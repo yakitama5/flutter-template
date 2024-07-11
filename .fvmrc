@@ -1,5 +1,5 @@
 {
-  "flutter": "3.22.1",
+  "flutter": "stable",
   "flavors": {},
   "updateVscodeSettings": false,
   "updateGitIgnore": false
