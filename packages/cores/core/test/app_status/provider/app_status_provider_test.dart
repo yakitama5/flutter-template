@@ -10,8 +10,8 @@ import 'package:cores_core/src/app_status/provider/force_update_version_provider
 import 'package:cores_core/src/app_status/provider/maintenance_mode_provider.dart';
 import 'package:cores_core/src/model/build_config.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
   final fakeBuildConfig = FakeBuildConfig(

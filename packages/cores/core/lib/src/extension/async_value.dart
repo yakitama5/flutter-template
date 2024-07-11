@@ -1,4 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 extension AsyncValueExtension<T> on AsyncValue<T> {
   /// Executes a future and returns its result as an [AsyncValue.data]. Captures

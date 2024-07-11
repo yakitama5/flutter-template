@@ -6,8 +6,9 @@ import 'package:features_setting/src/ui/components/setting_section_spacer.dart';
 import 'package:features_setting/src/ui/components/setting_section_title.dart';
 import 'package:features_setting/src/ui/provider/navigator_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+// ignore: one_member_abstracts
 abstract interface class SettingPageNavigator {
   void goLicensePage(BuildContext context);
 }
