@@ -8,9 +8,7 @@
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": "off",
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80],
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
       "source.organizeImports": "explicit",
@@ -53,5 +51,63 @@
   },
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
+  "vscodeGitCommit.template": ["{prefix}: {message}"],
+  "vscodeGitCommit.variables": {
+    "prefix": "aliasesType",
+    "aliasesType": [
+      {
+        "label": "🎉new",
+        "detail": "初めてのコミット（Initial Commit）"
+      },
+      {
+        "label": "🔖tag",
+        "detail": "バージョンタグ（Version Tag）"
+      },
+      {
+        "label": "✨feat",
+        "detail": "新機能（New Feature）"
+      },
+      {
+        "label": "🐛fix",
+        "detail": "バグ修正（Bugfix）"
+      },
+      {
+        "label": "♻️refactor",
+        "detail": "リファクタリング(Refactoring)"
+      },
+      {
+        "label": "📚doc",
+        "detail": "ドキュメント（Documentation）"
+      },
+      {
+        "label": "🎨design",
+        "detail": "デザインUI/UX(Accessibility)"
+      },
+      {
+        "label": "🐎perf",
+        "detail": "パフォーマンス（Performance）"
+      },
+      {
+        "label": "🔧chore",
+        "detail": "ビルド、補助ツール、ライブラリ関連(Settings)"
+      },
+      {
+        "label": "🚨test",
+        "detail": "テスト（Tests）"
+      },
+      {
+        "label": "🗨️comment",
+        "detail": "コメント整理、TODOコメント(Comment)"
+      },
+      {
+        "label": "🚧wip",
+        "detail": "WIP(Work In Progress)"
+      },
+      {
+        "label": "💩depre",
+        "detail": "非推奨追加（Deprecation）"
+      }
+    ]
   }
 }
