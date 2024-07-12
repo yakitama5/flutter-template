@@ -4,7 +4,7 @@ import 'package:cores_core/app_status.dart';
 import 'package:features_debug_mode/src/data/api/provider/exception_generator_api.dart';
 import 'package:features_debug_mode/src/ui/provider/navigator_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 abstract interface class DebugPageNavigator {
   void goNavigationDebugPage(BuildContext context);

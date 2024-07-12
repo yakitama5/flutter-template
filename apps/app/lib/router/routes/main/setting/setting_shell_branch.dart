@@ -39,7 +39,7 @@ class SettingPageRoute extends GoRouteData {
           const _SettingPageNavigatorImpl(),
         ),
       ],
-      child: const SettingPage(),
+      child: const SettingsPage(),
     );
   }
 }
