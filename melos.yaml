@@ -32,7 +32,7 @@ command:
       test: 
       flutter_gen_runner: 
     hooks:
-      post: melos grind generate-package-labels && grind generate-package-labeler
+      post: melos run grind generate-package-labels && grind generate-package-labeler
 
 scripts:
   report_test:
