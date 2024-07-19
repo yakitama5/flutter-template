@@ -1,3 +1,4 @@
+import 'package:features_setting/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -15,79 +16,80 @@ class SettingsPage extends HookConsumerWidget {
         ? const Icon(Icons.arrow_forward_ios_rounded)
         : null;
 
+    // TODO(yakitama5): 各種テーマの状況を取得して表示すること
     return Scaffold(
       appBar: AppBar(
-        title: const Text('設定'),
+        title: Text(i18n.settings.settingsPage.title),
       ),
       body: ThemedSettingsList(
         sections: [
           SettingsSection(
-            title: const Text('アカウント'),
+            title: Text(i18n.settings.settingsPage.account.head),
             tiles: [
               SettingsTile.navigation(
                 leading: const Icon(Icons.link),
                 trailing: trailing,
-                title: const Text('アカウント'),
+                title: Text(i18n.settings.settingsPage.account.account),
                 onPressed: _onAccount,
               ),
             ],
           ),
           SettingsSection(
-            title: const Text('レイアウト'),
+            title: Text(i18n.settings.settingsPage.layout.haed),
             tiles: [
               SettingsTile.navigation(
                 leading: const Icon(Icons.style),
                 trailing: trailing,
-                title: const Text('UIスタイル'),
+                title: Text(i18n.settings.settingsPage.layout.uiStyle),
                 description: const Text('システム設定'),
                 onPressed: _onUIStyle,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.light_mode),
                 trailing: trailing,
-                title: const Text('テーマモード'),
+                title: Text(i18n.settings.settingsPage.layout.themeMode),
                 description: const Text('システム設定'),
                 onPressed: _onThemeMode,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.color_lens),
                 trailing: trailing,
-                title: const Text('カラーテーマ'),
+                title: Text(i18n.settings.settingsPage.layout.colorTheme),
                 description: const Text('システムテーマ'),
                 onPressed: _onColorStyle,
               ),
             ],
           ),
           SettingsSection(
-            title: const Text('ヘルプ'),
+            title: Text(i18n.settings.settingsPage.help.head),
             tiles: [
               SettingsTile.navigation(
                 leading: const Icon(Icons.abc),
                 trailing: trailing,
-                title: const Text('使い方'),
+                title: Text(i18n.settings.settingsPage.help.howToUse),
                 onPressed: _onHowToUse,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.help),
                 trailing: trailing,
-                title: const Text('お問い合わせ'),
+                title: Text(i18n.settings.settingsPage.help.contactUs),
                 onPressed: _onContactUs,
               ),
               SettingsTile.navigation(
                 leading: Icon(MdiIcons.twitter),
                 trailing: trailing,
-                title: const Text('開発者X (旧Twitter)'),
+                title: Text(i18n.settings.settingsPage.help.developperTwitter),
                 onPressed: _onDevelopperTwitter,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.lock),
                 trailing: trailing,
-                title: const Text('プライバシーマニフェスト'),
+                title: Text(i18n.settings.settingsPage.help.privacyPollicy),
                 onPressed: _onPrivacyPolicy,
               ),
               SettingsTile.navigation(
                 trailing: trailing,
-                title: const Text('ライセンス'),
+                title: Text(i18n.settings.settingsPage.help.licencse),
                 onPressed: _onLicense,
               ),
             ],
