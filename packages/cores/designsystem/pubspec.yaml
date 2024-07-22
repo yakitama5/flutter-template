@@ -8,10 +8,13 @@ environment:
   flutter: ^3.22.1
 
 dependencies:
+  cores_shared_preferences:
+    path: ../shared_preferences
   flutter:
     sdk: flutter
   hooks_riverpod: ^3.0.0-dev.3
   riverpod_annotation: ^3.0.0-dev.3
+  slang: 
   theme_extensions_builder_annotation: 
 
 dev_dependencies:

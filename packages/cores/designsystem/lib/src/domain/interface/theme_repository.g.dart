@@ -1,24 +1,27 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'ui_style_provider.dart';
+part of 'theme_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$uiStyleHash() => r'3591291bf77f493cddafb054192e35d5a3038479';
+String _$themeRepositoryHash() => r'ff9a83598d38a92158e55cbf72796ffcbdf77919';
 
-/// See also [UiStyle].
-@ProviderFor(UiStyle)
-final uiStyleProvider = AutoDisposeNotifierProvider<UiStyle, UIStyle>.internal(
-  UiStyle.new,
-  name: r'uiStyleProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$uiStyleHash,
+/// DI用 (依存性逆転のためドメイン層に定義)
+///
+/// Copied from [themeRepository].
+@ProviderFor(themeRepository)
+final themeRepositoryProvider = AutoDisposeProvider<ThemeRepository>.internal(
+  themeRepository,
+  name: r'themeRepositoryProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$themeRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$UiStyle = AutoDisposeNotifier<UIStyle>;
+typedef ThemeRepositoryRef = AutoDisposeProviderRef<ThemeRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package

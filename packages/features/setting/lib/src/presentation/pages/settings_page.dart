@@ -1,3 +1,5 @@
+import 'package:cores_designsystem/application.dart';
+import 'package:cores_designsystem/strings.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -11,6 +13,9 @@ class SettingsPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // 現在の設定値を取得
+    final uiStyle = ref.watch(uiStyleProvider);
+
     // プラットフォームに応じたアイコンの出し訳
     final trailing = Theme.of(context).platform == TargetPlatform.iOS
         ? const Icon(Icons.arrow_forward_ios_rounded)
@@ -41,7 +46,9 @@ class SettingsPage extends HookConsumerWidget {
                 leading: const Icon(Icons.style),
                 trailing: trailing,
                 title: Text(i18n.settings.settingsPage.layout.uiStyle),
-                description: const Text('システム設定'),
+                description: Text(
+                  i18nDesignsystem.designsystem.uiStyle(context: uiStyle),
+                ),
                 onPressed: _onUIStyle,
               ),
               SettingsTile.navigation(

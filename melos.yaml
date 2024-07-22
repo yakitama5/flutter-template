@@ -59,7 +59,7 @@ scripts:
     packageFilters:
       dependsOn: build_runner
 
-  regenerate_watch_by_using_build_runner:
+  watch_build_runner:
     run: dart run build_runner watch -d
     exec:
       orderDependents: true

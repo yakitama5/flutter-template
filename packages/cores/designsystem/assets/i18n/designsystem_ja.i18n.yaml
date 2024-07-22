@@ -1,0 +1,4 @@
+uiStyle(context=UIStyle): 
+  system: システム設定
+  android: Android
+  ios: iOS

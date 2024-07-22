@@ -199,6 +199,20 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  cores_designsystem:
+    dependency: "direct main"
+    description:
+      path: "../../cores/designsystem"
+      relative: true
+    source: path
+    version: "0.0.1"
+  cores_shared_preferences:
+    dependency: transitive
+    description:
+      path: "../../cores/shared_preferences"
+      relative: true
+    source: path
+    version: "0.0.1"
   crypto:
     dependency: transitive
     description:
@@ -851,6 +865,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
+  theme_extensions_builder_annotation:
+    dependency: transitive
+    description:
+      name: theme_extensions_builder_annotation
+      sha256: edfcd5c2b226f05689e66aade860e688e236509de95c373e985bdb9e9d7c789f
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   time:
     dependency: transitive
     description:
