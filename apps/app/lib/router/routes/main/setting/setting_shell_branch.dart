@@ -8,6 +8,15 @@ const settingShellBranch = TypedStatefulShellBranch<SettingShellBranch>(
         TypedGoRoute<LicensePageRoute>(
           path: LicensePageRoute.path,
         ),
+        TypedGoRoute<SettingsUiStylePageRoute>(
+          path: SettingsUiStylePageRoute.path,
+        ),
+        TypedGoRoute<SettingsColorStylePageRoute>(
+          path: SettingsColorStylePageRoute.path,
+        ),
+        TypedGoRoute<SettingsThemeModePageRoute>(
+          path: SettingsThemeModePageRoute.path,
+        ),
       ],
     ),
   ],
@@ -24,6 +33,27 @@ final class _SettingPageNavigatorImpl implements SettingPageNavigator {
   void goLicensePage(BuildContext context) {
     const LicensePageRoute().go(context);
   }
+}
+
+final class _SettingsPageNavigatorImpl implements SettingsPageNavigator {
+  const _SettingsPageNavigatorImpl();
+
+  @override
+  void goLicensePage(BuildContext context) {
+    const LicensePageRoute().go(context);
+  }
+
+  @override
+  void goColorStylePage(BuildContext context) =>
+      const SettingsColorStylePageRoute().go(context);
+
+  @override
+  void goThemeModePage(BuildContext context) =>
+      const SettingsThemeModePageRoute().go(context);
+
+  @override
+  void goUiStylePage(BuildContext context) =>
+      const SettingsUiStylePageRoute().go(context);
 }
 
 class SettingPageRoute extends GoRouteData {
@@ -55,4 +85,34 @@ class LicensePageRoute extends GoRouteData {
       applicationIcon: CommonAssets.yumemiLogo.image(height: 100, width: 100),
     );
   }
+}
+
+class SettingsUiStylePageRoute extends GoRouteData {
+  const SettingsUiStylePageRoute();
+
+  static const path = 'ui_style';
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      SettingsUiStylePage();
+}
+
+class SettingsColorStylePageRoute extends GoRouteData {
+  const SettingsColorStylePageRoute();
+
+  static const path = 'color_style';
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      SettingsColorStylePage();
+}
+
+class SettingsThemeModePageRoute extends GoRouteData {
+  const SettingsThemeModePageRoute();
+
+  static const path = 'theme_mode';
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      SettingsThemeModePage();
 }

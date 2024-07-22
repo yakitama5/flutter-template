@@ -58,6 +58,18 @@ RouteBase get $mainPageShellRoute => StatefulShellRouteData.$route(
                   path: 'license',
                   factory: $LicensePageRouteExtension._fromState,
                 ),
+                GoRouteData.$route(
+                  path: 'ui_style',
+                  factory: $SettingsUiStylePageRouteExtension._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'color_style',
+                  factory: $SettingsColorStylePageRouteExtension._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'theme_mode',
+                  factory: $SettingsThemeModePageRouteExtension._fromState,
+                ),
               ],
             ),
           ],
@@ -190,6 +202,60 @@ extension $LicensePageRouteExtension on LicensePageRoute {
 
   String get location => GoRouteData.$location(
         '/setting/license',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SettingsUiStylePageRouteExtension on SettingsUiStylePageRoute {
+  static SettingsUiStylePageRoute _fromState(GoRouterState state) =>
+      const SettingsUiStylePageRoute();
+
+  String get location => GoRouteData.$location(
+        '/setting/ui_style',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SettingsColorStylePageRouteExtension on SettingsColorStylePageRoute {
+  static SettingsColorStylePageRoute _fromState(GoRouterState state) =>
+      const SettingsColorStylePageRoute();
+
+  String get location => GoRouteData.$location(
+        '/setting/color_style',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SettingsThemeModePageRouteExtension on SettingsThemeModePageRoute {
+  static SettingsThemeModePageRoute _fromState(GoRouterState state) =>
+      const SettingsThemeModePageRoute();
+
+  String get location => GoRouteData.$location(
+        '/setting/theme_mode',
       );
 
   void go(BuildContext context) => context.go(location);

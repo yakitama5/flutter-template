@@ -7,6 +7,14 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'package:settings_ui/settings_ui.dart';
 
 import '../components/themed_settings_list.dart';
+import '../router/navigator_provider.dart';
+
+abstract interface class SettingsPageNavigator {
+  void goUiStylePage(BuildContext context);
+  void goColorStylePage(BuildContext context);
+  void goThemeModePage(BuildContext context);
+  void goLicensePage(BuildContext context);
+}
 
 class SettingsPage extends HookConsumerWidget {
   const SettingsPage({super.key});
@@ -17,6 +25,8 @@ class SettingsPage extends HookConsumerWidget {
     final uiStyle = ref.watch(uiStyleProvider);
     final colorStyle = ref.watch(colorStyleProvider);
     final themeMode = ref.watch(themeModeProvider);
+
+    final navigator = ref.watch(settingsPageNavigatorProvider);
 
     // プラットフォームに応じたアイコンの出し訳
     final trailing = Theme.of(context).platform == TargetPlatform.iOS
@@ -50,7 +60,7 @@ class SettingsPage extends HookConsumerWidget {
                 description: Text(
                   i18nDesignsystem.designsystem.uiStyle(context: uiStyle),
                 ),
-                onPressed: _onUIStyle,
+                onPressed: navigator.goUiStylePage,
               ),
               SettingsTile.navigation(
                 leading: Icon(
@@ -65,7 +75,7 @@ class SettingsPage extends HookConsumerWidget {
                 description: Text(
                   i18nDesignsystem.designsystem.themeMode(context: themeMode),
                 ),
-                onPressed: _onThemeMode,
+                onPressed: navigator.goThemeModePage,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.color_lens),
@@ -74,7 +84,7 @@ class SettingsPage extends HookConsumerWidget {
                 description: Text(
                   i18nDesignsystem.designsystem.colorStyle(context: colorStyle),
                 ),
-                onPressed: _onColorStyle,
+                onPressed: navigator.goColorStylePage,
               ),
             ],
           ),
@@ -108,7 +118,7 @@ class SettingsPage extends HookConsumerWidget {
               SettingsTile.navigation(
                 trailing: trailing,
                 title: Text(i18n.settings.settingsPage.help.licencse),
-                onPressed: _onLicense,
+                onPressed: navigator.goLicensePage,
               ),
             ],
           ),
@@ -119,12 +129,6 @@ class SettingsPage extends HookConsumerWidget {
 
   void _onAccount(BuildContext context) {}
 
-  void _onUIStyle(BuildContext context) {}
-
-  void _onThemeMode(BuildContext context) {}
-
-  void _onColorStyle(BuildContext context) {}
-
   void _onHowToUse(BuildContext context) {}
 
   void _onContactUs(BuildContext context) {}
@@ -132,6 +136,4 @@ class SettingsPage extends HookConsumerWidget {
   Future<void> _onDevelopperTwitter(BuildContext context) async {}
 
   Future<void> _onPrivacyPolicy(BuildContext context) async {}
-
-  void _onLicense(BuildContext context) {}
 }

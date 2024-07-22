@@ -199,7 +199,7 @@ packages:
     source: path
     version: "0.0.1"
   cores_shared_preferences:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../cores/shared_preferences"
       relative: true
