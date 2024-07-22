@@ -1,0 +1,38 @@
+import 'package:cores_designsystem/application.dart';
+import 'package:cores_designsystem/domain.dart';
+import 'package:cores_designsystem/strings.dart';
+import 'package:features_setting/i18n/strings.g.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../components/settings_radio_list_tile.dart';
+import '../components/settings_radio_scaffold.dart';
+
+class SettingsUiStylePage extends HookConsumerWidget {
+  const SettingsUiStylePage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final initialValue = ref.watch(uiStyleProvider);
+    final selected = useState<UIStyle?>(initialValue);
+
+    return SettingsRadioScaffold(
+      title: i18n.settings.settingsPage.layout.uiStyle,
+      tiles: UIStyle.values.map((style) {
+        return SettingsRadioListTile<UIStyle>(
+          title: Text(i18nDesignsystem.designsystem.uiStyle(context: style)),
+          value: style,
+          groupValue: selected.value,
+          leading: Icon(style.iconData),
+          onChanged: (_) {
+            selected.value = style;
+            ref.read(uiStyleProvider.notifier).update(style);
+          },
+        );
+      }).toList(),
+    );
+  }
+}
