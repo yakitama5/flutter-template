@@ -8,6 +8,7 @@ environment:
   flutter: ^3.22.1
 
 dependencies:
+  collection:
   cores_core:
     path: ../../cores/core
   cores_data:
