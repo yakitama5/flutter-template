@@ -4,14 +4,16 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 6 (3 per locale)
+/// Strings: 30 (15 per locale)
 ///
-/// Built on 2024-07-22 at 07:47 UTC
+/// Built on 2024-07-22 at 08:33 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
 
+import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
 import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:slang/builder/model/node.dart';
 import 'package:slang_flutter/slang_flutter.dart';
@@ -169,6 +171,38 @@ class _StringsDesignsystemEn {
 				return 'iOS';
 		}
 	}
+	String colorStyle({required ColorStyle context}) {
+		switch (context) {
+			case ColorStyle.dynamicColor:
+				return 'DynamicColor';
+			case ColorStyle.systemColor:
+				return 'SystemColor';
+			case ColorStyle.blue:
+				return 'Blue';
+			case ColorStyle.purple:
+				return 'Purple';
+			case ColorStyle.green:
+				return 'Green';
+			case ColorStyle.red:
+				return 'Red';
+			case ColorStyle.pink:
+				return 'Pink';
+			case ColorStyle.yellow:
+				return 'Yellow';
+			case ColorStyle.orange:
+				return 'Orange';
+		}
+	}
+	String themeMode({required ThemeMode context}) {
+		switch (context) {
+			case ThemeMode.system:
+				return 'System';
+			case ThemeMode.light:
+				return 'Light';
+			case ThemeMode.dark:
+				return 'Dark';
+		}
+	}
 }
 
 // Path: <root>
@@ -217,6 +251,38 @@ class _StringsDesignsystemJa extends _StringsDesignsystemEn {
 				return 'iOS';
 		}
 	}
+	@override String colorStyle({required ColorStyle context}) {
+		switch (context) {
+			case ColorStyle.dynamicColor:
+				return 'ダイナミックカラー';
+			case ColorStyle.systemColor:
+				return 'システムカラー';
+			case ColorStyle.blue:
+				return 'ブルー';
+			case ColorStyle.purple:
+				return 'パープル';
+			case ColorStyle.green:
+				return 'グリーン';
+			case ColorStyle.red:
+				return 'レッド';
+			case ColorStyle.pink:
+				return 'ピンク';
+			case ColorStyle.yellow:
+				return 'イエロー';
+			case ColorStyle.orange:
+				return 'オレンジ';
+		}
+	}
+	@override String themeMode({required ThemeMode context}) {
+		switch (context) {
+			case ThemeMode.system:
+				return 'システムテーマ';
+			case ThemeMode.light:
+				return 'ライトテーマ';
+			case ThemeMode.dark:
+				return 'ダークテーマ';
+		}
+	}
 }
 
 /// Flat map(s) containing all translations.
@@ -235,6 +301,38 @@ extension on Translations {
 						return 'iOS';
 				}
 			};
+			case 'designsystem.colorStyle': return ({required ColorStyle context}) {
+				switch (context) {
+					case ColorStyle.dynamicColor:
+						return 'DynamicColor';
+					case ColorStyle.systemColor:
+						return 'SystemColor';
+					case ColorStyle.blue:
+						return 'Blue';
+					case ColorStyle.purple:
+						return 'Purple';
+					case ColorStyle.green:
+						return 'Green';
+					case ColorStyle.red:
+						return 'Red';
+					case ColorStyle.pink:
+						return 'Pink';
+					case ColorStyle.yellow:
+						return 'Yellow';
+					case ColorStyle.orange:
+						return 'Orange';
+				}
+			};
+			case 'designsystem.themeMode': return ({required ThemeMode context}) {
+				switch (context) {
+					case ThemeMode.system:
+						return 'System';
+					case ThemeMode.light:
+						return 'Light';
+					case ThemeMode.dark:
+						return 'Dark';
+				}
+			};
 			default: return null;
 		}
 	}
@@ -251,6 +349,38 @@ extension on _StringsJa {
 						return 'Android';
 					case UIStyle.ios:
 						return 'iOS';
+				}
+			};
+			case 'designsystem.colorStyle': return ({required ColorStyle context}) {
+				switch (context) {
+					case ColorStyle.dynamicColor:
+						return 'ダイナミックカラー';
+					case ColorStyle.systemColor:
+						return 'システムカラー';
+					case ColorStyle.blue:
+						return 'ブルー';
+					case ColorStyle.purple:
+						return 'パープル';
+					case ColorStyle.green:
+						return 'グリーン';
+					case ColorStyle.red:
+						return 'レッド';
+					case ColorStyle.pink:
+						return 'ピンク';
+					case ColorStyle.yellow:
+						return 'イエロー';
+					case ColorStyle.orange:
+						return 'オレンジ';
+				}
+			};
+			case 'designsystem.themeMode': return ({required ThemeMode context}) {
+				switch (context) {
+					case ThemeMode.system:
+						return 'システムテーマ';
+					case ThemeMode.light:
+						return 'ライトテーマ';
+					case ThemeMode.dark:
+						return 'ダークテーマ';
 				}
 			};
 			default: return null;

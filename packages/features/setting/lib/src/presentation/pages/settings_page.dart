@@ -15,13 +15,14 @@ class SettingsPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 現在の設定値を取得
     final uiStyle = ref.watch(uiStyleProvider);
+    final colorStyle = ref.watch(colorStyleProvider);
+    final themeMode = ref.watch(themeModeProvider);
 
     // プラットフォームに応じたアイコンの出し訳
     final trailing = Theme.of(context).platform == TargetPlatform.iOS
         ? const Icon(Icons.arrow_forward_ios_rounded)
         : null;
 
-    // TODO(yakitama5): 各種テーマの状況を取得して表示すること
     return Scaffold(
       appBar: AppBar(
         title: Text(i18n.settings.settingsPage.title),
@@ -52,17 +53,27 @@ class SettingsPage extends HookConsumerWidget {
                 onPressed: _onUIStyle,
               ),
               SettingsTile.navigation(
-                leading: const Icon(Icons.light_mode),
+                leading: Icon(
+                  switch (themeMode) {
+                    ThemeMode.system => Icons.settings,
+                    ThemeMode.light => Icons.light_mode,
+                    ThemeMode.dark => Icons.dark_mode,
+                  },
+                ),
                 trailing: trailing,
                 title: Text(i18n.settings.settingsPage.layout.themeMode),
-                description: const Text('システム設定'),
+                description: Text(
+                  i18nDesignsystem.designsystem.themeMode(context: themeMode),
+                ),
                 onPressed: _onThemeMode,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.color_lens),
                 trailing: trailing,
                 title: Text(i18n.settings.settingsPage.layout.colorTheme),
-                description: const Text('システムテーマ'),
+                description: Text(
+                  i18nDesignsystem.designsystem.colorStyle(context: colorStyle),
+                ),
                 onPressed: _onColorStyle,
               ),
             ],

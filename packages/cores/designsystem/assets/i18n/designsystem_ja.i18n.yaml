@@ -1,4 +1,18 @@
-uiStyle(context=UIStyle): 
+uiStyle(context=UIStyle):
   system: システム設定
   android: Android
   ios: iOS
+colorStyle(context=ColorStyle):
+  dynamicColor: ダイナミックカラー
+  systemColor: システムカラー
+  blue: ブルー
+  purple: パープル
+  green: グリーン
+  red: レッド
+  pink: ピンク
+  yellow: イエロー
+  orange: オレンジ
+themeMode(context=ThemeMode):
+  system: システムテーマ
+  light: ライトテーマ
+  dark: ダークテーマ

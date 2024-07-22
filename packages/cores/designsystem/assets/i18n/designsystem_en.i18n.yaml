@@ -1,4 +1,18 @@
-uiStyle(context=UIStyle): 
+uiStyle(context=UIStyle):
   system: System
   android: Android
   ios: iOS
+colorStyle(context=ColorStyle):
+  dynamicColor: DynamicColor
+  systemColor: SystemColor
+  blue: Blue
+  purple: Purple
+  green: Green
+  red: Red
+  pink: Pink
+  yellow: Yellow
+  orange: Orange
+themeMode(context=ThemeMode):
+  system: System
+  light: Light
+  dark: Dark
