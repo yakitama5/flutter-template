@@ -16,6 +16,7 @@ class SettingsColorStylePage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // TODO(yakitama5): DynamiColorを対応してから
     // final isDynamicColorSupported = ref.watch(dynamicColorSupportedProvider);
     final initialValue = ref.watch(colorStyleProvider);
     final selected = useState<ColorStyle?>(initialValue);
