@@ -26,15 +26,6 @@ class SettingShellBranch extends StatefulShellBranchData {
   const SettingShellBranch();
 }
 
-final class _SettingPageNavigatorImpl implements SettingPageNavigator {
-  const _SettingPageNavigatorImpl();
-
-  @override
-  void goLicensePage(BuildContext context) {
-    const LicensePageRoute().go(context);
-  }
-}
-
 final class _SettingsPageNavigatorImpl implements SettingsPageNavigator {
   const _SettingsPageNavigatorImpl();
 
@@ -65,8 +56,8 @@ class SettingPageRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) {
     return ProviderScope(
       overrides: [
-        settingPageNavigatorProvider.overrideWithValue(
-          const _SettingPageNavigatorImpl(),
+        settingsPageNavigatorProvider.overrideWithValue(
+          const _SettingsPageNavigatorImpl(),
         ),
       ],
       child: const SettingsPage(),

@@ -129,9 +129,23 @@ packages:
     source: path
     version: "0.0.1"
   cores_data:
-    dependency: "direct main"
+    dependency: "direct overridden"
     description:
       path: "../data"
+      relative: true
+    source: path
+    version: "0.0.1"
+  cores_designsystem:
+    dependency: "direct main"
+    description:
+      path: "../designsystem"
+      relative: true
+    source: path
+    version: "0.0.1"
+  cores_shared_preferences:
+    dependency: "direct main"
+    description:
+      path: "../shared_preferences"
       relative: true
     source: path
     version: "0.0.1"
@@ -143,6 +157,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
+  csv:
+    dependency: transitive
+    description:
+      name: csv
+      sha256: c6aa2679b2a18cb57652920f674488d89712efaf4d3fdf2e537215b35fc19d6c
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.0.0"
   custom_lint:
     dependency: "direct dev"
     description:
@@ -289,6 +311,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.19.0"
+  json2yaml:
+    dependency: transitive
+    description:
+      name: json2yaml
+      sha256: da94630fbc56079426fdd167ae58373286f603371075b69bf46d848d63ba3e51
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.0.1"
   json_annotation:
     dependency: transitive
     description:
@@ -534,6 +564,22 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  slang:
+    dependency: transitive
+    description:
+      name: slang
+      sha256: f68f6d6709890f85efabfb0318e9d694be2ebdd333e57fe5cb50eee449e4e3ab
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.31.1"
+  slang_flutter:
+    dependency: transitive
+    description:
+      name: slang_flutter
+      sha256: f8400292be49c11697d94af58d7f7d054c91af759f41ffe71e4e5413871ffc62
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.31.0"
   source_gen:
     dependency: transitive
     description:
@@ -614,6 +660,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.0"
+  theme_extensions_builder_annotation:
+    dependency: transitive
+    description:
+      name: theme_extensions_builder_annotation
+      sha256: edfcd5c2b226f05689e66aade860e688e236509de95c373e985bdb9e9d7c789f
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.1.0"
   typed_data:
     dependency: transitive
     description:

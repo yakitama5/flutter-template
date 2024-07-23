@@ -954,13 +954,21 @@ packages:
     source: sdk
     version: "0.0.99"
   slang:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: slang
       sha256: f68f6d6709890f85efabfb0318e9d694be2ebdd333e57fe5cb50eee449e4e3ab
       url: "https://pub.dev"
     source: hosted
     version: "3.31.1"
+  slang_flutter:
+    dependency: "direct main"
+    description:
+      name: slang_flutter
+      sha256: f8400292be49c11697d94af58d7f7d054c91af759f41ffe71e4e5413871ffc62
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.31.0"
   source_gen:
     dependency: transitive
     description:

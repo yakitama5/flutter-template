@@ -3,42 +3,46 @@ version: 1
 
 labels:
   # <!-- This is an auto-generated label -->
-  - label: "@apps/catalog"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\apps\\catalog"
     files:
-      - apps/catalog/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\apps\catalog/.+
 
-  - label: "@packages/cores/core"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\core"
     files:
-      - packages/cores/core/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\core/.+
 
-  - label: "@packages/cores/data"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\data"
     files:
-      - packages/cores/data/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\data/.+
 
-  - label: "@packages/cores/designsystem"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\designsystem"
     files:
-      - packages/cores/designsystem/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\designsystem/.+
 
-  - label: "@packages/cores/init"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\init"
     files:
-      - packages/cores/init/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\init/.+
 
-  - label: "@packages/features/debug_mode"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\shared_preferences"
     files:
-      - packages/features/debug_mode/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\shared_preferences/.+
 
-  - label: "@packages/features/github_repository"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\debug_mode"
     files:
-      - packages/features/github_repository/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\debug_mode/.+
 
-  - label: "@packages/features/setting"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\github_repository"
     files:
-      - packages/features/setting/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\github_repository/.+
 
-  - label: "@packages/features/webview"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\setting"
     files:
-      - packages/features/webview/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\setting/.+
 
-  - label: "@apps/app"
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\webview"
     files:
-      - apps/app/.+
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\webview/.+
+
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\apps\\app"
+    files:
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\apps\app/.+

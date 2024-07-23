@@ -10,8 +10,10 @@ environment:
 dependencies:
   cores_core:
     path: ../core
-  cores_data:
-    path: ../data
+  cores_shared_preferences:
+    path: ../shared_preferences
+  cores_designsystem:
+    path: ../designsystem
   flutter:
     sdk: flutter
   hooks_riverpod: ^3.0.0-dev.3

@@ -16,6 +16,7 @@ dependencies:
   hooks_riverpod: ^3.0.0-dev.3
   riverpod_annotation: ^3.0.0-dev.3
   slang: 
+  slang_flutter: 
   theme_extensions_builder_annotation: 
 
 dev_dependencies:
@@ -26,6 +27,7 @@ dev_dependencies:
   pedantic_mono:
   riverpod_generator: ^3.0.0-dev.11
   riverpod_lint: ^3.0.0-dev.4
+  slang_build_runner: 
   theme_extensions_builder: 
 
 flutter:
