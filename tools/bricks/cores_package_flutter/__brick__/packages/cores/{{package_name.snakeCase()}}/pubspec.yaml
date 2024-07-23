@@ -14,7 +14,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  test: ^1.24.0
   pedantic_mono: 
+  test: ^1.24.0
 
 flutter:

@@ -9,6 +9,8 @@ environment:
 
 dependencies:
   collection:
+  cores_auth:
+    path: ../../cores/auth    
   cores_core:
     path: ../../cores/core
   cores_data:
@@ -32,8 +34,8 @@ dev_dependencies:
     sdk: flutter
   freezed: ^2.4.7
   json_serializable: 
+  pedantic_mono: 
   riverpod_generator: ^3.0.0-dev.11
   riverpod_lint: ^3.0.0-dev.4
-  pedantic_mono: 
 
 flutter:
