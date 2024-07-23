@@ -1,3 +1,3 @@
-import 'package:features_{{feature_name.snakeCase()}}/src/gen/l10n/l10n.dart';
+import 'package:features_{{feature_name.snakeCase()}}/i18n/strings.g.dart';
 
-typedef {{feature_name.pascalCase()}}L10n = L10n;
+Translations get {{feature_name.pascalCase()}}I18n => i18n;
