@@ -75,7 +75,10 @@ void _replaceAnalysisOptions({
 
   final sb = StringBuffer();
   sb.write('''
-include: package:yumemi_lints/flutter/3.22/recommended.yaml
+include: package:pedantic_mono/analysis_options.yaml
+
+linter:
+  rules:
 
 analyzer:
 ''');
@@ -87,9 +90,23 @@ analyzer:
     - custom_lint
 ''');
   }
+
+  sb.write('''
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.gform.dart"
+    - "**/firebase_options*.dart"
+    - "*/.github/workflows/flutter_*.yaml"
+    - "*/functions/*.js"
+  errors:
+    invalid_annotation_target: ignore
+    todo: ignore
+    hack: ignore
+''');
+
   if (useFreezed) {
     sb.write('''
-  errors:
     # https://pub.dev/packages/freezed#install
     invalid_annotation_target: ignore
 ''');
