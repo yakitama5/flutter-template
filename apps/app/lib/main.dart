@@ -7,7 +7,6 @@ import 'package:cores_init/provider.dart';
 import 'package:features_setting/i18n/strings.g.dart' as settings;
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app_initializer.dart';
-import 'package:flutter_app/gen/l10n/l10n.dart';
 import 'package:flutter_app/router/provider/router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -15,7 +14,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   final (buildConfig: buildConfig) = await AppInitializer.initialize();
-  // TODO(yakitama5): 後から変更
+  // TODO(yakitama5): Slagn対応
   await settings.LocaleSettings.useDeviceLocale();
 
   runApp(
@@ -59,12 +58,13 @@ class MainApp extends ConsumerWidget {
     });
 
     return MaterialApp.router(
-      localizationsDelegates: const [
-        ...L10n.localizationsDelegates,
-      ],
-      supportedLocales: const [
-        ...L10n.supportedLocales,
-      ],
+      // TODO(yakitama5): Slagn対応
+      // localizationsDelegates: const [
+      //   ...L10n.localizationsDelegates,
+      // ],
+      // supportedLocales: const [
+      //   ...L10n.supportedLocales,
+      // ],
       scaffoldMessengerKey: SnackBarManager.rootScaffoldMessengerKey,
       routerConfig: ref.watch(routerProvider),
       theme: lightTheme(),

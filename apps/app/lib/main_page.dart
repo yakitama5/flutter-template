@@ -1,6 +1,5 @@
 import 'package:features_github_repository/data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/gen/l10n/l10n.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -14,18 +13,19 @@ class MainPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final l = L10n.of(context);
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: NavigationBar(
         selectedIndex: navigationShell.currentIndex,
         destinations: [
           NavigationDestination(
-            label: l.bottomTabHome,
+            // TODO(yakitama5): Slagn対応
+            label: 'Home',
             icon: const Icon(Icons.home),
           ),
           NavigationDestination(
-            label: l.bottomTabSettings,
+            // TODO(yakitama5): Slagn対応
+            label: 'Settings',
             icon: const Icon(Icons.settings),
           ),
         ],

@@ -50,7 +50,7 @@ scripts:
     packageFilters:
       dependsOn: custom_lint
 
-  regenerate_code: melos run regenerate_by_using_gen_l10n && melos run regenerate_by_using_build_runner && melos run regenerate_by_using_gen_slang
+  regenerate_code: melos run regenerate_by_using_build_runner && melos run regenerate_by_using_gen_slang
 
   regenerate_by_using_build_runner:
     run: dart run build_runner build -d
@@ -65,13 +65,6 @@ scripts:
       orderDependents: true
     packageFilters:
       dependsOn: build_runner
-
-  regenerate_by_using_gen_l10n:
-    run: flutter gen-l10n
-    exec:
-      orderDependents: true
-    packageFilters:
-      dependsOn: flutter_localizations
 
   regenerate_by_using_gen_slang:
     run: dart run slang
