@@ -9,8 +9,6 @@ environment:
 
 dependencies:
   collection:
-  cores_auth:
-    path: ../../cores/auth    
   cores_core:
     path: ../../cores/core
   cores_data:
