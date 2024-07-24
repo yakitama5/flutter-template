@@ -1,5 +1,5 @@
 import 'package:cores_designsystem/application.dart';
-import 'package:cores_designsystem/strings.dart';
+import 'package:cores_designsystem/i18n.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -23,7 +23,7 @@ class SettingsThemeModePage extends HookConsumerWidget {
       tiles: ThemeMode.values.map((themeMode) {
         return SettingsRadioListTile<ThemeMode>(
           title:
-              Text(i18nDesignsystem.designsystem.themeMode(context: themeMode)),
+              Text(designsystemI18n.designsystem.themeMode(context: themeMode)),
           value: themeMode,
           groupValue: selected.value,
           leading: Icon(

@@ -1,5 +1,5 @@
 import 'package:cores_designsystem/application.dart';
-import 'package:cores_designsystem/strings.dart';
+import 'package:cores_designsystem/i18n.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -58,7 +58,7 @@ class SettingsPage extends HookConsumerWidget {
                 trailing: trailing,
                 title: Text(i18n.settings.settingsPage.layout.uiStyle),
                 description: Text(
-                  i18nDesignsystem.designsystem.uiStyle(context: uiStyle),
+                  designsystemI18n.designsystem.uiStyle(context: uiStyle),
                 ),
                 onPressed: navigator.goUiStylePage,
               ),
@@ -73,7 +73,7 @@ class SettingsPage extends HookConsumerWidget {
                 trailing: trailing,
                 title: Text(i18n.settings.settingsPage.layout.themeMode),
                 description: Text(
-                  i18nDesignsystem.designsystem.themeMode(context: themeMode),
+                  designsystemI18n.designsystem.themeMode(context: themeMode),
                 ),
                 onPressed: navigator.goThemeModePage,
               ),
@@ -82,7 +82,7 @@ class SettingsPage extends HookConsumerWidget {
                 trailing: trailing,
                 title: Text(i18n.settings.settingsPage.layout.colorTheme),
                 description: Text(
-                  i18nDesignsystem.designsystem.colorStyle(context: colorStyle),
+                  designsystemI18n.designsystem.colorStyle(context: colorStyle),
                 ),
                 onPressed: navigator.goColorStylePage,
               ),

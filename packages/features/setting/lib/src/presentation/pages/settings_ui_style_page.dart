@@ -1,6 +1,6 @@
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/domain.dart';
-import 'package:cores_designsystem/strings.dart';
+import 'package:cores_designsystem/i18n.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -23,7 +23,7 @@ class SettingsUiStylePage extends HookConsumerWidget {
       title: i18n.settings.settingsPage.layout.uiStyle,
       tiles: UIStyle.values.map((style) {
         return SettingsRadioListTile<UIStyle>(
-          title: Text(i18nDesignsystem.designsystem.uiStyle(context: style)),
+          title: Text(designsystemI18n.designsystem.uiStyle(context: style)),
           value: style,
           groupValue: selected.value,
           leading: Icon(style.iconData),
