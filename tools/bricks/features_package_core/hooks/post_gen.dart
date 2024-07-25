@@ -53,28 +53,18 @@ void _addi18n({
       "import 'package:features_$featureName/i18n.dart';\n";
 
   // 追加するコード
-  String newLocalizationsDelegates = '''
-        ...${featureName.pascalCase}L10n.localizationsDelegates,
-  ''';
-  String newSupportedLocales = '''
-        ...${featureName.pascalCase}L10n.supportedLocales,
+  String newTranslationProvider = '''
+        ${featureName.pascalCase}TranslationProvider(),
   ''';
 
   // import文を最初に追加
   fileContent = importStatement + fileContent;
 
-  // TODO(yakitama5): Slang用に変更が必要
-  // // localizationsDelegatesに追加
-  // fileContent = fileContent.replaceFirst(
-  //   'localizationsDelegates: const [',
-  //   'localizationsDelegates: const [\n$newLocalizationsDelegates',
-  // );
-
-  // // supportedLocalesに追加
-  // fileContent = fileContent.replaceFirst(
-  //   'supportedLocales: const [',
-  //   'supportedLocales: const [\n$newSupportedLocales',
-  // );
+  // Slangの`TranslationProvider()`を追加
+  fileContent = fileContent.replaceFirst(
+    '_AppTranslationProvider(),',
+    '_AppTranslationProvider(),\n$newLocalizationsDelegates',
+  );
 
   // main.dartファイルを再度書き込み
   File(filePath).writeAsStringSync(fileContent);

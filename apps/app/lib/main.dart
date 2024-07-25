@@ -27,6 +27,7 @@ void main() async {
       ],
       child: Nested(children: [
         // Slangの伝播
+        _AppTranslationProvider(),
         SettingsTranslationProvider(),
         DesignsystemTranslationProvider()
       ], child: const MainApp()),
@@ -75,4 +76,14 @@ class MainApp extends ConsumerWidget {
       darkTheme: darkTheme(),
     );
   }
+}
+
+class _AppTranslationProvider extends SingleChildStatelessWidget {
+  const _AppTranslationProvider();
+
+  @override
+  Widget buildWithChild(BuildContext context, Widget? child) =>
+      TranslationProvider(
+        child: child ?? SizedBox.shrink(),
+      );
 }
