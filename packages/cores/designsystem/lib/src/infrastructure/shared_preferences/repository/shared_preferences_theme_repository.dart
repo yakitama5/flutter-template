@@ -2,7 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
 import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
 import 'package:cores_shared_preferences/infrastructure.dart';
-import 'package:flutter/src/material/app.dart';
+import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../domain/interface/theme_repository.dart';
