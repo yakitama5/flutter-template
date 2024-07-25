@@ -1,5 +1,6 @@
 import 'package:features_github_repository/data.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -19,13 +20,11 @@ class MainPage extends ConsumerWidget {
         selectedIndex: navigationShell.currentIndex,
         destinations: [
           NavigationDestination(
-            // TODO(yakitama5): Slagn対応
-            label: 'Home',
+            label: i18n.app.bottomNavBar.home,
             icon: const Icon(Icons.home),
           ),
           NavigationDestination(
-            // TODO(yakitama5): Slagn対応
-            label: 'Settings',
+            label: i18n.app.bottomNavBar.settings,
             icon: const Icon(Icons.settings),
           ),
         ],

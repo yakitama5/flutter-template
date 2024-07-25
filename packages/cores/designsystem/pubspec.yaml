@@ -14,6 +14,7 @@ dependencies:
   flutter:
     sdk: flutter
   hooks_riverpod: ^3.0.0-dev.3
+  nested: 
   riverpod_annotation: ^3.0.0-dev.3
   slang: 
   slang_flutter: 

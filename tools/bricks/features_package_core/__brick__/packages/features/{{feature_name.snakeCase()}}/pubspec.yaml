@@ -23,6 +23,7 @@ dependencies:
   freezed_annotation: 
   hooks_riverpod: ^3.0.0-dev.3
   intl: 
+  nested: 
   riverpod_annotation: ^3.0.0-dev.3
   slang: 
   slang_flutter: 

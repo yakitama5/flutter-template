@@ -1,6 +1,7 @@
 import 'package:cores_designsystem/theme_extensions.dart';
 import 'package:features_github_repository/ui.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:flutter_app/ui/provider/navigator_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -19,8 +20,7 @@ class HomePage extends ConsumerWidget {
     final navigator = ref.watch(homePageNavigatorProvider);
     return Scaffold(
       appBar: AppBar(
-        // TODO(yakitama5): Slang対応
-        title: Text('タイトル'),
+        title: Text(i18n.app.homePage.title),
         actions: [
           IconButton(
             onPressed: () => navigator.goDebugPage(context),

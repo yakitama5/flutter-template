@@ -22,6 +22,7 @@ dependencies:
   hooks_riverpod: ^3.0.0-dev.3
   intl: 
   material_design_icons_flutter:
+  nested: 
   riverpod_annotation: ^3.0.0-dev.3
   settings_ui:
   slang: 
