@@ -63,7 +63,7 @@ void _addi18n({
   // Slangの`TranslationProvider()`を追加
   fileContent = fileContent.replaceFirst(
     '_AppTranslationProvider(),',
-    '_AppTranslationProvider(),\n$newLocalizationsDelegates',
+    '_AppTranslationProvider(),\n$newTranslationProvider',
   );
 
   // main.dartファイルを再度書き込み
