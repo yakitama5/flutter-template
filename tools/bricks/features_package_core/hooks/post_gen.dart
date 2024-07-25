@@ -8,14 +8,14 @@ void run(HookContext context) {
   _addFeatureDependency(featureName: featureName);
   _addi18n(featureName: featureName);
 
-  // Process.runSync(
-  //   'melos',
-  //   ['bs'],
-  // );
-  // Process.runSync(
-  //   'melos',
-  //   ['run', 'regenerate_by_using_gen_l10n'],
-  // );
+  Process.runSync(
+    'melos',
+    ['bs'],
+  );
+  Process.runSync(
+    'melos',
+    ['run', 'regenerate_by_using_gen_slang'],
+  );
 }
 
 /// appにfeatureの依存を追加
@@ -55,7 +55,7 @@ void _addi18n({
   // 追加するコード
   String newTranslationProvider = '''
         ${featureName.pascalCase}TranslationProvider(),
-  ''';
+''';
 
   // import文を最初に追加
   fileContent = importStatement + fileContent;
