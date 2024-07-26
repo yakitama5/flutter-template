@@ -1,5 +1,4 @@
 import 'package:catalog/main.directories.g.dart';
-import 'package:cores_designsystem/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:widgetbook/widgetbook.dart';
@@ -40,8 +39,9 @@ class WidgetbookApp extends StatelessWidget {
         InspectorAddon(enabled: true),
         MaterialThemeAddon(
           themes: [
-            WidgetbookTheme(name: 'Light', data: lightTheme()),
-            WidgetbookTheme(name: 'Dark', data: darkTheme()),
+            // TODO(s-takehara): ここをProviderの値に変更
+            WidgetbookTheme(name: 'Light', data: ThemeData.light()),
+            WidgetbookTheme(name: 'Dark', data: ThemeData.dark()),
           ],
         ),
         LocalizationAddon(

@@ -4,7 +4,6 @@ import 'package:cores_core/provider.dart';
 import 'package:cores_core/ui.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
-import 'package:cores_designsystem/themes.dart';
 import 'package:cores_init/provider.dart';
 import 'package:features_auth/i18n.dart';
 import 'package:features_setting/i18n.dart';
@@ -48,6 +47,9 @@ class MainApp extends ConsumerWidget {
     // テーマ設定
     final themeMode = ref.watch(themeModeProvider);
     final uiStyle = ref.watch(uiStyleProvider);
+    final lightTheme =
+        ref.watch(appThemeProvider(brightness: Brightness.light));
+    final darkTheme = ref.watch(appThemeProvider(brightness: Brightness.dark));
 
     ref.listen<AppException?>(
       appExceptionNotifierProvider,
@@ -79,8 +81,8 @@ class MainApp extends ConsumerWidget {
 
       scaffoldMessengerKey: SnackBarManager.rootScaffoldMessengerKey,
       routerConfig: ref.watch(routerProvider),
-      theme: lightTheme().copyWith(platform: uiStyle.platform),
-      darkTheme: darkTheme().copyWith(platform: uiStyle.platform),
+      theme: lightTheme.copyWith(platform: uiStyle.platform),
+      darkTheme: darkTheme.copyWith(platform: uiStyle.platform),
       themeMode: themeMode,
     );
   }
