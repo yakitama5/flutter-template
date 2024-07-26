@@ -2,6 +2,7 @@ import 'package:cores_core/app_status.dart';
 import 'package:cores_core/exception.dart';
 import 'package:cores_core/provider.dart';
 import 'package:cores_core/ui.dart';
+import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:cores_designsystem/themes.dart';
 import 'package:cores_init/provider.dart';
@@ -44,6 +45,10 @@ class MainApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    // テーマ設定
+    final themeMode = ref.watch(themeModeProvider);
+    final uiStyle = ref.watch(uiStyleProvider);
+
     ref.listen<AppException?>(
       appExceptionNotifierProvider,
       (_, appException) {
@@ -74,8 +79,9 @@ class MainApp extends ConsumerWidget {
 
       scaffoldMessengerKey: SnackBarManager.rootScaffoldMessengerKey,
       routerConfig: ref.watch(routerProvider),
-      theme: lightTheme(),
-      darkTheme: darkTheme(),
+      theme: lightTheme().copyWith(platform: uiStyle.platform),
+      darkTheme: darkTheme().copyWith(platform: uiStyle.platform),
+      themeMode: themeMode,
     );
   }
 }
