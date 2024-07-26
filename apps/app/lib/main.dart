@@ -1,3 +1,4 @@
+import 'package:features_auth/i18n.dart';
 import 'package:cores_core/app_status.dart';
 import 'package:cores_core/exception.dart';
 import 'package:cores_core/provider.dart';
@@ -28,6 +29,8 @@ void main() async {
       child: Nested(children: [
         // Slangの伝播
         _AppTranslationProvider(),
+        AuthTranslationProvider(),
+
         SettingsTranslationProvider(),
         DesignsystemTranslationProvider()
       ], child: const MainApp()),

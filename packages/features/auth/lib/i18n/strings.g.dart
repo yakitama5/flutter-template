@@ -4,16 +4,13 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 30 (15 per locale)
+/// Strings: 2 (1 per locale)
 ///
 /// Built on 2024-07-26 at 01:33 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
 
-import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
-import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:slang/builder/model/node.dart';
 import 'package:slang_flutter/slang_flutter.dart';
@@ -151,58 +148,27 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	late final _StringsDesignsystemEn designsystem = _StringsDesignsystemEn._(_root);
+	late final _StringsAuthEn auth = _StringsAuthEn._(_root);
 }
 
-// Path: designsystem
-class _StringsDesignsystemEn {
-	_StringsDesignsystemEn._(this._root);
+// Path: auth
+class _StringsAuthEn {
+	_StringsAuthEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String uiStyle({required UIStyle context}) {
-		switch (context) {
-			case UIStyle.system:
-				return 'System';
-			case UIStyle.android:
-				return 'Android';
-			case UIStyle.ios:
-				return 'iOS';
-		}
-	}
-	String colorStyle({required ColorStyle context}) {
-		switch (context) {
-			case ColorStyle.dynamicColor:
-				return 'DynamicColor';
-			case ColorStyle.systemColor:
-				return 'SystemColor';
-			case ColorStyle.blue:
-				return 'Blue';
-			case ColorStyle.purple:
-				return 'Purple';
-			case ColorStyle.green:
-				return 'Green';
-			case ColorStyle.red:
-				return 'Red';
-			case ColorStyle.pink:
-				return 'Pink';
-			case ColorStyle.yellow:
-				return 'Yellow';
-			case ColorStyle.orange:
-				return 'Orange';
-		}
-	}
-	String themeMode({required ThemeMode context}) {
-		switch (context) {
-			case ThemeMode.system:
-				return 'System';
-			case ThemeMode.light:
-				return 'Light';
-			case ThemeMode.dark:
-				return 'Dark';
-		}
-	}
+	late final _StringsAuthAuthPageEn authPage = _StringsAuthAuthPageEn._(_root);
+}
+
+// Path: auth.authPage
+class _StringsAuthAuthPageEn {
+	_StringsAuthAuthPageEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Title';
 }
 
 // Path: <root>
@@ -231,58 +197,27 @@ class _StringsJa extends Translations {
 	@override late final _StringsJa _root = this; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsDesignsystemJa designsystem = _StringsDesignsystemJa._(_root);
+	@override late final _StringsAuthJa auth = _StringsAuthJa._(_root);
 }
 
-// Path: designsystem
-class _StringsDesignsystemJa extends _StringsDesignsystemEn {
-	_StringsDesignsystemJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: auth
+class _StringsAuthJa extends _StringsAuthEn {
+	_StringsAuthJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override String uiStyle({required UIStyle context}) {
-		switch (context) {
-			case UIStyle.system:
-				return 'システム設定';
-			case UIStyle.android:
-				return 'Android';
-			case UIStyle.ios:
-				return 'iOS';
-		}
-	}
-	@override String colorStyle({required ColorStyle context}) {
-		switch (context) {
-			case ColorStyle.dynamicColor:
-				return 'ダイナミックカラー';
-			case ColorStyle.systemColor:
-				return 'システムカラー';
-			case ColorStyle.blue:
-				return 'ブルー';
-			case ColorStyle.purple:
-				return 'パープル';
-			case ColorStyle.green:
-				return 'グリーン';
-			case ColorStyle.red:
-				return 'レッド';
-			case ColorStyle.pink:
-				return 'ピンク';
-			case ColorStyle.yellow:
-				return 'イエロー';
-			case ColorStyle.orange:
-				return 'オレンジ';
-		}
-	}
-	@override String themeMode({required ThemeMode context}) {
-		switch (context) {
-			case ThemeMode.system:
-				return 'システムテーマ';
-			case ThemeMode.light:
-				return 'ライトテーマ';
-			case ThemeMode.dark:
-				return 'ダークテーマ';
-		}
-	}
+	@override late final _StringsAuthAuthPageJa authPage = _StringsAuthAuthPageJa._(_root);
+}
+
+// Path: auth.authPage
+class _StringsAuthAuthPageJa extends _StringsAuthAuthPageEn {
+	_StringsAuthAuthPageJa._(_StringsJa root) : this._root = root, super._(root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'タイトル';
 }
 
 /// Flat map(s) containing all translations.
@@ -291,48 +226,7 @@ class _StringsDesignsystemJa extends _StringsDesignsystemEn {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'designsystem.uiStyle': return ({required UIStyle context}) {
-				switch (context) {
-					case UIStyle.system:
-						return 'System';
-					case UIStyle.android:
-						return 'Android';
-					case UIStyle.ios:
-						return 'iOS';
-				}
-			};
-			case 'designsystem.colorStyle': return ({required ColorStyle context}) {
-				switch (context) {
-					case ColorStyle.dynamicColor:
-						return 'DynamicColor';
-					case ColorStyle.systemColor:
-						return 'SystemColor';
-					case ColorStyle.blue:
-						return 'Blue';
-					case ColorStyle.purple:
-						return 'Purple';
-					case ColorStyle.green:
-						return 'Green';
-					case ColorStyle.red:
-						return 'Red';
-					case ColorStyle.pink:
-						return 'Pink';
-					case ColorStyle.yellow:
-						return 'Yellow';
-					case ColorStyle.orange:
-						return 'Orange';
-				}
-			};
-			case 'designsystem.themeMode': return ({required ThemeMode context}) {
-				switch (context) {
-					case ThemeMode.system:
-						return 'System';
-					case ThemeMode.light:
-						return 'Light';
-					case ThemeMode.dark:
-						return 'Dark';
-				}
-			};
+			case 'auth.authPage.title': return 'Title';
 			default: return null;
 		}
 	}
@@ -341,48 +235,7 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'designsystem.uiStyle': return ({required UIStyle context}) {
-				switch (context) {
-					case UIStyle.system:
-						return 'システム設定';
-					case UIStyle.android:
-						return 'Android';
-					case UIStyle.ios:
-						return 'iOS';
-				}
-			};
-			case 'designsystem.colorStyle': return ({required ColorStyle context}) {
-				switch (context) {
-					case ColorStyle.dynamicColor:
-						return 'ダイナミックカラー';
-					case ColorStyle.systemColor:
-						return 'システムカラー';
-					case ColorStyle.blue:
-						return 'ブルー';
-					case ColorStyle.purple:
-						return 'パープル';
-					case ColorStyle.green:
-						return 'グリーン';
-					case ColorStyle.red:
-						return 'レッド';
-					case ColorStyle.pink:
-						return 'ピンク';
-					case ColorStyle.yellow:
-						return 'イエロー';
-					case ColorStyle.orange:
-						return 'オレンジ';
-				}
-			};
-			case 'designsystem.themeMode': return ({required ThemeMode context}) {
-				switch (context) {
-					case ThemeMode.system:
-						return 'システムテーマ';
-					case ThemeMode.light:
-						return 'ライトテーマ';
-					case ThemeMode.dark:
-						return 'ダークテーマ';
-				}
-			};
+			case 'auth.authPage.title': return 'タイトル';
 			default: return null;
 		}
 	}
