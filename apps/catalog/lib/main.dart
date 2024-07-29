@@ -39,7 +39,7 @@ class WidgetbookApp extends StatelessWidget {
         InspectorAddon(enabled: true),
         MaterialThemeAddon(
           themes: [
-            // TODO(s-takehara): ここをProviderの値に変更
+            // Widgetbookでは固定テーマを利用
             WidgetbookTheme(name: 'Light', data: ThemeData.light()),
             WidgetbookTheme(name: 'Dark', data: ThemeData.dark()),
           ],
