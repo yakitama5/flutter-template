@@ -1,0 +1,20 @@
+name: cores_firebase
+description: "A new Flutter package project."
+version: 0.0.1
+
+environment:
+  sdk: ^3.4.1
+  flutter: ^3.22.1
+
+dependencies:
+  collection: 
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pedantic_mono: 
+  test: any
+
+flutter:
