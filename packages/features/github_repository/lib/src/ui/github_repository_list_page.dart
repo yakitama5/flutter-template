@@ -1,6 +1,5 @@
 import 'package:cores_core/exception.dart';
 import 'package:cores_core/ui.dart';
-import 'package:cores_designsystem/components.dart';
 import 'package:features_github_repository/src/data/provider/scroll_notifier.dart';
 import 'package:features_github_repository/src/domain/model/github_repository.dart';
 import 'package:features_github_repository/src/ui/provider/github_repository_list_notifier.dart';
@@ -51,13 +50,13 @@ class GitHubRepositoryListPage extends HookConsumerWidget {
             return endItem;
           }
 
-          return TextListTile(
+          return ListTile(
             onTap: () => navigator.goGitHubRepositoryDetailPage(
               context,
               data.items[index].name,
               data.items[index].description,
             ),
-            text: data.items[index].name,
+            title: Text(data.items[index].name),
           );
         },
       ),

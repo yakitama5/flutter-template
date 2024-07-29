@@ -1,13 +1,14 @@
-import 'package:cores_designsystem/components.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart';
 
-@UseCase(name: 'TextListTile', type: TextListTile)
-Widget textListTile(BuildContext context) => TextListTile(
+@UseCase(name: 'ListTile', type: ListTile)
+Widget textListTile(BuildContext context) => ListTile(
       onTap: () {},
-      text: context.knobs.string(
-        label: 'text',
-        initialValue: 'text',
+      title: Text(
+        context.knobs.string(
+          label: 'text',
+          initialValue: 'text',
+        ),
       ),
     );
