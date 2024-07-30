@@ -18,10 +18,10 @@ echo "Starting application ID renaming process..."
 
 readonly NEW_ANDROID_APPLICATION_ID=$1
 readonly NEW_IOS_APPLICATION_ID=$2
-readonly OLD_ANDROID_APPLICATION_ID="jp.co.yumemi.template"
-readonly OLD_IOS_APPLICATION_ID="jp.co.yumemi.template"
-readonly OLD_NAMESPACE="jp.co.yumemi.flutter_app"
-readonly OLD_PACKAGE_NAME="jp.co.yumemi.flutter_app"
+readonly OLD_ANDROID_APPLICATION_ID="com.yakuran.template"
+readonly OLD_IOS_APPLICATION_ID="com.yakuran.template"
+readonly OLD_NAMESPACE="com.yakuran.flutter_app"
+readonly OLD_PACKAGE_NAME="com.yakuran.flutter_app"
 
 # [Step1] Replace the application ID definition in the configuration JSON files within the flavor directory
 echo "[Step1] Replacing the application ID definition in the configuration JSON files within the flavor directory..."

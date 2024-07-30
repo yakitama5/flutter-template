@@ -27,4 +27,4 @@ This is a template project for Android and iOS apps.
 |  | Dev | Stg | Prd |
 |:-:|:-:|:-:|:-:|
 | APP_NAME | dev-Template | stg-Template | Template |
-| APP_ID | jp.co.yumemi.template.dev | jp.co.yumemi.template.stg | jp.co.yumemi.template |
+| APP_ID | com.yakuran.template.dev | com.yakuran.template.stg | com.yakuran.template.template |

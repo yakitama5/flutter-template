@@ -44,7 +44,7 @@ tasks.whenTaskAdded { task ->
 }
 
 android {
-    namespace = "jp.co.yumemi.flutter_app"
+    namespace = "com.yakuran.flutter_app"
     compileSdk = 34
     ndkVersion = flutter.ndkVersion
 
