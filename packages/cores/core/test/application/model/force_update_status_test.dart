@@ -1,7 +1,7 @@
 // ignore_for_file: avoid_redundant_argument_values
 
-import 'package:cores_core/src/app_status/model/force_update_status.dart';
-import 'package:cores_core/src/app_status/model/force_update_target_version.dart';
+import 'package:cores_core/src/application/model/force_update_status.dart';
+import 'package:cores_core/src/application/model/force_update_target_version.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 

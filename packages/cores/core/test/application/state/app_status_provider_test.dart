@@ -1,15 +1,15 @@
 // ignore_for_file: avoid_redundant_argument_values
 
-import 'package:cores_core/src/app_status/model/app_status.dart';
-import 'package:cores_core/src/app_status/model/force_update_status.dart';
-import 'package:cores_core/src/app_status/model/maintenance_mode_status.dart';
-import 'package:cores_core/src/app_status/provider/app_status_provider.dart';
-import 'package:cores_core/src/app_status/provider/force_update_provider.dart';
-import 'package:cores_core/src/app_status/provider/force_update_version_provider.dart';
-import 'package:cores_core/src/app_status/provider/maintenance_mode_provider.dart';
 import 'package:cores_core/src/application/model/app_build_config.dart';
+import 'package:cores_core/src/application/model/app_status.dart';
 import 'package:cores_core/src/application/model/flavor.dart';
+import 'package:cores_core/src/application/model/force_update_status.dart';
+import 'package:cores_core/src/application/model/maintenance_mode_status.dart';
 import 'package:cores_core/src/application/state/app_build_config_provider.dart';
+import 'package:cores_core/src/application/state/app_status_provider.dart';
+import 'package:cores_core/src/application/state/force_update_provider.dart';
+import 'package:cores_core/src/application/state/force_update_version_provider.dart';
+import 'package:cores_core/src/application/state/maintenance_mode_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

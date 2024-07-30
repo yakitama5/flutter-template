@@ -1,7 +1,8 @@
-import 'package:cores_core/src/app_status/model/force_update_target_version.dart';
 import 'package:cores_core/src/util/logger.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'force_update_target_version.dart';
 
 part 'force_update_status.freezed.dart';
 
