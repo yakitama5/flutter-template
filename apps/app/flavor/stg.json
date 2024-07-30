@@ -1,7 +1,0 @@
-{
-  "flavor": "stg",
-  "appName": "stg-Template",
-  "appIdAndroid": "com.yakuran.template",
-  "appIdIos": "com.yakuran.template",
-  "appIdSuffix": ".stg"
-}

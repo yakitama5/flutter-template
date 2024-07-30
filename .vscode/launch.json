@@ -15,16 +15,6 @@
             ]
         },
         {
-            "name": "stg-debug",
-            "cwd": "apps/app",
-            "request": "launch",
-            "program": "lib/main.dart",
-            "type": "dart",
-            "args": [
-                "--dart-define-from-file=flavor/stg.json"
-            ]
-        },
-        {
             "name": "prd-debug",
             "cwd": "apps/app",
             "request": "launch",

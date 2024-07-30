@@ -12,8 +12,6 @@ final class FirebaseInitializer {
       // TODO: Handle this case.
       Flavor.dev => throw UnimplementedError(),
       // TODO: Handle this case.
-      Flavor.stg => throw UnimplementedError(),
-      // TODO: Handle this case.
       Flavor.prd => throw UnimplementedError(),
     };
 
