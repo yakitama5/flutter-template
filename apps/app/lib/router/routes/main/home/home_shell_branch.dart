@@ -94,9 +94,10 @@ class GitHubRepositoryDetailPageRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) {
-    return GitHubRepositoryDetailPage(
-      repositoryName: repositoryName,
-      description: description,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Sample'),
+      ),
     );
   }
 }

@@ -1,4 +1,3 @@
-import 'package:features_github_repository/data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:go_router/go_router.dart';
@@ -29,15 +28,10 @@ class MainPage extends ConsumerWidget {
           ),
         ],
         onDestinationSelected: (index) async {
-          final canPop = GoRouter.of(context).canPop();
-          if (navigationShell.currentIndex == index && !canPop) {
-            ref.read(scrollNotifierProvider.notifier).notifyScrollToTop();
-          } else {
-            navigationShell.goBranch(
-              index,
-              initialLocation: index == navigationShell.currentIndex,
-            );
-          }
+          navigationShell.goBranch(
+            index,
+            initialLocation: index == navigationShell.currentIndex,
+          );
         },
       ),
     );
