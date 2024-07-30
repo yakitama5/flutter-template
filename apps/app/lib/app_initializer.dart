@@ -14,7 +14,7 @@ final class AppInitializer {
   static Future<InitializedValues> initialize() async {
     final buildConfig = await _initializeBuildConfig();
 
-    logger.info(buildConfig);
+    logger.i(buildConfig);
     return (buildConfig: buildConfig);
   }
 
