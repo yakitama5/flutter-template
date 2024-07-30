@@ -22,7 +22,7 @@ class ForceUpdateStatus with _$ForceUpdateStatus {
       final versionParts = version.split('.');
 
       if (versionParts.length != 3) {
-        logger.warning(
+        logger.w(
           'Invalid version format for Semantic Versioning: $version',
         );
         return [0, 0, 0];
@@ -31,7 +31,7 @@ class ForceUpdateStatus with _$ForceUpdateStatus {
       try {
         return versionParts.map(int.parse).toList();
       } on FormatException catch (_) {
-        logger.warning(
+        logger.w(
           '''Invalid format when attempting to parse a List into integers: $versionParts''',
         );
         return [0, 0, 0];

@@ -75,7 +75,7 @@ class CommonPagingView<N extends PagingAsyncNotifier<D, T>,
             return;
           }
           // AppException is expected, so this should never be reached.
-          logger.shout(
+          logger.d(
             'Unexpected error type encountered: $error - '
             'This indicates a need to revise exception handling to ensure only '
             'AppException is thrown. Please review exception handling '

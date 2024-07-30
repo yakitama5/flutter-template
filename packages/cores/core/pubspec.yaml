@@ -15,8 +15,8 @@ dependencies:
   hooks_riverpod: ^3.0.0-dev.3
   intl: 
   json_annotation: 
+  logger:
   riverpod_annotation: ^3.0.0-dev.3
-  simple_logger: 
   visibility_detector: 
 
 dev_dependencies:
