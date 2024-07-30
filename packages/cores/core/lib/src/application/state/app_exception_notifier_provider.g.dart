@@ -11,7 +11,9 @@ part of 'app_exception_notifier_provider.dart';
 String _$appExceptionNotifierHash() =>
     r'7ce57f8dfa05c30751b97a6362c296985c2703a9';
 
-/// See also [AppExceptionNotifier].
+/// 発生した例外をアプリ全体で管理するためのProvider
+///
+/// Copied from [AppExceptionNotifier].
 @ProviderFor(AppExceptionNotifier)
 final appExceptionNotifierProvider =
     NotifierProvider<AppExceptionNotifier, AppException?>.internal(

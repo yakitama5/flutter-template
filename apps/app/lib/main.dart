@@ -1,6 +1,5 @@
 import 'package:cores_core/app_status.dart';
 import 'package:cores_core/application.dart';
-import 'package:cores_core/exception.dart';
 import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';

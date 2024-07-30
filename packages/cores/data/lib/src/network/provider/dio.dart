@@ -1,4 +1,4 @@
-import 'package:cores_core/exception.dart';
+import 'package:cores_core/application.dart';
 import 'package:cores_data/src/network/provider/github_access_token.dart';
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

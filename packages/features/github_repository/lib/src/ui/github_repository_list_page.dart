@@ -1,4 +1,4 @@
-import 'package:cores_core/exception.dart';
+import 'package:cores_core/application.dart';
 import 'package:cores_core/ui.dart';
 import 'package:features_github_repository/src/data/provider/scroll_notifier.dart';
 import 'package:features_github_repository/src/domain/model/github_repository.dart';

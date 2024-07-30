@@ -1,4 +1,3 @@
-import 'package:cores_core/exception.dart';
 import 'package:cores_core/extension/async_value.dart';
 import 'package:cores_core/src/pagination/model/paging_data.dart';
 import 'package:cores_core/src/pagination/provider/paging_async_notifier.dart';
@@ -6,6 +5,8 @@ import 'package:cores_core/src/util/logger.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:visibility_detector/visibility_detector.dart';
+
+import '../../application/model/app_exception.dart';
 
 class CommonPagingView<N extends PagingAsyncNotifier<D, T>,
     D extends PagingData<T>, T> extends ConsumerWidget {
