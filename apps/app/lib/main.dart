@@ -1,7 +1,7 @@
 import 'package:cores_core/app_status.dart';
 import 'package:cores_core/application.dart';
 import 'package:cores_core/exception.dart';
-import 'package:cores_core/ui.dart';
+import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:cores_firebase/infrastructure.dart';
@@ -62,7 +62,7 @@ class MainApp extends ConsumerWidget {
         appExceptionNotifierProvider,
         (_, appException) {
           if (appException != null) {
-            SnackBarManager.showSnackBar(
+            SnackBarManager.showErrorSnackBar(
               'An error occurred: ${appException.message}',
             );
             ref.read(appExceptionNotifierProvider.notifier).consume();
@@ -73,7 +73,7 @@ class MainApp extends ConsumerWidget {
       ..listen<AppStatus>(appStatusProvider, (_, appStatus) {
         final forceUpdateEnabled = appStatus.forceUpdateStatus.enabled;
         if (forceUpdateEnabled) {
-          SnackBarManager.showSnackBar(
+          SnackBarManager.showInfoSnackBar(
             'Force Update is required.',
           );
           ref.read(forceUpdateProvider.notifier).disable();
