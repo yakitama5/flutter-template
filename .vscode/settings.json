@@ -101,6 +101,10 @@
         "detail": "コメント整理、TODOコメント(Comment)"
       },
       {
+        "label": "♻️generete",
+        "detail": "コード(再)生成、Bootstrap(Generate)"
+      },
+      {
         "label": "🚧wip",
         "detail": "WIP(Work In Progress)"
       },
