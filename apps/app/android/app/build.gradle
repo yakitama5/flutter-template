@@ -8,6 +8,25 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+// dart-define-from-file
+def dartDefines = [];
+if (project.hasProperty('dart-defines')) {
+    dartDefines = project.property('dart-defines')
+        .split(',')
+        .collectEntries { entry ->
+            def pair = new String(entry.decodeBase64(), 'UTF-8').split('=')
+            // valueがemtpyの時にlastがkeyになるので、lengthが2でなければ空のmapにする
+            pair.length == 2 ? [(pair.first()): pair.last()] : [:]
+        }
+}
+
+// android/key.propertiesの読み込み
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file('key.properties')
+if (keystorePropertiesFile.exists()) {
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+}
+
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file("local.properties")
 if (localPropertiesFile.exists()) {
@@ -26,24 +45,23 @@ if (flutterVersionName == null) {
     flutterVersionName = "1.0"
 }
 
-def dartDefines = [];
-if (project.hasProperty('dart-defines')) {
-    dartDefines = project.property('dart-defines')
-        .split(',')
-        .collectEntries { entry ->
-            def pair = new String(entry.decodeBase64(), 'UTF-8').split('=')
-            // valueがemtpyの時にlastがkeyになるので、lengthが2でなければ空のmapにする
-            pair.length == 2 ? [(pair.first()): pair.last()] : [:]
-        }
-}
-
 task copySources(type: Copy) {
     from "src/${dartDefines.flavor}/res"
     into 'src/main/res'
 }
 
+// `google-services.json`の環境毎の読み替え
+// Firebase Crashlyticsも対応されたら削除すること
+task selectGoogleServicesJson(type: Copy) {
+    from "src/${dartDefines.flavor}/google-services.json"
+    into './'
+}
+
 tasks.whenTaskAdded { task ->
     task.dependsOn copySources
+        if (task.name == 'processDebugGoogleServices' || task.name == 'processReleaseGoogleServices') {
+        task.dependsOn selectGoogleServicesJson
+    }
 }
 
 android {
