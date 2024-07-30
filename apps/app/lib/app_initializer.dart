@@ -1,12 +1,11 @@
 import 'dart:async';
 
-import 'package:cores_core/model.dart';
+import 'package:cores_core/application.dart';
 import 'package:cores_core/util.dart';
-import 'package:flutter_app/app_build_config.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
 typedef InitializedValues = ({
-  BuildConfig buildConfig,
+  AppBuildConfig buildConfig,
 });
 
 final class AppInitializer {
@@ -19,11 +18,11 @@ final class AppInitializer {
     return (buildConfig: buildConfig);
   }
 
-  static Future<BuildConfig> _initializeBuildConfig() async {
+  static Future<AppBuildConfig> _initializeBuildConfig() async {
     final packageInfo = await PackageInfo.fromPlatform();
 
     return AppBuildConfig(
-      appFlavor: const String.fromEnvironment('flavor'),
+      flavor: Flavor.values.byName(const String.fromEnvironment('flavor')),
       appName: packageInfo.appName,
       packageName: packageInfo.packageName,
       version: packageInfo.version,

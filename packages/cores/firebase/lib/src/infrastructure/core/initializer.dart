@@ -1,4 +1,4 @@
-import 'package:cores_core/model.dart';
+import 'package:cores_core/application.dart';
 import 'package:cores_firebase/firebase_options.dart';
 import 'package:cores_firebase/firebase_options_dev.dart' as dev;
 import 'package:firebase_core/firebase_core.dart';

@@ -1,6 +1,5 @@
 // ignore_for_file: avoid_redundant_argument_values
 
-import 'package:cores_core/provider.dart';
 import 'package:cores_core/src/app_status/model/app_status.dart';
 import 'package:cores_core/src/app_status/model/force_update_status.dart';
 import 'package:cores_core/src/app_status/model/maintenance_mode_status.dart';
@@ -8,17 +7,21 @@ import 'package:cores_core/src/app_status/provider/app_status_provider.dart';
 import 'package:cores_core/src/app_status/provider/force_update_provider.dart';
 import 'package:cores_core/src/app_status/provider/force_update_version_provider.dart';
 import 'package:cores_core/src/app_status/provider/maintenance_mode_provider.dart';
-import 'package:cores_core/src/model/build_config.dart';
+import 'package:cores_core/src/application/model/app_build_config.dart';
+import 'package:cores_core/src/application/model/flavor.dart';
+import 'package:cores_core/src/application/state/app_build_config_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
-  final fakeBuildConfig = FakeBuildConfig(
+  const fakeBuildConfig = AppBuildConfig(
     appName: 'appName',
     packageName: 'packageName',
     version: '1.0.0',
     buildNumber: '100000',
+    flavor: Flavor.dev,
+    buildSignature: '',
   );
 
   ProviderContainer createContainer({
@@ -46,7 +49,7 @@ void main() {
         // arrange
         final container = createContainer(
           overrides: [
-            buildConfigProvider.overrideWith(
+            appBuildConfigProvider.overrideWith(
               (ref) => fakeBuildConfig,
             ),
             maintenanceModeProvider.overrideWith(MaintenanceMode.new),
@@ -79,7 +82,7 @@ void main() {
         // arrange
         final container = createContainer(
           overrides: [
-            buildConfigProvider.overrideWith(
+            appBuildConfigProvider.overrideWith(
               (ref) => fakeBuildConfig,
             ),
             maintenanceModeProvider.overrideWith(MaintenanceMode.new),
@@ -115,7 +118,7 @@ void main() {
       // arrange
       final container = createContainer(
         overrides: [
-          buildConfigProvider.overrideWith(
+          appBuildConfigProvider.overrideWith(
             (ref) => fakeBuildConfig,
           ),
           maintenanceModeProvider.overrideWith(MaintenanceMode.new),
@@ -152,7 +155,7 @@ void main() {
 
         final container = createContainer(
           overrides: [
-            buildConfigProvider.overrideWith(
+            appBuildConfigProvider.overrideWith(
               (ref) => fakeBuildConfig,
             ),
             maintenanceModeProvider.overrideWith(MaintenanceMode.new),
@@ -190,7 +193,7 @@ void main() {
 
         final container = createContainer(
           overrides: [
-            buildConfigProvider.overrideWith(
+            appBuildConfigProvider.overrideWith(
               (ref) => fakeBuildConfig,
             ),
             maintenanceModeProvider.overrideWith(MaintenanceMode.new),
@@ -230,7 +233,7 @@ void main() {
 
         final container = createContainer(
           overrides: [
-            buildConfigProvider.overrideWith(
+            appBuildConfigProvider.overrideWith(
               (ref) => fakeBuildConfig,
             ),
             maintenanceModeProvider.overrideWith(MaintenanceMode.new),
@@ -268,7 +271,7 @@ void main() {
 
         final container = createContainer(
           overrides: [
-            buildConfigProvider.overrideWith(
+            appBuildConfigProvider.overrideWith(
               (ref) => fakeBuildConfig,
             ),
             maintenanceModeProvider.overrideWith(MaintenanceMode.new),
@@ -308,7 +311,7 @@ void main() {
 
         final container = createContainer(
           overrides: [
-            buildConfigProvider.overrideWith(
+            appBuildConfigProvider.overrideWith(
               (ref) => fakeBuildConfig,
             ),
             maintenanceModeProvider.overrideWith(MaintenanceMode.new),

@@ -1,6 +1,6 @@
 import 'package:cores_core/app_status.dart';
+import 'package:cores_core/application.dart';
 import 'package:cores_core/exception.dart';
-import 'package:cores_core/provider.dart';
 import 'package:cores_core/ui.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
@@ -29,7 +29,7 @@ void main() async {
     ProviderScope(
       overrides: [
         ...await initializeProviders(),
-        buildConfigProvider.overrideWithValue(buildConfig),
+        appBuildConfigProvider.overrideWithValue(buildConfig),
       ],
       child: Nested(
         children: const [
