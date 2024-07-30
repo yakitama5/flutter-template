@@ -4,6 +4,7 @@ import 'package:cores_core/provider.dart';
 import 'package:cores_core/ui.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
+import 'package:cores_firebase/infrastructure.dart';
 import 'package:cores_init/provider.dart';
 import 'package:features_auth/i18n.dart';
 import 'package:features_setting/i18n.dart';
@@ -18,7 +19,11 @@ import 'package:nested/nested.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initializer
   final (buildConfig: buildConfig) = await AppInitializer.initialize();
+  await FirebaseInitializer.initialize(buildConfig.flavor);
+
+  // Slang
   await LocaleSettings.useDeviceLocale();
 
   runApp(
@@ -75,7 +80,7 @@ class MainApp extends ConsumerWidget {
 
     return MaterialApp.router(
       // Slang
-      locale: TranslationProvider.of(context).flutterLocale, // use provider
+      locale: TranslationProvider.of(context).flutterLocale,
       supportedLocales: AppLocaleUtils.supportedLocales,
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
 

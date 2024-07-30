@@ -23,7 +23,6 @@ final class AppInitializer {
     final packageInfo = await PackageInfo.fromPlatform();
 
     return AppBuildConfig(
-      // ignore: do_not_use_environment
       appFlavor: const String.fromEnvironment('flavor'),
       appName: packageInfo.appName,
       packageName: packageInfo.packageName,
