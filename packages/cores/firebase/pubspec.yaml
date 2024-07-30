@@ -7,7 +7,16 @@ environment:
   flutter: ^3.22.1
 
 dependencies:
+  cores_core:
+    path: ../core
+  cloud_firestore:
   collection: 
+  firebase_analytics:
+  firebase_app_check:
+  firebase_auth:
+  firebase_core:
+  firebase_crashlytics:
+  firebase_remote_config:
   flutter:
     sdk: flutter
 
