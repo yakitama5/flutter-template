@@ -10,14 +10,15 @@ environment:
 dependencies:
   cores_core:
     path: ../core
-  cores_shared_preferences:
-    path: ../shared_preferences
   cores_designsystem:
     path: ../designsystem
+  cores_shared_preferences:
+    path: ../shared_preferences
   flutter:
     sdk: flutter
   hooks_riverpod: ^3.0.0-dev.3
   riverpod_annotation: ^3.0.0-dev.3
+  shared_preferences: any
 
 dev_dependencies:
   custom_lint: 

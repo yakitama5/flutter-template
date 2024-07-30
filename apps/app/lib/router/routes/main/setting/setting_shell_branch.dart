@@ -85,7 +85,7 @@ class SettingsUiStylePageRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      SettingsUiStylePage();
+      const SettingsUiStylePage();
 }
 
 class SettingsColorStylePageRoute extends GoRouteData {
@@ -95,7 +95,7 @@ class SettingsColorStylePageRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      SettingsColorStylePage();
+      const SettingsColorStylePage();
 }
 
 class SettingsThemeModePageRoute extends GoRouteData {
@@ -105,5 +105,5 @@ class SettingsThemeModePageRoute extends GoRouteData {
 
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      SettingsThemeModePage();
+      const SettingsThemeModePage();
 }

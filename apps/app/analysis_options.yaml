@@ -1,9 +1,20 @@
-include: package:yumemi_lints/flutter/3.22/recommended.yaml
+include: package:pedantic_mono/analysis_options.yaml
+
+linter:
+  rules:
 
 analyzer:
+  # https://riverpod.dev/docs/introduction/getting_started#enabling-riverpod_lintcustom_lint
   plugins:
-    # https://riverpod.dev/docs/introduction/getting_started#enabling-riverpod_lintcustom_lint
     - custom_lint
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "**/*.gform.dart"
+    - "**/firebase_options*.dart"
+    - "*/.github/workflows/flutter_*.yaml"
+    - "*/functions/*.js"
   errors:
-    # https://pub.dev/packages/freezed#install
     invalid_annotation_target: ignore
+    todo: ignore
+    hack: ignore

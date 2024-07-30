@@ -6,6 +6,7 @@ import 'package:features_debug_mode/src/ui/provider/navigator_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+// ignore: one_member_abstracts
 abstract interface class DebugPageNavigator {
   void goNavigationDebugPage(BuildContext context);
 }

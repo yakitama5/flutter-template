@@ -14,10 +14,10 @@ dependencies:
     path: ../../packages/cores/data
   cores_designsystem:
     path: ../../packages/cores/designsystem
-  cores_init:
-    path: ../../packages/cores/init
   cores_firebase:
     path: ../../packages/cores/firebase
+  cores_init:
+    path: ../../packages/cores/init
   features_auth:
     path: ../../packages/features/auth
   features_debug_mode:
@@ -53,6 +53,7 @@ dev_dependencies:
   freezed: any
   go_router_builder: ^2.4.1
   json_serializable: any
+  pedantic_mono: any
   riverpod_generator: ^3.0.0-dev.11
   riverpod_lint: ^3.0.0-dev.4
 

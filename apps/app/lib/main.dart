@@ -24,7 +24,7 @@ void main() async {
   await FirebaseInitializer.initialize(buildConfig.flavor);
 
   // Slang
-  await LocaleSettings.useDeviceLocale();
+  LocaleSettings.useDeviceLocale();
 
   runApp(
     ProviderScope(
@@ -32,14 +32,17 @@ void main() async {
         ...await initializeProviders(),
         buildConfigProvider.overrideWithValue(buildConfig),
       ],
-      child: Nested(children: [
-        // Slangの伝播
-        _AppTranslationProvider(),
-        AuthTranslationProvider(),
+      child: Nested(
+        children: const [
+          // Slangの伝播
+          _AppTranslationProvider(),
+          AuthTranslationProvider(),
 
-        SettingsTranslationProvider(),
-        DesignsystemTranslationProvider()
-      ], child: const MainApp()),
+          SettingsTranslationProvider(),
+          DesignsystemTranslationProvider(),
+        ],
+        child: const MainApp(),
+      ),
     ),
   );
 }
@@ -56,27 +59,29 @@ class MainApp extends ConsumerWidget {
         ref.watch(appThemeProvider(brightness: Brightness.light));
     final darkTheme = ref.watch(appThemeProvider(brightness: Brightness.dark));
 
-    ref.listen<AppException?>(
-      appExceptionNotifierProvider,
-      (_, appException) {
-        if (appException != null) {
+    ref
+      // エラー検知
+      ..listen<AppException?>(
+        appExceptionNotifierProvider,
+        (_, appException) {
+          if (appException != null) {
+            SnackBarManager.showSnackBar(
+              'An error occurred: ${appException.message}',
+            );
+            ref.read(appExceptionNotifierProvider.notifier).consume();
+          }
+        },
+      )
+      // アプリ状態検知
+      ..listen<AppStatus>(appStatusProvider, (_, appStatus) {
+        final forceUpdateEnabled = appStatus.forceUpdateStatus.enabled;
+        if (forceUpdateEnabled) {
           SnackBarManager.showSnackBar(
-            'An error occurred: ${appException.message}',
+            'Force Update is required.',
           );
-          ref.read(appExceptionNotifierProvider.notifier).consume();
+          ref.read(forceUpdateProvider.notifier).disable();
         }
-      },
-    );
-
-    ref.listen<AppStatus>(appStatusProvider, (_, appStatus) {
-      final forceUpdateEnabled = appStatus.forceUpdateStatus.enabled;
-      if (forceUpdateEnabled) {
-        SnackBarManager.showSnackBar(
-          'Force Update is required.',
-        );
-        ref.read(forceUpdateProvider.notifier).disable();
-      }
-    });
+      });
 
     return MaterialApp.router(
       // Slang
@@ -99,6 +104,6 @@ class _AppTranslationProvider extends SingleChildStatelessWidget {
   @override
   Widget buildWithChild(BuildContext context, Widget? child) =>
       TranslationProvider(
-        child: child ?? SizedBox.shrink(),
+        child: child ?? const SizedBox.shrink(),
       );
 }
