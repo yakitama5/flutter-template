@@ -5,12 +5,12 @@ targets:
         # https://github.com/dart-lang/build/blob/master/docs/faq.md#how-do-i-avoid-running-builders-on-unnecessary-inputs
         generate_for:
           include:
-            - lib/{model,**/model}/**.dart
+            - lib/{entity,**/entity}/**.dart
       # https://github.com/google/json_serializable.dart/tree/master/json_serializable#build-configuration
       json_serializable:
         generate_for:
           include:
-            - lib/{model,**/model}/**.dart
+            - lib/{entity,**/entity}/**.dart
         options:
           field_rename: snake
           # json のデシリアライズ時に発生する Exception を CheckedFromJsonException にまとめる
@@ -19,6 +19,7 @@ targets:
         generate_for:
           include:
             - lib/**/*provider.dart
+            - lib/{interface,**/interface}/*repository.dart
       # https://github.com/dart-lang/source_gen#ignore_for_file
       source_gen:combining_builder:
         options:
