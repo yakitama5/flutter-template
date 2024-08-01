@@ -5,6 +5,7 @@ import 'package:cores_designsystem/i18n.dart';
 import 'package:cores_firebase/infrastructure.dart';
 import 'package:cores_init/provider.dart';
 import 'package:features_setting/i18n.dart';
+import 'package:features_user/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app_initializer.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
@@ -33,6 +34,8 @@ void main() async {
         children: const [
           // Slangの伝播
           _AppTranslationProvider(),
+          UserTranslationProvider(),
+
           SettingsTranslationProvider(),
           DesignsystemTranslationProvider(),
         ],

@@ -4,14 +4,13 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 6 (3 per locale)
+/// Strings: 2 (1 per locale)
 ///
 /// Built on 2024-08-01 at 08:33 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
 
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:slang/builder/model/node.dart';
 import 'package:slang_flutter/slang_flutter.dart';
@@ -149,39 +148,27 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	late final _StringsAppEn app = _StringsAppEn._(_root);
+	late final _StringsUserEn user = _StringsUserEn._(_root);
 }
 
-// Path: app
-class _StringsAppEn {
-	_StringsAppEn._(this._root);
+// Path: user
+class _StringsUserEn {
+	_StringsUserEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _StringsAppBottomNavBarEn bottomNavBar = _StringsAppBottomNavBarEn._(_root);
-	late final _StringsAppHomePageEn homePage = _StringsAppHomePageEn._(_root);
+	late final _StringsUserUserPageEn userPage = _StringsUserUserPageEn._(_root);
 }
 
-// Path: app.bottomNavBar
-class _StringsAppBottomNavBarEn {
-	_StringsAppBottomNavBarEn._(this._root);
+// Path: user.userPage
+class _StringsUserUserPageEn {
+	_StringsUserUserPageEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get home => 'Home';
-	String get settings => 'Settings';
-}
-
-// Path: app.homePage
-class _StringsAppHomePageEn {
-	_StringsAppHomePageEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Home';
+	String get title => 'Title';
 }
 
 // Path: <root>
@@ -210,39 +197,27 @@ class _StringsJa extends Translations {
 	@override late final _StringsJa _root = this; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsAppJa app = _StringsAppJa._(_root);
+	@override late final _StringsUserJa user = _StringsUserJa._(_root);
 }
 
-// Path: app
-class _StringsAppJa extends _StringsAppEn {
-	_StringsAppJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: user
+class _StringsUserJa extends _StringsUserEn {
+	_StringsUserJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsAppBottomNavBarJa bottomNavBar = _StringsAppBottomNavBarJa._(_root);
-	@override late final _StringsAppHomePageJa homePage = _StringsAppHomePageJa._(_root);
+	@override late final _StringsUserUserPageJa userPage = _StringsUserUserPageJa._(_root);
 }
 
-// Path: app.bottomNavBar
-class _StringsAppBottomNavBarJa extends _StringsAppBottomNavBarEn {
-	_StringsAppBottomNavBarJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: user.userPage
+class _StringsUserUserPageJa extends _StringsUserUserPageEn {
+	_StringsUserUserPageJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override String get home => 'ホーム';
-	@override String get settings => '設定';
-}
-
-// Path: app.homePage
-class _StringsAppHomePageJa extends _StringsAppHomePageEn {
-	_StringsAppHomePageJa._(_StringsJa root) : this._root = root, super._(root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'ホーム';
+	@override String get title => 'タイトル';
 }
 
 /// Flat map(s) containing all translations.
@@ -251,9 +226,7 @@ class _StringsAppHomePageJa extends _StringsAppHomePageEn {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'app.bottomNavBar.home': return 'Home';
-			case 'app.bottomNavBar.settings': return 'Settings';
-			case 'app.homePage.title': return 'Home';
+			case 'user.userPage.title': return 'Title';
 			default: return null;
 		}
 	}
@@ -262,9 +235,7 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'app.bottomNavBar.home': return 'ホーム';
-			case 'app.bottomNavBar.settings': return '設定';
-			case 'app.homePage.title': return 'ホーム';
+			case 'user.userPage.title': return 'タイトル';
 			default: return null;
 		}
 	}

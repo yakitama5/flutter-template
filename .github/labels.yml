@@ -76,6 +76,10 @@
   color: 7080b0
   description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\setting package
 
+- name: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\user"
+  color: 333cd5
+  description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\user package
+
 - name: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\webview"
   color: 6c801e
   description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\webview package
