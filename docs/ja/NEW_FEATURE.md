@@ -82,10 +82,10 @@ class SamplePageRoute extends GoRouteData {
 }
 ```
 
-**4. `./apps/app/lib/router/provider/router.dart`に以下を追加**
+**4. `./apps/app/lib/router/provider/router_provider.dart`に以下を追加**
 
 ```dart
-// apps/app/lib/router/provider/router.dart
+// apps/app/lib/router/provider/router_provider.dart
 
 // 新たに作成されたfeatureのuiをimportする
 import 'package:features_sample/ui.dart';
@@ -165,7 +165,7 @@ Widget build(BuildContext context, WidgetRef ref) {
 ```dart
 // apps/app/lib/router/routes/main/sample/sample_shell_branch.dart
 
-part of 'package:flutter_app/router/provider/router.dart';
+part of 'package:flutter_app/presentation/router/state/router_provider.dart';
 
 const sampleShellBranch = TypedStatefulShellBranch<SampleShellBranch>(
   routes: <TypedRoute<RouteData>>[
@@ -192,10 +192,10 @@ class SamplePageRoute extends GoRouteData {
 
 ```
 
-**3. `./apps/app/lib/router/provider/router.dart`に以下を追加**
+**3. `./apps/app/lib/router/provider/router_provider.dart`に以下を追加**
 
 ```dart
-// apps/app/lib/router/provider/router.dart
+// apps/app/lib/router/provider/router_provider.dart
 
 // 新たに作成されたfeatureのuiをimportする
 import 'package:features_sample/ui.dart';
@@ -209,7 +209,7 @@ part 'package:flutter_app/router/routes/main/sample/sample_shell_branch.dart';
 ```dart
 // apps/app/lib/router/routes/main/main_page_shell_route.dart
 
-part of 'package:flutter_app/router/provider/router.dart';
+part of 'package:flutter_app/presentation/router/state/router_provider.dart';
 
 @TypedStatefulShellRoute<MainPageShellRoute>(
   branches: [

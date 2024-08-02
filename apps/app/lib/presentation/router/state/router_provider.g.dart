@@ -2,7 +2,7 @@
 
 // ignore_for_file: type=lint, duplicate_ignore
 
-part of 'router.dart';
+part of 'router_provider.dart';
 
 // **************************************************************************
 // GoRouterGenerator
@@ -295,7 +295,7 @@ extension $MaintenancePageRouteExtension on MaintenancePageRoute {
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'5b4acbe7a45ee3a6e7b71f78fb0ecc91d7cf5add';
+String _$routerHash() => r'565ff273ca0597997cb4388dfe342f8120f94b9c';
 
 /// See also [router].
 @ProviderFor(router)

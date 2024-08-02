@@ -1,4 +1,4 @@
-part of 'package:flutter_app/router/provider/router.dart';
+part of 'package:flutter_app/presentation/router/state/router_provider.dart';
 
 class WebPageRoute extends GoRouteData {
   const WebPageRoute();

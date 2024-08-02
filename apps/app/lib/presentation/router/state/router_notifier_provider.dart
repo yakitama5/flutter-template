@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import 'router.dart';
+import 'router_provider.dart';
 
 part 'router_notifier_provider.g.dart';
 

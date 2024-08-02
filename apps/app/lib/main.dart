@@ -10,7 +10,7 @@ import 'package:features_user/i18n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app_initializer.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
-import 'package:flutter_app/router/provider/router.dart';
+import 'package:flutter_app/presentation/router/state/router_provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';

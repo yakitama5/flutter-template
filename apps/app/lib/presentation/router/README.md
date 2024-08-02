@@ -66,7 +66,7 @@ external HogeNavigator hogeNavigator(HogeNavigatorRef ref);
     ├── navigator
     │   ├── hoge_navigator.dart
     ├── provider
-    │   ├── router.dart
+    │   ├── router_provider.dart
     │   └── router.g.dart
     └── routes
         └── hoge_page_route.dart
@@ -75,7 +75,7 @@ external HogeNavigator hogeNavigator(HogeNavigatorRef ref);
 ```dart:hoge_navigator.dart
 import 'package:cores_navigation/navigators.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/router/provider/router.dart';
+import 'package:flutter_app/router/provider/router_provider.dart';
 
 final class HogeNavigatorImpl implements HogeNavigator {
   const HogeNavigatorImpl();
@@ -88,7 +88,7 @@ final class HogeNavigatorImpl implements HogeNavigator {
 ```
 
 ```dart:hoge_page_route.dart
-part of 'package:flutter_app/router/provider/router.dart';
+part of 'package:flutter_app/presentation/router/state/router_provider.dart';
 
 @TypedGoRoute<HogePageRoute>(
     path: HogePageRoute.path,
