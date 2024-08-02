@@ -27,16 +27,17 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 @Riverpod(keepAlive: true)
 GoRouter router(RouterRef ref) {
-  final router = ref.watch(routerNotifierProvider.notifier);
+  final notifier = ref.watch(routerNotifierProvider.notifier);
 
   return GoRouter(
     navigatorKey: _rootNavigatorKey,
-    routes: router.routes,
+    routes: $appRoutes,
     debugLogDiagnostics: kDebugMode,
     initialLocation: HomePageRoute.path,
-    redirect: router.redirect,
 
+    // GoRouterそのものが再生成されないように、redirectは外部のNotifierに定義
     // ログイン状態やデータの変更でredirectを検知するように、`refreshListenable`を設定
-    refreshListenable: router,
+    redirect: notifier.redirect,
+    refreshListenable: notifier,
   );
 }

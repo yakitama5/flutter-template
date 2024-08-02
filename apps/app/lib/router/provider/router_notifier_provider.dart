@@ -11,8 +11,6 @@ part 'router_notifier_provider.g.dart';
 class RouterNotifier extends _$RouterNotifier implements Listenable {
   VoidCallback? routerListener;
 
-  List<RouteBase> get routes => $appRoutes;
-
   @override
   Future<void> build() async {
     ref.listenSelf((previous, next) {
