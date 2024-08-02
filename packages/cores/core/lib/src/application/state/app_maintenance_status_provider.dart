@@ -4,14 +4,14 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_maintenance_status_provider.g.dart';
 
-@riverpod
-Future<AppMaintenanceStatus> appMaintenanceStatus(
+@Riverpod(keepAlive: true)
+Stream<AppMaintenanceStatus> appMaintenanceStatus(
   AppMaintenanceStatusRef ref,
-) async {
+) {
   final repository = ref.watch(appMaintenanceRepositoryProvider);
-  final isMaintenance = await repository.isMaintenanceMode();
-
-  return isMaintenance
-      ? AppMaintenanceStatus.maintenance
-      : AppMaintenanceStatus.none;
+  return repository.fetchMaintenanceMode().map(
+        (isMaintenance) => isMaintenance
+            ? AppMaintenanceStatus.maintenance
+            : AppMaintenanceStatus.none,
+      );
 }

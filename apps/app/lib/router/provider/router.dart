@@ -1,3 +1,4 @@
+import 'package:cores_core/application.dart';
 import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/common_assets.dart';
 import 'package:features_debug_mode/ui.dart';
@@ -31,13 +32,17 @@ GoRouter router(RouterRef ref) {
     debugLogDiagnostics: kDebugMode,
     initialLocation: HomePageRoute.path,
     redirect: (_, __) async {
-      // TODO(yakitama5): メンテナンスページを作成してから
-      // final appMaintenanceStatus =
-      //     await ref.watch(appMaintenanceStatusProvider.future);
+      // メンテナンスモードの導線
+      final appMaintenanceStatus =
+          ref.watch(appMaintenanceStatusProvider).value;
+      switch (appMaintenanceStatus) {
+        case AppMaintenanceStatus.maintenance:
+          return MaintenancePageRoute.path;
+        case AppMaintenanceStatus.none:
+        case null:
+        // do nothing
+      }
 
-      // if (maintenanceModeEnabled) {
-      //   return MaintenancePageRoute.path;
-      // }
       return null;
     },
   );

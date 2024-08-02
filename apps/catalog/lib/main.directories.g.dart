@@ -15,19 +15,14 @@ import 'package:widgetbook/widgetbook.dart' as _i1;
 
 final directories = <_i1.WidgetbookNode>[
   _i1.WidgetbookFolder(
-    name: 'components',
+    name: 'material',
     children: [
-      _i1.WidgetbookFolder(
-        name: 'list_tiles',
-        children: [
-          _i1.WidgetbookLeafComponent(
-            name: 'TextListTile',
-            useCase: _i1.WidgetbookUseCase(
-              name: 'TextListTile',
-              builder: _i2.textListTile,
-            ),
-          )
-        ],
+      _i1.WidgetbookLeafComponent(
+        name: 'ListTile',
+        useCase: _i1.WidgetbookUseCase(
+          name: 'ListTile',
+          builder: _i2.textListTile,
+        ),
       )
     ],
   )
