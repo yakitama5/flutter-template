@@ -8,6 +8,8 @@ environment:
   flutter: ^3.22.1
 
 dependencies:
+  cores_firebase:
+    path: ../firebase
   flutter:
     sdk: flutter
   flutter_hooks:
@@ -17,6 +19,7 @@ dependencies:
   json_annotation: 
   logger:
   riverpod_annotation: ^3.0.0-dev.3
+  version: 
   visibility_detector: 
 
 dev_dependencies:

@@ -1,4 +1,3 @@
-import 'package:cores_core/application.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -20,9 +19,9 @@ class MaintenancePage extends ConsumerWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                ref
-                    .read(maintenanceModeProvider.notifier)
-                    .update(enabled: false);
+                // ref
+                //     .read(maintenanceModeProvider.notifier)
+                //     .update(enabled: false);
               },
               child: const Text('Disable maintenance mode'),
             ),

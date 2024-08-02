@@ -1,5 +1,7 @@
 import 'package:cores_core/application.dart';
 import 'package:cores_core/presentation.dart';
+import 'package:cores_core/src/application/model/app_update_status.dart';
+import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:cores_firebase/infrastructure.dart';
@@ -70,14 +72,20 @@ class MainApp extends ConsumerWidget {
           }
         },
       )
-      // アプリ状態検知
-      ..listen<AppStatus>(appStatusProvider, (_, appStatus) {
-        final forceUpdateEnabled = appStatus.forceUpdateStatus.enabled;
-        if (forceUpdateEnabled) {
-          SnackBarManager.showInfoSnackBar(
-            'Force Update is required.',
-          );
-          ref.read(forceUpdateProvider.notifier).disable();
+      // アップデート検知
+      ..listen(appUpdateStatusProvider, (_, snapshot) {
+        if (!snapshot.hasValue) {
+          return;
+        }
+
+        final status = snapshot.value!;
+        switch (status) {
+          case AppUpdateStatus.updateRequired:
+            logger.i('updateRequired');
+          case AppUpdateStatus.updatePossible:
+            logger.i('updatePossible');
+          case AppUpdateStatus.usingLatest:
+            logger.i('usingLatest');
         }
       });
 

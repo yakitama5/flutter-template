@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:cores_core/application.dart';
 import 'package:cores_core/util.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:version/version.dart';
 
 typedef InitializedValues = ({
   AppBuildConfig buildConfig,
@@ -25,7 +26,7 @@ final class AppInitializer {
       flavor: Flavor.values.byName(const String.fromEnvironment('flavor')),
       appName: packageInfo.appName,
       packageName: packageInfo.packageName,
-      version: packageInfo.version,
+      version: Version.parse(packageInfo.version),
       buildNumber: packageInfo.buildNumber,
       buildSignature: packageInfo.buildSignature,
       installerStore: packageInfo.installerStore,

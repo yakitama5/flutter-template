@@ -2,26 +2,28 @@
 
 // ignore_for_file: type=lint, duplicate_ignore
 
-part of 'force_update_provider.dart';
+part of 'app_version_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$forceUpdateHash() => r'f95a163b07058d775c5b645a11e3039e4468b4b9';
+String _$appVersionRepositoryHash() =>
+    r'9ade993c34720925fc0a1128f154a99ecafc4d9f';
 
-/// See also [ForceUpdate].
-@ProviderFor(ForceUpdate)
-final forceUpdateProvider =
-    NotifierProvider<ForceUpdate, ForceUpdateStatus>.internal(
-  ForceUpdate.new,
-  name: r'forceUpdateProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$forceUpdateHash,
+/// See also [appVersionRepository].
+@ProviderFor(appVersionRepository)
+final appVersionRepositoryProvider =
+    AutoDisposeProvider<AppVersionRepository>.internal(
+  appVersionRepository,
+  name: r'appVersionRepositoryProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$appVersionRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$ForceUpdate = Notifier<ForceUpdateStatus>;
+typedef AppVersionRepositoryRef = AutoDisposeProviderRef<AppVersionRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package

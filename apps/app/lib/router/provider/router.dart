@@ -1,4 +1,3 @@
-import 'package:cores_core/application.dart';
 import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/common_assets.dart';
 import 'package:features_debug_mode/ui.dart';
@@ -26,20 +25,19 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 @Riverpod(keepAlive: true)
 GoRouter router(RouterRef ref) {
-  final maintenanceModeStatus = ref.watch(
-    appStatusProvider.select((appStatus) => appStatus.maintenanceModeStatus),
-  );
   return GoRouter(
     navigatorKey: _rootNavigatorKey,
     routes: $appRoutes,
     debugLogDiagnostics: kDebugMode,
     initialLocation: HomePageRoute.path,
-    redirect: (_, __) {
-      final maintenanceModeEnabled = maintenanceModeStatus.enabled;
+    redirect: (_, __) async {
+      // TODO(yakitama5): メンテナンスページを作成してから
+      // final appMaintenanceStatus =
+      //     await ref.watch(appMaintenanceStatusProvider.future);
 
-      if (maintenanceModeEnabled) {
-        return MaintenancePageRoute.path;
-      }
+      // if (maintenanceModeEnabled) {
+      //   return MaintenancePageRoute.path;
+      // }
       return null;
     },
   );

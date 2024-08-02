@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:cores_core/application.dart';
 import 'package:features_debug_mode/src/data/api/provider/exception_generator_api.dart';
 import 'package:features_debug_mode/src/ui/provider/navigator_provider.dart';
 import 'package:flutter/material.dart';
@@ -34,18 +33,18 @@ class DebugPage extends ConsumerWidget {
             _FixSizedElevatedButton(
               title: 'Enable maintenance mode',
               onPressed: () async {
-                ref
-                    .read(maintenanceModeProvider.notifier)
-                    .update(enabled: true);
+                // ref
+                //     .read(maintenanceModeProvider.notifier)
+                //     .update(enabled: true);
               },
             ),
             _FixSizedElevatedButton(
               title: 'Enable force update',
               onPressed: () async {
-                ref.read(forceUpdateVersionProvider.notifier).update(
-                      iosTargetVersion: '9.9.9',
-                      androidTargetVersion: '9.9.9',
-                    );
+                // ref.read(forceUpdateVersionProvider.notifier).update(
+                //       iosTargetVersion: '9.9.9',
+                //       androidTargetVersion: '9.9.9',
+                //     );
               },
             ),
             _FixSizedElevatedButton(

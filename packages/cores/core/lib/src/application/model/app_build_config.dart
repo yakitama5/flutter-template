@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:version/version.dart';
 
 import 'flavor.dart';
 
@@ -11,7 +12,7 @@ class AppBuildConfig with _$AppBuildConfig {
     required Flavor flavor,
     required String appName,
     required String packageName,
-    required String version,
+    required Version version,
     required String buildNumber,
     required String buildSignature,
     String? installerStore,

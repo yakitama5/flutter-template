@@ -19,7 +19,7 @@ mixin _$AppBuildConfig {
   Flavor get flavor => throw _privateConstructorUsedError;
   String get appName => throw _privateConstructorUsedError;
   String get packageName => throw _privateConstructorUsedError;
-  String get version => throw _privateConstructorUsedError;
+  Version get version => throw _privateConstructorUsedError;
   String get buildNumber => throw _privateConstructorUsedError;
   String get buildSignature => throw _privateConstructorUsedError;
   String? get installerStore => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $AppBuildConfigCopyWith<$Res> {
       {Flavor flavor,
       String appName,
       String packageName,
-      String version,
+      Version version,
       String buildNumber,
       String buildSignature,
       String? installerStore});
@@ -82,7 +82,7 @@ class _$AppBuildConfigCopyWithImpl<$Res, $Val extends AppBuildConfig>
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Version,
       buildNumber: null == buildNumber
           ? _value.buildNumber
           : buildNumber // ignore: cast_nullable_to_non_nullable
@@ -111,7 +111,7 @@ abstract class _$$AppBuildConfigImplCopyWith<$Res>
       {Flavor flavor,
       String appName,
       String packageName,
-      String version,
+      Version version,
       String buildNumber,
       String buildSignature,
       String? installerStore});
@@ -152,7 +152,7 @@ class __$$AppBuildConfigImplCopyWithImpl<$Res>
       version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Version,
       buildNumber: null == buildNumber
           ? _value.buildNumber
           : buildNumber // ignore: cast_nullable_to_non_nullable
@@ -188,7 +188,7 @@ class _$AppBuildConfigImpl implements _AppBuildConfig {
   @override
   final String packageName;
   @override
-  final String version;
+  final Version version;
   @override
   final String buildNumber;
   @override
@@ -236,7 +236,7 @@ abstract class _AppBuildConfig implements AppBuildConfig {
       {required final Flavor flavor,
       required final String appName,
       required final String packageName,
-      required final String version,
+      required final Version version,
       required final String buildNumber,
       required final String buildSignature,
       final String? installerStore}) = _$AppBuildConfigImpl;
@@ -248,7 +248,7 @@ abstract class _AppBuildConfig implements AppBuildConfig {
   @override
   String get packageName;
   @override
-  String get version;
+  Version get version;
   @override
   String get buildNumber;
   @override
