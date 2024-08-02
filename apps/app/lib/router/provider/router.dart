@@ -1,4 +1,3 @@
-import 'package:cores_core/application.dart';
 import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/common_assets.dart';
 import 'package:features_debug_mode/ui.dart';
@@ -14,6 +13,8 @@ import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import 'router_notifier_provider.dart';
+
 part 'package:flutter_app/router/routes/main/home/debug_page_route.dart';
 part 'package:flutter_app/router/routes/main/home/home_shell_branch.dart';
 part 'package:flutter_app/router/routes/main/home/web_page_route.dart';
@@ -26,24 +27,16 @@ final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 @Riverpod(keepAlive: true)
 GoRouter router(RouterRef ref) {
+  final router = ref.watch(routerNotifierProvider.notifier);
+
   return GoRouter(
     navigatorKey: _rootNavigatorKey,
-    routes: $appRoutes,
+    routes: router.routes,
     debugLogDiagnostics: kDebugMode,
     initialLocation: HomePageRoute.path,
-    redirect: (_, __) async {
-      // メンテナンスモードの導線
-      final appMaintenanceStatus =
-          ref.watch(appMaintenanceStatusProvider).value;
-      switch (appMaintenanceStatus) {
-        case AppMaintenanceStatus.maintenance:
-          return MaintenancePageRoute.path;
-        case AppMaintenanceStatus.none:
-        case null:
-        // do nothing
-      }
+    redirect: router.redirect,
 
-      return null;
-    },
+    // ログイン状態やデータの変更でredirectを検知するように、`refreshListenable`を設定
+    refreshListenable: router,
   );
 }
