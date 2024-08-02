@@ -88,7 +88,7 @@ final class HogeNavigatorImpl implements HogeNavigator {
 ```
 
 ```dart:hoge_page_route.dart
-part of 'package:flutter_app/presentation/router/state/router_provider.dart';
+part of 'package:flutter_app/src/presentation/router/state/router_provider.dart';
 
 @TypedGoRoute<HogePageRoute>(
     path: HogePageRoute.path,

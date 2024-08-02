@@ -7,7 +7,7 @@ import 'router_provider.dart';
 
 part 'router_notifier_provider.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 class RouterNotifier extends _$RouterNotifier implements Listenable {
   VoidCallback? routerListener;
 

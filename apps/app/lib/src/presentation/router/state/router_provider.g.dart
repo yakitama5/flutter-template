@@ -295,11 +295,11 @@ extension $MaintenancePageRouteExtension on MaintenancePageRoute {
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'565ff273ca0597997cb4388dfe342f8120f94b9c';
+String _$routerHash() => r'45bf860c2cff709b2a36a4e62ce62b3e6c529dd3';
 
 /// See also [router].
 @ProviderFor(router)
-final routerProvider = Provider<GoRouter>.internal(
+final routerProvider = AutoDisposeProvider<GoRouter>.internal(
   router,
   name: r'routerProvider',
   debugGetCreateSourceHash:
@@ -308,6 +308,6 @@ final routerProvider = Provider<GoRouter>.internal(
   allTransitiveDependencies: null,
 );
 
-typedef RouterRef = ProviderRef<GoRouter>;
+typedef RouterRef = AutoDisposeProviderRef<GoRouter>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package

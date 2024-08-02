@@ -1,4 +1,4 @@
-part of 'package:flutter_app/presentation/router/state/router_provider.dart';
+part of 'package:flutter_app/src/presentation/router/state/router_provider.dart';
 
 const settingShellBranch = TypedStatefulShellBranch<SettingShellBranch>(
   routes: <TypedRoute<RouteData>>[

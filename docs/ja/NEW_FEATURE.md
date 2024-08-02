@@ -165,7 +165,7 @@ Widget build(BuildContext context, WidgetRef ref) {
 ```dart
 // apps/app/lib/router/routes/main/sample/sample_shell_branch.dart
 
-part of 'package:flutter_app/presentation/router/state/router_provider.dart';
+part of 'package:flutter_app/src/presentation/router/state/router_provider.dart';
 
 const sampleShellBranch = TypedStatefulShellBranch<SampleShellBranch>(
   routes: <TypedRoute<RouteData>>[
@@ -209,7 +209,7 @@ part 'package:flutter_app/router/routes/main/sample/sample_shell_branch.dart';
 ```dart
 // apps/app/lib/router/routes/main/main_page_shell_route.dart
 
-part of 'package:flutter_app/presentation/router/state/router_provider.dart';
+part of 'package:flutter_app/src/presentation/router/state/router_provider.dart';
 
 @TypedStatefulShellRoute<MainPageShellRoute>(
   branches: [
