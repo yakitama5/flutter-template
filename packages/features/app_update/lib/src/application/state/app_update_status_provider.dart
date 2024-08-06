@@ -1,8 +1,8 @@
-import 'package:cores_core/src/domain/interface/app_version_repository.dart';
+import 'package:cores_core/application.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../domain/interface/app_version_repository.dart';
 import '../model/app_update_status.dart';
-import 'app_build_config_provider.dart';
 
 part 'app_update_status_provider.g.dart';
 
