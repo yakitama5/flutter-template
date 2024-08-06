@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 2 (1 per locale)
 ///
-/// Built on 2024-08-06 at 10:25 UTC
+/// Built on 2024-08-06 at 10:43 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -148,22 +148,22 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	late final _StringsMaintenanceEn maintenance = _StringsMaintenanceEn._(_root);
+	late final _StringsAppUpdateEn appUpdate = _StringsAppUpdateEn._(_root);
 }
 
-// Path: maintenance
-class _StringsMaintenanceEn {
-	_StringsMaintenanceEn._(this._root);
+// Path: appUpdate
+class _StringsAppUpdateEn {
+	_StringsAppUpdateEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _StringsMaintenanceMaintenancePageEn maintenancePage = _StringsMaintenanceMaintenancePageEn._(_root);
+	late final _StringsAppUpdateAppUpdatePageEn appUpdatePage = _StringsAppUpdateAppUpdatePageEn._(_root);
 }
 
-// Path: maintenance.maintenancePage
-class _StringsMaintenanceMaintenancePageEn {
-	_StringsMaintenanceMaintenancePageEn._(this._root);
+// Path: appUpdate.appUpdatePage
+class _StringsAppUpdateAppUpdatePageEn {
+	_StringsAppUpdateAppUpdatePageEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
@@ -197,22 +197,22 @@ class _StringsJa extends Translations {
 	@override late final _StringsJa _root = this; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsMaintenanceJa maintenance = _StringsMaintenanceJa._(_root);
+	@override late final _StringsAppUpdateJa appUpdate = _StringsAppUpdateJa._(_root);
 }
 
-// Path: maintenance
-class _StringsMaintenanceJa extends _StringsMaintenanceEn {
-	_StringsMaintenanceJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: appUpdate
+class _StringsAppUpdateJa extends _StringsAppUpdateEn {
+	_StringsAppUpdateJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsMaintenanceMaintenancePageJa maintenancePage = _StringsMaintenanceMaintenancePageJa._(_root);
+	@override late final _StringsAppUpdateAppUpdatePageJa appUpdatePage = _StringsAppUpdateAppUpdatePageJa._(_root);
 }
 
-// Path: maintenance.maintenancePage
-class _StringsMaintenanceMaintenancePageJa extends _StringsMaintenanceMaintenancePageEn {
-	_StringsMaintenanceMaintenancePageJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: appUpdate.appUpdatePage
+class _StringsAppUpdateAppUpdatePageJa extends _StringsAppUpdateAppUpdatePageEn {
+	_StringsAppUpdateAppUpdatePageJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
@@ -226,7 +226,7 @@ class _StringsMaintenanceMaintenancePageJa extends _StringsMaintenanceMaintenanc
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'maintenance.maintenancePage.title': return 'Title';
+			case 'appUpdate.appUpdatePage.title': return 'Title';
 			default: return null;
 		}
 	}
@@ -235,7 +235,7 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'maintenance.maintenancePage.title': return 'タイトル';
+			case 'appUpdate.appUpdatePage.title': return 'タイトル';
 			default: return null;
 		}
 	}
