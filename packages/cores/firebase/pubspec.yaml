@@ -23,6 +23,7 @@ dependencies:
   flutter:
     sdk: flutter
   freezed_annotation: 
+  google_sign_in: 
   hooks_riverpod: ^3.0.0-dev.3
   riverpod_annotation: ^3.0.0-dev.3
 
