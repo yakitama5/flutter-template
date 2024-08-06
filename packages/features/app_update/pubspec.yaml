@@ -1,0 +1,43 @@
+name: features_app_update
+description: "This package provides app_update features."
+publish_to: 'none'
+version: 0.0.1
+
+environment:
+  sdk: ^3.4.1
+  flutter: ^3.22.1
+
+dependencies:
+  collection:
+  cores_core:
+    path: ../../cores/core
+  cores_data:
+    path: ../../cores/data
+  cores_designsystem:
+    path: ../../cores/designsystem
+  flutter:
+    sdk: flutter
+  flutter_hooks: 
+  flutter_localizations:
+    sdk: flutter
+  freezed_annotation: 
+  hooks_riverpod: ^3.0.0-dev.3
+  intl: 
+  nested: 
+  riverpod_annotation: ^3.0.0-dev.3
+  slang: 
+  slang_flutter: 
+
+dev_dependencies:
+  build_runner: 
+  custom_lint: 
+  flutter_test:
+    sdk: flutter
+  freezed: any
+  json_serializable: 
+  pedantic_mono: 
+  riverpod_generator: ^3.0.0-dev.11
+  riverpod_lint: ^3.0.0-dev.4
+  slang_build_runner: 
+
+flutter:

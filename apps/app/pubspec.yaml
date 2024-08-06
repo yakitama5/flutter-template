@@ -18,6 +18,8 @@ dependencies:
     path: ../../packages/cores/firebase
   cores_init:
     path: ../../packages/cores/init
+  features_app_update:
+    path: ../../packages/features/app_update
   features_debug_mode:
     path: ../../packages/features/debug_mode
   features_github_repository:

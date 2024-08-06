@@ -1,3 +1,4 @@
+import 'package:features_app_update/i18n.dart';
 import 'package:cores_core/application.dart';
 import 'package:cores_core/domain.dart';
 import 'package:cores_core/infrastructure.dart';
@@ -50,6 +51,8 @@ void main() async {
         children: const [
           // Slangの伝播
           _AppTranslationProvider(),
+          AppUpdateTranslationProvider(),
+
           MaintenanceTranslationProvider(),
 
           UserTranslationProvider(),
