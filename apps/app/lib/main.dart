@@ -1,13 +1,14 @@
 import 'package:cores_core/application.dart';
-import 'package:cores_core/domain.dart';
-import 'package:cores_core/infrastructure.dart';
 import 'package:cores_core/presentation.dart';
 import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:cores_firebase/infrastructure.dart';
 import 'package:cores_init/provider.dart';
+import 'package:features_app_update/application.dart';
+import 'package:features_app_update/domain.dart';
 import 'package:features_app_update/i18n.dart';
+import 'package:features_app_update/infrastructure.dart';
 import 'package:features_maintenance/domain.dart';
 import 'package:features_maintenance/i18n.dart';
 import 'package:features_maintenance/infrastructure.dart';
