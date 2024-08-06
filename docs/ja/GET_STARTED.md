@@ -11,6 +11,7 @@
 - [melos] コマンドを有効にしてください。
   - pubspec.lock ファイルを解析して melos コマンドのバージョンを取得するため、[yq] コマンドをインストールしてください。
   - 以下のコマンドを実行して melos コマンドをグローバルに有効にしてください。
+- [cmder] を推奨
 
     ```shell
     MELOS_VERSION=$(cat pubspec.lock | yq ".packages.melos.version" -r)
@@ -74,3 +75,5 @@ Please check:
 [mason_cli]: https://pub.dev/packages/mason_cli
 
 [yq]: https://github.com/mikefarah/yq
+
+[cmder]: https://github.com/cmderdev/cmder/wiki/Seamless-VS-Code-Integration
