@@ -22,6 +22,8 @@ dependencies:
     path: ../../packages/features/debug_mode
   features_github_repository:
     path: ../../packages/features/github_repository
+  features_maintenance:
+    path: ../../packages/features/maintenance
   features_setting:
     path: ../../packages/features/setting
   features_user:

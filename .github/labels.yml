@@ -72,6 +72,10 @@
   color: 8ee8a9
   description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\github_repository package
 
+- name: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\maintenance"
+  color: ffefea
+  description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\maintenance package
+
 - name: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\setting"
   color: 7080b0
   description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\setting package
