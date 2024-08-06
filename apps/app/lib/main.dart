@@ -1,11 +1,15 @@
-import 'package:features_maintenance/i18n.dart';
 import 'package:cores_core/application.dart';
+import 'package:cores_core/domain.dart';
+import 'package:cores_core/infrastructure.dart';
 import 'package:cores_core/presentation.dart';
 import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:cores_firebase/infrastructure.dart';
 import 'package:cores_init/provider.dart';
+import 'package:features_maintenance/domain.dart';
+import 'package:features_maintenance/i18n.dart';
+import 'package:features_maintenance/infrastructure.dart';
 import 'package:features_setting/i18n.dart';
 import 'package:features_user/i18n.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +39,12 @@ void main() async {
 
         // 初期ページの設定
         initialLocationProvider.overrideWithValue(HomePageRoute.path),
+
+        // Firebase
+        appMaintenanceRepositoryProvider
+            .overrideWith(RemoteConfigAppMaintenanceRepository.new),
+        appVersionRepositoryProvider
+            .overrideWith(RemoteConfigAppVersionRepository.new),
       ],
       child: Nested(
         children: const [

@@ -1,4 +1,4 @@
-import 'package:cores_core/application.dart';
+import 'package:features_maintenance/application.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

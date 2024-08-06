@@ -1,6 +1,7 @@
-import 'package:cores_core/src/application/model/app_maintenance_status.dart';
-import 'package:cores_core/src/domain/interface/app_maintenance_repository.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../domain/interface/app_maintenance_repository.dart';
+import '../model/app_maintenance_status.dart';
 
 part 'app_maintenance_status_provider.g.dart';
 

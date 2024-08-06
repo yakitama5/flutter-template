@@ -1,6 +1,7 @@
-import 'package:cores_core/src/domain/interface/app_maintenance_repository.dart';
 import 'package:cores_firebase/infrastructure.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../../../domain/interface/app_maintenance_repository.dart';
 
 const String _maintenanceKey = 'app_maintenance_mode';
 

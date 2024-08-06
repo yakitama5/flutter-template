@@ -1,5 +1,3 @@
-import 'package:cores_core/domain.dart';
-import 'package:cores_core/infrastructure.dart';
 import 'package:cores_designsystem/domain.dart';
 import 'package:cores_designsystem/infrastructure.dart';
 import 'package:cores_shared_preferences/infrastructure.dart';
@@ -17,12 +15,6 @@ Future<List<Override>> initializeProviders() async {
       sharedPreferencesProvider.overrideWithValue(preferences),
       themeRepositoryProvider
           .overrideWith(SharedPreferencesThemeRepository.new),
-
-      // Firebase
-      appMaintenanceRepositoryProvider
-          .overrideWith(RemoteConfigAppMaintenanceRepository.new),
-      appVersionRepositoryProvider
-          .overrideWith(RemoteConfigAppVersionRepository.new),
     ],
   );
   return overrides;
