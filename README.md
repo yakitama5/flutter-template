@@ -1,1 +1,1 @@
-docs/ja/GET_STARTED.md
+docs/GET_STARTED.md

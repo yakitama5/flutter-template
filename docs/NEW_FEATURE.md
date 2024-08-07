@@ -1,8 +1,5 @@
 # featureパッケージ追加からに画面遷移するまでの手順
 
-<!-- とりあえず英語版はないので一旦コメントアウト -->
-<!-- 言語: 日本語 | [English](/docs/en/NEW_FEATURE.md) -->
-
 ## 1. features_package(masonのbrick) で新しいパッケージを作成
 
 ```shell
