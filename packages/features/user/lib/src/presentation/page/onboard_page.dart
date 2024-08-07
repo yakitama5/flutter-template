@@ -1,7 +1,6 @@
 import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/presentation.dart';
 import 'package:features_setting/presentation.dart';
-import 'package:features_user/gen/assets.gen.dart';
 import 'package:features_user/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -10,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import '../../application/usecase/user_usecase.dart';
+import '../../gen/assets/assets.gen.dart';
 
 class OnboardPage extends StatelessWidget {
   const OnboardPage({super.key});

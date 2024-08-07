@@ -1,4 +1,5 @@
 import 'package:features_maintenance/application.dart';
+import 'package:features_user/application.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -30,6 +31,17 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
       return null;
     }
     final location = routeState.fullPath ?? '';
+    final isSplash = location == const RootRoute().location;
+    final isNotAuthLocations =
+        location.startsWith(const OnboardRoute().location);
+
+    // 認証判定
+    final authUser = await ref.watch(authStatusProvider.future);
+    if (authUser == null && (isSplash || !isNotAuthLocations)) {
+      return const OnboardRoute().location;
+    } else if (authUser != null && (isSplash || isNotAuthLocations)) {
+      return const HomePageRoute().location;
+    }
 
     // メンテナンスモード
     final appMaintenanceStatus = ref.watch(appMaintenanceStatusProvider).value;

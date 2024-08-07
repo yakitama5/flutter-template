@@ -44,9 +44,9 @@ class OnboardRoute extends GoRouteData {
 
   static const path = '/onboard';
 
-  // TODO(yakitama5): Onboardページを作ってページを設定する
   @override
-  Widget build(BuildContext context, GoRouterState state) => const HomePage();
+  Widget build(BuildContext context, GoRouterState state) =>
+      const OnboardPage();
 }
 
 class NavigatorPageShellRoute extends StatefulShellRouteData {

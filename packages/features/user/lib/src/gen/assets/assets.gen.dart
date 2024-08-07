@@ -11,7 +11,8 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   /// File path: assets/images/welcome_cats.svg
-  String get welcomeCats => 'assets/images/welcome_cats.svg';
+  String get welcomeCats =>
+      'packages/features_user/assets/images/welcome_cats.svg';
 
   /// List of all assets
   List<String> get values => [welcomeCats];
@@ -19,6 +20,8 @@ class $AssetsImagesGen {
 
 class Assets {
   Assets._();
+
+  static const String package = 'features_user';
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
