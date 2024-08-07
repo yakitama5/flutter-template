@@ -82,38 +82,34 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
     BuildContext context,
     WidgetRef ref,
     bool value,
-  ) async {
-    // TODO(yakitama5): GoogleSignInを実装
-    // return execute(
-    //   context,
-    //   action: () {
-    //     final usecase = ref.read(userUsecaseProvider);
-    //     return value ?
-    //          usecase.signInWithGoogle() : usecase.unlinkWithGoogle();
-    //   },
-    // );
-  }
+  ) async =>
+      execute(
+        action: () {
+          final usecase = ref.read(userUsecaseProvider);
+
+          // トグルの状態に合わせてユースケースを変更する
+          return value
+              ? usecase.signInWithGoogle()
+              : usecase.unlinkWithGoogle();
+        },
+      );
 
   Future<void> _onToggleApple(
     BuildContext context,
     WidgetRef ref,
     bool value,
-  ) async {
-    // TODO(yakitama5): AppleSignInを実装
-    // execute(
-    //   context,
-    //   action: () {
-    //     final usecase = ref.read(userUsecaseProvider);
-    //     return value ? usecase.signInWithApple() : usecase.unlinkWithApple();
-    //   },
-    // );
-  }
+  ) =>
+      execute(
+        action: () {
+          final usecase = ref.read(userUsecaseProvider);
+
+          // トグルの状態に合わせてユースケースを変更する
+          return value ? usecase.signInWithApple() : usecase.unlinkWithApple();
+        },
+      );
 
   Future<void> _onLogout(BuildContext context, WidgetRef ref) => execute(
-        context,
-        action: () async {},
-        // TODO(yakitama5): ログアウト処理を実装
-        // action: () => ref.read(userUsecaseProvider).signOut(),
+        action: () => ref.read(userUsecaseProvider).signOut(),
       );
 
   Future<void> _onDeleteAccount(BuildContext context, WidgetRef ref) async {
@@ -128,12 +124,10 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
     }
 
     // 削除処理
-    // TODO(yakitama5): 退会処理を実装
-    // if (context.mounted) {
-    //   return execute(
-    //     context,
-    //     action: () => ref.read(userUsecaseProvider).delete(),
-    //   );
-    // }
+    if (context.mounted) {
+      return execute(
+        action: () => ref.read(userUsecaseProvider).leave(),
+      );
+    }
   }
 }
