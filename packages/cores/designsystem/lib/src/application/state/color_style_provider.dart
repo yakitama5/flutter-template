@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:cores_designsystem/application.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../domain/interface/theme_repository.dart';
@@ -20,9 +21,14 @@ class _ColorStyle extends _$ColorStyle {
   ColorStyle build() {
     final colorStyle = _repository.fetchColorStyle();
 
-    // 初期値は「システム設定」
-    // TODO(yakitama5): 初期値を対応状況によって判定する
-    return colorStyle ?? ColorStyle.dynamicColor;
+    // 初期値は `DynamicColor`のサポート有無で変更
+    final supportStatus = ref.read(dynamicColorSupportProviderProvider);
+    final defaultValue = switch (supportStatus) {
+      DynamicColorSupportStatus.supported => ColorStyle.dynamicColor,
+      DynamicColorSupportStatus.notSupported => ColorStyle.systemColor,
+    };
+
+    return colorStyle ?? defaultValue;
   }
 
   Future<void> update(ColorStyle colorStyle) async {
