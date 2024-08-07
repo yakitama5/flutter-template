@@ -108,16 +108,8 @@ class MainApp extends ConsumerWidget {
       });
 
     return MaterialApp.router(
-      builder: (_, child) => Consumer(
-        child: child,
-        builder: (__, ref, child) {
-          final loading = ref.watch(loadingNotifierProvider);
-          return LoaderOverlay(
-            loading: loading,
-            child: child,
-          );
-        },
-      ),
+      // 共通のローディング表示
+      builder: (_, child) => LoaderOverlay(child: child),
 
       // Slang
       locale: TranslationProvider.of(context).flutterLocale,

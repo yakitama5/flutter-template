@@ -10,6 +10,8 @@ environment:
 dependencies:
   animations:
   collection:
+  cores_core:
+    path: ../core
   cores_shared_preferences:
     path: ../shared_preferences
   dynamic_color:
