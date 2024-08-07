@@ -15,6 +15,15 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
     ),
   ],
 )
+class BaseShellSroute extends ShellRouteData {
+  static final GlobalKey<NavigatorState> $navigatorKey = _rootNavigatorKey;
+
+  // ルート設定のために定義だけ
+  @override
+  Widget builder(BuildContext context, GoRouterState state, Widget navigator) =>
+      navigator;
+}
+
 class RootRoute extends GoRouteData {
   const RootRoute();
 
@@ -38,15 +47,6 @@ class OnboardRoute extends GoRouteData {
   // TODO(yakitama5): Onboardページを作ってページを設定する
   @override
   Widget build(BuildContext context, GoRouterState state) => const HomePage();
-}
-
-// ルート設定のために定義だけ
-class BaseShellSroute extends ShellRouteData {
-  static final GlobalKey<NavigatorState> $navigatorKey = _rootNavigatorKey;
-
-  @override
-  Widget builder(BuildContext context, GoRouterState state, Widget navigator) =>
-      navigator;
 }
 
 class NavigatorPageShellRoute extends StatefulShellRouteData {

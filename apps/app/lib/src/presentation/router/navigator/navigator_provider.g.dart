@@ -8,7 +8,7 @@ part of 'navigator_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$homePageNavigatorHash() => r'e6967f9a83bac4c9a26b2b70366a462b125318f4';
+String _$homePageNavigatorHash() => r'34bfa08b2cbdb9b7a38506a1ecfe8e00a9b761e9';
 
 /// See also [homePageNavigator].
 @ProviderFor(homePageNavigator)
@@ -19,8 +19,8 @@ final homePageNavigatorProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$homePageNavigatorHash,
-  dependencies: const <ProviderOrFamily>[],
-  allTransitiveDependencies: const <ProviderOrFamily>{},
+  dependencies: null,
+  allTransitiveDependencies: null,
 );
 
 typedef HomePageNavigatorRef = AutoDisposeProviderRef<HomePageNavigator>;

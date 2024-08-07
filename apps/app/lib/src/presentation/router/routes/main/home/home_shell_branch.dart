@@ -50,16 +50,14 @@ final class _GithubRepositoryListPageNavigatorImpl
     BuildContext context,
     String repositoryName,
     String? description,
-  ) {
-    GitHubRepositoryDetailPageRoute(repositoryName, description).go(context);
-  }
+  ) {}
 }
 
 class HomePageRoute extends GoRouteData {
   const HomePageRoute();
 
   static final GlobalKey<NavigatorState> $navigatorKey = _homeNavigatorKey;
-  static const path = 'home';
+  static const path = '/home';
 
   @override
   Widget build(BuildContext context, GoRouterState state) {

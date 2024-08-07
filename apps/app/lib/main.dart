@@ -45,7 +45,7 @@ void main() async {
 
         // アプリ特有の設定
         appBuildConfigProvider.overrideWithValue(buildConfig),
-        initialLocationProvider.overrideWithValue(HomePageRoute.path),
+        initialLocationProvider.overrideWithValue(RootRoute.path),
       ],
       child: Nested(
         children: const [

@@ -9,70 +9,81 @@ part of 'router_provider.dart';
 // **************************************************************************
 
 List<RouteBase> get $appRoutes => [
-      $mainPageShellRoute,
+      $baseShellSroute,
       $maintenancePageRoute,
     ];
 
-RouteBase get $mainPageShellRoute => StatefulShellRouteData.$route(
-      factory: $MainPageShellRouteExtension._fromState,
-      branches: [
-        StatefulShellBranchData.$branch(
-          routes: [
-            GoRouteData.$route(
-              path: '/',
-              factory: $HomePageRouteExtension._fromState,
+RouteBase get $baseShellSroute => ShellRouteData.$route(
+      navigatorKey: BaseShellSroute.$navigatorKey,
+      factory: $BaseShellSrouteExtension._fromState,
+      routes: [
+        GoRouteData.$route(
+          path: '/',
+          factory: $RootRouteExtension._fromState,
+        ),
+        GoRouteData.$route(
+          path: '/onboard',
+          factory: $OnboardRouteExtension._fromState,
+        ),
+        StatefulShellRouteData.$route(
+          factory: $NavigatorPageShellRouteExtension._fromState,
+          branches: [
+            StatefulShellBranchData.$branch(
               routes: [
                 GoRouteData.$route(
-                  path: 'github_repository_detail',
-                  factory: $GitHubRepositoryDetailPageRouteExtension._fromState,
-                ),
-                GoRouteData.$route(
-                  path: 'debug',
-                  parentNavigatorKey: DebugPageRoute.$parentNavigatorKey,
-                  factory: $DebugPageRouteExtension._fromState,
+                  path: '/home',
+                  factory: $HomePageRouteExtension._fromState,
                   routes: [
                     GoRouteData.$route(
-                      path: 'navigation_debug',
-                      parentNavigatorKey:
-                          NavigationDebugPageRoute.$parentNavigatorKey,
-                      factory: $NavigationDebugPageRouteExtension._fromState,
+                      path: 'debug',
+                      parentNavigatorKey: DebugPageRoute.$parentNavigatorKey,
+                      factory: $DebugPageRouteExtension._fromState,
+                      routes: [
+                        GoRouteData.$route(
+                          path: 'navigation_debug',
+                          parentNavigatorKey:
+                              NavigationDebugPageRoute.$parentNavigatorKey,
+                          factory:
+                              $NavigationDebugPageRouteExtension._fromState,
+                        ),
+                      ],
+                    ),
+                    GoRouteData.$route(
+                      path: 'web',
+                      parentNavigatorKey: WebPageRoute.$parentNavigatorKey,
+                      factory: $WebPageRouteExtension._fromState,
                     ),
                   ],
                 ),
-                GoRouteData.$route(
-                  path: 'web',
-                  parentNavigatorKey: WebPageRoute.$parentNavigatorKey,
-                  factory: $WebPageRouteExtension._fromState,
-                ),
               ],
             ),
-          ],
-        ),
-        StatefulShellBranchData.$branch(
-          routes: [
-            GoRouteData.$route(
-              path: '/setting',
-              factory: $SettingPageRouteExtension._fromState,
+            StatefulShellBranchData.$branch(
               routes: [
                 GoRouteData.$route(
-                  path: 'account',
-                  factory: $SettingsAccountPageRouteExtension._fromState,
-                ),
-                GoRouteData.$route(
-                  path: 'ui_style',
-                  factory: $SettingsUiStylePageRouteExtension._fromState,
-                ),
-                GoRouteData.$route(
-                  path: 'color_style',
-                  factory: $SettingsColorStylePageRouteExtension._fromState,
-                ),
-                GoRouteData.$route(
-                  path: 'theme_mode',
-                  factory: $SettingsThemeModePageRouteExtension._fromState,
-                ),
-                GoRouteData.$route(
-                  path: 'license',
-                  factory: $LicensePageRouteExtension._fromState,
+                  path: '/setting',
+                  factory: $SettingPageRouteExtension._fromState,
+                  routes: [
+                    GoRouteData.$route(
+                      path: 'account',
+                      factory: $SettingsAccountPageRouteExtension._fromState,
+                    ),
+                    GoRouteData.$route(
+                      path: 'ui_style',
+                      factory: $SettingsUiStylePageRouteExtension._fromState,
+                    ),
+                    GoRouteData.$route(
+                      path: 'color_style',
+                      factory: $SettingsColorStylePageRouteExtension._fromState,
+                    ),
+                    GoRouteData.$route(
+                      path: 'theme_mode',
+                      factory: $SettingsThemeModePageRouteExtension._fromState,
+                    ),
+                    GoRouteData.$route(
+                      path: 'license',
+                      factory: $LicensePageRouteExtension._fromState,
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -81,13 +92,12 @@ RouteBase get $mainPageShellRoute => StatefulShellRouteData.$route(
       ],
     );
 
-extension $MainPageShellRouteExtension on MainPageShellRoute {
-  static MainPageShellRoute _fromState(GoRouterState state) =>
-      const MainPageShellRoute();
+extension $BaseShellSrouteExtension on BaseShellSroute {
+  static BaseShellSroute _fromState(GoRouterState state) => BaseShellSroute();
 }
 
-extension $HomePageRouteExtension on HomePageRoute {
-  static HomePageRoute _fromState(GoRouterState state) => const HomePageRoute();
+extension $RootRouteExtension on RootRoute {
+  static RootRoute _fromState(GoRouterState state) => const RootRoute();
 
   String get location => GoRouteData.$location(
         '/',
@@ -103,20 +113,33 @@ extension $HomePageRouteExtension on HomePageRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $GitHubRepositoryDetailPageRouteExtension
-    on GitHubRepositoryDetailPageRoute {
-  static GitHubRepositoryDetailPageRoute _fromState(GoRouterState state) =>
-      GitHubRepositoryDetailPageRoute(
-        state.uri.queryParameters['repository-name']!,
-        state.uri.queryParameters['description'],
-      );
+extension $OnboardRouteExtension on OnboardRoute {
+  static OnboardRoute _fromState(GoRouterState state) => const OnboardRoute();
 
   String get location => GoRouteData.$location(
-        '/github_repository_detail',
-        queryParams: {
-          'repository-name': repositoryName,
-          if (description != null) 'description': description,
-        },
+        '/onboard',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $NavigatorPageShellRouteExtension on NavigatorPageShellRoute {
+  static NavigatorPageShellRoute _fromState(GoRouterState state) =>
+      const NavigatorPageShellRoute();
+}
+
+extension $HomePageRouteExtension on HomePageRoute {
+  static HomePageRoute _fromState(GoRouterState state) => const HomePageRoute();
+
+  String get location => GoRouteData.$location(
+        '/home',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -134,7 +157,7 @@ extension $DebugPageRouteExtension on DebugPageRoute {
       const DebugPageRoute();
 
   String get location => GoRouteData.$location(
-        '/debug',
+        '/home/debug',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -152,7 +175,7 @@ extension $NavigationDebugPageRouteExtension on NavigationDebugPageRoute {
       const NavigationDebugPageRoute();
 
   String get location => GoRouteData.$location(
-        '/debug/navigation_debug',
+        '/home/debug/navigation_debug',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -169,7 +192,7 @@ extension $WebPageRouteExtension on WebPageRoute {
   static WebPageRoute _fromState(GoRouterState state) => const WebPageRoute();
 
   String get location => GoRouteData.$location(
-        '/web',
+        '/home/web',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -317,7 +340,7 @@ extension $MaintenancePageRouteExtension on MaintenancePageRoute {
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'45bf860c2cff709b2a36a4e62ce62b3e6c529dd3';
+String _$routerHash() => r'5ae81246d824843a4d0e41d0fdf3fa70fb618600';
 
 /// See also [router].
 @ProviderFor(router)
