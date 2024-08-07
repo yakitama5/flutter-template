@@ -8,7 +8,7 @@ part 'ui_style_provider.g.dart';
 
 @riverpod
 class UiStyle extends _$UiStyle {
-  ThemeRepository get _repository => ref.read(themeRepositoryProvider);
+  ThemeRepository get _repository => ref.watch(themeRepositoryProvider);
 
   @override
   UIStyle build() {

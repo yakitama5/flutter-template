@@ -19,7 +19,7 @@ class FirebaseUserRepository implements UserRepository {
   final Ref ref;
 
   /// 認証ユーザー
-  auth.User? get _currentUser => ref.read(firebaseAuthProvider).currentUser;
+  auth.User? get _currentUser => ref.watch(firebaseAuthProvider).currentUser;
 
   @override
   Stream<User?> fetch({required String userId}) {
@@ -171,7 +171,7 @@ class FirebaseUserRepository implements UserRepository {
     final googleUser = await ref.read(googleSignInProvider).signIn();
     if (googleUser == null) {
       // TODO(yakitama5): メッセージ(多言語化)はアプリ層ですること
-      throw ServerNetworkException('Google認証に失敗しました。');
+      throw const ServerNetworkException('Google認証に失敗しました。');
     }
 
     final googleAuth = await googleUser.authentication;

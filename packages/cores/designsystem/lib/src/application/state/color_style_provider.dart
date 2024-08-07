@@ -14,7 +14,7 @@ AutoDisposeNotifierProviderImpl<_ColorStyle, ColorStyle>
 
 @riverpod
 class _ColorStyle extends _$ColorStyle {
-  ThemeRepository get _repository => ref.read(themeRepositoryProvider);
+  ThemeRepository get _repository => ref.watch(themeRepositoryProvider);
 
   @override
   ColorStyle build() {

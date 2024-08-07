@@ -1,5 +1,6 @@
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
+import 'package:cores_designsystem/presentation.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -29,7 +30,7 @@ class SettingsPage extends HookConsumerWidget {
     final navigator = ref.watch(settingsPageNavigatorProvider);
 
     // プラットフォームに応じたアイコンの出し訳
-    final trailing = Theme.of(context).platform == TargetPlatform.iOS
+    final trailing = Theme.of(context).isCupertinoPlatform
         ? const Icon(Icons.arrow_forward_ios_rounded)
         : null;
 

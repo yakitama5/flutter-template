@@ -3,7 +3,7 @@ import 'package:version/version.dart';
 
 part 'app_version_repository.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 AppVersionRepository appVersionRepository(AppVersionRepositoryRef ref) =>
     throw UnimplementedError();
 

@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:cores_firebase/infrastructure.dart';
 import 'package:features_user/src/domain/entity/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

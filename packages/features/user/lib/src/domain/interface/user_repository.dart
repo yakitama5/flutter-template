@@ -6,9 +6,8 @@ import '../entity/user.dart';
 part 'user_repository.g.dart';
 
 /// DI用 (依存性逆転のためドメイン層に定義)
-@riverpod
+@Riverpod(keepAlive: true)
 UserRepository userRepository(UserRepositoryRef ref) =>
-    // アプリ起動時 or テスト時に `override` することを前提に利用
     throw UnimplementedError();
 
 /// ユーザーモデル および ユーザーの認証に関するリポジトリ

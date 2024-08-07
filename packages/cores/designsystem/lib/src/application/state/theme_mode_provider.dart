@@ -14,7 +14,7 @@ AutoDisposeNotifierProviderImpl<_ThemeMode, ThemeMode> get themeModeProvider =>
 
 @riverpod
 class _ThemeMode extends _$ThemeMode {
-  ThemeRepository get _repository => ref.read(themeRepositoryProvider);
+  ThemeRepository get _repository => ref.watch(themeRepositoryProvider);
 
   @override
   ThemeMode build() => _repository.fetchThemeMode() ?? ThemeMode.system;

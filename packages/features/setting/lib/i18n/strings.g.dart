@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 40 (20 per locale)
+/// Strings: 44 (22 per locale)
 ///
-/// Built on 2024-08-06 at 10:25 UTC
+/// Built on 2024-08-07 at 00:23 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -186,6 +186,7 @@ class _StringsSettingsAccountPageEn {
 	String get title => 'Account';
 	late final _StringsSettingsAccountPageLinkEn link = _StringsSettingsAccountPageLinkEn._(_root);
 	late final _StringsSettingsAccountPageOtherEn other = _StringsSettingsAccountPageOtherEn._(_root);
+	late final _StringsSettingsAccountPageLeaveConfirmDialogEn leaveConfirmDialog = _StringsSettingsAccountPageLeaveConfirmDialogEn._(_root);
 }
 
 // Path: settings.settingsPage.account
@@ -251,6 +252,17 @@ class _StringsSettingsAccountPageOtherEn {
 	String get leave => 'Leave';
 }
 
+// Path: settings.accountPage.leaveConfirmDialog
+class _StringsSettingsAccountPageLeaveConfirmDialogEn {
+	_StringsSettingsAccountPageLeaveConfirmDialogEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Leave?';
+	String get body => 'Are you sure you want to cancel your membership? \\Ўn this operation cannot be undone.';
+}
+
 // Path: <root>
 class _StringsJa extends Translations {
 	/// You can call this constructor and build your own translation instance of this locale.
@@ -314,6 +326,7 @@ class _StringsSettingsAccountPageJa extends _StringsSettingsAccountPageEn {
 	@override String get title => 'アカウント';
 	@override late final _StringsSettingsAccountPageLinkJa link = _StringsSettingsAccountPageLinkJa._(_root);
 	@override late final _StringsSettingsAccountPageOtherJa other = _StringsSettingsAccountPageOtherJa._(_root);
+	@override late final _StringsSettingsAccountPageLeaveConfirmDialogJa leaveConfirmDialog = _StringsSettingsAccountPageLeaveConfirmDialogJa._(_root);
 }
 
 // Path: settings.settingsPage.account
@@ -379,6 +392,17 @@ class _StringsSettingsAccountPageOtherJa extends _StringsSettingsAccountPageOthe
 	@override String get leave => '退会';
 }
 
+// Path: settings.accountPage.leaveConfirmDialog
+class _StringsSettingsAccountPageLeaveConfirmDialogJa extends _StringsSettingsAccountPageLeaveConfirmDialogEn {
+	_StringsSettingsAccountPageLeaveConfirmDialogJa._(_StringsJa root) : this._root = root, super._(root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => '退会しますか？';
+	@override String get body => '本当に退会してもよろしいですか？\nこの操作は元に戻すことができません。';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -405,6 +429,8 @@ extension on Translations {
 			case 'settings.accountPage.other.head': return 'Other';
 			case 'settings.accountPage.other.logout': return 'Logout';
 			case 'settings.accountPage.other.leave': return 'Leave';
+			case 'settings.accountPage.leaveConfirmDialog.title': return 'Leave?';
+			case 'settings.accountPage.leaveConfirmDialog.body': return 'Are you sure you want to cancel your membership? \\Ўn this operation cannot be undone.';
 			default: return null;
 		}
 	}
@@ -433,6 +459,8 @@ extension on _StringsJa {
 			case 'settings.accountPage.other.head': return 'その他';
 			case 'settings.accountPage.other.logout': return 'ログアウト';
 			case 'settings.accountPage.other.leave': return '退会';
+			case 'settings.accountPage.leaveConfirmDialog.title': return '退会しますか？';
+			case 'settings.accountPage.leaveConfirmDialog.body': return '本当に退会してもよろしいですか？\nこの操作は元に戻すことができません。';
 			default: return null;
 		}
 	}

@@ -8,12 +8,15 @@ environment:
   flutter: ^3.22.1
 
 dependencies:
+  adaptive_dialog: 
   cores_core:
     path: ../../cores/core
   cores_data:
     path: ../../cores/data
   cores_designsystem:
     path: ../../cores/designsystem
+  features_user:
+    path: ../../features/user
   flutter:
     sdk: flutter
   flutter_hooks:

@@ -25,3 +25,6 @@ accountPage:
     head: Other
     logout: Logout
     leave: Leave
+  leaveConfirmDialog:
+    title: Leave?
+    body: Are you sure you want to cancel your membership? \\Ўn this operation cannot be undone.

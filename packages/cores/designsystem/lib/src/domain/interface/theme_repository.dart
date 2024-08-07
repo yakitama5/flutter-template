@@ -6,9 +6,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'theme_repository.g.dart';
 
 /// DI用 (依存性逆転のためドメイン層に定義)
-@riverpod
+@Riverpod(keepAlive: true)
 ThemeRepository themeRepository(ThemeRepositoryRef ref) =>
-// アプリ起動時 or テスト時に `override` することを前提に利用
     throw UnimplementedError();
 
 abstract class ThemeRepository {
