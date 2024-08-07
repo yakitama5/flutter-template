@@ -52,8 +52,7 @@ class UserUsecase with RunUsecaseMixin {
         ref,
         action: () async {
           // ユーザー情報 および アカウントの削除
-          final userId =
-              await ref.watch(authUserProvider.selectAsync((data) => data?.id));
+          final userId = await _authUserId;
           if (userId == null) {
             // TODO(yakitama5): 正しいExceptionに変更
             throw const ServerNetworkException('message');
