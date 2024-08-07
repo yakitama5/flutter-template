@@ -4,6 +4,7 @@ import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:cores_designsystem/init.dart';
+import 'package:cores_designsystem/presentation.dart';
 import 'package:cores_firebase/init.dart';
 import 'package:cores_shared_preferences/init.dart';
 import 'package:features_app_update/application.dart';
@@ -107,6 +108,17 @@ class MainApp extends ConsumerWidget {
       });
 
     return MaterialApp.router(
+      builder: (_, child) => Consumer(
+        child: child,
+        builder: (__, ref, child) {
+          final loading = ref.watch(loadingNotifierProvider);
+          return LoaderOverlay(
+            loading: loading,
+            child: child,
+          );
+        },
+      ),
+
       // Slang
       locale: TranslationProvider.of(context).flutterLocale,
       supportedLocales: AppLocaleUtils.supportedLocales,

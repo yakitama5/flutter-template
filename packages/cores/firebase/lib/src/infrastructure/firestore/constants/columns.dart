@@ -1,5 +1,5 @@
 /// 更新日付のカラム名
-const firestoreColumnUpdatedAt = 'updatedAt';
+const firestoreColumnUpdatedAt = 'updated_at';
 
 /// 作成日付のカラム名
-const firestoreColumnCreatedAt = 'createdAt';
+const firestoreColumnCreatedAt = 'created_at';

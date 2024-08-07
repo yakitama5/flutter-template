@@ -18,8 +18,8 @@ class UserUsecase with RunUsecaseMixin {
 
   final Ref ref;
 
-  UserRepository get _userRepository => ref.read(userRepositoryProvider);
-  Future<User?> get _authUser => ref.read(authUserProvider.future);
+  UserRepository get _userRepository => ref.watch(userRepositoryProvider);
+  Future<User?> get _authUser => ref.watch(authUserProvider.future);
   Future<String?> get _authUserId => _authUser.then((data) => data?.id);
 
   /// ユーザーの登録
@@ -52,7 +52,8 @@ class UserUsecase with RunUsecaseMixin {
         ref,
         action: () async {
           // ユーザー情報 および アカウントの削除
-          final userId = await _authUserId;
+          final userId =
+              await ref.watch(authUserProvider.selectAsync((data) => data?.id));
           if (userId == null) {
             // TODO(yakitama5): 正しいExceptionに変更
             throw const ServerNetworkException('message');
