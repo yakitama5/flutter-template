@@ -1,5 +1,7 @@
 part of 'package:flutter_app/src/presentation/router/state/router_provider.dart';
 
+final _settingsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'settings');
+
 const settingShellBranch = TypedStatefulShellBranch<SettingShellBranch>(
   routes: <TypedRoute<RouteData>>[
     TypedGoRoute<SettingPageRoute>(
@@ -58,6 +60,7 @@ final class _SettingsPageNavigatorImpl implements SettingsPageNavigator {
 class SettingPageRoute extends GoRouteData {
   const SettingPageRoute();
 
+  static final GlobalKey<NavigatorState> $navigatorKey = _settingsNavigatorKey;
   static const path = '/setting';
 
   @override

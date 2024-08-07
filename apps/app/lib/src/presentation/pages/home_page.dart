@@ -1,8 +1,9 @@
 import 'package:features_github_repository/ui.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
-import 'package:flutter_app/ui/provider/navigator_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+
+import '../router/navigator/navigator_provider.dart';
 
 abstract interface class HomePageNavigator {
   void goDebugPage(BuildContext context);

@@ -1,2 +1,7 @@
 userPage: 
   title: タイトル
+onboardPage:
+  start: はじめる
+  startCaption: はじめての方はこちら
+  signInWithGoogle: Googleアカウントでログイン
+  signInWithApple: Appleアカウントでログイン

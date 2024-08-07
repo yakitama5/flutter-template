@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 2 (1 per locale)
+/// Strings: 10 (5 per locale)
 ///
-/// Built on 2024-08-06 at 10:25 UTC
+/// Built on 2024-08-07 at 10:13 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -159,6 +159,7 @@ class _StringsUserEn {
 
 	// Translations
 	late final _StringsUserUserPageEn userPage = _StringsUserUserPageEn._(_root);
+	late final _StringsUserOnboardPageEn onboardPage = _StringsUserOnboardPageEn._(_root);
 }
 
 // Path: user.userPage
@@ -169,6 +170,19 @@ class _StringsUserUserPageEn {
 
 	// Translations
 	String get title => 'Title';
+}
+
+// Path: user.onboardPage
+class _StringsUserOnboardPageEn {
+	_StringsUserOnboardPageEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get start => 'Start';
+	String get startCaption => 'For first-time users, click here';
+	String get signInWithGoogle => 'Sign in with Google';
+	String get signInWithApple => 'Sign in with Apple';
 }
 
 // Path: <root>
@@ -208,6 +222,7 @@ class _StringsUserJa extends _StringsUserEn {
 
 	// Translations
 	@override late final _StringsUserUserPageJa userPage = _StringsUserUserPageJa._(_root);
+	@override late final _StringsUserOnboardPageJa onboardPage = _StringsUserOnboardPageJa._(_root);
 }
 
 // Path: user.userPage
@@ -220,6 +235,19 @@ class _StringsUserUserPageJa extends _StringsUserUserPageEn {
 	@override String get title => 'タイトル';
 }
 
+// Path: user.onboardPage
+class _StringsUserOnboardPageJa extends _StringsUserOnboardPageEn {
+	_StringsUserOnboardPageJa._(_StringsJa root) : this._root = root, super._(root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get start => 'はじめる';
+	@override String get startCaption => 'はじめての方はこちら';
+	@override String get signInWithGoogle => 'Googleアカウントでログイン';
+	@override String get signInWithApple => 'Appleアカウントでログイン';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -227,6 +255,10 @@ extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'user.userPage.title': return 'Title';
+			case 'user.onboardPage.start': return 'Start';
+			case 'user.onboardPage.startCaption': return 'For first-time users, click here';
+			case 'user.onboardPage.signInWithGoogle': return 'Sign in with Google';
+			case 'user.onboardPage.signInWithApple': return 'Sign in with Apple';
 			default: return null;
 		}
 	}
@@ -236,6 +268,10 @@ extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'user.userPage.title': return 'タイトル';
+			case 'user.onboardPage.start': return 'はじめる';
+			case 'user.onboardPage.startCaption': return 'はじめての方はこちら';
+			case 'user.onboardPage.signInWithGoogle': return 'Googleアカウントでログイン';
+			case 'user.onboardPage.signInWithApple': return 'Appleアカウントでログイン';
 			default: return null;
 		}
 	}

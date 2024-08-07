@@ -7,8 +7,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:settings_ui/settings_ui.dart';
 
-import '../components/themed_settings_list.dart';
-import '../router/navigator_provider.dart';
+import '../components/src/themed_settings_list.dart';
+import '../router/navigator/navigator_provider.dart';
 
 abstract interface class SettingsPageNavigator {
   void goAccountPage(BuildContext context);

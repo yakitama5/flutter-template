@@ -18,6 +18,7 @@ dependencies:
   intl: 
   json_annotation: 
   logger:
+  nested: 
   riverpod_annotation: ^3.0.0-dev.3
   version: 
   visibility_detector: 

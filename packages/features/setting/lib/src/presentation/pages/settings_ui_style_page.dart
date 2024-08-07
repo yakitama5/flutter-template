@@ -6,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../components/settings_radio_list_tile.dart';
-import '../components/settings_radio_scaffold.dart';
+import '../components/src/settings_radio_list_tile.dart';
+import '../components/src/settings_radio_scaffold.dart';
 
 class SettingsUiStylePage extends HookConsumerWidget {
   const SettingsUiStylePage({

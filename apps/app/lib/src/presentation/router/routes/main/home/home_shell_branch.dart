@@ -1,13 +1,12 @@
 part of 'package:flutter_app/src/presentation/router/state/router_provider.dart';
 
+final _homeNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'home');
+
 const homeShellBranch = TypedStatefulShellBranch<HomeShellBranch>(
-  routes: <TypedRoute<RouteData>>[
+  routes: [
     TypedGoRoute<HomePageRoute>(
       path: HomePageRoute.path,
       routes: [
-        TypedGoRoute<GitHubRepositoryDetailPageRoute>(
-          path: GitHubRepositoryDetailPageRoute.path,
-        ),
         TypedGoRoute<DebugPageRoute>(
           path: DebugPageRoute.path,
           routes: [
@@ -59,7 +58,8 @@ final class _GithubRepositoryListPageNavigatorImpl
 class HomePageRoute extends GoRouteData {
   const HomePageRoute();
 
-  static const path = '/';
+  static final GlobalKey<NavigatorState> $navigatorKey = _homeNavigatorKey;
+  static const path = 'home';
 
   @override
   Widget build(BuildContext context, GoRouterState state) {

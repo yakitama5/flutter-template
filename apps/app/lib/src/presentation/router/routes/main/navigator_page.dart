@@ -3,8 +3,8 @@ import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class MainPage extends ConsumerWidget {
-  const MainPage({
+class NavigatorPage extends ConsumerWidget {
+  const NavigatorPage({
     required this.navigationShell,
     super.key,
   });

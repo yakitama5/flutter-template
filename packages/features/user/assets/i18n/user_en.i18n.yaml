@@ -1,2 +1,7 @@
 userPage: 
   title: Title
+onboardPage:
+  start: Start
+  startCaption: For first-time users, click here
+  signInWithGoogle: Sign in with Google
+  signInWithApple: Sign in with Apple
