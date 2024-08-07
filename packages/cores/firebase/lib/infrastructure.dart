@@ -1,6 +1,5 @@
 export 'src/infrastructure/authentication/extension/firebase_auth_user_extension.dart';
 export 'src/infrastructure/authentication/state/firebase_auth_provider.dart';
-export 'src/infrastructure/core/initializer.dart';
 export 'src/infrastructure/firestore/constants/columns.dart';
 export 'src/infrastructure/firestore/converter/json_key.dart';
 export 'src/infrastructure/firestore/state/firestore_provider.dart';

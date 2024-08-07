@@ -23,10 +23,6 @@ labels:
     files:
       - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\firebase/.+
 
-  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\init"
-    files:
-      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\init/.+
-
   - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\shared_preferences"
     files:
       - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\shared_preferences/.+

@@ -16,8 +16,8 @@ dependencies:
     path: ../../packages/cores/designsystem
   cores_firebase:
     path: ../../packages/cores/firebase
-  cores_init:
-    path: ../../packages/cores/init
+  cores_shared_preferences:
+    path: ../../packages/cores/shared_preferences
   features_app_update:
     path: ../../packages/features/app_update
   features_debug_mode:

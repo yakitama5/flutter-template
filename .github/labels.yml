@@ -56,10 +56,6 @@
   color: 2ed59c
   description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\firebase package
 
-- name: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\init"
-  color: 1f50f8
-  description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\init package
-
 - name: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\shared_preferences"
   color: 434ac7
   description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\shared_preferences package

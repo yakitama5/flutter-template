@@ -11,9 +11,11 @@ dependencies:
   collection:
   cores_shared_preferences:
     path: ../shared_preferences
+  dynamic_color:
   flutter:
     sdk: flutter
   hooks_riverpod: ^3.0.0-dev.3
+  material_color_utilities:
   nested: 
   riverpod_annotation: ^3.0.0-dev.3
   slang: 
