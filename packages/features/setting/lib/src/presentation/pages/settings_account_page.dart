@@ -72,7 +72,7 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
         ),
       ),
       // TODO(yakitama5): Errorパッケージを作成してから
-      error: (_, __) => Container(),
+      error: (_, __) => const Center(child: Text('Error')),
       // error: ErrorView.new,
       loading: CircularProgressIndicator.new,
     );

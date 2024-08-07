@@ -13,7 +13,9 @@ import 'package:features_maintenance/domain.dart';
 import 'package:features_maintenance/i18n.dart';
 import 'package:features_maintenance/infrastructure.dart';
 import 'package:features_setting/i18n.dart';
+import 'package:features_user/domain.dart';
 import 'package:features_user/i18n.dart';
+import 'package:features_user/infrastructure.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app_initializer.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
@@ -47,6 +49,7 @@ void main() async {
             .overrideWith(RemoteConfigAppMaintenanceRepository.new),
         appVersionRepositoryProvider
             .overrideWith(RemoteConfigAppVersionRepository.new),
+        userRepositoryProvider.overrideWith(FirebaseUserRepository.new),
       ],
       child: Nested(
         children: const [
