@@ -83,7 +83,7 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
     WidgetRef ref,
     bool value,
   ) async {
-    // TODO(yakitama5): 未作成
+    // TODO(yakitama5): GoogleSignInを実装
     // return execute(
     //   context,
     //   action: () {
@@ -99,7 +99,7 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
     WidgetRef ref,
     bool value,
   ) async {
-    // TODO(yakitama5): 未作成
+    // TODO(yakitama5): AppleSignInを実装
     // execute(
     //   context,
     //   action: () {
@@ -112,6 +112,7 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
   Future<void> _onLogout(BuildContext context, WidgetRef ref) => execute(
         context,
         action: () async {},
+        // TODO(yakitama5): ログアウト処理を実装
         // action: () => ref.read(userUsecaseProvider).signOut(),
       );
 
@@ -127,7 +128,7 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
     }
 
     // 削除処理
-    // TODO(yakitama5): 未作成
+    // TODO(yakitama5): 退会処理を実装
     // if (context.mounted) {
     //   return execute(
     //     context,

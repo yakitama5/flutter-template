@@ -170,7 +170,7 @@ class FirebaseUserRepository implements UserRepository {
   Future<auth.UserCredential> _signInWithGoogleByMobile() async {
     final googleUser = await ref.read(googleSignInProvider).signIn();
     if (googleUser == null) {
-      // TODO(yakitama5): メッセージ(多言語化)はアプリ層ですること
+      // TODO(yakitama5): 意図したExceptionに変更、多言語化対応を行うこと
       throw const ServerNetworkException('Google認証に失敗しました。');
     }
 
@@ -202,7 +202,7 @@ class FirebaseUserRepository implements UserRepository {
     // 他の連携アカウントが存在するか否か
     final linkedMultiProvider = user != null && user.providerData.length >= 2;
     if (!linkedProvider || !linkedMultiProvider) {
-      // TODO(yakitama5): 後から
+      // TODO(yakitama5): 意図したExceptionに変更
       throw const ServerNetworkException('Test');
     }
 
