@@ -5,8 +5,8 @@ const settingShellBranch = TypedStatefulShellBranch<SettingShellBranch>(
     TypedGoRoute<SettingPageRoute>(
       path: SettingPageRoute.path,
       routes: [
-        TypedGoRoute<LicensePageRoute>(
-          path: LicensePageRoute.path,
+        TypedGoRoute<SettingsAccountPageRoute>(
+          path: SettingsAccountPageRoute.path,
         ),
         TypedGoRoute<SettingsUiStylePageRoute>(
           path: SettingsUiStylePageRoute.path,
@@ -16,6 +16,9 @@ const settingShellBranch = TypedStatefulShellBranch<SettingShellBranch>(
         ),
         TypedGoRoute<SettingsThemeModePageRoute>(
           path: SettingsThemeModePageRoute.path,
+        ),
+        TypedGoRoute<LicensePageRoute>(
+          path: LicensePageRoute.path,
         ),
       ],
     ),
@@ -45,6 +48,11 @@ final class _SettingsPageNavigatorImpl implements SettingsPageNavigator {
   @override
   void goUiStylePage(BuildContext context) =>
       const SettingsUiStylePageRoute().go(context);
+
+  @override
+  void goAccountPage(BuildContext context) {
+    const SettingsAccountPageRoute().go(context);
+  }
 }
 
 class SettingPageRoute extends GoRouteData {
@@ -76,6 +84,16 @@ class LicensePageRoute extends GoRouteData {
       applicationIcon: CommonAssets.yumemiLogo.image(height: 100, width: 100),
     );
   }
+}
+
+class SettingsAccountPageRoute extends GoRouteData {
+  const SettingsAccountPageRoute();
+
+  static const path = 'account';
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const SettingsAccountPage();
 }
 
 class SettingsUiStylePageRoute extends GoRouteData {

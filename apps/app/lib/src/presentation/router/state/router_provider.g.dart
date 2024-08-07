@@ -55,8 +55,8 @@ RouteBase get $mainPageShellRoute => StatefulShellRouteData.$route(
               factory: $SettingPageRouteExtension._fromState,
               routes: [
                 GoRouteData.$route(
-                  path: 'license',
-                  factory: $LicensePageRouteExtension._fromState,
+                  path: 'account',
+                  factory: $SettingsAccountPageRouteExtension._fromState,
                 ),
                 GoRouteData.$route(
                   path: 'ui_style',
@@ -69,6 +69,10 @@ RouteBase get $mainPageShellRoute => StatefulShellRouteData.$route(
                 GoRouteData.$route(
                   path: 'theme_mode',
                   factory: $SettingsThemeModePageRouteExtension._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'license',
+                  factory: $LicensePageRouteExtension._fromState,
                 ),
               ],
             ),
@@ -196,12 +200,12 @@ extension $SettingPageRouteExtension on SettingPageRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $LicensePageRouteExtension on LicensePageRoute {
-  static LicensePageRoute _fromState(GoRouterState state) =>
-      const LicensePageRoute();
+extension $SettingsAccountPageRouteExtension on SettingsAccountPageRoute {
+  static SettingsAccountPageRoute _fromState(GoRouterState state) =>
+      const SettingsAccountPageRoute();
 
   String get location => GoRouteData.$location(
-        '/setting/license',
+        '/setting/account',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -256,6 +260,24 @@ extension $SettingsThemeModePageRouteExtension on SettingsThemeModePageRoute {
 
   String get location => GoRouteData.$location(
         '/setting/theme_mode',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $LicensePageRouteExtension on LicensePageRoute {
+  static LicensePageRoute _fromState(GoRouterState state) =>
+      const LicensePageRoute();
+
+  String get location => GoRouteData.$location(
+        '/setting/license',
       );
 
   void go(BuildContext context) => context.go(location);

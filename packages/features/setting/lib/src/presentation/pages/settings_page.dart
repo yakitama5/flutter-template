@@ -11,6 +11,7 @@ import '../components/themed_settings_list.dart';
 import '../router/navigator_provider.dart';
 
 abstract interface class SettingsPageNavigator {
+  void goAccountPage(BuildContext context);
   void goUiStylePage(BuildContext context);
   void goColorStylePage(BuildContext context);
   void goThemeModePage(BuildContext context);
@@ -47,7 +48,7 @@ class SettingsPage extends HookConsumerWidget {
                 leading: const Icon(Icons.link),
                 trailing: trailing,
                 title: Text(i18n.settings.settingsPage.account.account),
-                onPressed: _onAccount,
+                onPressed: navigator.goAccountPage,
               ),
             ],
           ),
@@ -127,8 +128,6 @@ class SettingsPage extends HookConsumerWidget {
       ),
     );
   }
-
-  void _onAccount(BuildContext context) {}
 
   void _onHowToUse(BuildContext context) {}
 

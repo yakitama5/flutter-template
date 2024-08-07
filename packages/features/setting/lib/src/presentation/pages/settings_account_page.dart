@@ -88,7 +88,8 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
     //   context,
     //   action: () {
     //     final usecase = ref.read(userUsecaseProvider);
-    //     return value ? usecase.signInWithGoogle() : usecase.unlinkWithGoogle();
+    //     return value ?
+    //          usecase.signInWithGoogle() : usecase.unlinkWithGoogle();
     //   },
     // );
   }
