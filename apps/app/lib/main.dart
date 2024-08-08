@@ -78,7 +78,7 @@ class MainApp extends ConsumerWidget {
 
     ref
       // エラー検知
-      // HACK(yakitama5): アプリ全体の例外管理を検討(mixinかriverpod)
+      // TODO(yakitama5): アプリ全体の例外管理に応じて変更検討(mixinかriverpod)
       ..listen<AppException?>(
         appExceptionNotifierProvider,
         (_, appException) {
