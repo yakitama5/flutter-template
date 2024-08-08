@@ -7,11 +7,15 @@ environment:
   flutter: ^3.22.1
 
 dependencies:
-  collection: 
+  collection:
+  cores_core:
+    path: ../core 
   flutter:
     sdk: flutter
+  nested: 
 
 dev_dependencies:
+  custom_lint: 
   flutter_test:
     sdk: flutter
   pedantic_mono: 
