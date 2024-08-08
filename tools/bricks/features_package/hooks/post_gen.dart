@@ -20,7 +20,11 @@ void run(HookContext context) {
   );
 
   if (useRiverpod || useFreezed) {
-    Process.runSync('melos', ['bs']);
+    Process.runSync(
+      'melos',
+      ['bs'],
+      runInShell: true,
+    );
   }
 }
 
@@ -45,6 +49,7 @@ void _addDependency({
         'dev:custom_lint'
       ],
       workingDirectory: 'packages/features/$featureName',
+      runInShell: true,
     );
   }
 
@@ -62,6 +67,7 @@ void _addDependency({
         'dev:json_serializable',
       ],
       workingDirectory: 'packages/features/$featureName',
+      runInShell: true,
     );
   }
 }

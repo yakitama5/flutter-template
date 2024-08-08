@@ -15,6 +15,7 @@ void run(HookContext context) {
     context.vars['hooks'] ? '--hooks' : '',
     '--desc',
     context.vars['description'],
+    runInShell: true,
   ]);
 
   // add bricks
@@ -23,10 +24,12 @@ void run(HookContext context) {
     brickName,
     '--path',
     bricksDir + brickName,
+    runInShell: true,
   ]);
 
   // remove LICENSE
   Process.runSync('rm', [
     '$bricksDir$brickName/LICENSE',
+    runInShell: true,
   ]);
 }

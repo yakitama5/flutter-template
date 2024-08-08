@@ -11,10 +11,12 @@ void run(HookContext context) {
   Process.runSync(
     'melos',
     ['bs'],
+    runInShell: true,
   );
   Process.runSync(
     'melos',
     ['run', 'regenerate_by_using_gen_slang'],
+    runInShell: true,
   );
 }
 
@@ -35,6 +37,7 @@ void _addFeatureDependency({
       '../../packages/features/$featureName',
     ],
     workingDirectory: 'apps/app',
+    runInShell: true,
   );
 }
 
@@ -71,5 +74,9 @@ void _addi18n({
 
   // フォーマット
   // importのソート未対応
-  Process.runSync('dart', ['format', filePath]);
+  Process.runSync(
+    'dart',
+    ['format', filePath],
+    runInShell: true,
+  );
 }

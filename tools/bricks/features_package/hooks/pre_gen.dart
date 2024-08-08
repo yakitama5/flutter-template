@@ -12,10 +12,16 @@ void run(HookContext context) {
   }
 
   // パッケージがまだ存在しない場合は、features_package_core brickでパッケージを作成する
-  Process.runSync('mason', [
-    'make',
-    'features_package_core',
-    '--feature_name',
-    featureName,
-  ]);
+  Directory currentDir = Directory.current;
+  context.logger.info('currentDir: ${currentDir}');
+  Process.runSync(
+    'mason',
+    [
+      'make',
+      'features_package_core',
+      '--feature_name',
+      featureName,
+    ],
+    runInShell: true,
+  );
 }
