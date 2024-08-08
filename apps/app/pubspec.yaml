@@ -24,6 +24,8 @@ dependencies:
     path: ../../packages/features/app_update
   features_maintenance:
     path: ../../packages/features/maintenance
+  features_sample_list:
+    path: ../../packages/features/sample_list
   features_setting:
     path: ../../packages/features/setting
   features_user:

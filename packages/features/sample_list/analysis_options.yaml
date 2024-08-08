@@ -4,8 +4,8 @@ linter:
   rules:
 
 analyzer:
-  # https://riverpod.dev/docs/introduction/getting_started#enabling-riverpod_lintcustom_lint
   plugins:
+    # https://riverpod.dev/docs/introduction/getting_started#enabling-riverpod_lintcustom_lint
     - custom_lint
   exclude:
     - "**/*.g.dart"
@@ -15,6 +15,7 @@ analyzer:
     - "*/.github/workflows/flutter_*.yaml"
     - "*/functions/*.js"
   errors:
+    # https://pub.dev/packages/freezed#install
     invalid_annotation_target: ignore
     todo: ignore
     hack: ignore

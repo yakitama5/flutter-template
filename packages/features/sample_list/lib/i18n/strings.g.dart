@@ -4,7 +4,7 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 6 (3 per locale)
+/// Strings: 2 (1 per locale)
 ///
 /// Built on 2024-08-08 at 07:42 UTC
 
@@ -148,49 +148,27 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	late final _StringsErrorEn error = _StringsErrorEn._(_root);
+	late final _StringsSampleListEn sampleList = _StringsSampleListEn._(_root);
 }
 
-// Path: error
-class _StringsErrorEn {
-	_StringsErrorEn._(this._root);
+// Path: sampleList
+class _StringsSampleListEn {
+	_StringsSampleListEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _StringsErrorErrorPageEn errorPage = _StringsErrorErrorPageEn._(_root);
-	late final _StringsErrorMessageEn message = _StringsErrorMessageEn._(_root);
+	late final _StringsSampleListSampleListPageEn sampleListPage = _StringsSampleListSampleListPageEn._(_root);
 }
 
-// Path: error.errorPage
-class _StringsErrorErrorPageEn {
-	_StringsErrorErrorPageEn._(this._root);
+// Path: sampleList.sampleListPage
+class _StringsSampleListSampleListPageEn {
+	_StringsSampleListSampleListPageEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get title => 'Error';
-}
-
-// Path: error.message
-class _StringsErrorMessageEn {
-	_StringsErrorMessageEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	late final _StringsErrorMessageImpossibleOperationEn impossibleOperation = _StringsErrorMessageImpossibleOperationEn._(_root);
-}
-
-// Path: error.message.impossibleOperation
-class _StringsErrorMessageImpossibleOperationEn {
-	_StringsErrorMessageImpossibleOperationEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get notAuth => 'Not auth';
-	String get notLinked => 'Not linked';
+	String get title => 'Title';
 }
 
 // Path: <root>
@@ -219,49 +197,27 @@ class _StringsJa extends Translations {
 	@override late final _StringsJa _root = this; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsErrorJa error = _StringsErrorJa._(_root);
+	@override late final _StringsSampleListJa sampleList = _StringsSampleListJa._(_root);
 }
 
-// Path: error
-class _StringsErrorJa extends _StringsErrorEn {
-	_StringsErrorJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: sampleList
+class _StringsSampleListJa extends _StringsSampleListEn {
+	_StringsSampleListJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsErrorErrorPageJa errorPage = _StringsErrorErrorPageJa._(_root);
-	@override late final _StringsErrorMessageJa message = _StringsErrorMessageJa._(_root);
+	@override late final _StringsSampleListSampleListPageJa sampleListPage = _StringsSampleListSampleListPageJa._(_root);
 }
 
-// Path: error.errorPage
-class _StringsErrorErrorPageJa extends _StringsErrorErrorPageEn {
-	_StringsErrorErrorPageJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: sampleList.sampleListPage
+class _StringsSampleListSampleListPageJa extends _StringsSampleListSampleListPageEn {
+	_StringsSampleListSampleListPageJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'エラー';
-}
-
-// Path: error.message
-class _StringsErrorMessageJa extends _StringsErrorMessageEn {
-	_StringsErrorMessageJa._(_StringsJa root) : this._root = root, super._(root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override late final _StringsErrorMessageImpossibleOperationJa impossibleOperation = _StringsErrorMessageImpossibleOperationJa._(_root);
-}
-
-// Path: error.message.impossibleOperation
-class _StringsErrorMessageImpossibleOperationJa extends _StringsErrorMessageImpossibleOperationEn {
-	_StringsErrorMessageImpossibleOperationJa._(_StringsJa root) : this._root = root, super._(root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get notAuth => '認証済でないため操作が許可されていません';
-	@override String get notLinked => 'アカウントが連携されていないため解除出来ません';
+	@override String get title => 'タイトル';
 }
 
 /// Flat map(s) containing all translations.
@@ -270,9 +226,7 @@ class _StringsErrorMessageImpossibleOperationJa extends _StringsErrorMessageImpo
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'error.errorPage.title': return 'Error';
-			case 'error.message.impossibleOperation.notAuth': return 'Not auth';
-			case 'error.message.impossibleOperation.notLinked': return 'Not linked';
+			case 'sampleList.sampleListPage.title': return 'Title';
 			default: return null;
 		}
 	}
@@ -281,9 +235,7 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'error.errorPage.title': return 'エラー';
-			case 'error.message.impossibleOperation.notAuth': return '認証済でないため操作が許可されていません';
-			case 'error.message.impossibleOperation.notLinked': return 'アカウントが連携されていないため解除出来ません';
+			case 'sampleList.sampleListPage.title': return 'タイトル';
 			default: return null;
 		}
 	}

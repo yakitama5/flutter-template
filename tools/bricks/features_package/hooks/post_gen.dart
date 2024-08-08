@@ -106,7 +106,6 @@ analyzer:
     - "*/.github/workflows/flutter_*.yaml"
     - "*/functions/*.js"
   errors:
-    invalid_annotation_target: ignore
     todo: ignore
     hack: ignore
 ''');

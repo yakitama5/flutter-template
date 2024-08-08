@@ -14,6 +14,7 @@ import 'package:features_app_update/i18n.dart';
 import 'package:features_app_update/init.dart';
 import 'package:features_maintenance/i18n.dart';
 import 'package:features_maintenance/init.dart';
+import 'package:features_sample_list/i18n.dart';
 import 'package:features_setting/i18n.dart';
 import 'package:features_user/i18n.dart';
 import 'package:features_user/init.dart';
@@ -54,6 +55,8 @@ void main() async {
         children: const [
           // Slangの伝播
           _AppTranslationProvider(),
+          SampleListTranslationProvider(),
+
           AppUpdateTranslationProvider(),
           MaintenanceTranslationProvider(),
           UserTranslationProvider(),
