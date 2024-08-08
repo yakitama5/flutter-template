@@ -104,8 +104,8 @@ class FirebaseUserRepository implements UserRepository {
 
   @override
   Future<AuthStatus> signInWithGoogle() async {
-    // TODO(yakitama5): Web専用のやり方をサポートする
-    final credential = await _signInWithGoogleByMobile();
+    final credential =
+        await (kIsWeb ? _signInWithGoogleByWeb() : _signInWithGoogleByMobile());
     return credential.user!.authStatus;
   }
 
@@ -181,6 +181,21 @@ class FirebaseUserRepository implements UserRepository {
       return current.linkWithCredential(credential);
     } else {
       return ref.read(firebaseAuthProvider).signInWithCredential(credential);
+    }
+  }
+
+  /// Web用のGoogleサインイン
+  Future<auth.UserCredential> _signInWithGoogleByWeb() async {
+    // 必要な権限に応じて設定
+    // Notes: https://developers.google.com/identity/protocols/oauth2/scopes?hl=ja#people
+    final googleProvider = auth.GoogleAuthProvider();
+
+    // 現在のユーザー情報があれば連携する
+    final current = _currentUser;
+    if (current != null) {
+      return current.linkWithPopup(googleProvider);
+    } else {
+      return ref.read(firebaseAuthProvider).signInWithPopup(googleProvider);
     }
   }
 }
