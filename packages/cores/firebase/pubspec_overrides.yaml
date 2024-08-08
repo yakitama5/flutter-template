@@ -1,4 +1,6 @@
-# melos_managed_dependency_overrides: cores_core
+# melos_managed_dependency_overrides: cores_core,cores_error
 dependency_overrides:
   cores_core:
     path: ..\\core
+  cores_error:
+    path: ..\\error

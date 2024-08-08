@@ -22,10 +22,6 @@ dependencies:
     path: ../../packages/cores/shared_preferences
   features_app_update:
     path: ../../packages/features/app_update
-  features_debug_mode:
-    path: ../../packages/features/debug_mode
-  features_github_repository:
-    path: ../../packages/features/github_repository
   features_maintenance:
     path: ../../packages/features/maintenance
   features_setting:
@@ -39,6 +35,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   freezed_annotation: any
+  gap: any
   go_router: ^13.2.1
   hooks_riverpod: ^3.0.0-dev.3
   intl: any

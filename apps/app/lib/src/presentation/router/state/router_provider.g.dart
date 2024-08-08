@@ -35,20 +35,6 @@ RouteBase get $baseShellSroute => ShellRouteData.$route(
                   factory: $HomePageRouteExtension._fromState,
                   routes: [
                     GoRouteData.$route(
-                      path: 'debug',
-                      parentNavigatorKey: DebugPageRoute.$parentNavigatorKey,
-                      factory: $DebugPageRouteExtension._fromState,
-                      routes: [
-                        GoRouteData.$route(
-                          path: 'navigation_debug',
-                          parentNavigatorKey:
-                              NavigationDebugPageRoute.$parentNavigatorKey,
-                          factory:
-                              $NavigationDebugPageRouteExtension._fromState,
-                        ),
-                      ],
-                    ),
-                    GoRouteData.$route(
                       path: 'web',
                       parentNavigatorKey: WebPageRoute.$parentNavigatorKey,
                       factory: $WebPageRouteExtension._fromState,
@@ -140,42 +126,6 @@ extension $HomePageRouteExtension on HomePageRoute {
 
   String get location => GoRouteData.$location(
         '/home',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-extension $DebugPageRouteExtension on DebugPageRoute {
-  static DebugPageRoute _fromState(GoRouterState state) =>
-      const DebugPageRoute();
-
-  String get location => GoRouteData.$location(
-        '/home/debug',
-      );
-
-  void go(BuildContext context) => context.go(location);
-
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  void replace(BuildContext context) => context.replace(location);
-}
-
-extension $NavigationDebugPageRouteExtension on NavigationDebugPageRoute {
-  static NavigationDebugPageRoute _fromState(GoRouterState state) =>
-      const NavigationDebugPageRoute();
-
-  String get location => GoRouteData.$location(
-        '/home/debug/navigation_debug',
       );
 
   void go(BuildContext context) => context.go(location);

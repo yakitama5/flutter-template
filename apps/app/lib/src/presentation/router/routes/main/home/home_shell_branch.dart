@@ -7,14 +7,6 @@ const homeShellBranch = TypedStatefulShellBranch<HomeShellBranch>(
     TypedGoRoute<HomePageRoute>(
       path: HomePageRoute.path,
       routes: [
-        TypedGoRoute<DebugPageRoute>(
-          path: DebugPageRoute.path,
-          routes: [
-            TypedGoRoute<NavigationDebugPageRoute>(
-              path: NavigationDebugPageRoute.path,
-            ),
-          ],
-        ),
         TypedGoRoute<WebPageRoute>(
           path: WebPageRoute.path,
         ),
@@ -29,28 +21,6 @@ class HomeShellBranch extends StatefulShellBranchData {
 
 final class _HomePageNavigatorImpl implements HomePageNavigator {
   const _HomePageNavigatorImpl();
-
-  @override
-  void goDebugPage(BuildContext context) {
-    const DebugPageRoute().go(context);
-  }
-
-  @override
-  void goWebPage(BuildContext context) {
-    const WebPageRoute().go(context);
-  }
-}
-
-final class _GithubRepositoryListPageNavigatorImpl
-    implements GitHubRepositoryListPageNavigator {
-  const _GithubRepositoryListPageNavigatorImpl();
-
-  @override
-  void goGitHubRepositoryDetailPage(
-    BuildContext context,
-    String repositoryName,
-    String? description,
-  ) {}
 }
 
 class HomePageRoute extends GoRouteData {
@@ -72,29 +42,8 @@ class HomePageRoute extends GoRouteData {
         overrides: [
           homePageNavigatorProvider
               .overrideWithValue(const _HomePageNavigatorImpl()),
-          gitHubRepositoryListPageNavigatorProvider.overrideWithValue(
-            const _GithubRepositoryListPageNavigatorImpl(),
-          ),
         ],
         child: const HomePage(),
-      ),
-    );
-  }
-}
-
-class GitHubRepositoryDetailPageRoute extends GoRouteData {
-  const GitHubRepositoryDetailPageRoute(this.repositoryName, this.description);
-
-  final String repositoryName;
-  final String? description;
-
-  static const path = 'github_repository_detail';
-
-  @override
-  Widget build(BuildContext context, GoRouterState state) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Sample'),
       ),
     );
   }
