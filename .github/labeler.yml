@@ -19,6 +19,10 @@ labels:
     files:
       - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\designsystem/.+
 
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\error"
+    files:
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\error/.+
+
   - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\firebase"
     files:
       - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\firebase/.+

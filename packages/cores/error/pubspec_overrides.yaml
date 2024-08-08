@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: cores_core,cores_firebase
+dependency_overrides:
+  cores_core:
+    path: ..\\core
+  cores_firebase:
+    path: ..\\firebase

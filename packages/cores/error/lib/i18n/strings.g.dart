@@ -148,27 +148,27 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	late final _StringsMaintenanceEn maintenance = _StringsMaintenanceEn._(_root);
+	late final _StringsErrorEn error = _StringsErrorEn._(_root);
 }
 
-// Path: maintenance
-class _StringsMaintenanceEn {
-	_StringsMaintenanceEn._(this._root);
+// Path: error
+class _StringsErrorEn {
+	_StringsErrorEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _StringsMaintenanceMaintenancePageEn maintenancePage = _StringsMaintenanceMaintenancePageEn._(_root);
+	late final _StringsErrorErrorPageEn errorPage = _StringsErrorErrorPageEn._(_root);
 }
 
-// Path: maintenance.maintenancePage
-class _StringsMaintenanceMaintenancePageEn {
-	_StringsMaintenanceMaintenancePageEn._(this._root);
+// Path: error.errorPage
+class _StringsErrorErrorPageEn {
+	_StringsErrorErrorPageEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get title => 'Title';
+	String get title => 'Error';
 }
 
 // Path: <root>
@@ -197,27 +197,27 @@ class _StringsJa extends Translations {
 	@override late final _StringsJa _root = this; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsMaintenanceJa maintenance = _StringsMaintenanceJa._(_root);
+	@override late final _StringsErrorJa error = _StringsErrorJa._(_root);
 }
 
-// Path: maintenance
-class _StringsMaintenanceJa extends _StringsMaintenanceEn {
-	_StringsMaintenanceJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: error
+class _StringsErrorJa extends _StringsErrorEn {
+	_StringsErrorJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsMaintenanceMaintenancePageJa maintenancePage = _StringsMaintenanceMaintenancePageJa._(_root);
+	@override late final _StringsErrorErrorPageJa errorPage = _StringsErrorErrorPageJa._(_root);
 }
 
-// Path: maintenance.maintenancePage
-class _StringsMaintenanceMaintenancePageJa extends _StringsMaintenanceMaintenancePageEn {
-	_StringsMaintenanceMaintenancePageJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: error.errorPage
+class _StringsErrorErrorPageJa extends _StringsErrorErrorPageEn {
+	_StringsErrorErrorPageJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'タイトル';
+	@override String get title => 'エラー';
 }
 
 /// Flat map(s) containing all translations.
@@ -226,7 +226,7 @@ class _StringsMaintenanceMaintenancePageJa extends _StringsMaintenanceMaintenanc
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'maintenance.maintenancePage.title': return 'Title';
+			case 'error.errorPage.title': return 'Error';
 			default: return null;
 		}
 	}
@@ -235,7 +235,7 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'maintenance.maintenancePage.title': return 'タイトル';
+			case 'error.errorPage.title': return 'エラー';
 			default: return null;
 		}
 	}

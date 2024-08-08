@@ -52,6 +52,10 @@
   color: 2a260a
   description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\designsystem package
 
+- name: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\error"
+  color: df1756
+  description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\error package
+
 - name: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\cores\\firebase"
   color: 2ed59c
   description: c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\cores\firebase package
