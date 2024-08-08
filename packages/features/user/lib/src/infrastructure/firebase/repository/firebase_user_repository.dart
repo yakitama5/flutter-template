@@ -1,4 +1,3 @@
-import 'package:cores_error/application.dart';
 import 'package:cores_firebase/infrastructure.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/foundation.dart';
@@ -116,13 +115,13 @@ class FirebaseUserRepository implements UserRepository {
   }
 
   @override
-  Future<void> unlinkWithApple() {
-    return _unlinkWithProviderId(auth.AppleAuthProvider.PROVIDER_ID);
+  Future<void> unlinkWithApple() async {
+    await _currentUser?.unlink(auth.AppleAuthProvider.PROVIDER_ID);
   }
 
   @override
-  Future<void> unlinkWithGoogle() {
-    return _unlinkWithProviderId(auth.GoogleAuthProvider.PROVIDER_ID);
+  Future<void> unlinkWithGoogle() async {
+    await _currentUser?.unlink(auth.GoogleAuthProvider.PROVIDER_ID);
   }
 
   /// 認証状態に関するSignUp処理
@@ -183,20 +182,5 @@ class FirebaseUserRepository implements UserRepository {
     } else {
       return ref.read(firebaseAuthProvider).signInWithCredential(credential);
     }
-  }
-
-  /// 連携アカウントの解除
-  Future<auth.User?> _unlinkWithProviderId(String providerId) async {
-    // 認証済か否か
-    final linkedProvider = _currentUser?.providerData
-            .where((u) => u.providerId == providerId)
-            .isNotEmpty ??
-        false;
-    if (!linkedProvider) {
-      // TODO(yakitama5): メッセージを後から設定
-      throw const ImpossibleOperationException('Test');
-    }
-
-    return _currentUser?.unlink(providerId);
   }
 }

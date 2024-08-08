@@ -1,6 +1,7 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/presentation.dart';
+import 'package:cores_error/presentation.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:features_user/application.dart';
 import 'package:flutter/material.dart';
@@ -71,9 +72,7 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
           ],
         ),
       ),
-      // TODO(yakitama5): Errorパッケージを作成してから
-      error: (_, __) => const Center(child: Text('Error')),
-      // error: ErrorView.new,
+      error: ErrorView.new,
       loading: CircularProgressIndicator.new,
     );
   }

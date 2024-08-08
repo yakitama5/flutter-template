@@ -3,7 +3,7 @@ import 'package:nested/nested.dart';
 
 import 'i18n/strings.g.dart';
 
-Translations get designsystemI18n => i18n;
+Translations get errorI18n => i18n;
 
 class ErrorTranslationProvider extends SingleChildStatelessWidget {
   const ErrorTranslationProvider({super.key, super.child});

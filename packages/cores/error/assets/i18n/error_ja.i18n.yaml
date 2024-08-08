@@ -1,2 +1,6 @@
 errorPage:
   title: エラー
+message:
+  impossibleOperation:
+    notAuth: 認証済でないため操作が許可されていません
+    notLinked: アカウントが連携されていないため解除出来ません

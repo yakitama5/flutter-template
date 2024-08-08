@@ -1,2 +1,6 @@
 errorPage:
   title: Error
+message:
+  impossibleOperation:
+    notAuth: Not auth
+    notLinked: Not linked

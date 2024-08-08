@@ -2,12 +2,13 @@ import 'dart:async';
 
 import 'package:cores_core/application.dart';
 import 'package:cores_error/application.dart';
+import 'package:cores_error/i18n.dart';
+import 'package:features_user/application.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../domain/entity/user.dart';
 import '../../domain/interface/user_repository.dart';
-import '../state/auth_user_provider.dart';
 
 part 'user_usecase.g.dart';
 
@@ -55,8 +56,9 @@ class UserUsecase with RunUsecaseMixin {
           // ユーザー情報 および アカウントの削除
           final userId = await _authUserId;
           if (userId == null) {
-            // TODO(yakitama5): 正しいExceptionに変更
-            throw const ServerNetworkException('message');
+            throw ImpossibleOperationException(
+              errorI18n.error.message.impossibleOperation.notAuth,
+            );
           }
           await _userRepository.delete(userId: userId);
         },
@@ -65,12 +67,34 @@ class UserUsecase with RunUsecaseMixin {
   /// Googleアカウント連携を解除する
   Future<void> unlinkWithGoogle() => execute(
         ref,
-        action: () => _userRepository.unlinkWithGoogle(),
+        action: () async {
+          // アカウント連携済か否かのチェック
+          final status = await ref.read(authStatusProvider.future);
+          final linked = status?.linkedGoogle ?? false;
+          if (!linked) {
+            throw ImpossibleOperationException(
+              errorI18n.error.message.impossibleOperation.notLinked,
+            );
+          }
+
+          return _userRepository.unlinkWithGoogle();
+        },
       );
 
   /// Appleアカウント連携を解除する
   Future<void> unlinkWithApple() => execute(
         ref,
-        action: () => _userRepository.unlinkWithApple(),
+        action: () async {
+          // アカウント連携済か否かのチェック
+          final status = await ref.read(authStatusProvider.future);
+          final linked = status?.linkedApple ?? false;
+          if (!linked) {
+            throw ImpossibleOperationException(
+              errorI18n.error.message.impossibleOperation.notLinked,
+            );
+          }
+
+          return _userRepository.unlinkWithApple();
+        },
       );
 }
