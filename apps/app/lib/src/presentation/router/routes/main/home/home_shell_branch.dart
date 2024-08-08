@@ -10,6 +10,9 @@ const homeShellBranch = TypedStatefulShellBranch<HomeShellBranch>(
         TypedGoRoute<WebPageRoute>(
           path: WebPageRoute.path,
         ),
+        TypedGoRoute<SampleListPageRoute>(
+          path: SampleListPageRoute.path,
+        ),
       ],
     ),
   ],
@@ -21,6 +24,11 @@ class HomeShellBranch extends StatefulShellBranchData {
 
 final class _HomePageNavigatorImpl implements HomePageNavigator {
   const _HomePageNavigatorImpl();
+
+  @override
+  void goSampleListPage(BuildContext context) {
+    const SampleListPageRoute().go(context);
+  }
 }
 
 class HomePageRoute extends GoRouteData {
@@ -47,4 +55,14 @@ class HomePageRoute extends GoRouteData {
       ),
     );
   }
+}
+
+class SampleListPageRoute extends GoRouteData {
+  const SampleListPageRoute();
+
+  static const path = 'sample_list';
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const SampleListPage();
 }

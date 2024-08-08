@@ -8,6 +8,7 @@ environment:
   flutter: ^3.22.1
 
 dependencies:
+  clock: 
   collection:
   cores_core:
     path: ../../cores/core
@@ -15,12 +16,15 @@ dependencies:
     path: ../../cores/data
   cores_designsystem:
     path: ../../cores/designsystem
+  cores_error:
+    path: ../../cores/error
   flutter:
     sdk: flutter
   flutter_hooks: any 
   flutter_localizations:
     sdk: flutter
   freezed_annotation: any 
+  gap: 
   hooks_riverpod: ^3.0.0-dev.3
   intl: 
   json_annotation: any

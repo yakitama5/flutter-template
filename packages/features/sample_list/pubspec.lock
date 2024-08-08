@@ -154,7 +154,7 @@ packages:
     source: hosted
     version: "0.4.1"
   clock:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: clock
       sha256: cb6d7f03e1de671e34607e909a7213e31d7752be4fb66a86d29fe1eb14bfb5cf
@@ -207,7 +207,7 @@ packages:
     source: path
     version: "0.0.1"
   cores_error:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../../cores/error"
       relative: true
@@ -409,7 +409,7 @@ packages:
     source: hosted
     version: "4.0.0"
   gap:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: gap
       sha256: f19387d4e32f849394758b91377f9153a1b41d79513ef7668c088c77dbc6955d

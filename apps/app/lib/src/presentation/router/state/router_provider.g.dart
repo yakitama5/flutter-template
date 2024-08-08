@@ -39,6 +39,10 @@ RouteBase get $baseShellSroute => ShellRouteData.$route(
                       parentNavigatorKey: WebPageRoute.$parentNavigatorKey,
                       factory: $WebPageRouteExtension._fromState,
                     ),
+                    GoRouteData.$route(
+                      path: 'sample_list',
+                      factory: $SampleListPageRouteExtension._fromState,
+                    ),
                   ],
                 ),
               ],
@@ -143,6 +147,24 @@ extension $WebPageRouteExtension on WebPageRoute {
 
   String get location => GoRouteData.$location(
         '/home/web',
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+extension $SampleListPageRouteExtension on SampleListPageRoute {
+  static SampleListPageRoute _fromState(GoRouterState state) =>
+      const SampleListPageRoute();
+
+  String get location => GoRouteData.$location(
+        '/home/sample_list',
       );
 
   void go(BuildContext context) => context.go(location);

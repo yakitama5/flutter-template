@@ -5,7 +5,10 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../router/navigator/navigator_provider.dart';
 
-abstract interface class HomePageNavigator {}
+// ignore: one_member_abstracts
+abstract interface class HomePageNavigator {
+  void goSampleListPage(BuildContext context);
+}
 
 class HomePage extends ConsumerWidget {
   const HomePage({
@@ -16,7 +19,13 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final navigator = ref.watch(homePageNavigatorProvider);
     // TODO(yakitama5): 機能を作って呼び出す
-    final contents = <Widget>[];
+    final contents = <Widget>[
+      FilledButton.icon(
+        icon: const Icon(Icons.list),
+        onPressed: () => navigator.goSampleListPage(context),
+        label: const Text('SampleList'),
+      ),
+    ];
 
     return Scaffold(
       appBar: AppBar(
