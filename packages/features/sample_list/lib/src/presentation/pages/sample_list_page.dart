@@ -66,10 +66,9 @@ class _SliverBody extends HookConsumerWidget {
           return items.when(
             data: (itemsData) {
               final item = itemsData[index % pageSize];
-              ListTile(
+              return ListTile(
                 title: Text(item.name),
               );
-              return null;
             },
             error: ErrorView.new,
             // TODO(yakitama5): ListTile形式のShimmerを作成

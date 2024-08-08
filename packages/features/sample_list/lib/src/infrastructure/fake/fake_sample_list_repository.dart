@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:clock/clock.dart';
 import 'package:collection/collection.dart';
 import 'package:cores_core/domain.dart';
@@ -9,7 +11,7 @@ import '../../domain/entity/sample_list_fetch_result.dart';
 import '../../domain/interface/sample_list_repository.dart';
 
 const _pageSize = 10;
-const _totalLength = 23;
+const _totalLength = 500;
 
 class FakeSampleListRepository extends SampleListRepository {
   FakeSampleListRepository(this.ref);
@@ -39,7 +41,9 @@ class FakeSampleListRepository extends SampleListRepository {
     int page = 1,
     required SampleListSortKey sortKey,
     required SortOrder sortOrder,
-  }) {
+  }) async* {
+    await Future<void>.delayed(const Duration(milliseconds: 1000));
+
     final sortItems = items.sortedBy<String>(
       (e) => switch (sortKey) {
         SampleListSortKey.createdAt => e.createdAt.toString(),
@@ -54,12 +58,12 @@ class FakeSampleListRepository extends SampleListRepository {
     };
 
     final start = (page - 1) * _pageSize;
-    final end = start + _pageSize;
+    final end = min(start + _pageSize, items.length);
     final result = SampleListFetchResult(
       items: orderItems.sublist(start, end),
       totalCount: items.length,
     );
 
-    return Stream.value(result);
+    yield* Stream.value(result);
   }
 }
