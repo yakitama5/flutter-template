@@ -37,19 +37,8 @@ class FirebaseUserRepository implements UserRepository {
     // 認証 (すでに認証だけしていたらIDの取得だけ)
     final authUid = await _authSignUp();
 
-    // 新しいドキュメントを取得
-    final userDocRef = ref.read(userDocumentRefProvider(userId: authUid));
-
-    // Firestore用のモデルに変換
-    final userId = userDocRef.id;
-    final user = FirestoreUserModel(
-      id: userId,
-    );
-
-    // 同時に登録
-    await ref.read(firestoreProvider).runTransaction((transaction) async {
-      return transaction.set(userDocRef, user);
-    });
+    // ドキュメントが存在しなければ登録
+    await _createUserDocIfNotExists(authUid);
   }
 
   @override
@@ -98,6 +87,10 @@ class FirebaseUserRepository implements UserRepository {
     final credential =
         await (kIsWeb ? _signInWithAppleByWeb() : _signInWithAppleByMobile());
 
+    // ドキュメントが存在しなければ登録
+    final authUser = credential.user!;
+    await _createUserDocIfNotExists(authUser.uid);
+
     // 変換して返却
     return credential.user!.authStatus;
   }
@@ -106,7 +99,12 @@ class FirebaseUserRepository implements UserRepository {
   Future<AuthStatus> signInWithGoogle() async {
     final credential =
         await (kIsWeb ? _signInWithGoogleByWeb() : _signInWithGoogleByMobile());
-    return credential.user!.authStatus;
+
+    // ドキュメントが存在しなければ登録
+    final authUser = credential.user!;
+    await _createUserDocIfNotExists(authUser.uid);
+
+    return authUser.authStatus;
   }
 
   @override
@@ -197,5 +195,27 @@ class FirebaseUserRepository implements UserRepository {
     } else {
       return ref.read(firebaseAuthProvider).signInWithPopup(googleProvider);
     }
+  }
+
+  Future<void> _createUserDocIfNotExists(String uid) async {
+    // ドキュメントの取得
+    final userDocRef = ref.read(userDocumentRefProvider(userId: uid));
+    final userDoc = await userDocRef.get();
+
+    // 存在すれば認証情報を返却して終了
+    if (userDoc.exists) {
+      return;
+    }
+
+    // Firestore用のモデルに変換
+    final userId = userDocRef.id;
+    final user = FirestoreUserModel(
+      id: userId,
+    );
+
+    // 同時に登録
+    await ref.read(firestoreProvider).runTransaction((transaction) async {
+      return transaction.set(userDocRef, user);
+    });
   }
 }
