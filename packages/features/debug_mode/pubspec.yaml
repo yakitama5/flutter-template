@@ -14,6 +14,8 @@ dependencies:
     path: ../../cores/data
   cores_designsystem:
     path: ../../cores/designsystem
+  cores_error:
+    path: ../../cores/error
   dio: ^5.4.0
   flutter:
     sdk: flutter

@@ -16,6 +16,8 @@ dependencies:
     path: ../../cores/data
   cores_designsystem:
     path: ../../cores/designsystem
+  cores_error:
+    path: ../../cores/error
   cores_firebase:
     path: ../../cores/firebase
   features_setting:

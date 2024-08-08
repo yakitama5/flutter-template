@@ -1,4 +1,4 @@
-import 'package:cores_core/application.dart';
+import 'package:cores_error/application.dart';
 import 'package:cores_firebase/infrastructure.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/foundation.dart';

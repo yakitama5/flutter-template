@@ -262,6 +262,13 @@ packages:
       relative: true
     source: path
     version: "0.0.1"
+  cores_error:
+    dependency: "direct main"
+    description:
+      path: "../../cores/error"
+      relative: true
+    source: path
+    version: "0.0.1"
   cores_firebase:
     dependency: "direct overridden"
     description:

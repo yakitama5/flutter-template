@@ -1,4 +1,4 @@
-import 'package:cores_core/application.dart';
+import 'package:cores_error/application.dart';
 
 import '../components/snack_bar_manager.dart';
 
