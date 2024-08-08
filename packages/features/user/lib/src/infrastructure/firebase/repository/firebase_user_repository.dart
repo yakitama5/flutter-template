@@ -169,15 +169,11 @@ class FirebaseUserRepository implements UserRepository {
   /// Mobile用のGoogleサインイン
   Future<auth.UserCredential> _signInWithGoogleByMobile() async {
     final googleUser = await ref.read(googleSignInProvider).signIn();
-    if (googleUser == null) {
-      // TODO(yakitama5): 意図したExceptionに変更、多言語化対応を行うこと
-      throw const ServerNetworkException('Google認証に失敗しました。');
-    }
 
-    final googleAuth = await googleUser.authentication;
+    final googleAuth = await googleUser?.authentication;
     final credential = auth.GoogleAuthProvider.credential(
-      accessToken: googleAuth.accessToken,
-      idToken: googleAuth.idToken,
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
     );
 
     // 現在のユーザー情報があれば連携する
@@ -191,19 +187,14 @@ class FirebaseUserRepository implements UserRepository {
 
   /// 連携アカウントの解除
   Future<auth.User?> _unlinkWithProviderId(String providerId) async {
-    // 認証されてなければNG
-    final user = _currentUser;
-
     // 認証済か否か
-    final linkedProvider = user?.providerData
+    final linkedProvider = _currentUser?.providerData
             .where((u) => u.providerId == providerId)
             .isNotEmpty ??
         false;
-    // 他の連携アカウントが存在するか否か
-    final linkedMultiProvider = user != null && user.providerData.length >= 2;
-    if (!linkedProvider || !linkedMultiProvider) {
-      // TODO(yakitama5): 意図したExceptionに変更
-      throw const ServerNetworkException('Test');
+    if (!linkedProvider) {
+      // TODO(yakitama5): メッセージを後から設定
+      throw const ImpossibleOperationException('Test');
     }
 
     return _currentUser?.unlink(providerId);

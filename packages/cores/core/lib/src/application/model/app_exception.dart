@@ -4,6 +4,14 @@ sealed class AppException implements Exception {
   final String message;
 }
 
+sealed class BusinessException extends AppException {
+  const BusinessException(super.message);
+}
+
+class ImpossibleOperationException extends BusinessException {
+  const ImpossibleOperationException(super.message);
+}
+
 sealed class NetworkException extends AppException {
   const NetworkException(super.message);
 
