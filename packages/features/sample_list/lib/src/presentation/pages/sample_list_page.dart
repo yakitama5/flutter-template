@@ -72,7 +72,16 @@ class _SliverBody extends HookConsumerWidget {
             },
             error: ErrorView.new,
             // TODO(yakitama5): ListTile形式のShimmerを作成
-            loading: () => const ShimmerWidget.rectangular(height: 10),
+            loading: () => const ListTile(
+              title: ShimmerWidget.rectangular(
+                height: 20,
+                width: 200,
+              ),
+              leading: ShimmerWidget.rectangular(
+                height: 60,
+                width: 100,
+              ),
+            ),
           );
         },
         separatorBuilder: (context, index) => const Gap(8),
