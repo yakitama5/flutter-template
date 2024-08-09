@@ -61,17 +61,22 @@ class _SliverBody extends HookConsumerWidget {
         itemCount: result?.totalCount ?? pageSize,
         itemBuilder: (context, index) {
           final page = index ~/ pageSize + 1;
+          final indexInPage = index % pageSize;
           final items = ref.watch(sampleListProvider(page: page));
 
           return items.when(
             data: (itemsData) {
-              final item = itemsData[index % pageSize];
+              final item = itemsData[indexInPage];
               return ListTile(
                 title: Text(item.name),
               );
             },
             // TODO(yakitama5): ListTile用のErrorViewを共通定義
-            error: ErrorView.new,
+            error: (error, __) => ErrorListTile(
+              indexInPage: indexInPage,
+              isLoading: items.isLoading,
+              error: error.toString(),
+            ),
             // TODO(yakitama5): ListTile形式のShimmerを作成
             loading: () => const ListTile(
               title: ShimmerWidget.rectangular(
