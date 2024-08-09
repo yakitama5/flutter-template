@@ -9,7 +9,7 @@ part of 'sample_item_fetch_result_provider.dart';
 // **************************************************************************
 
 String _$sampleListFetchResultHash() =>
-    r'd592c7aa229c735d6fb8746849b85676cc04cf12';
+    r'4fd67698aa5eea92377ffe62b17982af47253bce';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -37,23 +37,10 @@ class _SystemHash {
 const sampleListFetchResultProvider = SampleListFetchResultFamily();
 
 /// See also [sampleListFetchResult].
-class SampleListFetchResultFamily extends Family {
+class SampleListFetchResultFamily
+    extends Family<AsyncValue<SampleListFetchResult>> {
   /// See also [sampleListFetchResult].
   const SampleListFetchResultFamily();
-
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'sampleListFetchResultProvider';
 
   /// See also [sampleListFetchResult].
   SampleListFetchResultProvider call({
@@ -64,7 +51,6 @@ class SampleListFetchResultFamily extends Family {
     );
   }
 
-  @visibleForOverriding
   @override
   SampleListFetchResultProvider getProviderOverride(
     covariant SampleListFetchResultProvider provider,
@@ -74,29 +60,19 @@ class SampleListFetchResultFamily extends Family {
     );
   }
 
-  /// Enables overriding the behavior of this provider, no matter the parameters.
-  Override overrideWith(
-      Stream<SampleListFetchResult> Function(SampleListFetchResultRef ref)
-          create) {
-    return _$SampleListFetchResultFamilyOverride(this, create);
-  }
-}
-
-class _$SampleListFetchResultFamilyOverride implements FamilyOverride {
-  _$SampleListFetchResultFamilyOverride(this.overriddenFamily, this.create);
-
-  final Stream<SampleListFetchResult> Function(SampleListFetchResultRef ref)
-      create;
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
 
   @override
-  final SampleListFetchResultFamily overriddenFamily;
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
 
   @override
-  SampleListFetchResultProvider getProviderOverride(
-    covariant SampleListFetchResultProvider provider,
-  ) {
-    return provider._copyWith(create);
-  }
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'sampleListFetchResultProvider';
 }
 
 /// See also [sampleListFetchResult].
@@ -123,7 +99,7 @@ class SampleListFetchResultProvider
         );
 
   SampleListFetchResultProvider._internal(
-    super.create, {
+    super._createNotifier, {
     required super.name,
     required super.dependencies,
     required super.allTransitiveDependencies,
@@ -136,7 +112,8 @@ class SampleListFetchResultProvider
 
   @override
   Override overrideWith(
-    Stream<SampleListFetchResult> Function(SampleListFetchResultRef ref) create,
+    Stream<SampleListFetchResult> Function(SampleListFetchResultRef provider)
+        create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -153,29 +130,8 @@ class SampleListFetchResultProvider
   }
 
   @override
-  ({
-    int page,
-  }) get argument {
-    return (page: page,);
-  }
-
-  @override
   AutoDisposeStreamProviderElement<SampleListFetchResult> createElement() {
     return _SampleListFetchResultProviderElement(this);
-  }
-
-  SampleListFetchResultProvider _copyWith(
-    Stream<SampleListFetchResult> Function(SampleListFetchResultRef ref) create,
-  ) {
-    return SampleListFetchResultProvider._internal(
-      (ref) => create(ref as SampleListFetchResultRef),
-      name: name,
-      dependencies: dependencies,
-      allTransitiveDependencies: allTransitiveDependencies,
-      debugGetCreateSourceHash: debugGetCreateSourceHash,
-      from: from,
-      page: page,
-    );
   }
 
   @override
@@ -207,4 +163,4 @@ class _SampleListFetchResultProviderElement
   int get page => (origin as SampleListFetchResultProvider).page;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -36,23 +36,9 @@ class _SystemHash {
 const sampleListProvider = SampleListFamily();
 
 /// See also [sampleList].
-class SampleListFamily extends Family {
+class SampleListFamily extends Family<AsyncValue<List<SampleListEntity>>> {
   /// See also [sampleList].
   const SampleListFamily();
-
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'sampleListProvider';
 
   /// See also [sampleList].
   SampleListProvider call({
@@ -63,7 +49,6 @@ class SampleListFamily extends Family {
     );
   }
 
-  @visibleForOverriding
   @override
   SampleListProvider getProviderOverride(
     covariant SampleListProvider provider,
@@ -73,27 +58,19 @@ class SampleListFamily extends Family {
     );
   }
 
-  /// Enables overriding the behavior of this provider, no matter the parameters.
-  Override overrideWith(
-      FutureOr<List<SampleListEntity>> Function(SampleListRef ref) create) {
-    return _$SampleListFamilyOverride(this, create);
-  }
-}
-
-class _$SampleListFamilyOverride implements FamilyOverride {
-  _$SampleListFamilyOverride(this.overriddenFamily, this.create);
-
-  final FutureOr<List<SampleListEntity>> Function(SampleListRef ref) create;
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
 
   @override
-  final SampleListFamily overriddenFamily;
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
 
   @override
-  SampleListProvider getProviderOverride(
-    covariant SampleListProvider provider,
-  ) {
-    return provider._copyWith(create);
-  }
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'sampleListProvider';
 }
 
 /// See also [sampleList].
@@ -120,7 +97,7 @@ class SampleListProvider
         );
 
   SampleListProvider._internal(
-    super.create, {
+    super._createNotifier, {
     required super.name,
     required super.dependencies,
     required super.allTransitiveDependencies,
@@ -133,7 +110,7 @@ class SampleListProvider
 
   @override
   Override overrideWith(
-    FutureOr<List<SampleListEntity>> Function(SampleListRef ref) create,
+    FutureOr<List<SampleListEntity>> Function(SampleListRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -150,29 +127,8 @@ class SampleListProvider
   }
 
   @override
-  ({
-    int page,
-  }) get argument {
-    return (page: page,);
-  }
-
-  @override
   AutoDisposeFutureProviderElement<List<SampleListEntity>> createElement() {
     return _SampleListProviderElement(this);
-  }
-
-  SampleListProvider _copyWith(
-    FutureOr<List<SampleListEntity>> Function(SampleListRef ref) create,
-  ) {
-    return SampleListProvider._internal(
-      (ref) => create(ref as SampleListRef),
-      name: name,
-      dependencies: dependencies,
-      allTransitiveDependencies: allTransitiveDependencies,
-      debugGetCreateSourceHash: debugGetCreateSourceHash,
-      from: from,
-      page: page,
-    );
   }
 
   @override
@@ -203,4 +159,4 @@ class _SampleListProviderElement
   int get page => (origin as SampleListProvider).page;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

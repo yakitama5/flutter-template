@@ -36,23 +36,9 @@ class _SystemHash {
 const sampleItemProvider = SampleItemFamily();
 
 /// See also [sampleItem].
-class SampleItemFamily extends Family {
+class SampleItemFamily extends Family<AsyncValue<SampleListEntity?>> {
   /// See also [sampleItem].
   const SampleItemFamily();
-
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'sampleItemProvider';
 
   /// See also [sampleItem].
   SampleItemProvider call({
@@ -63,7 +49,6 @@ class SampleItemFamily extends Family {
     );
   }
 
-  @visibleForOverriding
   @override
   SampleItemProvider getProviderOverride(
     covariant SampleItemProvider provider,
@@ -73,27 +58,19 @@ class SampleItemFamily extends Family {
     );
   }
 
-  /// Enables overriding the behavior of this provider, no matter the parameters.
-  Override overrideWith(
-      Stream<SampleListEntity?> Function(SampleItemRef ref) create) {
-    return _$SampleItemFamilyOverride(this, create);
-  }
-}
-
-class _$SampleItemFamilyOverride implements FamilyOverride {
-  _$SampleItemFamilyOverride(this.overriddenFamily, this.create);
-
-  final Stream<SampleListEntity?> Function(SampleItemRef ref) create;
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
 
   @override
-  final SampleItemFamily overriddenFamily;
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
 
   @override
-  SampleItemProvider getProviderOverride(
-    covariant SampleItemProvider provider,
-  ) {
-    return provider._copyWith(create);
-  }
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'sampleItemProvider';
 }
 
 /// See also [sampleItem].
@@ -119,7 +96,7 @@ class SampleItemProvider extends AutoDisposeStreamProvider<SampleListEntity?> {
         );
 
   SampleItemProvider._internal(
-    super.create, {
+    super._createNotifier, {
     required super.name,
     required super.dependencies,
     required super.allTransitiveDependencies,
@@ -132,7 +109,7 @@ class SampleItemProvider extends AutoDisposeStreamProvider<SampleListEntity?> {
 
   @override
   Override overrideWith(
-    Stream<SampleListEntity?> Function(SampleItemRef ref) create,
+    Stream<SampleListEntity?> Function(SampleItemRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -149,29 +126,8 @@ class SampleItemProvider extends AutoDisposeStreamProvider<SampleListEntity?> {
   }
 
   @override
-  ({
-    String id,
-  }) get argument {
-    return (id: id,);
-  }
-
-  @override
   AutoDisposeStreamProviderElement<SampleListEntity?> createElement() {
     return _SampleItemProviderElement(this);
-  }
-
-  SampleItemProvider _copyWith(
-    Stream<SampleListEntity?> Function(SampleItemRef ref) create,
-  ) {
-    return SampleItemProvider._internal(
-      (ref) => create(ref as SampleItemRef),
-      name: name,
-      dependencies: dependencies,
-      allTransitiveDependencies: allTransitiveDependencies,
-      debugGetCreateSourceHash: debugGetCreateSourceHash,
-      from: from,
-      id: id,
-    );
   }
 
   @override
@@ -202,4 +158,4 @@ class _SampleItemProviderElement
   String get id => (origin as SampleItemProvider).id;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -70,6 +70,7 @@ class _SliverBody extends HookConsumerWidget {
                 title: Text(item.name),
               );
             },
+            // TODO(yakitama5): ListTile用のErrorViewを共通定義
             error: ErrorView.new,
             // TODO(yakitama5): ListTile形式のShimmerを作成
             loading: () => const ListTile(
