@@ -35,6 +35,7 @@ dependencies:
   material_design_icons_flutter:
   nested: 
   riverpod_annotation: 
+  riverpod_paging_utils:
   slang: 
   slang_flutter: 
 
