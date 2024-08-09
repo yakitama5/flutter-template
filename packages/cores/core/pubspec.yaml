@@ -14,12 +14,12 @@ dependencies:
     sdk: flutter
   flutter_hooks:
   freezed_annotation:
-  hooks_riverpod: ^3.0.0-dev.3
+  hooks_riverpod: 
   intl:
   json_annotation:
   logger:
   nested:
-  riverpod_annotation: ^3.0.0-dev.3
+  riverpod_annotation: 
   version:
   visibility_detector:
 
@@ -31,5 +31,5 @@ dev_dependencies:
   freezed:
   json_serializable:
   pedantic_mono:
-  riverpod_generator: ^3.0.0-dev.11
-  riverpod_lint: ^3.0.0-dev.4
+  riverpod_generator: 
+  riverpod_lint: 

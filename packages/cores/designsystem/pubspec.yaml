@@ -22,10 +22,10 @@ dependencies:
   freezed_annotation: 
   gap: 
   gauge_indicator: 
-  hooks_riverpod: ^3.0.0-dev.3
+  hooks_riverpod: 
   material_color_utilities:
   nested: 
-  riverpod_annotation: ^3.0.0-dev.3
+  riverpod_annotation: 
   shimmer:
   slang: 
   slang_flutter: 
@@ -39,8 +39,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   pedantic_mono:
-  riverpod_generator: ^3.0.0-dev.11
-  riverpod_lint: ^3.0.0-dev.4
+  riverpod_generator: 
+  riverpod_lint: 
   slang_build_runner: 
   theme_extensions_builder: 
 
