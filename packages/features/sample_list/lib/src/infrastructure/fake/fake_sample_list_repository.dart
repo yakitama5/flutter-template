@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:clock/clock.dart';
 import 'package:collection/collection.dart';
 import 'package:cores_core/domain.dart';
+import 'package:cores_error/application.dart';
 import 'package:features_sample_list/src/domain/entity/sample_list_entity.dart';
 import 'package:features_sample_list/src/domain/value_object/sample_list_sort_key.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -11,7 +12,17 @@ import '../../domain/entity/sample_list_fetch_result.dart';
 import '../../domain/interface/sample_list_repository.dart';
 
 const _pageSize = 10;
-const _totalLength = 500;
+const _totalLength = 100;
+
+const _images = [
+  'https://placehold.jp/3d4070/ffffff/150x150.png?text=Example',
+  'https://placehold.jp/703e65/ffffff/150x150.png?text=Example',
+  'https://placehold.jp/6643b6/ffffff/150x150.png?text=Example',
+  'https://placehold.jp/b6ad43/ffffff/150x150.png?text=Example',
+  'https://placehold.jp/b65a43/ffffff/150x150.png?text=Example',
+  'https://placehold.jp/43a9b6/ffffff/150x150.png?text=Example',
+  'https://placehold.jp/43b65a/ffffff/150x150.png?text=Example',
+];
 
 class FakeSampleListRepository extends SampleListRepository {
   FakeSampleListRepository(this.ref);
@@ -24,6 +35,8 @@ class FakeSampleListRepository extends SampleListRepository {
       return SampleListEntity(
         id: 'Id $i',
         name: 'Name $i',
+        price: i * 100,
+        imageUrl: _images[i % _images.length],
         createdAt: clock.fromNow(days: -i),
         updatedAt: clock.fromNow(days: -i),
       );
@@ -42,7 +55,9 @@ class FakeSampleListRepository extends SampleListRepository {
     required SampleListSortKey sortKey,
     required SortOrder sortOrder,
   }) async* {
-    await Future<void>.delayed(const Duration(milliseconds: 1000));
+    await Future<void>.delayed(const Duration(milliseconds: 3000));
+
+    throw const ServerNetworkException('hogehoge');
 
     final sortItems = items.sortedBy<String>(
       (e) => switch (sortKey) {

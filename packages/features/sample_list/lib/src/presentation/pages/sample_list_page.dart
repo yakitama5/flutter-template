@@ -27,6 +27,7 @@ class SampleListPage extends HookConsumerWidget {
             SliverPersistentHeader(
               delegate: SliverChipsDelegate(
                 chips: [
+                  // TODO(yakitama5): Chipsを作成して状態管理する
                   const LeadingIconInputChip(
                     label: Text('Order'),
                     iconData: Icons.sort,
@@ -49,7 +50,7 @@ class _SliverBody extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // TODO(yakitama5): ページサイズを共通定義
+    // HACK(yakitama5): ページサイズを共通定義
     const pageSize = 10;
 
     // 先頭ページを固定で取得
@@ -69,6 +70,8 @@ class _SliverBody extends HookConsumerWidget {
               final item = itemsData[indexInPage];
               return ListTile(
                 title: Text(item.name),
+                leading: Image.network(item.imageUrl!),
+                subtitle: Text('￥${item.price}'),
               );
             },
             // TODO(yakitama5): ListTile用のErrorViewを共通定義
@@ -76,21 +79,35 @@ class _SliverBody extends HookConsumerWidget {
               indexInPage: indexInPage,
               isLoading: items.isLoading,
               error: error.toString(),
+              onRetry: () {
+                ref.invalidate(sampleListFetchResultProvider(page: page));
+              },
             ),
-            // TODO(yakitama5): ListTile形式のShimmerを作成
-            loading: () => const ListTile(
-              title: ShimmerWidget.rectangular(
-                height: 20,
-                width: 200,
-              ),
-              leading: ShimmerWidget.rectangular(
-                height: 60,
-                width: 100,
-              ),
-            ),
+            loading: _ShimmerListTile.new,
           );
         },
         separatorBuilder: (context, index) => const Gap(8),
+      ),
+    );
+  }
+}
+
+class _ShimmerListTile extends StatelessWidget {
+  const _ShimmerListTile();
+
+  @override
+  Widget build(BuildContext context) {
+    // プライベートWidgetのためマジックナンバーを許容
+    return const ListTile(
+      title: ShimmerWidget.rectangular(
+        height: 24,
+      ),
+      subtitle: ShimmerWidget.rectangular(
+        height: 16,
+      ),
+      leading: ShimmerWidget.rectangular(
+        height: 64,
+        width: 64,
       ),
     );
   }
