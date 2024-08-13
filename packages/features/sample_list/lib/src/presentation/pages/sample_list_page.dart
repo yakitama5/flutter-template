@@ -54,7 +54,9 @@ class _SliverBody extends HookConsumerWidget {
     const pageSize = 10;
 
     // 先頭ページを固定で取得
-    final result = ref.watch(sampleListFetchResultProvider(page: 1)).value;
+    // エラーハンドリングはコンテンツ取得部分でこ行うため`valueOrNull`で無視する
+    final result =
+        ref.watch(sampleListFetchResultProvider(page: 1)).valueOrNull;
 
     return SliverPadding(
       padding: const EdgeInsets.only(bottom: 120),
