@@ -54,7 +54,7 @@ class _SliverBody extends HookConsumerWidget {
     const pageSize = 10;
 
     // 先頭ページを固定で取得
-    // エラーハンドリングはコンテンツ取得部分でこ行うため`valueOrNull`で無視する
+    // エラーハンドリングはコンテンツ取得部分で行うため`valueOrNull`で無視する
     final result =
         ref.watch(sampleListFetchResultProvider(page: 1)).valueOrNull;
 

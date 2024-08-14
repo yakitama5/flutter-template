@@ -29,6 +29,7 @@ Stream<SampleListFetchResult> sampleListFetchResult(
 
 const _duration = Duration(seconds: 30);
 
+// HACK(yakitama5): 共通定義したい
 void keepAliveTimerForStream<T>(
   AutoDisposeStreamProviderRef<T> ref, {
   Duration? duration,
