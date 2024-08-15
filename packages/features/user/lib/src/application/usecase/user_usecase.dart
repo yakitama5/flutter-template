@@ -69,6 +69,7 @@ class UserUsecase with RunUsecaseMixin {
         ref,
         action: () async {
           // アカウント連携済か否かのチェック
+          // HACK(yakitama5): チェック関連はdomain層として業務ルール化したい
           final status = await ref.read(authStatusProvider.future);
           final linked = status?.linkedGoogle ?? false;
           if (!linked) {
