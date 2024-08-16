@@ -1,7 +1,7 @@
 name: template_workspace
 
 environment:
-  sdk: ^3.3.1
+  sdk: ^3.5.0
 
 dev_dependencies:
   grinder: ^0.9.5

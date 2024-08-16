@@ -9,13 +9,13 @@ packages:
 command:
   bootstrap:
     environment:
-      sdk: ^3.4.1
-      flutter: ^3.22.1
+      sdk: ^3.5.0
+      flutter: ^3.24.0
     dependencies:
       collection:
       flutter_hooks: 
       freezed_annotation:
-      go_router: ^13.2.1
+      go_router: 
       hooks_riverpod: 
       intl: 
       json_annotation: 
