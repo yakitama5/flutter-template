@@ -8,7 +8,7 @@ part of 'sample_list_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$sampleListHash() => r'67db9374d0a40db2f71a1d552a2f27de60a15d35';
+String _$sampleListHash() => r'16110053f6f196e2ee2f336077f93dfd4bcd757c';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -36,16 +36,18 @@ class _SystemHash {
 const sampleListProvider = SampleListFamily();
 
 /// See also [sampleList].
-class SampleListFamily extends Family<AsyncValue<List<SampleListEntity>>> {
+class SampleListFamily extends Family<AsyncValue<SampleListResponse>> {
   /// See also [sampleList].
   const SampleListFamily();
 
   /// See also [sampleList].
   SampleListProvider call({
     required int page,
+    required SampleListQuery query,
   }) {
     return SampleListProvider(
       page: page,
+      query: query,
     );
   }
 
@@ -55,6 +57,7 @@ class SampleListFamily extends Family<AsyncValue<List<SampleListEntity>>> {
   ) {
     return call(
       page: provider.page,
+      query: provider.query,
     );
   }
 
@@ -74,15 +77,16 @@ class SampleListFamily extends Family<AsyncValue<List<SampleListEntity>>> {
 }
 
 /// See also [sampleList].
-class SampleListProvider
-    extends AutoDisposeFutureProvider<List<SampleListEntity>> {
+class SampleListProvider extends AutoDisposeStreamProvider<SampleListResponse> {
   /// See also [sampleList].
   SampleListProvider({
     required int page,
+    required SampleListQuery query,
   }) : this._internal(
           (ref) => sampleList(
             ref as SampleListRef,
             page: page,
+            query: query,
           ),
           from: sampleListProvider,
           name: r'sampleListProvider',
@@ -94,6 +98,7 @@ class SampleListProvider
           allTransitiveDependencies:
               SampleListFamily._allTransitiveDependencies,
           page: page,
+          query: query,
         );
 
   SampleListProvider._internal(
@@ -104,13 +109,15 @@ class SampleListProvider
     required super.debugGetCreateSourceHash,
     required super.from,
     required this.page,
+    required this.query,
   }) : super.internal();
 
   final int page;
+  final SampleListQuery query;
 
   @override
   Override overrideWith(
-    FutureOr<List<SampleListEntity>> Function(SampleListRef provider) create,
+    Stream<SampleListResponse> Function(SampleListRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -122,41 +129,50 @@ class SampleListProvider
         allTransitiveDependencies: null,
         debugGetCreateSourceHash: null,
         page: page,
+        query: query,
       ),
     );
   }
 
   @override
-  AutoDisposeFutureProviderElement<List<SampleListEntity>> createElement() {
+  AutoDisposeStreamProviderElement<SampleListResponse> createElement() {
     return _SampleListProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is SampleListProvider && other.page == page;
+    return other is SampleListProvider &&
+        other.page == page &&
+        other.query == query;
   }
 
   @override
   int get hashCode {
     var hash = _SystemHash.combine(0, runtimeType.hashCode);
     hash = _SystemHash.combine(hash, page.hashCode);
+    hash = _SystemHash.combine(hash, query.hashCode);
 
     return _SystemHash.finish(hash);
   }
 }
 
-mixin SampleListRef on AutoDisposeFutureProviderRef<List<SampleListEntity>> {
+mixin SampleListRef on AutoDisposeStreamProviderRef<SampleListResponse> {
   /// The parameter `page` of this provider.
   int get page;
+
+  /// The parameter `query` of this provider.
+  SampleListQuery get query;
 }
 
 class _SampleListProviderElement
-    extends AutoDisposeFutureProviderElement<List<SampleListEntity>>
+    extends AutoDisposeStreamProviderElement<SampleListResponse>
     with SampleListRef {
   _SampleListProviderElement(super.provider);
 
   @override
   int get page => (origin as SampleListProvider).page;
+  @override
+  SampleListQuery get query => (origin as SampleListProvider).query;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

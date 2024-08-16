@@ -60,25 +60,12 @@ const duserDocumentRefProvider = DuserDocumentRefFamily();
 /// 削除済ユーザードキュメントの参照
 ///
 /// Copied from [duserDocumentRef].
-class DuserDocumentRefFamily extends Family {
+class DuserDocumentRefFamily
+    extends Family<DocumentReference<FirestoreUserModel>> {
   /// 削除済ユーザードキュメントの参照
   ///
   /// Copied from [duserDocumentRef].
   const DuserDocumentRefFamily();
-
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'duserDocumentRefProvider';
 
   /// 削除済ユーザードキュメントの参照
   ///
@@ -91,7 +78,6 @@ class DuserDocumentRefFamily extends Family {
     );
   }
 
-  @visibleForOverriding
   @override
   DuserDocumentRefProvider getProviderOverride(
     covariant DuserDocumentRefProvider provider,
@@ -101,29 +87,19 @@ class DuserDocumentRefFamily extends Family {
     );
   }
 
-  /// Enables overriding the behavior of this provider, no matter the parameters.
-  Override overrideWith(
-      DocumentReference<FirestoreUserModel> Function(DuserDocumentRefRef ref)
-          create) {
-    return _$DuserDocumentRefFamilyOverride(this, create);
-  }
-}
-
-class _$DuserDocumentRefFamilyOverride implements FamilyOverride {
-  _$DuserDocumentRefFamilyOverride(this.overriddenFamily, this.create);
-
-  final DocumentReference<FirestoreUserModel> Function(DuserDocumentRefRef ref)
-      create;
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
 
   @override
-  final DuserDocumentRefFamily overriddenFamily;
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
 
   @override
-  DuserDocumentRefProvider getProviderOverride(
-    covariant DuserDocumentRefProvider provider,
-  ) {
-    return provider._copyWith(create);
-  }
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'duserDocumentRefProvider';
 }
 
 /// 削除済ユーザードキュメントの参照
@@ -154,7 +130,7 @@ class DuserDocumentRefProvider
         );
 
   DuserDocumentRefProvider._internal(
-    super.create, {
+    super._createNotifier, {
     required super.name,
     required super.dependencies,
     required super.allTransitiveDependencies,
@@ -167,7 +143,7 @@ class DuserDocumentRefProvider
 
   @override
   Override overrideWith(
-    DocumentReference<FirestoreUserModel> Function(DuserDocumentRefRef ref)
+    DocumentReference<FirestoreUserModel> Function(DuserDocumentRefRef provider)
         create,
   ) {
     return ProviderOverride(
@@ -185,31 +161,9 @@ class DuserDocumentRefProvider
   }
 
   @override
-  ({
-    String? userId,
-  }) get argument {
-    return (userId: userId,);
-  }
-
-  @override
   AutoDisposeProviderElement<DocumentReference<FirestoreUserModel>>
       createElement() {
     return _DuserDocumentRefProviderElement(this);
-  }
-
-  DuserDocumentRefProvider _copyWith(
-    DocumentReference<FirestoreUserModel> Function(DuserDocumentRefRef ref)
-        create,
-  ) {
-    return DuserDocumentRefProvider._internal(
-      (ref) => create(ref as DuserDocumentRefRef),
-      name: name,
-      dependencies: dependencies,
-      allTransitiveDependencies: allTransitiveDependencies,
-      debugGetCreateSourceHash: debugGetCreateSourceHash,
-      from: from,
-      userId: userId,
-    );
   }
 
   @override
@@ -241,4 +195,4 @@ class _DuserDocumentRefProviderElement
   String? get userId => (origin as DuserDocumentRefProvider).userId;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

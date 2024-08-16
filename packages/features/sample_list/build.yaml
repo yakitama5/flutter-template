@@ -6,12 +6,14 @@ targets:
         generate_for:
           include:
             - lib/{entity,**/entity}/**.dart
+            - lib/{value_object,**/value_object}/**.dart
             - lib/{model,**/model}/**.dart
       # https://github.com/google/json_serializable.dart/tree/master/json_serializable#build-configuration
       json_serializable:
         generate_for:
           include:
             - lib/{entity,**/entity}/**.dart
+            - lib/{value_object,**/value_object}/**.dart
             - lib/{model,**/model}/**.dart
         options:
           field_rename: snake

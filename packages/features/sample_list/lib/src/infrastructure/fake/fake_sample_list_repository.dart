@@ -3,13 +3,13 @@ import 'dart:math';
 import 'package:clock/clock.dart';
 import 'package:collection/collection.dart';
 import 'package:cores_core/domain.dart';
-import 'package:cores_error/application.dart';
 import 'package:features_sample_list/src/domain/entity/sample_list_entity.dart';
 import 'package:features_sample_list/src/domain/value_object/sample_list_sort_key.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../domain/entity/sample_list_fetch_result.dart';
 import '../../domain/interface/sample_list_repository.dart';
+import '../../domain/value_object/sample_list_query.dart';
+import '../../domain/value_object/sample_list_response.dart';
 
 const _pageSize = 10;
 const _totalLength = 100;
@@ -50,31 +50,28 @@ class FakeSampleListRepository extends SampleListRepository {
   }
 
   @override
-  Stream<SampleListFetchResult> fetchList({
+  Stream<SampleListResponse> fetchList({
     int page = 1,
-    required SampleListSortKey sortKey,
-    required SortOrder sortOrder,
+    required SampleListQuery query,
   }) async* {
     await Future<void>.delayed(const Duration(milliseconds: 3000));
 
-    throw const ServerNetworkException('hogehoge');
-
     final sortItems = items.sortedBy<String>(
-      (e) => switch (sortKey) {
+      (e) => switch (query.sortKey) {
         SampleListSortKey.createdAt => e.createdAt.toString(),
         SampleListSortKey.name => e.name,
         SampleListSortKey.price => e.price.toString(),
       },
     );
 
-    final orderItems = switch (sortOrder) {
+    final orderItems = switch (query.sortOrder) {
       SortOrder.asc => sortItems,
       SortOrder.desc => sortItems.reversed.toList(),
     };
 
     final start = (page - 1) * _pageSize;
     final end = min(start + _pageSize, items.length);
-    final result = SampleListFetchResult(
+    final result = SampleListResponse(
       items: orderItems.sublist(start, end),
       totalCount: items.length,
     );

@@ -59,25 +59,12 @@ const userDocumentRefProvider = UserDocumentRefFamily();
 /// ユーザードキュメントの参照
 ///
 /// Copied from [userDocumentRef].
-class UserDocumentRefFamily extends Family {
+class UserDocumentRefFamily
+    extends Family<DocumentReference<FirestoreUserModel>> {
   /// ユーザードキュメントの参照
   ///
   /// Copied from [userDocumentRef].
   const UserDocumentRefFamily();
-
-  static const Iterable<ProviderOrFamily>? _dependencies = null;
-
-  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
-
-  @override
-  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
-
-  @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
-      _allTransitiveDependencies;
-
-  @override
-  String? get name => r'userDocumentRefProvider';
 
   /// ユーザードキュメントの参照
   ///
@@ -90,7 +77,6 @@ class UserDocumentRefFamily extends Family {
     );
   }
 
-  @visibleForOverriding
   @override
   UserDocumentRefProvider getProviderOverride(
     covariant UserDocumentRefProvider provider,
@@ -100,29 +86,19 @@ class UserDocumentRefFamily extends Family {
     );
   }
 
-  /// Enables overriding the behavior of this provider, no matter the parameters.
-  Override overrideWith(
-      DocumentReference<FirestoreUserModel> Function(UserDocumentRefRef ref)
-          create) {
-    return _$UserDocumentRefFamilyOverride(this, create);
-  }
-}
-
-class _$UserDocumentRefFamilyOverride implements FamilyOverride {
-  _$UserDocumentRefFamilyOverride(this.overriddenFamily, this.create);
-
-  final DocumentReference<FirestoreUserModel> Function(UserDocumentRefRef ref)
-      create;
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
 
   @override
-  final UserDocumentRefFamily overriddenFamily;
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
 
   @override
-  UserDocumentRefProvider getProviderOverride(
-    covariant UserDocumentRefProvider provider,
-  ) {
-    return provider._copyWith(create);
-  }
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'userDocumentRefProvider';
 }
 
 /// ユーザードキュメントの参照
@@ -153,7 +129,7 @@ class UserDocumentRefProvider
         );
 
   UserDocumentRefProvider._internal(
-    super.create, {
+    super._createNotifier, {
     required super.name,
     required super.dependencies,
     required super.allTransitiveDependencies,
@@ -166,7 +142,7 @@ class UserDocumentRefProvider
 
   @override
   Override overrideWith(
-    DocumentReference<FirestoreUserModel> Function(UserDocumentRefRef ref)
+    DocumentReference<FirestoreUserModel> Function(UserDocumentRefRef provider)
         create,
   ) {
     return ProviderOverride(
@@ -184,31 +160,9 @@ class UserDocumentRefProvider
   }
 
   @override
-  ({
-    String? userId,
-  }) get argument {
-    return (userId: userId,);
-  }
-
-  @override
   AutoDisposeProviderElement<DocumentReference<FirestoreUserModel>>
       createElement() {
     return _UserDocumentRefProviderElement(this);
-  }
-
-  UserDocumentRefProvider _copyWith(
-    DocumentReference<FirestoreUserModel> Function(UserDocumentRefRef ref)
-        create,
-  ) {
-    return UserDocumentRefProvider._internal(
-      (ref) => create(ref as UserDocumentRefRef),
-      name: name,
-      dependencies: dependencies,
-      allTransitiveDependencies: allTransitiveDependencies,
-      debugGetCreateSourceHash: debugGetCreateSourceHash,
-      from: from,
-      userId: userId,
-    );
   }
 
   @override
@@ -240,4 +194,4 @@ class _UserDocumentRefProviderElement
   String? get userId => (origin as UserDocumentRefProvider).userId;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

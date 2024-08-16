@@ -1,9 +1,8 @@
-import 'package:cores_core/domain.dart';
 import 'package:features_sample_list/src/domain/entity/sample_list_entity.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../entity/sample_list_fetch_result.dart';
-import '../value_object/sample_list_sort_key.dart';
+import '../value_object/sample_list_query.dart';
+import '../value_object/sample_list_response.dart';
 
 part 'sample_list_repository.g.dart';
 
@@ -12,10 +11,9 @@ SampleListRepository sampleListRepository(SampleListRepositoryRef ref) =>
     throw UnimplementedError();
 
 abstract class SampleListRepository {
-  Stream<SampleListFetchResult> fetchList({
+  Stream<SampleListResponse> fetchList({
     int page = 1,
-    required SampleListSortKey sortKey,
-    required SortOrder sortOrder,
+    required SampleListQuery query,
   });
 
   Stream<SampleListEntity?> fetch({required String id});

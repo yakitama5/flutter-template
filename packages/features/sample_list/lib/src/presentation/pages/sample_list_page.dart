@@ -1,12 +1,14 @@
+import 'package:cores_core/domain.dart';
 import 'package:cores_designsystem/presentation.dart';
 import 'package:cores_error/presentation.dart';
-import 'package:features_sample_list/src/application/state/sample_list_provider.dart';
+import 'package:features_sample_list/src/domain/value_object/sample_list_query.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../application/state/sample_item_fetch_result_provider.dart';
+import '../../application/state/sample_list_provider.dart';
+import '../../domain/value_object/sample_list_sort_key.dart';
 
 class SampleListPage extends HookConsumerWidget {
   const SampleListPage({super.key});
@@ -15,30 +17,53 @@ class SampleListPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final scrollController = useScrollController();
 
+    // HACK(yakitama5): 初期値をDomain層に定義
+    final query = useState(
+      const SampleListQuery(
+        sortKey: SampleListSortKey.createdAt,
+        sortOrder: SortOrder.desc,
+      ),
+    );
+
     return SafeArea(
       top: false,
       child: Scaffold(
-        body: CustomScrollView(
-          controller: scrollController,
-          slivers: [
-            const SliverAppBar(
-              title: Text('タイトル'),
-            ),
-            SliverPersistentHeader(
-              delegate: SliverChipsDelegate(
-                chips: [
-                  // TODO(yakitama5): Chipsを作成して状態管理する
-                  const LeadingIconInputChip(
-                    label: Text('Order'),
-                    iconData: Icons.sort,
-                  ),
-                ],
-                safeAreaPadding: MediaQuery.paddingOf(context),
+        body: RefreshIndicator(
+          onRefresh: () async {
+            ref.invalidate(sampleListProvider);
+
+            // 最初のページが表示されるまでは待機
+            try {
+              await ref
+                  .read(sampleListProvider(page: 1, query: query.value).future);
+            } on Exception catch (_) {
+              // do nothing
+            }
+          },
+          child: CustomScrollView(
+            controller: scrollController,
+            slivers: [
+              const SliverAppBar(
+                title: Text('タイトル'),
               ),
-              pinned: true,
-            ),
-            const _SliverBody(),
-          ],
+              SliverPersistentHeader(
+                delegate: SliverChipsDelegate(
+                  chips: [
+                    // TODO(yakitama5): Chipsを作成して状態管理する
+                    const LeadingIconInputChip(
+                      label: Text('Order'),
+                      iconData: Icons.sort,
+                    ),
+                  ],
+                  safeAreaPadding: MediaQuery.paddingOf(context),
+                ),
+                pinned: true,
+              ),
+              _SliverBody(
+                query: query.value,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -46,7 +71,9 @@ class SampleListPage extends HookConsumerWidget {
 }
 
 class _SliverBody extends HookConsumerWidget {
-  const _SliverBody();
+  const _SliverBody({required this.query});
+
+  final SampleListQuery query;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -56,33 +83,36 @@ class _SliverBody extends HookConsumerWidget {
     // 先頭ページを固定で取得
     // エラーハンドリングはコンテンツ取得部分で行うため`valueOrNull`で無視する
     final result =
-        ref.watch(sampleListFetchResultProvider(page: 1)).valueOrNull;
+        ref.watch(sampleListProvider(page: 1, query: query)).valueOrNull;
 
     return SliverPadding(
       padding: const EdgeInsets.only(bottom: 120),
       sliver: SliverList.separated(
+        // 条件が変更されたらスクロール状態をリセットさせる
+        key: ValueKey(query),
         itemCount: result?.totalCount ?? pageSize,
         itemBuilder: (context, index) {
           final page = index ~/ pageSize + 1;
           final indexInPage = index % pageSize;
-          final items = ref.watch(sampleListProvider(page: page));
+          final response =
+              ref.watch(sampleListProvider(page: page, query: query));
 
-          return items.when(
-            data: (itemsData) {
-              final item = itemsData[indexInPage];
+          return response.when(
+            data: (responseData) {
+              final item = responseData.items[indexInPage];
               return ListTile(
                 title: Text(item.name),
+                // HACK(yakitama5): 画像をキャッシュする
                 leading: Image.network(item.imageUrl!),
                 subtitle: Text('￥${item.price}'),
               );
             },
-            // TODO(yakitama5): ListTile用のErrorViewを共通定義
             error: (error, __) => ErrorListTile(
               indexInPage: indexInPage,
-              isLoading: items.isLoading,
+              isLoading: response.isLoading,
               error: error.toString(),
               onRetry: () {
-                ref.invalidate(sampleListFetchResultProvider(page: page));
+                ref.invalidate(sampleListProvider(page: page, query: query));
               },
             ),
             loading: _ShimmerListTile.new,
