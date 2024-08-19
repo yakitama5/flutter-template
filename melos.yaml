@@ -33,6 +33,11 @@ command:
       flutter_gen_runner: 
     hooks:
       post: grind generate-package-labels && grind generate-package-labeler
+  clean:
+    hooks:
+      post: melos exec --flutter --concurrency=3 -- "flutter clean"
+        # melos exec --flutter --file-exists="ios/Podfile.lock" -- "cd ios && rm Podfile.lock"
+        # melos exec --flutter --file-exists="macos/Podfile.lock" -- "cd macos && rm Podfile.lock"
 
 scripts:
   report_test:
@@ -59,19 +64,19 @@ scripts:
     packageFilters:
       dependsOn: build_runner
 
-  watch_build_runner:
-    run: dart run build_runner watch -d
-    exec:
-      orderDependents: true
-    packageFilters:
-      dependsOn: build_runner
-
   regenerate_by_using_gen_slang:
     run: dart run slang
     exec:
       orderDependents: true
     packageFilters:
       dependsOn: slang
+
+  watch_build_runner:
+    run: dart run build_runner watch -d
+    exec:
+      orderDependents: true
+    packageFilters:
+      dependsOn: build_runner
 
 ide:
   intellij:
