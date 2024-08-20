@@ -9,26 +9,21 @@ class BottomSheetSelectActionChip<T> extends StatelessWidget {
     super.key,
     required this.label,
     required this.iconData,
-    required this.title,
+    this.title,
     this.onChanged,
     this.initial,
     required this.actions,
   });
 
+  /// Chip Property
   final Widget label;
   final IconData iconData;
-  final String title;
+
+  /// BottomSheet Property
+  final Widget? title;
   final void Function(T value)? onChanged;
   final T? initial;
   final List<BottomSheetAction<T>> actions;
-
-  void _handleTap(T value) {
-    if (onChanged == null) {
-      return;
-    }
-
-    return onChanged!(value);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,21 +34,11 @@ class BottomSheetSelectActionChip<T> extends StatelessWidget {
         // BottomSheetの表示
         await showModalBottomSheet(
           context: context,
-          builder: (context) {
-            return _BottomSheetColumn(
-              children: [
-                ListTile(
-                  title: Text('並び替え'),
-                ),
-                Divider(),
-                ...actions.map((a) => ListTile(
-                      title: a.title,
-                      leading: a.icon,
-                      onTap: () => _handleTap(a.value),
-                    )),
-              ],
-            );
-          },
+          builder: (context) => _BottomSheet(
+            title: title,
+            actions: actions,
+            onChanged: onChanged,
+          ),
         );
 
         return;
@@ -65,15 +50,24 @@ class BottomSheetSelectActionChip<T> extends StatelessWidget {
   }
 }
 
-class _BottomSheetColumn extends StatelessWidget {
-  const _BottomSheetColumn({
-    super.key,
-    this.children,
+class _BottomSheet<T> extends StatelessWidget {
+  const _BottomSheet({
+    required this.actions,
+    this.onChanged,
     this.title,
   });
 
-  final List<Widget>? children;
   final Widget? title;
+  final List<BottomSheetAction<T>> actions;
+  final void Function(T value)? onChanged;
+
+  void _handleTap(T value) {
+    if (onChanged == null) {
+      return;
+    }
+
+    return onChanged!(value);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,13 +78,16 @@ class _BottomSheetColumn extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Gap(8),
-          Padding(
-            padding: const EdgeInsets.only(left: 8),
-            child: title,
-          ),
           ...[
-            const Gap(8),
-            if (children != null) ...children!,
+            ListTile(
+              title: title,
+            ),
+            Divider(),
+            ...actions.map((a) => ListTile(
+                  title: a.title,
+                  leading: a.icon,
+                  onTap: () => _handleTap(a.value),
+                )),
           ],
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:cores_core/domain.dart';
+import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/presentation.dart';
 import 'package:cores_error/presentation.dart';
 import 'package:features_sample_list/src/domain/value_object/sample_list_query.dart';
@@ -59,7 +60,8 @@ class SampleListPage extends HookConsumerWidget {
                               ))
                           .toList(),
                       iconData: Icons.sort,
-                      title: '並び替え',
+                      title: Text('並び替え'),
+                      onChanged: (value) => logger.d(value),
                     ),
                   ],
                   safeAreaPadding: MediaQuery.paddingOf(context),
