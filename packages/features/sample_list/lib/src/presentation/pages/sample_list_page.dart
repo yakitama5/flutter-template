@@ -50,9 +50,15 @@ class SampleListPage extends HookConsumerWidget {
                 delegate: SliverChipsDelegate(
                   chips: [
                     // TODO(yakitama5): Chipsを作成して状態管理する
-                    const LeadingIconInputChip(
-                      label: Text('Order'),
+                    BottomSheetSelectActionChip<SampleListSortKey>(
+                      label: const Text('並び替え'),
                       iconData: Icons.sort,
+                      title: '並び替え',
+                      items: SampleListSortKey.values,
+                      labelBuilder: (item) => item.name,
+                      iconBuilder: (item) => item == SampleListSortKey.createdAt
+                          ? Icons.sort
+                          : Icons.branding_watermark_rounded,
                     ),
                   ],
                   safeAreaPadding: MediaQuery.paddingOf(context),

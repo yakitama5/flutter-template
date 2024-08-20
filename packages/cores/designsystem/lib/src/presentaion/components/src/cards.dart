@@ -1,4 +1,3 @@
-import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:nested/nested.dart';
 
@@ -107,31 +106,31 @@ class OutlinedCard extends SingleChildCard {
   }
 }
 
-class OpenContainerCardWrapper<T> extends StatelessWidget {
-  const OpenContainerCardWrapper({
-    super.key,
-    required this.closedBuilder,
-    required this.openBuilder,
-  });
+// class OpenContainerCardWrapper<T> extends StatelessWidget {
+//   const OpenContainerCardWrapper({
+//     super.key,
+//     required this.closedBuilder,
+//     required this.openBuilder,
+//   });
 
-  final CloseContainerBuilder closedBuilder;
-  final OpenContainerBuilder<T> openBuilder;
+//   final CloseContainerBuilder closedBuilder;
+//   final OpenContainerBuilder<T> openBuilder;
 
-  @override
-  Widget build(BuildContext context) {
-    final cs = Theme.of(context).colorScheme;
+//   @override
+//   Widget build(BuildContext context) {
+//     final cs = Theme.of(context).colorScheme;
 
-    return OpenContainer(
-      closedBuilder: closedBuilder,
-      openBuilder: openBuilder,
+//     return OpenContainer(
+//       closedBuilder: closedBuilder,
+//       openBuilder: openBuilder,
 
-      // ClosedBuilderが表示されてしまう対応
-      closedShape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
-      closedColor: cs.surface,
-      closedElevation: 0,
-      tappable: false,
-    );
-  }
-}
+//       // ClosedBuilderが表示されてしまう対応
+//       closedShape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(16),
+//       ),
+//       closedColor: cs.surface,
+//       closedElevation: 0,
+//       tappable: false,
+//     );
+//   }
+// }

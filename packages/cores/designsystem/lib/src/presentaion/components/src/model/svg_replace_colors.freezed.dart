@@ -19,7 +19,9 @@ mixin _$SvgReplaceColors {
   Color get rawColor => throw _privateConstructorUsedError;
   Color get color => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SvgReplaceColors
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $SvgReplaceColorsCopyWith<SvgReplaceColors> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$SvgReplaceColorsCopyWithImpl<$Res, $Val extends SvgReplaceColors>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of SvgReplaceColors
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$SvgReplaceColorsImplCopyWithImpl<$Res>
       $Res Function(_$SvgReplaceColorsImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SvgReplaceColors
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -128,7 +134,9 @@ class _$SvgReplaceColorsImpl implements _SvgReplaceColors {
   @override
   int get hashCode => Object.hash(runtimeType, rawColor, color);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SvgReplaceColors
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SvgReplaceColorsImplCopyWith<_$SvgReplaceColorsImpl> get copyWith =>
@@ -145,8 +153,11 @@ abstract class _SvgReplaceColors implements SvgReplaceColors {
   Color get rawColor;
   @override
   Color get color;
+
+  /// Create a copy of SvgReplaceColors
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SvgReplaceColorsImplCopyWith<_$SvgReplaceColorsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
