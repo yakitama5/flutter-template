@@ -52,13 +52,14 @@ class SampleListPage extends HookConsumerWidget {
                     // TODO(yakitama5): Chipsを作成して状態管理する
                     BottomSheetSelectActionChip<SampleListSortKey>(
                       label: const Text('並び替え'),
+                      actions: SampleListSortKey.values
+                          .map((e) => BottomSheetAction(
+                                title: Text('Title'),
+                                value: e,
+                              ))
+                          .toList(),
                       iconData: Icons.sort,
                       title: '並び替え',
-                      items: SampleListSortKey.values,
-                      labelBuilder: (item) => item.name,
-                      iconBuilder: (item) => item == SampleListSortKey.createdAt
-                          ? Icons.sort
-                          : Icons.branding_watermark_rounded,
                     ),
                   ],
                   safeAreaPadding: MediaQuery.paddingOf(context),

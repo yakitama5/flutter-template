@@ -1,9 +1,11 @@
+export 'src/bottom_sheet_action_chip.dart';
 export 'src/brightness_scope.dart';
 export 'src/cards.dart';
 export 'src/chips.dart';
 export 'src/gauge_indicator.dart';
 export 'src/image_aspect_ratio.dart';
 export 'src/loader_overlay.dart';
+export 'src/model/bottom_sheet_action.dart';
 export 'src/model/svg_replace_colors.dart';
 export 'src/shimmer_widget.dart';
 export 'src/sliver_chips_delegate.dart';
