@@ -7,7 +7,7 @@ namespaces: true
 
 # Config
 imports:
-  - "package:features_sample_list/src/domain/value_object/sample_list_sort_key.dart"
+  - "package:cores_core/src/domain/value_object/sort_order.dart"
 contexts:
-  SampleListSortKey:
+  SortOrder:
     generate_enum: false

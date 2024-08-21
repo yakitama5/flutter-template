@@ -4,14 +4,14 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 8 (4 per locale)
+/// Strings: 4 (2 per locale)
 ///
-/// Built on 2024-08-21 at 04:37 UTC
+/// Built on 2024-08-21 at 05:38 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
 
-import 'package:features_sample_list/src/domain/value_object/sample_list_sort_key.dart';
+import 'package:cores_core/src/domain/value_object/sort_order.dart';
 import 'package:flutter/widgets.dart';
 import 'package:slang/builder/model/node.dart';
 import 'package:slang_flutter/slang_flutter.dart';
@@ -149,37 +149,24 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	late final _StringsSampleListEn sampleList = _StringsSampleListEn._(_root);
+	late final _StringsCoreEn core = _StringsCoreEn._(_root);
 }
 
-// Path: sampleList
-class _StringsSampleListEn {
-	_StringsSampleListEn._(this._root);
+// Path: core
+class _StringsCoreEn {
+	_StringsCoreEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	late final _StringsSampleListSampleListPageEn sampleListPage = _StringsSampleListSampleListPageEn._(_root);
-	String sampleListSortKey({required SampleListSortKey context}) {
+	String sortOrder({required SortOrder context}) {
 		switch (context) {
-			case SampleListSortKey.createdAt:
-				return 'Created at';
-			case SampleListSortKey.name:
-				return 'Name';
-			case SampleListSortKey.price:
-				return 'Price';
+			case SortOrder.asc:
+				return 'ASC';
+			case SortOrder.desc:
+				return 'DESC';
 		}
 	}
-}
-
-// Path: sampleList.sampleListPage
-class _StringsSampleListSampleListPageEn {
-	_StringsSampleListSampleListPageEn._(this._root);
-
-	final Translations _root; // ignore: unused_field
-
-	// Translations
-	String get title => 'Title';
 }
 
 // Path: <root>
@@ -208,37 +195,24 @@ class _StringsJa extends Translations {
 	@override late final _StringsJa _root = this; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsSampleListJa sampleList = _StringsSampleListJa._(_root);
+	@override late final _StringsCoreJa core = _StringsCoreJa._(_root);
 }
 
-// Path: sampleList
-class _StringsSampleListJa extends _StringsSampleListEn {
-	_StringsSampleListJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: core
+class _StringsCoreJa extends _StringsCoreEn {
+	_StringsCoreJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsSampleListSampleListPageJa sampleListPage = _StringsSampleListSampleListPageJa._(_root);
-	@override String sampleListSortKey({required SampleListSortKey context}) {
+	@override String sortOrder({required SortOrder context}) {
 		switch (context) {
-			case SampleListSortKey.createdAt:
-				return '作成日時';
-			case SampleListSortKey.name:
-				return '名前';
-			case SampleListSortKey.price:
-				return '価格';
+			case SortOrder.asc:
+				return '昇順';
+			case SortOrder.desc:
+				return '降順';
 		}
 	}
-}
-
-// Path: sampleList.sampleListPage
-class _StringsSampleListSampleListPageJa extends _StringsSampleListSampleListPageEn {
-	_StringsSampleListSampleListPageJa._(_StringsJa root) : this._root = root, super._(root);
-
-	@override final _StringsJa _root; // ignore: unused_field
-
-	// Translations
-	@override String get title => 'タイトル';
 }
 
 /// Flat map(s) containing all translations.
@@ -247,15 +221,12 @@ class _StringsSampleListSampleListPageJa extends _StringsSampleListSampleListPag
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'sampleList.sampleListPage.title': return 'Title';
-			case 'sampleList.sampleListSortKey': return ({required SampleListSortKey context}) {
+			case 'core.sortOrder': return ({required SortOrder context}) {
 				switch (context) {
-					case SampleListSortKey.createdAt:
-						return 'Created at';
-					case SampleListSortKey.name:
-						return 'Name';
-					case SampleListSortKey.price:
-						return 'Price';
+					case SortOrder.asc:
+						return 'ASC';
+					case SortOrder.desc:
+						return 'DESC';
 				}
 			};
 			default: return null;
@@ -266,15 +237,12 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'sampleList.sampleListPage.title': return 'タイトル';
-			case 'sampleList.sampleListSortKey': return ({required SampleListSortKey context}) {
+			case 'core.sortOrder': return ({required SortOrder context}) {
 				switch (context) {
-					case SampleListSortKey.createdAt:
-						return '作成日時';
-					case SampleListSortKey.name:
-						return '名前';
-					case SampleListSortKey.price:
-						return '価格';
+					case SortOrder.asc:
+						return '昇順';
+					case SortOrder.desc:
+						return '降順';
 				}
 			};
 			default: return null;

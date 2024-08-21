@@ -18,12 +18,20 @@ class BottomSheetSelectActionChip<T> extends StatelessWidget {
   /// Chip Property
   final Widget label;
   final IconData iconData;
+  final void Function(T value)? onChanged;
 
   /// BottomSheet Property
   final Widget? title;
-  final void Function(T value)? onChanged;
   final T? initial;
   final List<BottomSheetAction<T>> actions;
+
+  void _handleChange(T? value) {
+    if (onChanged == null || value == null) {
+      return;
+    }
+
+    return onChanged!(value);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,16 +40,18 @@ class BottomSheetSelectActionChip<T> extends StatelessWidget {
       iconData: iconData,
       onPressed: () async {
         // BottomSheetの表示
-        await showModalBottomSheet(
+        final response = await showModalBottomSheet<T>(
           context: context,
           builder: (context) => _BottomSheet(
             title: title,
+            initial: initial,
             actions: actions,
             onChanged: onChanged,
           ),
         );
 
-        return;
+        // 値の変更
+        _handleChange(response);
       },
       // `itemOrder` は未選択がありえないので、`true`固定
       selected: true,
@@ -55,22 +65,19 @@ class _BottomSheet<T> extends StatelessWidget {
     required this.actions,
     this.onChanged,
     this.title,
+    this.initial,
   });
 
   final Widget? title;
   final List<BottomSheetAction<T>> actions;
   final void Function(T value)? onChanged;
-
-  void _handleTap(T value) {
-    if (onChanged == null) {
-      return;
-    }
-
-    return onChanged!(value);
-  }
+  final T? initial;
 
   @override
   Widget build(BuildContext context) {
+    final hasAnyIcon = actions.any((e) => e.icon != null);
+    final cs = Theme.of(context).colorScheme;
+
     return Padding(
       padding: const EdgeInsets.all(8),
       child: Column(
@@ -83,11 +90,26 @@ class _BottomSheet<T> extends StatelessWidget {
               title: title,
             ),
             Divider(),
-            ...actions.map((a) => ListTile(
-                  title: a.title,
-                  leading: a.icon,
-                  onTap: () => _handleTap(a.value),
-                )),
+            ...actions.map((a) {
+              final icon = a.icon ??
+                  (hasAnyIcon
+                      ? SizedBox(
+                          width: 24,
+                        )
+                      : null);
+              final selected = a.value == initial;
+
+              return ListTile(
+                title: a.title,
+                selected: selected,
+                selectedTileColor: cs.primaryContainer,
+                selectedColor: cs.onPrimaryContainer,
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32)),
+                leading: icon,
+                onTap: () => Navigator.pop(context, a.value),
+              );
+            }),
           ],
         ],
       ),

@@ -1,5 +1,4 @@
 import 'package:cores_core/domain.dart';
-import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/presentation.dart';
 import 'package:cores_error/presentation.dart';
 import 'package:features_sample_list/src/domain/value_object/sample_list_query.dart';
@@ -52,16 +51,24 @@ class SampleListPage extends HookConsumerWidget {
                   chips: [
                     // TODO(yakitama5): Chipsを作成して状態管理する
                     BottomSheetSelectActionChip<SampleListSortKey>(
-                      label: const Text('並び替え'),
+                      label: Text(query.value.sortKey.name),
                       actions: SampleListSortKey.values
                           .map((e) => BottomSheetAction(
-                                title: Text('Title'),
+                                title: Text(e.title),
+                                icon: query.value.sortKey == e
+                                    ? Icon(query.value.sortOrder.iconData)
+                                    : null,
                                 value: e,
                               ))
                           .toList(),
                       iconData: Icons.sort,
-                      title: Text('並び替え'),
-                      onChanged: (value) => logger.d(value),
+                      title: Text(query.value.sortKey.title),
+                      initial: query.value.sortKey,
+                      onChanged: (value) {
+                        // TODO(yakitama5): 昇順降順判断
+                        final isReselect = value == query.value;
+                        // query.value = isReselect ? query.value.copyWith(sortOrder: query.value.sortOrder)  query.value.copyWith(sortKey: value);
+                      },
                     ),
                   ],
                   safeAreaPadding: MediaQuery.paddingOf(context),

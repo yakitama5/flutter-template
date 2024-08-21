@@ -20,6 +20,8 @@ dependencies:
   logger:
   nested:
   riverpod_annotation: 
+  slang: 
+  slang_flutter: 
   version:
   visibility_detector:
 
@@ -33,3 +35,4 @@ dev_dependencies:
   pedantic_mono:
   riverpod_generator: 
   riverpod_lint: 
+  slang_build_runner: 

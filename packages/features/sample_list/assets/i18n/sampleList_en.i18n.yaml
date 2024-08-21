@@ -1,2 +1,6 @@
 sampleListPage: 
   title: Title
+sampleListSortKey(context=SampleListSortKey):
+  createdAt: Created at
+  name: Name
+  price: Price
