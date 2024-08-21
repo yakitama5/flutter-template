@@ -41,7 +41,7 @@ class SampleListPage extends HookConsumerWidget {
             }
           },
           child: CustomScrollView(
-            controller: scrollController,
+            // controller: scrollController,
             slivers: [
               const SliverAppBar(
                 title: Text('タイトル'),
@@ -64,10 +64,17 @@ class SampleListPage extends HookConsumerWidget {
                       iconData: Icons.sort,
                       title: Text(query.value.sortKey.title),
                       initial: query.value.sortKey,
-                      onChanged: (value) {
+                      onChanged: (sortKey) {
                         // TODO(yakitama5): 昇順降順判断
-                        final isReselect = value == query.value;
-                        // query.value = isReselect ? query.value.copyWith(sortOrder: query.value.sortOrder)  query.value.copyWith(sortKey: value);
+                        final isReselect = sortKey == query.value.sortKey;
+                        final prevSortOrder = query.value.sortOrder;
+                        final sortOrder = SortOrder.values
+                            .where((e) => e != prevSortOrder)
+                            .first;
+                        query.value = isReselect
+                            ? query.value.copyWith(sortOrder: sortOrder)
+                            : query.value.copyWith(
+                                sortOrder: SortOrder.asc, sortKey: sortKey);
                       },
                     ),
                   ],
