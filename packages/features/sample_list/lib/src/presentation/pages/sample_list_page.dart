@@ -23,42 +23,6 @@ class SampleListPage extends HookConsumerWidget {
       ),
     );
 
-    final widget = Material(
-      child: SafeArea(
-        top: false,
-        child: Row(
-          children: [
-            // TODO(yakitama5): Chipsを作成して状態管理する
-            BottomSheetSelectActionChip<SampleListSortKey>(
-              label: Text(query.value.sortKey.name),
-              actions: SampleListSortKey.values
-                  .map((e) => BottomSheetAction(
-                        title: Text(e.title),
-                        icon: query.value.sortKey == e
-                            ? Icon(query.value.sortOrder.iconData)
-                            : null,
-                        value: e,
-                      ))
-                  .toList(),
-              iconData: Icons.sort,
-              title: Text(query.value.sortKey.title),
-              initial: query.value.sortKey,
-              onChanged: (sortKey) {
-                // TODO(yakitama5): 昇順降順判断
-                final isReselect = sortKey == query.value.sortKey;
-                final prevSortOrder = query.value.sortOrder;
-                final sortOrder =
-                    SortOrder.values.where((e) => e != prevSortOrder).first;
-                query.value = isReselect
-                    ? query.value.copyWith(sortOrder: sortOrder)
-                    : query.value
-                        .copyWith(sortOrder: SortOrder.asc, sortKey: sortKey);
-              },
-            )
-          ],
-        ),
-      ),
-    );
     return SafeArea(
       top: false,
       child: Scaffold(
