@@ -15,8 +15,6 @@ class SampleListPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final scrollController = useScrollController();
-
     // HACK(yakitama5): 初期値をDomain層に定義
     final query = useState(
       const SampleListQuery(
@@ -25,6 +23,42 @@ class SampleListPage extends HookConsumerWidget {
       ),
     );
 
+    final widget = Material(
+      child: SafeArea(
+        top: false,
+        child: Row(
+          children: [
+            // TODO(yakitama5): Chipsを作成して状態管理する
+            BottomSheetSelectActionChip<SampleListSortKey>(
+              label: Text(query.value.sortKey.name),
+              actions: SampleListSortKey.values
+                  .map((e) => BottomSheetAction(
+                        title: Text(e.title),
+                        icon: query.value.sortKey == e
+                            ? Icon(query.value.sortOrder.iconData)
+                            : null,
+                        value: e,
+                      ))
+                  .toList(),
+              iconData: Icons.sort,
+              title: Text(query.value.sortKey.title),
+              initial: query.value.sortKey,
+              onChanged: (sortKey) {
+                // TODO(yakitama5): 昇順降順判断
+                final isReselect = sortKey == query.value.sortKey;
+                final prevSortOrder = query.value.sortOrder;
+                final sortOrder =
+                    SortOrder.values.where((e) => e != prevSortOrder).first;
+                query.value = isReselect
+                    ? query.value.copyWith(sortOrder: sortOrder)
+                    : query.value
+                        .copyWith(sortOrder: SortOrder.asc, sortKey: sortKey);
+              },
+            )
+          ],
+        ),
+      ),
+    );
     return SafeArea(
       top: false,
       child: Scaffold(
@@ -41,46 +75,48 @@ class SampleListPage extends HookConsumerWidget {
             }
           },
           child: CustomScrollView(
-            // controller: scrollController,
             slivers: [
-              const SliverAppBar(
+              SliverAppBar(
                 title: Text('タイトル'),
               ),
-              SliverPersistentHeader(
-                delegate: SliverChipsDelegate(
-                  chips: [
-                    // TODO(yakitama5): Chipsを作成して状態管理する
-                    BottomSheetSelectActionChip<SampleListSortKey>(
-                      label: Text(query.value.sortKey.name),
-                      actions: SampleListSortKey.values
-                          .map((e) => BottomSheetAction(
-                                title: Text(e.title),
-                                icon: query.value.sortKey == e
-                                    ? Icon(query.value.sortOrder.iconData)
-                                    : null,
-                                value: e,
-                              ))
-                          .toList(),
-                      iconData: Icons.sort,
-                      title: Text(query.value.sortKey.title),
-                      initial: query.value.sortKey,
-                      onChanged: (sortKey) {
-                        // TODO(yakitama5): 昇順降順判断
-                        final isReselect = sortKey == query.value.sortKey;
-                        final prevSortOrder = query.value.sortOrder;
-                        final sortOrder = SortOrder.values
-                            .where((e) => e != prevSortOrder)
-                            .first;
-                        query.value = isReselect
-                            ? query.value.copyWith(sortOrder: sortOrder)
-                            : query.value.copyWith(
-                                sortOrder: SortOrder.asc, sortKey: sortKey);
-                      },
+              PinnedHeaderSliver(
+                child: Material(
+                  child: SafeArea(
+                    top: true,
+                    child: Row(
+                      children: [
+                        // TODO(yakitama5): Chipsを作成して状態管理する
+                        BottomSheetSelectActionChip<SampleListSortKey>(
+                          label: Text(query.value.sortKey.title),
+                          actions: SampleListSortKey.values
+                              .map((e) => BottomSheetAction(
+                                    title: Text(e.title),
+                                    icon: query.value.sortKey == e
+                                        ? Icon(query.value.sortOrder.iconData)
+                                        : null,
+                                    value: e,
+                                  ))
+                              .toList(),
+                          iconData: Icons.sort,
+                          title: Text(query.value.sortKey.title),
+                          initial: query.value.sortKey,
+                          onChanged: (sortKey) {
+                            // TODO(yakitama5): 昇順降順判断
+                            final isReselect = sortKey == query.value.sortKey;
+                            final prevSortOrder = query.value.sortOrder;
+                            final sortOrder = SortOrder.values
+                                .where((e) => e != prevSortOrder)
+                                .first;
+                            query.value = isReselect
+                                ? query.value.copyWith(sortOrder: sortOrder)
+                                : query.value.copyWith(
+                                    sortOrder: SortOrder.asc, sortKey: sortKey);
+                          },
+                        )
+                      ],
                     ),
-                  ],
-                  safeAreaPadding: MediaQuery.paddingOf(context),
+                  ),
                 ),
-                pinned: true,
               ),
               _SliverBody(
                 query: query.value,
@@ -165,5 +201,35 @@ class _ShimmerListTile extends StatelessWidget {
         width: 64,
       ),
     );
+  }
+}
+
+class SafeAreaPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
+  final Widget child;
+
+  final double expandedHeight;
+
+  SafeAreaPersistentHeaderDelegate(
+      {required this.child, required this.expandedHeight});
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return Material(
+        child: SafeArea(bottom: false, child: SizedBox.expand(child: child)));
+  }
+
+  @override
+  double get maxExtent => expandedHeight;
+
+  @override
+  double get minExtent => kToolbarHeight;
+
+  @override
+  bool shouldRebuild(SafeAreaPersistentHeaderDelegate old) {
+    if (old.child != child) {
+      return true;
+    }
+    return false;
   }
 }
