@@ -67,12 +67,9 @@ class SampleListPage extends HookConsumerWidget {
                           onChanged: (sortKey) {
                             // TODO(yakitama5): 昇順降順判断
                             final isReselect = sortKey == query.value.sortKey;
-                            final prevSortOrder = query.value.sortOrder;
-                            final sortOrder = SortOrder.values
-                                .where((e) => e != prevSortOrder)
-                                .first;
                             query.value = isReselect
-                                ? query.value.copyWith(sortOrder: sortOrder)
+                                ? query.value.copyWith(
+                                    sortOrder: query.value.sortOrder.reverse)
                                 : query.value.copyWith(
                                     sortOrder: SortOrder.asc, sortKey: sortKey);
                           },
