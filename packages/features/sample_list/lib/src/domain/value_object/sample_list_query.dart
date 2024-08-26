@@ -7,7 +7,7 @@ part 'sample_list_query.freezed.dart';
 @freezed
 class SampleListQuery with _$SampleListQuery {
   const factory SampleListQuery({
-    required SampleListSortKey sortKey,
-    required SortOrder sortOrder,
+    @Default(SampleListSortKey.price) SampleListSortKey sortKey,
+    @Default(SortOrder.asc) SortOrder sortOrder,
   }) = _SampleListQuery;
 }

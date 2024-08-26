@@ -103,11 +103,14 @@ class __$$SampleListQueryImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SampleListQueryImpl implements _SampleListQuery {
-  const _$SampleListQueryImpl({required this.sortKey, required this.sortOrder});
+  const _$SampleListQueryImpl(
+      {this.sortKey = SampleListSortKey.price, this.sortOrder = SortOrder.asc});
 
   @override
+  @JsonKey()
   final SampleListSortKey sortKey;
   @override
+  @JsonKey()
   final SortOrder sortOrder;
 
   @override
@@ -138,8 +141,8 @@ class _$SampleListQueryImpl implements _SampleListQuery {
 
 abstract class _SampleListQuery implements SampleListQuery {
   const factory _SampleListQuery(
-      {required final SampleListSortKey sortKey,
-      required final SortOrder sortOrder}) = _$SampleListQueryImpl;
+      {final SampleListSortKey sortKey,
+      final SortOrder sortOrder}) = _$SampleListQueryImpl;
 
   @override
   SampleListSortKey get sortKey;

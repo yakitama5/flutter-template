@@ -15,13 +15,8 @@ class SampleListPage extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // HACK(yakitama5): 初期値をDomain層に定義
-    final query = useState(
-      const SampleListQuery(
-        sortKey: SampleListSortKey.createdAt,
-        sortOrder: SortOrder.desc,
-      ),
-    );
+    // 初期状態はドメイン層に定義
+    final query = useState(const SampleListQuery());
 
     return SafeArea(
       top: false,
@@ -65,13 +60,12 @@ class SampleListPage extends HookConsumerWidget {
                           title: Text(query.value.sortKey.title),
                           initial: query.value.sortKey,
                           onChanged: (sortKey) {
-                            // TODO(yakitama5): 昇順降順判断
+                            // 再選択の場合は順序を入れ替える
                             final isReselect = sortKey == query.value.sortKey;
                             query.value = isReselect
                                 ? query.value.copyWith(
                                     sortOrder: query.value.sortOrder.reverse)
-                                : query.value.copyWith(
-                                    sortOrder: SortOrder.asc, sortKey: sortKey);
+                                : SampleListQuery(sortKey: sortKey);
                           },
                         )
                       ],
