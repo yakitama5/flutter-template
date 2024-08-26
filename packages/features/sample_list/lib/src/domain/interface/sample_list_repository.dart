@@ -13,6 +13,7 @@ SampleListRepository sampleListRepository(SampleListRepositoryRef ref) =>
 abstract class SampleListRepository {
   Stream<SampleListResponse> fetchList({
     int page = 1,
+    int pageSize = 10,
     required SampleListQuery query,
   });
 

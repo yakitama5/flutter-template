@@ -11,7 +11,6 @@ import '../../domain/interface/sample_list_repository.dart';
 import '../../domain/value_object/sample_list_query.dart';
 import '../../domain/value_object/sample_list_response.dart';
 
-const _pageSize = 10;
 const _totalLength = 100;
 
 const _images = [
@@ -52,6 +51,7 @@ class FakeSampleListRepository extends SampleListRepository {
   @override
   Stream<SampleListResponse> fetchList({
     int page = 1,
+    int pageSize = 10,
     required SampleListQuery query,
   }) async* {
     await Future<void>.delayed(const Duration(milliseconds: 3000));
@@ -69,8 +69,8 @@ class FakeSampleListRepository extends SampleListRepository {
       SortOrder.desc => sortItems.reversed.toList(),
     };
 
-    final start = (page - 1) * _pageSize;
-    final end = min(start + _pageSize, items.length);
+    final start = (page - 1) * pageSize;
+    final end = min(start + pageSize, items.length);
     final result = SampleListResponse(
       items: orderItems.sublist(start, end),
       totalCount: items.length,
