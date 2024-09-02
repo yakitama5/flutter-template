@@ -1,6 +1,7 @@
 import 'package:features_sample_list/src/domain/entity/sample_list_entity.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../constants/sample_list_constants.dart';
 import '../value_object/sample_list_query.dart';
 import '../value_object/sample_list_response.dart';
 
@@ -13,7 +14,7 @@ SampleListRepository sampleListRepository(SampleListRepositoryRef ref) =>
 abstract class SampleListRepository {
   Stream<SampleListResponse> fetchList({
     int page = 1,
-    int pageSize = 10,
+    int pageSize = sampleListPageSize,
     required SampleListQuery query,
   });
 

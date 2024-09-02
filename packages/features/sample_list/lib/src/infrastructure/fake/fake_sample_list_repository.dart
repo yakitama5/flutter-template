@@ -7,6 +7,7 @@ import 'package:features_sample_list/src/domain/entity/sample_list_entity.dart';
 import 'package:features_sample_list/src/domain/value_object/sample_list_sort_key.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../domain/constants/sample_list_constants.dart';
 import '../../domain/interface/sample_list_repository.dart';
 import '../../domain/value_object/sample_list_query.dart';
 import '../../domain/value_object/sample_list_response.dart';
@@ -51,7 +52,7 @@ class FakeSampleListRepository extends SampleListRepository {
   @override
   Stream<SampleListResponse> fetchList({
     int page = 1,
-    int pageSize = 10,
+    int pageSize = sampleListPageSize,
     required SampleListQuery query,
   }) async* {
     await Future<void>.delayed(const Duration(milliseconds: 3000));

@@ -8,6 +8,7 @@ import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../application/state/sample_list_provider.dart';
+import '../../domain/constants/sample_list_constants.dart';
 import '../../domain/value_object/sample_list_sort_key.dart';
 
 class SampleListPage extends HookConsumerWidget {
@@ -91,9 +92,6 @@ class _SliverBody extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // HACK(yakitama5): ページサイズを共通定義
-    const pageSize = 10;
-
     // 先頭ページを固定で取得
     // エラーハンドリングはコンテンツ取得部分で行うため`valueOrNull`で無視する
     final result =
@@ -104,10 +102,10 @@ class _SliverBody extends HookConsumerWidget {
       sliver: SliverList.separated(
         // 条件が変更されたらスクロール状態をリセットさせる
         key: ValueKey(query),
-        itemCount: result?.totalCount ?? pageSize,
+        itemCount: result?.totalCount ?? sampleListPageSize,
         itemBuilder: (context, index) {
-          final page = index ~/ pageSize + 1;
-          final indexInPage = index % pageSize;
+          final page = index ~/ sampleListPageSize + 1;
+          final indexInPage = index % sampleListPageSize;
           final response =
               ref.watch(sampleListProvider(page: page, query: query));
 
