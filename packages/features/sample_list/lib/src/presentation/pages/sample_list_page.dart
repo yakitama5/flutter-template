@@ -116,8 +116,13 @@ class _SliverBody extends HookConsumerWidget {
               final item = responseData.items[indexInPage];
               return ListTile(
                 title: Text(item.name),
-                // HACK(yakitama5): 画像をキャッシュする
-                leading: Image.network(item.imageUrl!),
+                leading: Image.network(
+                  item.imageUrl!,
+                  loadingBuilder: (context, child, loadingProgress) =>
+                      loadingProgress == null
+                          ? child
+                          : _ShimmerListTileLeading(),
+                ),
                 subtitle: Text('￥${item.price}'),
               );
             },
@@ -151,10 +156,18 @@ class _ShimmerListTile extends StatelessWidget {
       subtitle: ShimmerWidget.rectangular(
         height: 16,
       ),
-      leading: ShimmerWidget.rectangular(
-        height: 64,
-        width: 64,
-      ),
+      leading: _ShimmerListTileLeading(),
+    );
+  }
+}
+
+class _ShimmerListTileLeading extends StatelessWidget {
+  const _ShimmerListTileLeading();
+  @override
+  Widget build(BuildContext context) {
+    return ShimmerWidget.rectangular(
+      height: 64,
+      width: 64,
     );
   }
 }
