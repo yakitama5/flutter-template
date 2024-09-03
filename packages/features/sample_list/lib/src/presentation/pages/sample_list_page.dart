@@ -34,9 +34,9 @@ class SampleListPage extends HookConsumerWidget {
               // do nothing
             }
           },
+          // HACK(yakitama5): SliverAppBar付きのこの構成を共通定義化する
           child: CustomScrollView(
             slivers: [
-              // TODO(yakitama5): ここにセーフエリアを付けてみる
               PinnedHeaderSliver(
                 child: Material(
                   child: SafeArea(
