@@ -36,13 +36,23 @@ class SampleListPage extends HookConsumerWidget {
           },
           child: CustomScrollView(
             slivers: [
+              // TODO(yakitama5): ここにセーフエリアを付けてみる
+              PinnedHeaderSliver(
+                child: Material(
+                  child: SafeArea(
+                    top: true,
+                    child: SizedBox.shrink(),
+                  ),
+                ),
+              ),
               SliverAppBar(
+                primary: false,
                 title: Text('タイトル'),
               ),
               PinnedHeaderSliver(
                 child: Material(
                   child: SafeArea(
-                    top: true,
+                    top: false,
                     child: Row(
                       children: [
                         // TODO(yakitama5): Chipsを作成して状態管理する
@@ -167,35 +177,5 @@ class _ShimmerListTileLeading extends StatelessWidget {
       height: 64,
       width: 64,
     );
-  }
-}
-
-class SafeAreaPersistentHeaderDelegate extends SliverPersistentHeaderDelegate {
-  final Widget child;
-
-  final double expandedHeight;
-
-  SafeAreaPersistentHeaderDelegate(
-      {required this.child, required this.expandedHeight});
-
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Material(
-        child: SafeArea(bottom: false, child: SizedBox.expand(child: child)));
-  }
-
-  @override
-  double get maxExtent => expandedHeight;
-
-  @override
-  double get minExtent => kToolbarHeight;
-
-  @override
-  bool shouldRebuild(SafeAreaPersistentHeaderDelegate old) {
-    if (old.child != child) {
-      return true;
-    }
-    return false;
   }
 }
