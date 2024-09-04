@@ -36,5 +36,3 @@ dev_dependencies:
   riverpod_generator: 
   riverpod_lint: 
   test: any
-
-flutter:
