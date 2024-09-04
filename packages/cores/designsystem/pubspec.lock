@@ -626,6 +626,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  nilts:
+    dependency: "direct dev"
+    description:
+      name: nilts
+      sha256: "4686b5bc32908383796a9f113756cd157536b1106582a633632413f1b3b351c0"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.16.1"
   package_config:
     dependency: transitive
     description:

@@ -974,6 +974,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
+  nilts:
+    dependency: "direct dev"
+    description:
+      name: nilts
+      sha256: "4388dc172d8879d1e9f6baa4d600d275f24595dd64590cd9d5b938b562d35221"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.15.0"
   package_config:
     dependency: transitive
     description:
