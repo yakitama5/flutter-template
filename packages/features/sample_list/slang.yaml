@@ -8,6 +8,9 @@ namespaces: true
 # Config
 imports:
   - "package:features_sample_list/src/domain/value_object/sample_list_sort_key.dart"
+  - "package:features_sample_list/src/presentation/components/sample_list_view_chip.dart"
 contexts:
   SampleListSortKey:
+    generate_enum: false
+  ViewerLayoutType:
     generate_enum: false

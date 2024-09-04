@@ -35,6 +35,6 @@ void keepAliveTimerForStream<T>(
 
   ref
     ..onCancel(() => timer = Timer(duration ?? _duration, link.close))
-    ..onResume(() => timer?.cancel)
-    ..onDispose(() => timer?.cancel);
+    ..onResume(() => timer?.cancel())
+    ..onDispose(() => timer?.cancel());
 }

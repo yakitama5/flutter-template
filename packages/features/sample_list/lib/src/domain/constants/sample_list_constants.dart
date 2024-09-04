@@ -1,1 +1,1 @@
-const sampleListPageSize = 10;
+const sampleListPageSize = 20;

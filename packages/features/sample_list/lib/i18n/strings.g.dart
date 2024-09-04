@@ -4,14 +4,15 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 8 (4 per locale)
+/// Strings: 14 (7 per locale)
 ///
-/// Built on 2024-08-21 at 04:37 UTC
+/// Built on 2024-09-04 at 09:07 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
 
 import 'package:features_sample_list/src/domain/value_object/sample_list_sort_key.dart';
+import 'package:features_sample_list/src/presentation/components/sample_list_view_chip.dart';
 import 'package:flutter/widgets.dart';
 import 'package:slang/builder/model/node.dart';
 import 'package:slang_flutter/slang_flutter.dart';
@@ -170,6 +171,14 @@ class _StringsSampleListEn {
 				return 'Price';
 		}
 	}
+	String viewerLayoutType({required ViewerLayoutType context}) {
+		switch (context) {
+			case ViewerLayoutType.list:
+				return 'List';
+			case ViewerLayoutType.grid:
+				return 'Grid';
+		}
+	}
 }
 
 // Path: sampleList.sampleListPage
@@ -180,6 +189,7 @@ class _StringsSampleListSampleListPageEn {
 
 	// Translations
 	String get title => 'Title';
+	String get viewerLayoutType => 'Layout type';
 }
 
 // Path: <root>
@@ -229,6 +239,14 @@ class _StringsSampleListJa extends _StringsSampleListEn {
 				return '価格';
 		}
 	}
+	@override String viewerLayoutType({required ViewerLayoutType context}) {
+		switch (context) {
+			case ViewerLayoutType.list:
+				return 'リスト表示';
+			case ViewerLayoutType.grid:
+				return 'グリッド表示';
+		}
+	}
 }
 
 // Path: sampleList.sampleListPage
@@ -239,6 +257,7 @@ class _StringsSampleListSampleListPageJa extends _StringsSampleListSampleListPag
 
 	// Translations
 	@override String get title => 'タイトル';
+	@override String get viewerLayoutType => '表示形式';
 }
 
 /// Flat map(s) containing all translations.
@@ -248,6 +267,7 @@ extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'sampleList.sampleListPage.title': return 'Title';
+			case 'sampleList.sampleListPage.viewerLayoutType': return 'Layout type';
 			case 'sampleList.sampleListSortKey': return ({required SampleListSortKey context}) {
 				switch (context) {
 					case SampleListSortKey.createdAt:
@@ -256,6 +276,14 @@ extension on Translations {
 						return 'Name';
 					case SampleListSortKey.price:
 						return 'Price';
+				}
+			};
+			case 'sampleList.viewerLayoutType': return ({required ViewerLayoutType context}) {
+				switch (context) {
+					case ViewerLayoutType.list:
+						return 'List';
+					case ViewerLayoutType.grid:
+						return 'Grid';
 				}
 			};
 			default: return null;
@@ -267,6 +295,7 @@ extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'sampleList.sampleListPage.title': return 'タイトル';
+			case 'sampleList.sampleListPage.viewerLayoutType': return '表示形式';
 			case 'sampleList.sampleListSortKey': return ({required SampleListSortKey context}) {
 				switch (context) {
 					case SampleListSortKey.createdAt:
@@ -275,6 +304,14 @@ extension on _StringsJa {
 						return '名前';
 					case SampleListSortKey.price:
 						return '価格';
+				}
+			};
+			case 'sampleList.viewerLayoutType': return ({required ViewerLayoutType context}) {
+				switch (context) {
+					case ViewerLayoutType.list:
+						return 'リスト表示';
+					case ViewerLayoutType.grid:
+						return 'グリッド表示';
 				}
 			};
 			default: return null;

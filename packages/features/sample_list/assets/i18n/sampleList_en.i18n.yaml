@@ -1,6 +1,10 @@
 sampleListPage: 
   title: Title
+  viewerLayoutType: Layout type
 sampleListSortKey(context=SampleListSortKey):
   createdAt: Created at
   name: Name
   price: Price
+viewerLayoutType(context=ViewerLayoutType):
+  list: List
+  grid: Grid
