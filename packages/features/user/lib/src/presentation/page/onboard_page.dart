@@ -19,7 +19,7 @@ class OnboardPage extends StatelessWidget {
     return const Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(right: 16, left: 16, top: 40),
+          padding: EdgeInsetsDirectional.only(start: 16, end: 16, top: 40),
           child: SingleChildScrollView(
             child: Column(
               children: [

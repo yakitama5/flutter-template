@@ -54,7 +54,7 @@ class SampleListPage extends HookConsumerWidget {
             PinnedHeaderSliver(
               child: Material(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 8, right: 8),
+                  padding: const EdgeInsetsDirectional.only(start: 8, end: 8),
                   child: Row(
                     children: [
                       SampleListSortChip(
@@ -104,7 +104,9 @@ class _SliverBody extends HookConsumerWidget {
         ref.watch(sampleListProvider(page: 1, query: query)).valueOrNull;
 
     return SliverPadding(
-      padding: const EdgeInsets.only(bottom: 120),
+      padding: const EdgeInsetsDirectional.only(
+        bottom: 120,
+      ),
       sliver: SampleItemsViewer(
         // 条件が変更されたらスクロール状態をリセットさせる
         // key: ValueKey(query),
@@ -177,7 +179,7 @@ class _ItemTile extends StatelessWidget {
               Gap(8),
               Flexible(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 16, right: 16),
+                  padding: EdgeInsetsDirectional.only(start: 16, end: 16),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

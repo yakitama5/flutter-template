@@ -79,7 +79,7 @@ class _BottomSheet<T> extends StatelessWidget {
     final cs = Theme.of(context).colorScheme;
 
     return Padding(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsetsDirectional.all(8),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
