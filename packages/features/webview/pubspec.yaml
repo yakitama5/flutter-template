@@ -17,6 +17,7 @@ dev_dependencies:
   custom_lint: any
   flutter_test:
     sdk: flutter
+  nilts: any
   pedantic_mono: any
 
 flutter:

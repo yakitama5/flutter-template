@@ -46,6 +46,7 @@ dev_dependencies:
     sdk: flutter
   freezed: any
   json_serializable:
+  nilts: any
   pedantic_mono:
   riverpod_generator:
   riverpod_lint:

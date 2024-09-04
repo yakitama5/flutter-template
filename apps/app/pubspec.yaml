@@ -59,6 +59,7 @@ dev_dependencies:
   freezed: any
   go_router_builder: ^2.4.1
   json_serializable: any
+  nilts: any
   pedantic_mono: any
   riverpod_generator: 
   riverpod_lint: 

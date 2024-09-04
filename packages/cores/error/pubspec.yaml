@@ -29,10 +29,9 @@ dev_dependencies:
   flutter_gen_runner: 
   flutter_test:
     sdk: flutter
+  nilts: any
   pedantic_mono:
   riverpod_generator: 
   riverpod_lint: 
   slang_build_runner: 
   theme_extensions_builder: 
-
-flutter:

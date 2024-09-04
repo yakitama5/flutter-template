@@ -41,12 +41,11 @@ dev_dependencies:
     sdk: flutter
   freezed: any
   json_serializable: any 
+  nilts: any
   pedantic_mono: 
   riverpod_generator: 
   riverpod_lint: 
   slang_build_runner: 
-
-flutter:
 
 # パッケージ内でのみ利用するAssetsは下記の指定が必要
 # flutter_gen:
