@@ -6,7 +6,7 @@
 /// Locales: 2
 /// Strings: 14 (7 per locale)
 ///
-/// Built on 2024-09-04 at 09:07 UTC
+/// Built on 2024-09-04 at 09:38 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -188,7 +188,7 @@ class _StringsSampleListSampleListPageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get title => 'Title';
+	String get title => 'List Sample';
 	String get viewerLayoutType => 'Layout type';
 }
 
@@ -256,7 +256,7 @@ class _StringsSampleListSampleListPageJa extends _StringsSampleListSampleListPag
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'タイトル';
+	@override String get title => 'リスト表示サンプル';
 	@override String get viewerLayoutType => '表示形式';
 }
 
@@ -266,7 +266,7 @@ class _StringsSampleListSampleListPageJa extends _StringsSampleListSampleListPag
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'sampleList.sampleListPage.title': return 'Title';
+			case 'sampleList.sampleListPage.title': return 'List Sample';
 			case 'sampleList.sampleListPage.viewerLayoutType': return 'Layout type';
 			case 'sampleList.sampleListSortKey': return ({required SampleListSortKey context}) {
 				switch (context) {
@@ -294,7 +294,7 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'sampleList.sampleListPage.title': return 'タイトル';
+			case 'sampleList.sampleListPage.title': return 'リスト表示サンプル';
 			case 'sampleList.sampleListPage.viewerLayoutType': return '表示形式';
 			case 'sampleList.sampleListSortKey': return ({required SampleListSortKey context}) {
 				switch (context) {

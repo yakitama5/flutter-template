@@ -1,5 +1,5 @@
 sampleListPage: 
-  title: タイトル
+  title: リスト表示サンプル
   viewerLayoutType: 表示形式
 sampleListSortKey(context=SampleListSortKey):
   createdAt: 作成日時

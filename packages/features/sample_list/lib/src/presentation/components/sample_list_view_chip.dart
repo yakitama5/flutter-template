@@ -31,13 +31,13 @@ class SampleListViewChip extends StatelessWidget {
       label: Text(i18n.sampleList.sampleListPage.viewerLayoutType),
       actions: ViewerLayoutType.values
           .map((e) => BottomSheetAction(
-                title: Text(e.name),
+                title: Text(e.title),
                 icon: Icon(e.iconData),
                 value: e,
               ))
           .toList(),
       iconData: viewerLayoutType.iconData,
-      title: Text(viewerLayoutType.title),
+      title: Text(i18n.sampleList.sampleListPage.viewerLayoutType),
       initial: viewerLayoutType,
       onChanged: onChanged,
     );

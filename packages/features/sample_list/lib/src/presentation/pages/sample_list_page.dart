@@ -1,6 +1,7 @@
 import 'package:cores_core/domain.dart';
 import 'package:cores_designsystem/presentation.dart';
 import 'package:cores_error/presentation.dart';
+import 'package:features_sample_list/i18n/strings.g.dart';
 import 'package:features_sample_list/src/domain/entity/sample_list_entity.dart';
 import 'package:features_sample_list/src/domain/value_object/sample_list_query.dart';
 import 'package:features_sample_list/src/presentation/components/sample_items_viewer.dart';
@@ -49,7 +50,7 @@ class SampleListPage extends HookConsumerWidget {
             ),
             SliverAppBar(
               primary: false,
-              title: Text('タイトル'),
+              title: Text(i18n.sampleList.sampleListPage.title),
             ),
             PinnedHeaderSliver(
               child: Material(
@@ -152,10 +153,13 @@ class _ItemTile extends StatelessWidget {
     return switch (viewerLayoutType) {
       ViewerLayoutType.list => ListTile(
           title: Text(item.name),
-          leading: Image.network(
-            item.imageUrl!,
-            loadingBuilder: (context, child, loadingProgress) =>
-                loadingProgress == null ? child : _ShimmerListTileLeading(),
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(12),
+            child: Image.network(
+              item.imageUrl!,
+              loadingBuilder: (context, child, loadingProgress) =>
+                  loadingProgress == null ? child : _ShimmerListTileLeading(),
+            ),
           ),
           subtitle: Text('￥${item.price}'),
         ),

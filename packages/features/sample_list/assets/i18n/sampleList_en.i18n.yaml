@@ -1,5 +1,5 @@
 sampleListPage: 
-  title: Title
+  title: List Sample
   viewerLayoutType: Layout type
 sampleListSortKey(context=SampleListSortKey):
   createdAt: Created at
