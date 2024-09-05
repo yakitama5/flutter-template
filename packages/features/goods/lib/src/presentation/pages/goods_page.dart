@@ -5,13 +5,13 @@ import 'package:cores_error/presentation.dart';
 import 'package:features_goods/i18n/strings.g.dart';
 import 'package:features_goods/src/application/state/goods_list_provider.dart';
 import 'package:features_goods/src/domain/constants/goods_constants.dart';
-import 'package:features_goods/src/domain/entity/goods.dart';
 import 'package:features_goods/src/domain/value_object/goods_fetch_query.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../components/goods_card.dart';
 import '../components/goods_sort_key_chip.dart';
 
 class GoodsPage extends HookConsumerWidget {
@@ -119,7 +119,8 @@ class _SliverBody extends HookConsumerWidget {
               ref.watch(goodsListProvider(page: page, query: query));
 
           return response.when(
-            data: (data) => _ItemTile(
+            data: (data) => GoodsCard(
+              key: ValueKey(data.goods[indexInPage]),
               item: data.goods[indexInPage],
               viewLayout: viewLayout,
             ),
@@ -139,110 +140,6 @@ class _SliverBody extends HookConsumerWidget {
   }
 }
 
-class _ItemTile extends StatelessWidget {
-  const _ItemTile({required this.item, required this.viewLayout});
-
-  final Goods item;
-  final ViewLayout viewLayout;
-
-  @override
-  Widget build(BuildContext context) {
-    final tt = Theme.of(context).textTheme;
-
-    return switch (viewLayout) {
-      ViewLayout.list => Card.outlined(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  item.imageUrl!,
-                  height: 120,
-                  width: double.infinity,
-                  fit: BoxFit.fitWidth,
-                  loadingBuilder: (context, child, loadingProgress) =>
-                      loadingProgress == null
-                          ? child
-                          : _ShimmerListTileLeading(),
-                ),
-              ),
-              Gap(16),
-              Flexible(
-                child: Padding(
-                  padding: EdgeInsetsDirectional.only(start: 16, end: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        item.name,
-                        style: tt.headlineMedium,
-                      ),
-                      Text(
-                        '￥${item.price}',
-                        style: tt.headlineSmall,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      // ListTile
-      // ViewLayout.list => ListTile(
-      //     title: Text(item.name),
-      //     leading: ClipRRect(
-      //       borderRadius: BorderRadius.circular(12),
-      //       child: Image.network(
-      //         item.imageUrl!,
-      //         loadingBuilder: (context, child, loadingProgress) =>
-      //             loadingProgress == null ? child : _ShimmerListTileLeading(),
-      //       ),
-      //     ),
-      //     subtitle: Text('￥${item.price}'),
-      //   ),
-      ViewLayout.grid => Card.outlined(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.network(
-                  item.imageUrl!,
-                  height: 96,
-                  width: double.infinity,
-                  fit: BoxFit.fitWidth,
-                  loadingBuilder: (context, child, loadingProgress) =>
-                      loadingProgress == null
-                          ? child
-                          : _ShimmerListTileLeading(),
-                ),
-              ),
-              Gap(8),
-              Flexible(
-                child: Padding(
-                  padding: EdgeInsetsDirectional.only(start: 16, end: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        item.name,
-                        style: tt.titleMedium,
-                      ),
-                      Text('￥${item.price}'),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-    };
-  }
-}
-
 class _ShimmerTile extends StatelessWidget {
   const _ShimmerTile({required this.viewLayout});
   final ViewLayout viewLayout;
@@ -251,7 +148,7 @@ class _ShimmerTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return switch (viewLayout) {
       ViewLayout.list => _ShimmerListTile(),
-      ViewLayout.grid => ShimmerWidget.rectangular(height: double.infinity),
+      ViewLayout.grid => ShimmerWidget.rectangular(height: 60),
     };
   }
 }

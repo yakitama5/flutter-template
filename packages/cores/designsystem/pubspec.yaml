@@ -28,6 +28,7 @@ dependencies:
   shimmer:
   slang: 
   slang_flutter: 
+  sliver_tools: 
   url_launcher:
 
 dev_dependencies:
