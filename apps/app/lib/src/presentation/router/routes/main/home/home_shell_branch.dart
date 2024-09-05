@@ -60,9 +60,8 @@ class HomePageRoute extends GoRouteData {
 class SampleListPageRoute extends GoRouteData {
   const SampleListPageRoute();
 
-  static const path = 'sample_list';
+  static const path = 'goods';
 
   @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const SampleListPage();
+  Widget build(BuildContext context, GoRouterState state) => const GoodsPage();
 }

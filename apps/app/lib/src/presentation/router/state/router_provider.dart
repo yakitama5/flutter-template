@@ -1,7 +1,7 @@
 import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/common_assets.dart';
+import 'package:features_goods/presentation.dart';
 import 'package:features_maintenance/presentation.dart';
-import 'package:features_sample_list/presentation.dart';
 import 'package:features_setting/presentation.dart';
 import 'package:features_user/presentation.dart';
 import 'package:features_webview/webview.dart';

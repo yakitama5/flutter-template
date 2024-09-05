@@ -35,13 +35,13 @@ labels:
     files:
       - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\app_update/.+
 
+  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\goods"
+    files:
+      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\goods/.+
+
   - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\maintenance"
     files:
       - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\maintenance/.+
-
-  - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\sample_list"
-    files:
-      - c:\users\s-takehara\ghq\github.com\yakitama5\flutter-template\packages\features\sample_list/.+
 
   - label: "@c:\\users\\s-takehara\\ghq\\github.com\\yakitama5\\flutter-template\\packages\\features\\setting"
     files:

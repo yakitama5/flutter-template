@@ -8,6 +8,7 @@ export 'src/loader_overlay.dart';
 export 'src/model/bottom_sheet_action.dart';
 export 'src/model/svg_replace_colors.dart';
 export 'src/shimmer_widget.dart';
+export 'src/sliver_switch_layout_view_builder.dart';
 export 'src/svg_asset_image.dart';
 export 'src/url_link.dart';
 export 'src/width_fill_box.dart';

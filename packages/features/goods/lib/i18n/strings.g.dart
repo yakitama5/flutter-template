@@ -4,17 +4,13 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 34 (17 per locale)
+/// Strings: 2 (1 per locale)
 ///
-/// Built on 2024-09-05 at 01:28 UTC
+/// Built on 2024-09-05 at 01:20 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
 
-import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
-import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
-import 'package:cores_designsystem/src/domain/value_object/view_layout.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:slang/builder/model/node.dart';
 import 'package:slang_flutter/slang_flutter.dart';
@@ -152,66 +148,27 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	late final Translations _root = this; // ignore: unused_field
 
 	// Translations
-	late final _StringsDesignsystemEn designsystem = _StringsDesignsystemEn._(_root);
+	late final _StringsGoodsEn goods = _StringsGoodsEn._(_root);
 }
 
-// Path: designsystem
-class _StringsDesignsystemEn {
-	_StringsDesignsystemEn._(this._root);
+// Path: goods
+class _StringsGoodsEn {
+	_StringsGoodsEn._(this._root);
 
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String uiStyle({required UIStyle context}) {
-		switch (context) {
-			case UIStyle.system:
-				return 'System';
-			case UIStyle.android:
-				return 'Android';
-			case UIStyle.ios:
-				return 'iOS';
-		}
-	}
-	String colorStyle({required ColorStyle context}) {
-		switch (context) {
-			case ColorStyle.dynamicColor:
-				return 'DynamicColor';
-			case ColorStyle.systemColor:
-				return 'SystemColor';
-			case ColorStyle.blue:
-				return 'Blue';
-			case ColorStyle.purple:
-				return 'Purple';
-			case ColorStyle.green:
-				return 'Green';
-			case ColorStyle.red:
-				return 'Red';
-			case ColorStyle.pink:
-				return 'Pink';
-			case ColorStyle.yellow:
-				return 'Yellow';
-			case ColorStyle.orange:
-				return 'Orange';
-		}
-	}
-	String themeMode({required ThemeMode context}) {
-		switch (context) {
-			case ThemeMode.system:
-				return 'System';
-			case ThemeMode.light:
-				return 'Light';
-			case ThemeMode.dark:
-				return 'Dark';
-		}
-	}
-	String viewLayout({required ViewLayout context}) {
-		switch (context) {
-			case ViewLayout.grid:
-				return 'Grid';
-			case ViewLayout.list:
-				return 'List';
-		}
-	}
+	late final _StringsGoodsGoodsPageEn goodsPage = _StringsGoodsGoodsPageEn._(_root);
+}
+
+// Path: goods.goodsPage
+class _StringsGoodsGoodsPageEn {
+	_StringsGoodsGoodsPageEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get title => 'Title';
 }
 
 // Path: <root>
@@ -240,66 +197,27 @@ class _StringsJa extends Translations {
 	@override late final _StringsJa _root = this; // ignore: unused_field
 
 	// Translations
-	@override late final _StringsDesignsystemJa designsystem = _StringsDesignsystemJa._(_root);
+	@override late final _StringsGoodsJa goods = _StringsGoodsJa._(_root);
 }
 
-// Path: designsystem
-class _StringsDesignsystemJa extends _StringsDesignsystemEn {
-	_StringsDesignsystemJa._(_StringsJa root) : this._root = root, super._(root);
+// Path: goods
+class _StringsGoodsJa extends _StringsGoodsEn {
+	_StringsGoodsJa._(_StringsJa root) : this._root = root, super._(root);
 
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override String uiStyle({required UIStyle context}) {
-		switch (context) {
-			case UIStyle.system:
-				return 'システム設定';
-			case UIStyle.android:
-				return 'Android';
-			case UIStyle.ios:
-				return 'iOS';
-		}
-	}
-	@override String colorStyle({required ColorStyle context}) {
-		switch (context) {
-			case ColorStyle.dynamicColor:
-				return 'ダイナミックカラー';
-			case ColorStyle.systemColor:
-				return 'システムカラー';
-			case ColorStyle.blue:
-				return 'ブルー';
-			case ColorStyle.purple:
-				return 'パープル';
-			case ColorStyle.green:
-				return 'グリーン';
-			case ColorStyle.red:
-				return 'レッド';
-			case ColorStyle.pink:
-				return 'ピンク';
-			case ColorStyle.yellow:
-				return 'イエロー';
-			case ColorStyle.orange:
-				return 'オレンジ';
-		}
-	}
-	@override String themeMode({required ThemeMode context}) {
-		switch (context) {
-			case ThemeMode.system:
-				return 'システムテーマ';
-			case ThemeMode.light:
-				return 'ライトテーマ';
-			case ThemeMode.dark:
-				return 'ダークテーマ';
-		}
-	}
-	@override String viewLayout({required ViewLayout context}) {
-		switch (context) {
-			case ViewLayout.grid:
-				return 'グリッド表示';
-			case ViewLayout.list:
-				return 'リスト表示';
-		}
-	}
+	@override late final _StringsGoodsGoodsPageJa goodsPage = _StringsGoodsGoodsPageJa._(_root);
+}
+
+// Path: goods.goodsPage
+class _StringsGoodsGoodsPageJa extends _StringsGoodsGoodsPageEn {
+	_StringsGoodsGoodsPageJa._(_StringsJa root) : this._root = root, super._(root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'タイトル';
 }
 
 /// Flat map(s) containing all translations.
@@ -308,56 +226,7 @@ class _StringsDesignsystemJa extends _StringsDesignsystemEn {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'designsystem.uiStyle': return ({required UIStyle context}) {
-				switch (context) {
-					case UIStyle.system:
-						return 'System';
-					case UIStyle.android:
-						return 'Android';
-					case UIStyle.ios:
-						return 'iOS';
-				}
-			};
-			case 'designsystem.colorStyle': return ({required ColorStyle context}) {
-				switch (context) {
-					case ColorStyle.dynamicColor:
-						return 'DynamicColor';
-					case ColorStyle.systemColor:
-						return 'SystemColor';
-					case ColorStyle.blue:
-						return 'Blue';
-					case ColorStyle.purple:
-						return 'Purple';
-					case ColorStyle.green:
-						return 'Green';
-					case ColorStyle.red:
-						return 'Red';
-					case ColorStyle.pink:
-						return 'Pink';
-					case ColorStyle.yellow:
-						return 'Yellow';
-					case ColorStyle.orange:
-						return 'Orange';
-				}
-			};
-			case 'designsystem.themeMode': return ({required ThemeMode context}) {
-				switch (context) {
-					case ThemeMode.system:
-						return 'System';
-					case ThemeMode.light:
-						return 'Light';
-					case ThemeMode.dark:
-						return 'Dark';
-				}
-			};
-			case 'designsystem.viewLayout': return ({required ViewLayout context}) {
-				switch (context) {
-					case ViewLayout.grid:
-						return 'Grid';
-					case ViewLayout.list:
-						return 'List';
-				}
-			};
+			case 'goods.goodsPage.title': return 'Title';
 			default: return null;
 		}
 	}
@@ -366,56 +235,7 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'designsystem.uiStyle': return ({required UIStyle context}) {
-				switch (context) {
-					case UIStyle.system:
-						return 'システム設定';
-					case UIStyle.android:
-						return 'Android';
-					case UIStyle.ios:
-						return 'iOS';
-				}
-			};
-			case 'designsystem.colorStyle': return ({required ColorStyle context}) {
-				switch (context) {
-					case ColorStyle.dynamicColor:
-						return 'ダイナミックカラー';
-					case ColorStyle.systemColor:
-						return 'システムカラー';
-					case ColorStyle.blue:
-						return 'ブルー';
-					case ColorStyle.purple:
-						return 'パープル';
-					case ColorStyle.green:
-						return 'グリーン';
-					case ColorStyle.red:
-						return 'レッド';
-					case ColorStyle.pink:
-						return 'ピンク';
-					case ColorStyle.yellow:
-						return 'イエロー';
-					case ColorStyle.orange:
-						return 'オレンジ';
-				}
-			};
-			case 'designsystem.themeMode': return ({required ThemeMode context}) {
-				switch (context) {
-					case ThemeMode.system:
-						return 'システムテーマ';
-					case ThemeMode.light:
-						return 'ライトテーマ';
-					case ThemeMode.dark:
-						return 'ダークテーマ';
-				}
-			};
-			case 'designsystem.viewLayout': return ({required ViewLayout context}) {
-				switch (context) {
-					case ViewLayout.grid:
-						return 'グリッド表示';
-					case ViewLayout.list:
-						return 'リスト表示';
-				}
-			};
+			case 'goods.goodsPage.title': return 'タイトル';
 			default: return null;
 		}
 	}

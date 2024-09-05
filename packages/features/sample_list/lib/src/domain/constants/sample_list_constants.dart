@@ -1,1 +1,0 @@
-const sampleListPageSize = 20;

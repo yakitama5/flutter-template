@@ -22,10 +22,10 @@ dependencies:
     path: ../../packages/cores/shared_preferences
   features_app_update:
     path: ../../packages/features/app_update
+  features_goods:
+    path: ../../packages/features/goods
   features_maintenance:
     path: ../../packages/features/maintenance
-  features_sample_list:
-    path: ../../packages/features/sample_list
   features_setting:
     path: ../../packages/features/setting
   features_user:

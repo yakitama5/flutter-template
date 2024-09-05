@@ -12,10 +12,10 @@ import 'package:cores_shared_preferences/init.dart';
 import 'package:features_app_update/application.dart';
 import 'package:features_app_update/i18n.dart';
 import 'package:features_app_update/init.dart';
+import 'package:features_goods/i18n.dart';
+import 'package:features_goods/init.dart';
 import 'package:features_maintenance/i18n.dart';
 import 'package:features_maintenance/init.dart';
-import 'package:features_sample_list/i18n.dart';
-import 'package:features_sample_list/init.dart';
 import 'package:features_setting/i18n.dart';
 import 'package:features_user/i18n.dart';
 import 'package:features_user/init.dart';
@@ -47,7 +47,7 @@ void main() async {
         ...await initializeAppUpdateProviders(),
         ...await initializeMaintenanceProviders(),
         ...await initializeUserProviders(),
-        ...await initializeSampleListProviders(),
+        ...await initializeGoodsProviders(),
 
         // アプリ特有の設定
         appBuildConfigProvider.overrideWithValue(buildConfig),
@@ -57,7 +57,7 @@ void main() async {
         children: const [
           // Slangの伝播
           _AppTranslationProvider(),
-          SampleListTranslationProvider(),
+          GoodsTranslationProvider(),
           AppUpdateTranslationProvider(),
           MaintenanceTranslationProvider(),
           UserTranslationProvider(),

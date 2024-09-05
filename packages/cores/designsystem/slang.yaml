@@ -9,11 +9,14 @@ namespaces: true
 imports:
   - "package:cores_designsystem/src/domain/value_object/ui_style.dart"
   - "package:cores_designsystem/src/domain/value_object/color_style.dart"
+  - "package:cores_designsystem/src/domain/value_object/view_layout.dart"
   - "package:flutter/material.dart"
 contexts:
   UIStyle:
     generate_enum: false
   ColorStyle:
+    generate_enum: false
+  ViewLayout:
     generate_enum: false
   ThemeMode:
     generate_enum: false

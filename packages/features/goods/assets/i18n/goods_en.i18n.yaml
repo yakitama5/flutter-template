@@ -1,0 +1,7 @@
+goodsPage: 
+  title: Goods
+  layout: Layout
+goodsSortKey(context=GoodsSortKey):
+  createdAt: Created at
+  name: Name
+  price: Price
