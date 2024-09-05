@@ -53,11 +53,11 @@ dev_dependencies:
   build_runner: any
   build_verify: ^3.1.0
   custom_lint: any
-  flutter_launcher_icons: ^0.13.1
   flutter_test:
     sdk: flutter
   freezed: any
   go_router_builder: ^2.4.1
+  icons_launcher: any
   json_serializable: any
   nilts: any
   pedantic_mono: any
@@ -66,14 +66,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
-flutter_launcher_icons:
-  # https://zenn.dev/tsuruo/articles/eae9dbbad8372f#themed-app-icons
-  # https://blog.okaryo.io/20221127-support-themed-app-icon-in-flutter-app-for-android-13
-  android: true
-  ios: true
-  image_path: "assets/launcher_icon/icon_dev.png"
-  min_sdk_android: 21
-  adaptive_icon_background: "#FFFFFF"
-  adaptive_icon_foreground: "assets/launcher_icon/icon_adaptive_dev.png"
-  adaptive_icon_monochrome: "assets/launcher_icon/icon_adaptive_monochrome_dev.png"
