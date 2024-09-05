@@ -1,9 +1,10 @@
+import 'package:cores_designsystem/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 
 /// Viewのレイアウト
 enum ViewLayout {
   grid(Icons.grid_3x3_rounded),
-  list(Icons.list_alt_rounded);
+  list(Icons.list_rounded);
 
   const ViewLayout(this.iconData);
 
@@ -11,5 +12,5 @@ enum ViewLayout {
 }
 
 extension ViewLayoutX on ViewLayout {
-  String get title => 'TODO';
+  String get title => i18n.designsystem.viewLayout.typeName(context: this);
 }

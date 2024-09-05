@@ -1,3 +1,5 @@
+import 'package:features_goods/i18n/strings.g.dart';
+
 enum GoodsSortKey {
   createdAt,
   name,
@@ -5,6 +7,5 @@ enum GoodsSortKey {
 }
 
 extension GoodsSortKeyX on GoodsSortKey {
-  // String get title => i18n.sampleList.sampleListSortKey(context: this);
-  String get title => 'TODO';
+  String get title => i18n.goods.goodsSortKey(context: this);
 }

@@ -4,13 +4,14 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 2 (1 per locale)
+/// Strings: 10 (5 per locale)
 ///
-/// Built on 2024-09-05 at 01:20 UTC
+/// Built on 2024-09-05 at 02:09 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
 
+import 'package:features_goods/src/domain/value_object/goods_sort_key.dart';
 import 'package:flutter/widgets.dart';
 import 'package:slang/builder/model/node.dart';
 import 'package:slang_flutter/slang_flutter.dart';
@@ -159,6 +160,16 @@ class _StringsGoodsEn {
 
 	// Translations
 	late final _StringsGoodsGoodsPageEn goodsPage = _StringsGoodsGoodsPageEn._(_root);
+	String goodsSortKey({required GoodsSortKey context}) {
+		switch (context) {
+			case GoodsSortKey.createdAt:
+				return 'Created at';
+			case GoodsSortKey.name:
+				return 'Name';
+			case GoodsSortKey.price:
+				return 'Price';
+		}
+	}
 }
 
 // Path: goods.goodsPage
@@ -168,7 +179,8 @@ class _StringsGoodsGoodsPageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
-	String get title => 'Title';
+	String get title => 'Goods';
+	String get layout => 'Layout';
 }
 
 // Path: <root>
@@ -208,6 +220,16 @@ class _StringsGoodsJa extends _StringsGoodsEn {
 
 	// Translations
 	@override late final _StringsGoodsGoodsPageJa goodsPage = _StringsGoodsGoodsPageJa._(_root);
+	@override String goodsSortKey({required GoodsSortKey context}) {
+		switch (context) {
+			case GoodsSortKey.createdAt:
+				return '作成日時';
+			case GoodsSortKey.name:
+				return '商品名';
+			case GoodsSortKey.price:
+				return '価格';
+		}
+	}
 }
 
 // Path: goods.goodsPage
@@ -217,7 +239,8 @@ class _StringsGoodsGoodsPageJa extends _StringsGoodsGoodsPageEn {
 	@override final _StringsJa _root; // ignore: unused_field
 
 	// Translations
-	@override String get title => 'タイトル';
+	@override String get title => '商品一覧';
+	@override String get layout => '表示形式';
 }
 
 /// Flat map(s) containing all translations.
@@ -226,7 +249,18 @@ class _StringsGoodsGoodsPageJa extends _StringsGoodsGoodsPageEn {
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'goods.goodsPage.title': return 'Title';
+			case 'goods.goodsPage.title': return 'Goods';
+			case 'goods.goodsPage.layout': return 'Layout';
+			case 'goods.goodsSortKey': return ({required GoodsSortKey context}) {
+				switch (context) {
+					case GoodsSortKey.createdAt:
+						return 'Created at';
+					case GoodsSortKey.name:
+						return 'Name';
+					case GoodsSortKey.price:
+						return 'Price';
+				}
+			};
 			default: return null;
 		}
 	}
@@ -235,7 +269,18 @@ extension on Translations {
 extension on _StringsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
-			case 'goods.goodsPage.title': return 'タイトル';
+			case 'goods.goodsPage.title': return '商品一覧';
+			case 'goods.goodsPage.layout': return '表示形式';
+			case 'goods.goodsSortKey': return ({required GoodsSortKey context}) {
+				switch (context) {
+					case GoodsSortKey.createdAt:
+						return '作成日時';
+					case GoodsSortKey.name:
+						return '商品名';
+					case GoodsSortKey.price:
+						return '価格';
+				}
+			};
 			default: return null;
 		}
 	}
