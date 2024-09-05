@@ -1,6 +1,6 @@
 import 'package:cores_designsystem/domain.dart';
+import 'package:cores_designsystem/i18n/strings.g.dart';
 import 'package:cores_designsystem/presentation.dart';
-import 'package:features_goods/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 
 class ViewLayoutChip extends StatelessWidget {
@@ -16,7 +16,7 @@ class ViewLayoutChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomSheetSelectActionChip<ViewLayout>(
-      label: Text(i18n.goods.goodsPage.title),
+      label: Text(i18n.designsystem.viewLayout.name),
       actions: ViewLayout.values
           .map((e) => BottomSheetAction(
                 title: Text(e.title),
@@ -25,7 +25,7 @@ class ViewLayoutChip extends StatelessWidget {
               ))
           .toList(),
       iconData: viewLayout.iconData,
-      title: Text(i18n.goods.goodsPage.title),
+      title: Text(i18n.designsystem.viewLayout.name),
       initial: viewLayout,
       onChanged: onChanged,
     );

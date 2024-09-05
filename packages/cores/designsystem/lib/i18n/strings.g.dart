@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 34 (17 per locale)
+/// Strings: 36 (18 per locale)
 ///
-/// Built on 2024-09-05 at 01:28 UTC
+/// Built on 2024-09-05 at 02:03 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -204,7 +204,18 @@ class _StringsDesignsystemEn {
 				return 'Dark';
 		}
 	}
-	String viewLayout({required ViewLayout context}) {
+	late final _StringsDesignsystemViewLayoutEn viewLayout = _StringsDesignsystemViewLayoutEn._(_root);
+}
+
+// Path: designsystem.viewLayout
+class _StringsDesignsystemViewLayoutEn {
+	_StringsDesignsystemViewLayoutEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get name => 'Layout';
+	String typeName({required ViewLayout context}) {
 		switch (context) {
 			case ViewLayout.grid:
 				return 'Grid';
@@ -292,7 +303,18 @@ class _StringsDesignsystemJa extends _StringsDesignsystemEn {
 				return 'ダークテーマ';
 		}
 	}
-	@override String viewLayout({required ViewLayout context}) {
+	@override late final _StringsDesignsystemViewLayoutJa viewLayout = _StringsDesignsystemViewLayoutJa._(_root);
+}
+
+// Path: designsystem.viewLayout
+class _StringsDesignsystemViewLayoutJa extends _StringsDesignsystemViewLayoutEn {
+	_StringsDesignsystemViewLayoutJa._(_StringsJa root) : this._root = root, super._(root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => '表示形式';
+	@override String typeName({required ViewLayout context}) {
 		switch (context) {
 			case ViewLayout.grid:
 				return 'グリッド表示';
@@ -350,7 +372,8 @@ extension on Translations {
 						return 'Dark';
 				}
 			};
-			case 'designsystem.viewLayout': return ({required ViewLayout context}) {
+			case 'designsystem.viewLayout.name': return 'Layout';
+			case 'designsystem.viewLayout.typeName': return ({required ViewLayout context}) {
 				switch (context) {
 					case ViewLayout.grid:
 						return 'Grid';
@@ -408,7 +431,8 @@ extension on _StringsJa {
 						return 'ダークテーマ';
 				}
 			};
-			case 'designsystem.viewLayout': return ({required ViewLayout context}) {
+			case 'designsystem.viewLayout.name': return '表示形式';
+			case 'designsystem.viewLayout.typeName': return ({required ViewLayout context}) {
 				switch (context) {
 					case ViewLayout.grid:
 						return 'グリッド表示';

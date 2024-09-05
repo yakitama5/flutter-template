@@ -16,6 +16,8 @@ themeMode(context=ThemeMode):
   system: System
   light: Light
   dark: Dark
-viewLayout(context=ViewLayout):
-  grid: Grid
-  list: List
+viewLayout:
+  name: Layout
+  typeName(context=ViewLayout):
+    grid: Grid
+    list: List

@@ -16,6 +16,8 @@ themeMode(context=ThemeMode):
   system: システムテーマ
   light: ライトテーマ
   dark: ダークテーマ
-viewLayout(context=ViewLayout):
-  grid: グリッド表示
-  list: リスト表示
+viewLayout:
+  name: 表示形式
+  typeName(context=ViewLayout):
+    grid: グリッド表示
+    list: リスト表示
