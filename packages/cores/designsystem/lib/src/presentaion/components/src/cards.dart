@@ -1,3 +1,4 @@
+import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:nested/nested.dart';
 
@@ -84,56 +85,43 @@ class OutlinedCard extends SingleChildCard {
     // Notes: 基本的な設定は公式ドキュメントに沿って設定
     // https://m3.material.io/components/cards/specs#9abbced9-d5d3-4893-9a67-031825205f06
     final shape = BorderRadius.circular(12);
-    const padding =
-        EdgeInsetsDirectional.only(start: 16, end: 16, top: 8, bottom: 8);
 
-    return Card(
-      elevation: 0,
-      clipBehavior: Clip.hardEdge,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(
-          color: Theme.of(context).colorScheme.outline,
-        ),
-        borderRadius: shape,
-      ),
+    return Card.outlined(
       child: InkWell(
         borderRadius: shape,
         onTap: onTap,
         onLongPress: onLongPress,
-        child: Padding(
-          padding: padding,
-          child: child,
-        ),
+        child: child,
       ),
     );
   }
 }
 
-// class OpenContainerCardWrapper<T> extends StatelessWidget {
-//   const OpenContainerCardWrapper({
-//     super.key,
-//     required this.closedBuilder,
-//     required this.openBuilder,
-//   });
+class OpenContainerCardWrapper<T> extends StatelessWidget {
+  const OpenContainerCardWrapper({
+    super.key,
+    required this.closedBuilder,
+    required this.openBuilder,
+  });
 
-//   final CloseContainerBuilder closedBuilder;
-//   final OpenContainerBuilder<T> openBuilder;
+  final CloseContainerBuilder closedBuilder;
+  final OpenContainerBuilder<T> openBuilder;
 
-//   @override
-//   Widget build(BuildContext context) {
-//     final cs = Theme.of(context).colorScheme;
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
 
-//     return OpenContainer(
-//       closedBuilder: closedBuilder,
-//       openBuilder: openBuilder,
+    return OpenContainer(
+      closedBuilder: closedBuilder,
+      openBuilder: openBuilder,
 
-//       // ClosedBuilderが表示されてしまう対応
-//       closedShape: RoundedRectangleBorder(
-//         borderRadius: BorderRadius.circular(16),
-//       ),
-//       closedColor: cs.surface,
-//       closedElevation: 0,
-//       tappable: false,
-//     );
-//   }
-// }
+      // ClosedBuilderが表示されてしまう対応
+      closedShape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      closedColor: cs.surface,
+      closedElevation: 0,
+      tappable: false,
+    );
+  }
+}

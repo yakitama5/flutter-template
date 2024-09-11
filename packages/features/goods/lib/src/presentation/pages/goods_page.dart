@@ -6,6 +6,7 @@ import 'package:features_goods/i18n/strings.g.dart';
 import 'package:features_goods/src/application/state/goods_list_provider.dart';
 import 'package:features_goods/src/domain/constants/goods_constants.dart';
 import 'package:features_goods/src/domain/value_object/goods_fetch_query.dart';
+import 'package:features_goods/src/presentation/pages/goods_detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
@@ -109,7 +110,7 @@ class _SliverBody extends HookConsumerWidget {
       ),
       sliver: SliverSwitchLayoutViewBuilder(
         // 条件が変更されたらスクロール状態をリセットさせる
-        // key: ValueKey(query),
+        key: ValueKey(query),
         viewLayout: viewLayout,
         itemCount: result?.totalCount ?? goodsPageSize,
         itemBuilder: (context, index) {
@@ -119,10 +120,15 @@ class _SliverBody extends HookConsumerWidget {
               ref.watch(goodsListProvider(page: page, query: query));
 
           return response.when(
-            data: (data) => GoodsCard(
-              key: ValueKey(data.goods[indexInPage]),
-              item: data.goods[indexInPage],
-              viewLayout: viewLayout,
+            data: (data) => OpenContainerCardWrapper(
+              openBuilder: (context, action) =>
+                  GoodsDetailPage(goods: data.goods[indexInPage]),
+              closedBuilder: (context, action) => GoodsCard(
+                key: ValueKey(data.goods[indexInPage]),
+                item: data.goods[indexInPage],
+                viewLayout: viewLayout,
+                onTap: action,
+              ),
             ),
             loading: () => _ShimmerTile(viewLayout: viewLayout),
             error: (error, __) => ErrorListTile(

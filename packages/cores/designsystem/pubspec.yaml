@@ -8,6 +8,7 @@ environment:
   flutter: ^3.24.0
 
 dependencies:
+  animations: 
   collection:
   cores_core:
     path: ../core

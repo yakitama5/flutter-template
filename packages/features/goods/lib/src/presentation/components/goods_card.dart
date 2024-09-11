@@ -11,10 +11,12 @@ double _imageHeight(ViewLayout viewLayout) => switch (viewLayout) {
     };
 
 class GoodsCard extends StatelessWidget {
-  const GoodsCard({super.key, required this.item, required this.viewLayout});
+  const GoodsCard(
+      {super.key, required this.item, required this.viewLayout, this.onTap});
 
   final Goods item;
   final ViewLayout viewLayout;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,8 @@ class GoodsCard extends StatelessWidget {
       ViewLayout.list => tt.headlineSmall,
     };
 
-    return Card.outlined(
+    return OutlinedCard(
+      onTap: onTap,
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
