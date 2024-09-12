@@ -23,6 +23,7 @@ dependencies:
   gap: 
   gauge_indicator: 
   hooks_riverpod: 
+  linked_scroll_controller: 
   material_color_utilities:
   nested: 
   riverpod_annotation: 

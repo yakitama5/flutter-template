@@ -4,6 +4,7 @@ export 'src/cards.dart';
 export 'src/chips.dart';
 export 'src/gauge_indicator.dart';
 export 'src/image_aspect_ratio.dart';
+export 'src/linked_scroll_builder.dart';
 export 'src/loader_overlay.dart';
 export 'src/model/bottom_sheet_action.dart';
 export 'src/model/svg_replace_colors.dart';

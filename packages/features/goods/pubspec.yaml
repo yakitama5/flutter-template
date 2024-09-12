@@ -29,7 +29,6 @@ dependencies:
   hooks_riverpod: 
   intl: 
   json_annotation: any
-  linked_scroll_controller: 
   nested: 
   riverpod_annotation: 
   riverpod_paging_utils:
