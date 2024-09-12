@@ -11,8 +11,12 @@ double _imageHeight(ViewLayout viewLayout) => switch (viewLayout) {
     };
 
 class GoodsCard extends StatelessWidget {
-  const GoodsCard(
-      {super.key, required this.item, required this.viewLayout, this.onTap});
+  const GoodsCard({
+    super.key,
+    required this.item,
+    required this.viewLayout,
+    this.onTap,
+  });
 
   final Goods item;
   final ViewLayout viewLayout;
@@ -55,8 +59,12 @@ class GoodsCard extends StatelessWidget {
           ),
           Flexible(
             child: Padding(
-              padding: EdgeInsetsDirectional.only(
-                  start: 16, end: 16, top: 16, bottom: 16),
+              padding: const EdgeInsetsDirectional.only(
+                start: 16,
+                end: 16,
+                top: 16,
+                bottom: 16,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -64,12 +72,12 @@ class GoodsCard extends StatelessWidget {
                     item.name,
                     style: headlineStyle,
                   ),
-                  Gap(4),
+                  const Gap(4),
                   Text(
                     '￥${item.price}',
                     style: subheadStyle,
                   ),
-                  Gap(8),
+                  const Gap(8),
                   Text(
                     item.description,
                     overflow: TextOverflow.ellipsis,
@@ -82,13 +90,5 @@ class GoodsCard extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class ShimmerGoodsCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
   }
 }

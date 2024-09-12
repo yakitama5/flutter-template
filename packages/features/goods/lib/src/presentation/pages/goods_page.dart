@@ -40,10 +40,9 @@ class GoodsPage extends HookConsumerWidget {
         // HACK(yakitama5): SliverAppBar付きのこの構成を共通定義化する
         child: CustomScrollView(
           slivers: [
-            PinnedHeaderSliver(
+            const PinnedHeaderSliver(
               child: Material(
                 child: SafeArea(
-                  top: true,
                   child: SizedBox.shrink(),
                 ),
               ),
@@ -64,13 +63,14 @@ class GoodsPage extends HookConsumerWidget {
                           final isReselect = sortKey == query.value.sortKey;
                           query.value = isReselect
                               ? query.value.copyWith(
-                                  sortOrder: query.value.sortOrder.reverse)
+                                  sortOrder: query.value.sortOrder.reverse,
+                                )
                               : GoodsFetchQuery(sortKey: sortKey);
                         },
                         sortKey: query.value.sortKey,
                         sortOrder: query.value.sortOrder,
                       ),
-                      Gap(12),
+                      const Gap(12),
                       ViewLayoutChip(
                         viewLayout: viewLayout.value,
                         onChanged: (v) => viewLayout.value = v,
@@ -153,8 +153,8 @@ class _ShimmerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return switch (viewLayout) {
-      ViewLayout.list => _ShimmerListTile(),
-      ViewLayout.grid => ShimmerWidget.rectangular(height: 60),
+      ViewLayout.list => const _ShimmerListTile(),
+      ViewLayout.grid => const ShimmerWidget.rectangular(height: 60),
     };
   }
 }
@@ -181,7 +181,7 @@ class _ShimmerListTileLeading extends StatelessWidget {
   const _ShimmerListTileLeading();
   @override
   Widget build(BuildContext context) {
-    return ShimmerWidget.rectangular(
+    return const ShimmerWidget.rectangular(
       height: 64,
       width: 64,
     );

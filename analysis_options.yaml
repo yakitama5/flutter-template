@@ -12,7 +12,7 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.gform.dart"
     - "**/firebase_options*.dart"
-    - "*/.github/workflows/flutter_*.yaml"
+    - ".github/**"
     - "*/functions/*.js"
     - "tool/**"
     - "tools/**"

@@ -10,8 +10,8 @@ sealed class SingleChildCard extends SingleChildStatelessWidget {
     this.onLongPress,
   });
 
-  final void Function()? onTap;
-  final void Function()? onLongPress;
+  final VoidCallback? onTap;
+  final VoidCallback? onLongPress;
 }
 
 class ElevatedCard extends SingleChildCard {

@@ -10,7 +10,7 @@ typedef SwitchLayoutItemBuilder = Widget? Function(
 );
 
 /// 表示形式をスイッチング可能なViewBuilder
-class SliverSwitchLayoutViewBuilder<T> extends StatelessWidget {
+class SliverSwitchLayoutViewBuilder extends StatelessWidget {
   const SliverSwitchLayoutViewBuilder({
     super.key,
     required this.viewLayout,
@@ -39,14 +39,14 @@ class SliverSwitchLayoutViewBuilder<T> extends StatelessWidget {
         ViewLayout.grid => SliverAnimatedGrid(
             initialItemCount: itemCount ?? 0,
             gridDelegate: gridDelegate ??
-                SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 240.0,
-                  mainAxisSpacing: 4.0,
-                  crossAxisSpacing: 4.0,
+                const SliverGridDelegateWithMaxCrossAxisExtent(
+                  maxCrossAxisExtent: 240,
+                  mainAxisSpacing: 4,
+                  crossAxisSpacing: 4,
                   childAspectRatio: 0.75,
                 ),
             itemBuilder: (context, index, animation) =>
-                itemBuilder(context, index) ?? SizedBox.shrink(),
+                itemBuilder(context, index) ?? const SizedBox.shrink(),
           )
       },
     );

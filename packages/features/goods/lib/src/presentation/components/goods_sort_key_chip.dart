@@ -5,11 +5,12 @@ import 'package:flutter/material.dart';
 
 /// 並び替えを行うための`ActionChip`
 class GoodsSortKeyChip extends StatelessWidget {
-  const GoodsSortKeyChip(
-      {super.key,
-      required this.onChanged,
-      required this.sortKey,
-      required this.sortOrder});
+  const GoodsSortKeyChip({
+    super.key,
+    required this.onChanged,
+    required this.sortKey,
+    required this.sortOrder,
+  });
 
   final ValueChanged<GoodsSortKey> onChanged;
   final GoodsSortKey sortKey;
@@ -20,11 +21,13 @@ class GoodsSortKeyChip extends StatelessWidget {
     return BottomSheetSelectActionChip<GoodsSortKey>(
       label: Text(sortKey.title),
       actions: GoodsSortKey.values
-          .map((e) => BottomSheetAction(
-                title: Text(e.title),
-                icon: sortKey == e ? Icon(sortOrder.iconData) : null,
-                value: e,
-              ))
+          .map(
+            (e) => BottomSheetAction(
+              title: Text(e.title),
+              icon: sortKey == e ? Icon(sortOrder.iconData) : null,
+              value: e,
+            ),
+          )
           .toList(),
       iconData: Icons.sort,
       title: Text(sortKey.title),

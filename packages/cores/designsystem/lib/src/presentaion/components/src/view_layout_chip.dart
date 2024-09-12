@@ -18,11 +18,13 @@ class ViewLayoutChip extends StatelessWidget {
     return BottomSheetSelectActionChip<ViewLayout>(
       label: Text(i18n.designsystem.viewLayout.name),
       actions: ViewLayout.values
-          .map((e) => BottomSheetAction(
-                title: Text(e.title),
-                icon: Icon(e.iconData),
-                value: e,
-              ))
+          .map(
+            (e) => BottomSheetAction(
+              title: Text(e.title),
+              icon: Icon(e.iconData),
+              value: e,
+            ),
+          )
           .toList(),
       iconData: viewLayout.iconData,
       title: Text(i18n.designsystem.viewLayout.name),

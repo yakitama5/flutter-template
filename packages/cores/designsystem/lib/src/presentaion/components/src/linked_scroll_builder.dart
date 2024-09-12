@@ -6,9 +6,10 @@ class LinkedScrollBuilder extends StatefulWidget {
   const LinkedScrollBuilder({super.key, required this.builder});
 
   final Widget Function(
-      BuildContext context,
-      LinkedScrollControllerGroup controllerGroup,
-      ({ScrollController one, ScrollController two}) controllers) builder;
+    BuildContext context,
+    LinkedScrollControllerGroup controllerGroup,
+    ({ScrollController one, ScrollController two}) controllers,
+  ) builder;
 
   @override
   State<StatefulWidget> createState() => _LinkedScrollControllBuilderState();

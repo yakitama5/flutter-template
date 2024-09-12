@@ -18,7 +18,7 @@ class BottomSheetSelectActionChip<T> extends StatelessWidget {
   /// Chip Property
   final Widget label;
   final IconData iconData;
-  final void Function(T value)? onChanged;
+  final ValueChanged<T>? onChanged;
 
   /// BottomSheet Property
   final Widget? title;
@@ -70,7 +70,7 @@ class _BottomSheet<T> extends StatelessWidget {
 
   final Widget? title;
   final List<BottomSheetAction<T>> actions;
-  final void Function(T value)? onChanged;
+  final ValueChanged<T>? onChanged;
   final T? initial;
 
   @override
@@ -89,11 +89,11 @@ class _BottomSheet<T> extends StatelessWidget {
             ListTile(
               title: title,
             ),
-            Divider(),
+            const Divider(),
             ...actions.map((a) {
               final icon = a.icon ??
                   (hasAnyIcon
-                      ? SizedBox(
+                      ? const SizedBox(
                           width: 24,
                         )
                       : null);
@@ -105,7 +105,8 @@ class _BottomSheet<T> extends StatelessWidget {
                 selectedTileColor: cs.primaryContainer,
                 selectedColor: cs.onPrimaryContainer,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(32)),
+                  borderRadius: BorderRadius.circular(32),
+                ),
                 leading: icon,
                 onTap: () => Navigator.pop(context, a.value),
               );

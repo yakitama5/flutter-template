@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../model/dynamic_color_support_status.dart';
@@ -12,7 +11,11 @@ DynamicColorSupportStatus dynamicColorSupportProvider(
   DynamicColorSupportProviderRef ref,
 ) {
   final corePalette = ref.watch(corePaletteProvider);
-  final isSupport = corePalette != null && !Platform.isIOS && !Platform.isMacOS;
+  final isSupport = corePalette != null &&
+      switch (defaultTargetPlatform) {
+        TargetPlatform.iOS || TargetPlatform.macOS => false,
+        _ => true,
+      };
 
   return isSupport
       ? DynamicColorSupportStatus.supported

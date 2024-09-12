@@ -1,4 +1,4 @@
-import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../domain/interface/app_maintenance_repository.dart';
 import '../infrastructure/firebase/repository/remote_config_app_maintenance_repository.dart';

@@ -8,6 +8,7 @@ part 'app_theme_provider.g.dart';
 
 @riverpod
 ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
+  // ignore: avoid_manual_providers_as_generated_provider_dependency
   final colorStyle = ref.watch(colorStyleProvider);
   final corePalette = ref.watch(corePaletteProvider);
 
