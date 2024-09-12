@@ -13,8 +13,12 @@ ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
   final corePalette = ref.watch(corePaletteProvider);
 
   return switch (colorStyle) {
+    // パッケージ対応されるまで最新のColorSchemeに合わせて編集
+    // Notes: https://github.com/material-foundation/flutter-packages/issues/582
     ColorStyle.dynamicColor => ThemeData.from(
-        colorScheme: corePalette!.toColorScheme(brightness: brightness),
+        colorScheme: _generateDynamicColourSchemes(
+          corePalette!.toColorScheme(brightness: brightness),
+        ),
       ),
     ColorStyle.systemColor =>
       brightness == Brightness.light ? ThemeData.light() : ThemeData.dark(),
@@ -33,3 +37,37 @@ ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
       )
   };
 }
+
+ColorScheme _generateDynamicColourSchemes(ColorScheme scheme) {
+  final seed = ColorScheme.fromSeed(seedColor: scheme.primary);
+  final addtionalColours = _extractAdditionalColors(seed);
+  final addedScheme = _insertAdditionalColors(seed, addtionalColours);
+
+  return addedScheme;
+}
+
+List<Color> _extractAdditionalColors(ColorScheme scheme) => [
+      scheme.surface,
+      scheme.surfaceDim,
+      scheme.surfaceBright,
+      scheme.surfaceContainerLowest,
+      scheme.surfaceContainerLow,
+      scheme.surfaceContainer,
+      scheme.surfaceContainerHigh,
+      scheme.surfaceContainerHighest,
+    ];
+
+ColorScheme _insertAdditionalColors(
+  ColorScheme scheme,
+  List<Color> additionalColours,
+) =>
+    scheme.copyWith(
+      surface: additionalColours[0],
+      surfaceDim: additionalColours[1],
+      surfaceBright: additionalColours[2],
+      surfaceContainerLowest: additionalColours[3],
+      surfaceContainerLow: additionalColours[4],
+      surfaceContainer: additionalColours[5],
+      surfaceContainerHigh: additionalColours[6],
+      surfaceContainerHighest: additionalColours[7],
+    );
