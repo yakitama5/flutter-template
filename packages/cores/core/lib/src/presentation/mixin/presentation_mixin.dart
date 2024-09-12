@@ -1,4 +1,5 @@
 import 'package:cores_error/application.dart';
+import 'package:flutter/foundation.dart';
 
 import '../components/snack_bar_manager.dart';
 
@@ -6,7 +7,7 @@ import '../components/snack_bar_manager.dart';
 mixin PresentationMixin {
   /// エラーハンドリングをラップした実行処理
   Future<void> execute({
-    required Future<void> Function() action,
+    required AsyncCallback action,
     String? successMessage,
   }) async {
     try {

@@ -14,7 +14,7 @@ class SettingsRadioListTile<T> extends StatelessWidget {
   final Text title;
   final T value;
   final T? groupValue;
-  final void Function(T? value)? onChanged;
+  final ValueChanged<T?>? onChanged;
 
   @override
   Widget build(BuildContext context) => RadioListTile.adaptive(

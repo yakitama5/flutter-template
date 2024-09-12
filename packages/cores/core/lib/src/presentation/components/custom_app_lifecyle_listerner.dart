@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// A widget that listens to the lifecycle of the app.
@@ -14,8 +15,8 @@ class CustomAppLifecycleListener extends StatefulWidget {
     VoidCallback? onPause,
     VoidCallback? onRestart,
     VoidCallback? onDetach,
-    Future<AppExitResponse> Function()? onExitRequested,
-    void Function(AppLifecycleState state)? onStateChange,
+    AsyncValueGetter<AppExitResponse>? onExitRequested,
+    ValueChanged<AppLifecycleState>? onStateChange,
     super.key,
   })  : _child = child,
         _onResume = onResume,
@@ -36,8 +37,8 @@ class CustomAppLifecycleListener extends StatefulWidget {
   final VoidCallback? _onPause;
   final VoidCallback? _onRestart;
   final VoidCallback? _onDetach;
-  final Future<AppExitResponse> Function()? _onExitRequested;
-  final void Function(AppLifecycleState state)? _onStateChange;
+  final AsyncValueGetter<AppExitResponse>? _onExitRequested;
+  final ValueChanged<AppLifecycleState>? _onStateChange;
 
   @override
   State<CustomAppLifecycleListener> createState() =>

@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
@@ -34,14 +33,19 @@ class _WebViewState extends State<WebPage> {
   }
 
   Future<void> onRefresh() async {
-    if (Platform.isAndroid) {
-      await _webViewController?.reload();
-    } else if (Platform.isIOS) {
-      await _webViewController?.loadUrl(
-        urlRequest: URLRequest(
-          url: await _webViewController?.getUrl(),
-        ),
-      );
+    switch (defaultTargetPlatform) {
+      case TargetPlatform.android:
+      case TargetPlatform.fuchsia:
+        await _webViewController?.reload();
+      case TargetPlatform.linux:
+      case TargetPlatform.windows:
+      case TargetPlatform.macOS:
+      case TargetPlatform.iOS:
+        await _webViewController?.loadUrl(
+          urlRequest: URLRequest(
+            url: await _webViewController?.getUrl(),
+          ),
+        );
     }
   }
 
