@@ -20,5 +20,3 @@ dev_dependencies:
     sdk: flutter
   pedantic_mono: 
   test: ^1.24.0
-
-flutter:

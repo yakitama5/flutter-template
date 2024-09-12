@@ -4,8 +4,12 @@ environment:
   sdk: ^3.5.0
 
 dev_dependencies:
+  custom_lint: any
+  flutter_lints:
   grinder: ^0.9.5
   melos: ^6.0.0
+  nilts: any
   path: ^1.9.0
+  pedantic_mono: any
   yaml: ^3.1.2
   yaml_edit: ^2.2.1
