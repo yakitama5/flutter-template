@@ -49,7 +49,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/
+    - assets/images/
 
 flutter_gen:
   output: lib/src/gen/assets

@@ -9,16 +9,22 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsImagesGen {
+  const $AssetsImagesGen();
+
+  /// File path: assets/images/logo.png
+  AssetGenImage get logo => const AssetGenImage('assets/images/logo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [logo];
+}
+
 class Assets {
   Assets._();
 
   static const String package = 'cores_designsystem';
 
-  static const AssetGenImage yumemiLogo =
-      AssetGenImage('assets/yumemi_logo.png');
-
-  /// List of all assets
-  static List<AssetGenImage> get values => [yumemiLogo];
+  static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
 class AssetGenImage {
