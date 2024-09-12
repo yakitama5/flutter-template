@@ -49,6 +49,7 @@ class GoodsCard extends StatelessWidget {
               height: imageHeight,
               width: double.infinity,
               fit: BoxFit.fitWidth,
+              semanticLabel: item.description,
               loadingBuilder: (context, child, loadingProgress) =>
                   loadingProgress == null
                       ? child

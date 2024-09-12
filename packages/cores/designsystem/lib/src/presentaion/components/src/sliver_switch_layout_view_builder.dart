@@ -36,8 +36,7 @@ class SliverSwitchLayoutViewBuilder extends StatelessWidget {
             itemCount: itemCount,
             separatorBuilder: (context, index) => const Gap(8),
           ),
-        ViewLayout.grid => SliverAnimatedGrid(
-            initialItemCount: itemCount ?? 0,
+        ViewLayout.grid => SliverGrid.builder(
             gridDelegate: gridDelegate ??
                 const SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 240,
@@ -45,8 +44,7 @@ class SliverSwitchLayoutViewBuilder extends StatelessWidget {
                   crossAxisSpacing: 4,
                   childAspectRatio: 0.75,
                 ),
-            itemBuilder: (context, index, animation) =>
-                itemBuilder(context, index) ?? const SizedBox.shrink(),
+            itemBuilder: itemBuilder,
           )
       },
     );
