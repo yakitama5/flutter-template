@@ -12,9 +12,10 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.gform.dart"
     - "**/firebase_options*.dart"
-    - "tools/**"
     - "*/.github/workflows/flutter_*.yaml"
     - "*/functions/*.js"
+    - "tool/**"
+    - "tools/**"
   errors:
     invalid_annotation_target: ignore
     todo: ignore
