@@ -15,7 +15,7 @@ class ThemedSettingsList extends HookConsumerWidget {
   final ScrollPhysics? physics;
   final DevicePlatform? platform;
   final Brightness? brightness;
-  final EdgeInsets? contentPadding;
+  final EdgeInsetsGeometry? contentPadding;
   final List<AbstractSettingsSection> sections;
 
   @override
