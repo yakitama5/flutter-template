@@ -12,16 +12,15 @@ ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
   final colorStyle = ref.watch(colorStyleProvider);
   final corePalette = ref.watch(corePaletteProvider);
 
-  return switch (colorStyle) {
+  final colorScheme = switch (colorStyle) {
     // パッケージ対応されるまで最新のColorSchemeに合わせて編集
     // Notes: https://github.com/material-foundation/flutter-packages/issues/582
-    ColorStyle.dynamicColor => ThemeData.from(
-        colorScheme: _generateDynamicColourSchemes(
-          corePalette!.toColorScheme(brightness: brightness),
-        ),
+    ColorStyle.dynamicColor => _generateDynamicColourSchemes(
+        corePalette!.toColorScheme(brightness: brightness),
       ),
-    ColorStyle.systemColor =>
-      brightness == Brightness.light ? ThemeData.light() : ThemeData.dark(),
+    ColorStyle.systemColor => brightness == Brightness.light
+        ? const ColorScheme.light()
+        : const ColorScheme.dark(),
     ColorStyle.blue ||
     ColorStyle.purple ||
     ColorStyle.green ||
@@ -29,13 +28,15 @@ ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
     ColorStyle.pink ||
     ColorStyle.yellow ||
     ColorStyle.orange =>
-      ThemeData.from(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: colorStyle.seedColor!,
-          brightness: brightness,
-        ),
+      ColorScheme.fromSeed(
+        seedColor: colorStyle.seedColor!,
+        brightness: brightness,
       )
   };
+
+  return ThemeData(
+    colorScheme: colorScheme,
+  );
 }
 
 ColorScheme _generateDynamicColourSchemes(ColorScheme scheme) {

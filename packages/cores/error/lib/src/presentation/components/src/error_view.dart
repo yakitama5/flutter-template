@@ -22,6 +22,7 @@ class ErrorView extends HookWidget {
           const Gap(8),
           Text(
             error.errorMessage,
+            // HACK(yakitama5): `ThemeExtension`
             style: textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.bold),
           ),
         ],

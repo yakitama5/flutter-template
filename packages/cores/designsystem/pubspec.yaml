@@ -30,7 +30,8 @@ dependencies:
   shimmer:
   slang: 
   slang_flutter: 
-  sliver_tools: 
+  sliver_tools:
+  theme_tailor_annotation:  
   url_launcher:
 
 dev_dependencies:
@@ -45,6 +46,7 @@ dev_dependencies:
   riverpod_generator: 
   riverpod_lint: 
   slang_build_runner: 
+  theme_tailor: 
 
 flutter:
   uses-material-design: true

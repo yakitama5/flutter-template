@@ -23,6 +23,7 @@ class UrlLink extends StatelessWidget {
     final defaultStyle =
         textTheme.labelMedium?.copyWith(color: colorScheme.onPrimaryContainer);
 
+    // HACK(yakitama5): `ThemeExtension`
     return Link(
       uri: Uri.parse(url),
       target: LinkTarget.blank,
