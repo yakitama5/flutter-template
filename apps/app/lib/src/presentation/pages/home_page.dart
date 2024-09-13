@@ -33,6 +33,11 @@ class HomePage extends ConsumerWidget {
               label: Text(goodsI18n.goods.goodsPage.title),
             ),
           ),
+          SizedBox(
+            width: double.infinity,
+            height: 100,
+            child: ColoredBox(color: Theme.of(context).appColors.favIcon),
+          ),
         ],
       ),
     );

@@ -1,5 +1,6 @@
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
+import 'package:cores_designsystem/src/presentaion/theme/theme_extensions/src/app_colors.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -36,6 +37,9 @@ ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
 
   return ThemeData(
     colorScheme: colorScheme,
+    extensions: [
+      AppColors.brightness(brightness: brightness),
+    ],
   );
 }
 

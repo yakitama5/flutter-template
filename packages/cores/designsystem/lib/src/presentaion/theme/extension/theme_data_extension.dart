@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../theme_extensions/theme_extensions.dart';
+
 extension ThemeDataX on ThemeData {
+  AppColors get appColors => extension<AppColors>()!;
+
   /// iOS or Macか否か
   bool get isCupertinoPlatform {
     switch (platform) {
