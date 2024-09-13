@@ -22,7 +22,7 @@ class SettingsRadioListTile<T> extends StatelessWidget {
           children: [
             if (leading != null)
               Padding(
-                padding: const EdgeInsetsDirectional.only(start: 16),
+                padding: const EdgeInsetsDirectional.only(end: 16),
                 child: leading,
               ),
             title,
