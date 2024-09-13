@@ -1,9 +1,10 @@
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
-import 'package:cores_designsystem/src/presentaion/theme/theme_extensions/src/app_colors.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import '../../presentaion/theme/theme_extensions/theme_extensions.dart';
 
 part 'app_theme_provider.g.dart';
 
@@ -20,8 +21,8 @@ ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
         corePalette!.toColorScheme(brightness: brightness),
       ),
     ColorStyle.systemColor => brightness == Brightness.light
-        ? const ColorScheme.light()
-        : const ColorScheme.dark(),
+        ? ColorScheme.light(brightness: brightness)
+        : ColorScheme.dark(brightness: brightness),
     ColorStyle.blue ||
     ColorStyle.purple ||
     ColorStyle.green ||
@@ -37,6 +38,7 @@ ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
 
   return ThemeData(
     colorScheme: colorScheme,
+    brightness: brightness,
     extensions: [
       AppColors.brightness(brightness: brightness),
     ],
@@ -44,7 +46,10 @@ ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
 }
 
 ColorScheme _generateDynamicColourSchemes(ColorScheme scheme) {
-  final seed = ColorScheme.fromSeed(seedColor: scheme.primary);
+  final seed = ColorScheme.fromSeed(
+    seedColor: scheme.primary,
+    brightness: scheme.brightness,
+  );
   final addtionalColours = _extractAdditionalColors(seed);
   final addedScheme = _insertAdditionalColors(seed, addtionalColours);
 

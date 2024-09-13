@@ -9,8 +9,8 @@ class AppColors extends ThemeExtension<AppColors> with _$AppColorsTailorMixin {
 
   factory AppColors.brightness({required Brightness brightness}) =>
       switch (brightness) {
-        Brightness.light => const AppColors(favIcon: Colors.white),
-        Brightness.dark => const AppColors(favIcon: Colors.black),
+        Brightness.light => const AppColors(favIcon: Colors.blueAccent),
+        Brightness.dark => const AppColors(favIcon: Colors.lightBlue),
       };
 
   @override
