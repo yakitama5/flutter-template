@@ -1,4 +1,5 @@
 import 'package:cores_designsystem/application.dart';
+import 'package:cores_designsystem/common_assets.dart';
 import 'package:cores_designsystem/domain.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:features_setting/i18n/strings.g.dart';
@@ -46,7 +47,10 @@ class SettingsColorStylePage extends HookConsumerWidget {
           groupValue: selected.value,
           leading: switch (colorStyle) {
             ColorStyle.dynamicColor => const Icon(Icons.person),
-            ColorStyle.systemColor => const Icon(Icons.settings),
+            ColorStyle.systemColor => CommonAssets.images.logo.image(
+                height: 24,
+                width: 24,
+              ),
             // 参考カラーを表示
             ColorStyle.blue ||
             ColorStyle.purple ||
