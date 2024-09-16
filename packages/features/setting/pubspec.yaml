@@ -24,12 +24,12 @@ dependencies:
   flutter_hooks:
   flutter_localizations:
     sdk: flutter
-  flutter_settings_ui: 
   hooks_riverpod: 
   intl: 
   material_design_icons_flutter:
   nested: 
-  riverpod_annotation: 
+  riverpod_annotation:
+  settings_ui: 
   slang: 
   slang_flutter: 
 
