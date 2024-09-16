@@ -1,5 +1,6 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:cores_core/presentation.dart';
+import 'package:cores_designsystem/common_assets.dart';
 import 'package:cores_error/presentation.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:features_user/application.dart';
@@ -29,7 +30,8 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
               title: Text(i18n.settings.accountPage.link.head),
               tiles: [
                 SettingsTile.switchTile(
-                  leading: Icon(MdiIcons.google),
+                  leading:
+                      CommonAssets.images.google.svg(width: 24, height: 24),
                   title: Text(i18n.settings.accountPage.link.google),
                   initialValue: data?.linkedGoogle,
                   onToggle: (value) => _onToggleGoogle(context, ref, value),
