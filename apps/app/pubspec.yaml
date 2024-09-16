@@ -20,6 +20,7 @@ dependencies:
     path: ../../packages/cores/firebase
   cores_shared_preferences:
     path: ../../packages/cores/shared_preferences
+  cupertino_icons: 
   features_app_update:
     path: ../../packages/features/app_update
   features_goods:

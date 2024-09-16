@@ -1,6 +1,5 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:cores_core/presentation.dart';
-import 'package:cores_designsystem/presentation.dart';
 import 'package:cores_error/presentation.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:features_user/application.dart';
@@ -17,10 +16,6 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final colorScheme = Theme.of(context).colorScheme;
-    final trailing = Theme.of(context).isCupertinoPlatform
-        ? const Icon(Icons.arrow_forward_ios_rounded)
-        : null;
-
     final authStatus = ref.watch(authStatusProvider);
 
     return authStatus.when(
@@ -57,13 +52,11 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
                 if (data?.isAnonymous != true)
                   SettingsTile.navigation(
                     leading: const Icon(Icons.logout),
-                    trailing: trailing,
                     title: Text(i18n.settings.accountPage.other.logout),
                     onPressed: (context) => _onLogout(context, ref),
                   ),
                 SettingsTile.navigation(
                   leading: Icon(Icons.delete, color: colorScheme.error),
-                  trailing: trailing,
                   title: Text(i18n.settings.accountPage.other.leave),
                   onPressed: (context) => _onDeleteAccount(context, ref),
                 ),

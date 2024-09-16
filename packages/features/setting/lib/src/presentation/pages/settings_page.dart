@@ -1,6 +1,5 @@
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
-import 'package:cores_designsystem/presentation.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -30,11 +29,6 @@ class SettingsPage extends HookConsumerWidget {
 
     final navigator = ref.watch(settingsPageNavigatorProvider);
 
-    // プラットフォームに応じたアイコンの出し訳
-    final trailing = Theme.of(context).isCupertinoPlatform
-        ? const Icon(Icons.arrow_forward_ios_rounded)
-        : null;
-
     return Scaffold(
       appBar: AppBar(
         title: Text(i18n.settings.settingsPage.title),
@@ -46,7 +40,6 @@ class SettingsPage extends HookConsumerWidget {
             tiles: [
               SettingsTile.navigation(
                 leading: const Icon(Icons.link),
-                trailing: trailing,
                 title: Text(i18n.settings.settingsPage.account.account),
                 onPressed: navigator.goAccountPage,
               ),
@@ -57,9 +50,8 @@ class SettingsPage extends HookConsumerWidget {
             tiles: [
               SettingsTile.navigation(
                 leading: const Icon(Icons.style),
-                trailing: trailing,
                 title: Text(i18n.settings.settingsPage.layout.uiStyle),
-                description: Text(
+                value: Text(
                   designsystemI18n.designsystem.uiStyle(context: uiStyle),
                 ),
                 onPressed: navigator.goUiStylePage,
@@ -72,18 +64,16 @@ class SettingsPage extends HookConsumerWidget {
                     ThemeMode.dark => Icons.dark_mode,
                   },
                 ),
-                trailing: trailing,
                 title: Text(i18n.settings.settingsPage.layout.themeMode),
-                description: Text(
+                value: Text(
                   designsystemI18n.designsystem.themeMode(context: themeMode),
                 ),
                 onPressed: navigator.goThemeModePage,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.color_lens),
-                trailing: trailing,
                 title: Text(i18n.settings.settingsPage.layout.colorTheme),
-                description: Text(
+                value: Text(
                   designsystemI18n.designsystem.colorStyle(context: colorStyle),
                 ),
                 onPressed: navigator.goColorStylePage,
@@ -95,30 +85,25 @@ class SettingsPage extends HookConsumerWidget {
             tiles: [
               SettingsTile.navigation(
                 leading: const Icon(Icons.abc),
-                trailing: trailing,
                 title: Text(i18n.settings.settingsPage.help.howToUse),
                 onPressed: _onHowToUse,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.help),
-                trailing: trailing,
                 title: Text(i18n.settings.settingsPage.help.contactUs),
                 onPressed: _onContactUs,
               ),
               SettingsTile.navigation(
                 leading: Icon(MdiIcons.twitter),
-                trailing: trailing,
                 title: Text(i18n.settings.settingsPage.help.developperTwitter),
                 onPressed: _onDevelopperTwitter,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.lock),
-                trailing: trailing,
                 title: Text(i18n.settings.settingsPage.help.privacyPollicy),
                 onPressed: _onPrivacyPolicy,
               ),
               SettingsTile.navigation(
-                trailing: trailing,
                 title: Text(i18n.settings.settingsPage.help.licencse),
                 onPressed: navigator.goLicensePage,
               ),
