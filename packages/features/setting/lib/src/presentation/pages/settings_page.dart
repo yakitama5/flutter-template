@@ -114,11 +114,19 @@ class SettingsPage extends HookConsumerWidget {
     );
   }
 
-  void _onHowToUse(BuildContext context) {}
+  void _onHowToUse(BuildContext context) {
+    // TODO(yakitama5): Webページに遷移
+  }
 
-  void _onContactUs(BuildContext context) {}
+  void _onContactUs(BuildContext context) {
+    // TODO(yakitama5): Webページに遷移
+  }
 
-  Future<void> _onDevelopperTwitter(BuildContext context) async {}
+  Future<void> _onDevelopperTwitter(BuildContext context) async {
+    // TODO(yakitama5): Webページに遷移
+  }
 
-  Future<void> _onPrivacyPolicy(BuildContext context) async {}
+  Future<void> _onPrivacyPolicy(BuildContext context) async {
+    // TODO(yakitama5): Webページに遷移
+  }
 }
