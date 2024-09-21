@@ -37,8 +37,8 @@ command:
   clean:
     hooks:
       post: melos exec --flutter --concurrency=3 -- "flutter clean"
-        # melos exec --flutter --file-exists="ios/Podfile.lock" -- "cd ios && rm Podfile.lock"
-        # melos exec --flutter --file-exists="macos/Podfile.lock" -- "cd macos && rm Podfile.lock"
+        melos exec --flutter --file-exists="ios/Podfile.lock" -- "cd ios && rm Podfile.lock"
+        melos exec --flutter --file-exists="macos/Podfile.lock" -- "cd macos && rm Podfile.lock"
 
 scripts:
   report_test:
