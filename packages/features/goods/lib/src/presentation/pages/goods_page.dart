@@ -104,44 +104,38 @@ class _SliverBody extends HookConsumerWidget {
     final result =
         ref.watch(goodsListProvider(page: 1, query: query)).valueOrNull;
 
-    return SliverPadding(
-      padding: const EdgeInsetsDirectional.only(
-        bottom: 120,
-      ),
-      sliver: SliverSwitchLayoutViewBuilder(
-        // 条件が変更されたらスクロール状態をリセットさせる
-        key: ValueKey(query),
-        viewLayout: viewLayout,
-        itemCount: result?.totalCount ?? goodsPageSize,
-        itemBuilder: (context, index) {
-          final page = index ~/ goodsPageSize + 1;
-          final indexInPage = index % goodsPageSize;
-          final response =
-              ref.watch(goodsListProvider(page: page, query: query));
+    return SliverSwitchLayoutViewBuilder(
+      // 条件が変更されたらスクロール状態をリセットさせる
+      key: ValueKey(query),
+      viewLayout: viewLayout,
+      itemCount: result?.totalCount ?? goodsPageSize,
+      itemBuilder: (context, index) {
+        final page = index ~/ goodsPageSize + 1;
+        final indexInPage = index % goodsPageSize;
+        final response = ref.watch(goodsListProvider(page: page, query: query));
 
-          return response.when(
-            data: (data) => OpenContainerCardWrapper(
-              openBuilder: (context, action) =>
-                  GoodsDetailPage(goods: data.goods[indexInPage]),
-              closedBuilder: (context, action) => GoodsCard(
-                key: ValueKey(data.goods[indexInPage]),
-                item: data.goods[indexInPage],
-                viewLayout: viewLayout,
-                onTap: action,
-              ),
+        return response.when(
+          data: (data) => OpenContainerCardWrapper(
+            openBuilder: (context, action) =>
+                GoodsDetailPage(goods: data.goods[indexInPage]),
+            closedBuilder: (context, action) => GoodsCard(
+              key: ValueKey(data.goods[indexInPage]),
+              item: data.goods[indexInPage],
+              viewLayout: viewLayout,
+              onTap: action,
             ),
-            loading: () => _ShimmerTile(viewLayout: viewLayout),
-            error: (error, __) => ErrorListTile(
-              indexInPage: indexInPage,
-              isLoading: response.isLoading,
-              error: error.toString(),
-              onRetry: () {
-                ref.invalidate(goodsListProvider(page: page, query: query));
-              },
-            ),
-          );
-        },
-      ),
+          ),
+          loading: () => _ShimmerTile(viewLayout: viewLayout),
+          error: (error, __) => ErrorListTile(
+            indexInPage: indexInPage,
+            isLoading: response.isLoading,
+            error: error.toString(),
+            onRetry: () {
+              ref.invalidate(goodsListProvider(page: page, query: query));
+            },
+          ),
+        );
+      },
     );
   }
 }
