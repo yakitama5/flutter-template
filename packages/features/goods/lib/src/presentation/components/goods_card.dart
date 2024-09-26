@@ -1,40 +1,23 @@
-import 'package:cores_designsystem/domain.dart';
 import 'package:cores_designsystem/presentation.dart';
 import 'package:features_goods/src/domain/entity/goods.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-/// 画像の高さ
-double _imageHeight(ViewLayout viewLayout) => switch (viewLayout) {
-      ViewLayout.grid => 96.0,
-      ViewLayout.list => 160.0,
-    };
-
 class GoodsCard extends StatelessWidget {
   const GoodsCard({
     super.key,
     required this.item,
-    required this.viewLayout,
     this.onTap,
   });
 
+  static const _imageHeight = 96.0;
+
   final Goods item;
-  final ViewLayout viewLayout;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final tt = Theme.of(context).textTheme;
-
-    final imageHeight = _imageHeight(viewLayout);
-    final headlineStyle = switch (viewLayout) {
-      ViewLayout.grid => tt.titleLarge,
-      ViewLayout.list => tt.headlineMedium,
-    };
-    final subheadStyle = switch (viewLayout) {
-      ViewLayout.grid => tt.titleMedium,
-      ViewLayout.list => tt.headlineSmall,
-    };
 
     return OutlinedCard(
       onTap: onTap,
@@ -46,15 +29,15 @@ class GoodsCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(12),
             child: Image.network(
               item.imageUrl!,
-              height: imageHeight,
+              height: _imageHeight,
               width: double.infinity,
               fit: BoxFit.fitWidth,
               semanticLabel: item.description,
               loadingBuilder: (context, child, loadingProgress) =>
                   loadingProgress == null
                       ? child
-                      : ShimmerWidget.rectangular(
-                          height: imageHeight,
+                      : const ShimmerWidget.rectangular(
+                          height: _imageHeight,
                         ),
             ),
           ),
@@ -71,12 +54,12 @@ class GoodsCard extends StatelessWidget {
                 children: [
                   Text(
                     item.name,
-                    style: headlineStyle,
+                    style: tt.titleLarge,
                   ),
                   const Gap(4),
                   Text(
                     '￥${item.price}',
-                    style: subheadStyle,
+                    style: tt.titleMedium,
                   ),
                   const Gap(8),
                   Text(

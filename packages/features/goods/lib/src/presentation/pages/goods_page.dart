@@ -118,12 +118,34 @@ class _SliverBody extends HookConsumerWidget {
           data: (data) => OpenContainerCardWrapper(
             openBuilder: (context, action) =>
                 GoodsDetailPage(goods: data.goods[indexInPage]),
-            closedBuilder: (context, action) => GoodsCard(
-              key: ValueKey(data.goods[indexInPage]),
-              item: data.goods[indexInPage],
-              viewLayout: viewLayout,
-              onTap: action,
-            ),
+            // TODO(yakitama5): ListとGridに戻す
+            closedBuilder: (context, action) {
+              final item = data.goods[indexInPage];
+              switch (viewLayout) {
+                case ViewLayout.grid:
+                  return GoodsCard(
+                    key: ValueKey(item),
+                    item: item,
+                    onTap: action,
+                  );
+                case ViewLayout.list:
+                  return ListTile(
+                    key: ValueKey(item),
+                    title: Text(item.name),
+                    leading: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Image.network(
+                        item.imageUrl!,
+                        loadingBuilder: (context, child, loadingProgress) =>
+                            loadingProgress == null
+                                ? child
+                                : const _ShimmerListTileLeading(),
+                      ),
+                    ),
+                    subtitle: Text('￥${item.price}'),
+                  );
+              }
+            },
           ),
           loading: () => _ShimmerTile(viewLayout: viewLayout),
           error: (error, __) => ErrorListTile(
