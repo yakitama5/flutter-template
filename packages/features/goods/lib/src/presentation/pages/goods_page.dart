@@ -118,7 +118,6 @@ class _SliverBody extends HookConsumerWidget {
           data: (data) => OpenContainerCardWrapper(
             openBuilder: (context, action) =>
                 GoodsDetailPage(goods: data.goods[indexInPage]),
-            // TODO(yakitama5): ListとGridに戻す
             closedBuilder: (context, action) {
               final item = data.goods[indexInPage];
               switch (viewLayout) {
@@ -131,6 +130,7 @@ class _SliverBody extends HookConsumerWidget {
                 case ViewLayout.list:
                   return ListTile(
                     key: ValueKey(item),
+                    onTap: action,
                     title: Text(item.name),
                     leading: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
@@ -148,6 +148,7 @@ class _SliverBody extends HookConsumerWidget {
             },
           ),
           loading: () => _ShimmerTile(viewLayout: viewLayout),
+          // TODO(yakitama5): エラー表示を分けて記載
           error: (error, __) => ErrorListTile(
             indexInPage: indexInPage,
             isLoading: response.isLoading,

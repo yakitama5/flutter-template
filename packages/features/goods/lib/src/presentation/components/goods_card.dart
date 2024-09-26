@@ -10,7 +10,7 @@ class GoodsCard extends StatelessWidget {
     this.onTap,
   });
 
-  static const _imageHeight = 96.0;
+  static const _imageHeight = 120.0;
 
   final Goods item;
   final VoidCallback? onTap;
