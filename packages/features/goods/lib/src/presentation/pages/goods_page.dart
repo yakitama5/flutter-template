@@ -128,6 +128,7 @@ class _SliverBody extends HookConsumerWidget {
                     onTap: action,
                   );
                 case ViewLayout.list:
+                  // HACK(yakitama5): ListTileもコンポーネント化する
                   return ListTile(
                     key: ValueKey(item),
                     onTap: action,
