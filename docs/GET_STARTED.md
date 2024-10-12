@@ -44,7 +44,7 @@ fvm use --force
 ### 依存関係のインストール
 
 ```shell
-melos bootstrap
+melos bs
 ```
 
 ### アプリの実行
