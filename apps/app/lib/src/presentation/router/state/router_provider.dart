@@ -27,7 +27,7 @@ part 'router_provider.g.dart';
 final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
 
 @riverpod
-GoRouter router(RouterRef ref) {
+GoRouter router(Ref ref) {
   final notifier = ref.watch(routerNotifierProvider.notifier);
   final initialLocation = ref.watch(initialLocationProvider);
 
@@ -38,7 +38,7 @@ GoRouter router(RouterRef ref) {
 
     // GoRouterそのものが再生成されないように、redirectは外部のNotifierに定義
     // ログイン状態やデータの変更でredirectを検知するように、`refreshListenable`を設定
-    redirect: notifier.redirect,
+    redirect: (_, routeState) => notifier.redirect(routeState),
     refreshListenable: notifier,
   );
 }

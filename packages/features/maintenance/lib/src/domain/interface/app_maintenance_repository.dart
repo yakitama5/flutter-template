@@ -1,10 +1,11 @@
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_maintenance_repository.g.dart';
 
 @Riverpod(keepAlive: true)
 AppMaintenanceRepository appMaintenanceRepository(
-  AppMaintenanceRepositoryRef ref,
+  Ref ref,
 ) =>
     throw UnimplementedError();
 

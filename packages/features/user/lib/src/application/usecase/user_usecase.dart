@@ -13,7 +13,7 @@ import '../../domain/interface/user_repository.dart';
 part 'user_usecase.g.dart';
 
 @Riverpod(keepAlive: true)
-UserUsecase userUsecase(UserUsecaseRef ref) => UserUsecase(ref);
+UserUsecase userUsecase(Ref ref) => UserUsecase(ref);
 
 class UserUsecase with RunUsecaseMixin {
   const UserUsecase(this.ref);

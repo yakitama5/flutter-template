@@ -2,6 +2,7 @@ import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../presentaion/theme/theme_extensions/theme_extensions.dart';
@@ -9,7 +10,7 @@ import '../../presentaion/theme/theme_extensions/theme_extensions.dart';
 part 'app_theme_provider.g.dart';
 
 @riverpod
-ThemeData appTheme(AppThemeRef ref, {required Brightness brightness}) {
+ThemeData appTheme(Ref ref, {required Brightness brightness}) {
   // ignore: avoid_manual_providers_as_generated_provider_dependency
   final colorStyle = ref.watch(colorStyleProvider);
   final corePalette = ref.watch(corePaletteProvider);

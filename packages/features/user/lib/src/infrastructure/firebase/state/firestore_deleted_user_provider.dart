@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cores_firebase/infrastructure.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../extension/collection_reference.dart';
@@ -10,7 +11,7 @@ part 'firestore_deleted_user_provider.g.dart';
 /// 削除済ユーザーコレクションの参照
 @riverpod
 CollectionReference<FirestoreUserModel> duserCollectionRef(
-  DuserCollectionRefRef ref,
+  Ref ref,
 ) {
   return ref.watch(firestoreProvider).dusersRef().withConverter(
         fromFirestore: (snapshot, options) =>
@@ -29,7 +30,7 @@ CollectionReference<FirestoreUserModel> duserCollectionRef(
 /// 削除済ユーザードキュメントの参照
 @riverpod
 DocumentReference<FirestoreUserModel> duserDocumentRef(
-  DuserDocumentRefRef ref, {
+  Ref ref, {
   String? userId,
 }) =>
     ref.watch(duserCollectionRefProvider).doc(userId);

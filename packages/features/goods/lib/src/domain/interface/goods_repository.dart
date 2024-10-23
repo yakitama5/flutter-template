@@ -1,3 +1,4 @@
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../constants/goods_constants.dart';
@@ -8,8 +9,7 @@ import '../value_object/goods_fetch_response.dart';
 part 'goods_repository.g.dart';
 
 @Riverpod(keepAlive: true)
-GoodsRepository goodsRepository(GoodsRepositoryRef ref) =>
-    throw UnimplementedError();
+GoodsRepository goodsRepository(Ref ref) => throw UnimplementedError();
 
 abstract class GoodsRepository {
   Stream<GoodsFetchResponse> fetchList({

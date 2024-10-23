@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../model/dynamic_color_support_status.dart';
@@ -8,7 +9,7 @@ part 'dynamic_color_support_provider.g.dart';
 
 @riverpod
 DynamicColorSupportStatus dynamicColorSupportProvider(
-  DynamicColorSupportProviderRef ref,
+  Ref ref,
 ) {
   final corePalette = ref.watch(corePaletteProvider);
   final isSupport = corePalette != null &&

@@ -10,21 +10,20 @@ part 'router_notifier_provider.g.dart';
 
 @riverpod
 class RouterNotifier extends _$RouterNotifier implements Listenable {
-  VoidCallback? routerListener;
+  VoidCallback? _routerListener;
 
   @override
   Future<void> build() async {
-    ref.listenSelf((previous, next) {
+    listenSelf((previous, next) {
       if (state.isLoading) {
         return;
       }
 
-      routerListener?.call();
+      _routerListener?.call();
     });
   }
 
   Future<String?> redirect(
-    BuildContext context,
     GoRouterState routeState,
   ) async {
     if (state.isLoading || state.hasError) {
@@ -61,11 +60,11 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
 
   @override
   void addListener(VoidCallback listener) {
-    routerListener = listener;
+    _routerListener = listener;
   }
 
   @override
   void removeListener(VoidCallback listener) {
-    routerListener = null;
+    _routerListener = null;
   }
 }

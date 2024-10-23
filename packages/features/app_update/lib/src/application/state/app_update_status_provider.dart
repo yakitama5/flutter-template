@@ -1,4 +1,5 @@
 import 'package:cores_core/application.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../domain/interface/app_version_repository.dart';
@@ -7,7 +8,7 @@ import '../model/app_update_status.dart';
 part 'app_update_status_provider.g.dart';
 
 @riverpod
-Future<AppUpdateStatus> appUpdateStatus(AppUpdateStatusRef ref) async {
+Future<AppUpdateStatus> appUpdateStatus(Ref ref) async {
   // 現在のアプリ情報を取得
   final appVersion = ref.watch(appBuildConfigProvider.select((e) => e.version));
 
