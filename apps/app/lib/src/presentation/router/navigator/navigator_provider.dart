@@ -4,5 +4,5 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'navigator_provider.g.dart';
 
-@riverpod
+@Riverpod(dependencies: [])
 HomePageNavigator homePageNavigator(Ref ref) => throw UnimplementedError();

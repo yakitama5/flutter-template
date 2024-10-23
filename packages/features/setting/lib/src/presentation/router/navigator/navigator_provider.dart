@@ -4,7 +4,7 @@ import '../../pages/settings_page.dart';
 
 part 'navigator_provider.g.dart';
 
-@riverpod
+@Riverpod(dependencies: [])
 SettingsPageNavigator settingsPageNavigator(SettingsPageNavigatorRef ref) {
   throw UnimplementedError();
 }

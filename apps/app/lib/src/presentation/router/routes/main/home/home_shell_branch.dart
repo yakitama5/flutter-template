@@ -48,8 +48,10 @@ class HomePageRoute extends GoRouteData {
       // navigation or the state.
       child: ProviderScope(
         overrides: [
-          homePageNavigatorProvider
-              .overrideWithValue(const _HomePageNavigatorImpl()),
+          homePageNavigatorProvider.overrideWithValue(
+            // ナビゲーションの実装クラスを指定
+            const _HomePageNavigatorImpl(),
+          ),
         ],
         child: const HomePage(),
       ),
