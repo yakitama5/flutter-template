@@ -17,9 +17,9 @@ dependencies:
   flutter_svg:
   freezed_annotation: 
   gap: 
-  hooks_riverpod: 
+  hooks_riverpod: ^2.6.1 
   nested: 
-  riverpod_annotation: 
+  riverpod_annotation: ^2.6.1 
   slang: 
   slang_flutter: 
 
@@ -31,7 +31,7 @@ dev_dependencies:
     sdk: flutter
   nilts: any
   pedantic_mono:
-  riverpod_generator: 
-  riverpod_lint: 
+  riverpod_generator: ^2.6.1 
+  riverpod_lint: ^2.6.1 
   slang_build_runner: 
   theme_extensions_builder: 

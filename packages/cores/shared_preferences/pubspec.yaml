@@ -9,8 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  hooks_riverpod: 
-  riverpod_annotation: 
+  hooks_riverpod: ^2.6.1 
+  riverpod_annotation: ^2.6.1 
   shared_preferences: 
 
 dev_dependencies:
@@ -20,6 +20,6 @@ dev_dependencies:
     sdk: flutter
   nilts: any
   pedantic_mono:
-  riverpod_generator: 
-  riverpod_lint: 
+  riverpod_generator: ^2.6.1 
+  riverpod_lint: ^2.6.1 
   test: any

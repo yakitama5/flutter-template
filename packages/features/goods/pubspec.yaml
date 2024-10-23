@@ -26,11 +26,11 @@ dependencies:
     sdk: flutter
   freezed_annotation: any 
   gap: 
-  hooks_riverpod: 
+  hooks_riverpod: ^2.6.1 
   intl: 
   json_annotation: any
   nested: 
-  riverpod_annotation: 
+  riverpod_annotation: ^2.6.1 
   riverpod_paging_utils:
   slang: 
   slang_flutter: 
@@ -44,8 +44,8 @@ dev_dependencies:
   json_serializable: any 
   nilts: any
   pedantic_mono: 
-  riverpod_generator: any 
-  riverpod_lint: any 
+  riverpod_generator: ^2.6.1 
+  riverpod_lint: ^2.6.1 
   slang_build_runner: 
 
 flutter:

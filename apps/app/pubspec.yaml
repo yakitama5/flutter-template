@@ -40,12 +40,12 @@ dependencies:
   freezed_annotation: any
   gap: any
   go_router: any
-  hooks_riverpod: 
+  hooks_riverpod: ^2.6.1 
   intl: any
   json_annotation: any
   nested: 
   package_info_plus: ^5.0.1
-  riverpod_annotation: 
+  riverpod_annotation: ^2.6.1 
   slang: 
   slang_flutter: 
   version: 
@@ -62,8 +62,8 @@ dev_dependencies:
   json_serializable: any
   nilts: any
   pedantic_mono: any
-  riverpod_generator: 
-  riverpod_lint: 
+  riverpod_generator: ^2.6.1 
+  riverpod_lint: ^2.6.1 
 
 flutter:
   uses-material-design: true

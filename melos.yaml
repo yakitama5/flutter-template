@@ -16,11 +16,11 @@ command:
       flutter_hooks: any
       freezed_annotation: any
       go_router: any
-      hooks_riverpod: any
+      hooks_riverpod: ^2.6.1
       intl: any
       json_annotation: any
       logger: any
-      riverpod_annotation: any
+      riverpod_annotation: ^2.6.1
     dev_dependencies:
       build_runner: any
       custom_lint: any
@@ -29,8 +29,8 @@ command:
       json_serializable: any
       nilts: any
       pedantic_mono: any
-      riverpod_generator: any
-      riverpod_lint: any
+      riverpod_generator: ^2.6.1
+      riverpod_lint: ^2.6.1
       test: any
     hooks:
       post: grind generate-package-labels && grind generate-package-labeler

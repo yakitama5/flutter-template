@@ -25,11 +25,11 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_settings_ui: any
-  hooks_riverpod: 
+  hooks_riverpod: ^2.6.1 
   intl: 
   material_design_icons_flutter:
   nested: 
-  riverpod_annotation:
+  riverpod_annotation: ^2.6.1
   slang: 
   slang_flutter: 
 
@@ -38,8 +38,8 @@ dev_dependencies:
   flutter_gen_runner: 
   nilts: any
   pedantic_mono:
-  riverpod_generator: 
-  riverpod_lint: 
+  riverpod_generator: ^2.6.1 
+  riverpod_lint: ^2.6.1 
   slang_build_runner: 
 
 flutter:

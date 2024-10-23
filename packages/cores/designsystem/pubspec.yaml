@@ -22,11 +22,11 @@ dependencies:
   freezed_annotation: 
   gap: 
   gauge_indicator: 
-  hooks_riverpod: 
+  hooks_riverpod: ^2.6.1 
   linked_scroll_controller: 
   material_color_utilities:
   nested: 
-  riverpod_annotation: 
+  riverpod_annotation: ^2.6.1 
   shimmer:
   slang: 
   slang_flutter: 
@@ -43,8 +43,8 @@ dev_dependencies:
   freezed:
   nilts: any
   pedantic_mono:
-  riverpod_generator: 
-  riverpod_lint: 
+  riverpod_generator: ^2.6.1 
+  riverpod_lint: ^2.6.1 
   slang_build_runner: 
   theme_tailor: 
 

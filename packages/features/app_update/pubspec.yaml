@@ -23,10 +23,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   freezed_annotation: 
-  hooks_riverpod: 
+  hooks_riverpod: ^2.6.1 
   intl: 
   nested: 
-  riverpod_annotation: 
+  riverpod_annotation: ^2.6.1 
   slang: 
   slang_flutter: 
   version: 
@@ -40,6 +40,6 @@ dev_dependencies:
   json_serializable: 
   nilts: any
   pedantic_mono: 
-  riverpod_generator: 
-  riverpod_lint: 
+  riverpod_generator: ^2.6.1 
+  riverpod_lint: ^2.6.1 
   slang_build_runner: 
