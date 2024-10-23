@@ -18,19 +18,20 @@ class SharedPreferencesThemeRepository implements ThemeRepository {
 
   @override
   ColorStyle? fetchColorStyle() {
-    final value = ref.read(sharedPreferencesProvider).getString(_colorStyleKey);
+    final value =
+        ref.watch(sharedPreferencesProvider).getString(_colorStyleKey);
     return ColorStyle.values.firstWhereOrNull((e) => e.name == value);
   }
 
   @override
   UIStyle? fetchUIStyle() {
-    final value = ref.read(sharedPreferencesProvider).getString(_uiStyleKey);
+    final value = ref.watch(sharedPreferencesProvider).getString(_uiStyleKey);
     return UIStyle.values.firstWhereOrNull((e) => e.name == value);
   }
 
   @override
   ThemeMode? fetchThemeMode() {
-    final value = ref.read(sharedPreferencesProvider).getString(_themeModeKey);
+    final value = ref.watch(sharedPreferencesProvider).getString(_themeModeKey);
     return ThemeMode.values.firstWhereOrNull((e) => e.name == value);
   }
 
@@ -41,7 +42,7 @@ class SharedPreferencesThemeRepository implements ThemeRepository {
 
   @override
   Future<void> updateUIStyle(UIStyle uiStyle) =>
-      ref.read(sharedPreferencesProvider).setString(_uiStyleKey, uiStyle.name);
+      ref.watch(sharedPreferencesProvider).setString(_uiStyleKey, uiStyle.name);
 
   @override
   Future<void> updateThemeMode(ThemeMode themeMode) => ref

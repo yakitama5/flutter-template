@@ -44,11 +44,11 @@ class FirebaseUserRepository implements UserRepository {
   @override
   Future<void> delete({required String userId}) async {
     // ユーザーモデルの削除
-    final firestore = ref.read(firestoreProvider);
+    final firestore = ref.watch(firestoreProvider);
     await firestore.runTransaction((transaction) async {
       // 削除前の状態を保持
-      final docRef = ref.read(userDocumentRefProvider(userId: userId));
-      final delDocRef = ref.read(duserDocumentRefProvider(userId: userId));
+      final docRef = ref.watch(userDocumentRefProvider(userId: userId));
+      final delDocRef = ref.watch(duserDocumentRefProvider(userId: userId));
       final doc = await transaction.get(docRef);
 
       transaction
@@ -59,12 +59,12 @@ class FirebaseUserRepository implements UserRepository {
     });
 
     // 認証情報の削除
-    await ref.read(firebaseAuthProvider).currentUser?.delete();
+    await ref.watch(firebaseAuthProvider).currentUser?.delete();
   }
 
   @override
   Stream<AuthStatus?> fetchAuthStatus() {
-    return ref.read(firebaseAuthProvider).userChanges().map((authUser) {
+    return ref.watch(firebaseAuthProvider).userChanges().map((authUser) {
       if (authUser == null) {
         return null;
       }
@@ -75,7 +75,8 @@ class FirebaseUserRepository implements UserRepository {
   @override
   Future<AuthStatus> signInAnonymously() async {
     // 匿名ログイン
-    final credential = await ref.read(firebaseAuthProvider).signInAnonymously();
+    final credential =
+        await ref.watch(firebaseAuthProvider).signInAnonymously();
 
     // 結果を変換
     return credential.user!.authStatus;
@@ -109,7 +110,7 @@ class FirebaseUserRepository implements UserRepository {
 
   @override
   Future<void> signOut() {
-    return ref.read(firebaseAuthProvider).signOut();
+    return ref.watch(firebaseAuthProvider).signOut();
   }
 
   @override
@@ -137,7 +138,7 @@ class FirebaseUserRepository implements UserRepository {
 
   /// モバイル用のAppleサインイン
   Future<auth.UserCredential> _signInWithAppleByMobile() {
-    final firebaseAuth = ref.read(firebaseAuthProvider);
+    final firebaseAuth = ref.watch(firebaseAuthProvider);
     final appleProvider = auth.AppleAuthProvider();
     final current = _currentUser;
 
@@ -151,7 +152,7 @@ class FirebaseUserRepository implements UserRepository {
 
   /// Web用のAppleサインイン
   Future<auth.UserCredential> _signInWithAppleByWeb() {
-    final firebaseAuth = ref.read(firebaseAuthProvider);
+    final firebaseAuth = ref.watch(firebaseAuthProvider);
     final appleProvider = auth.AppleAuthProvider();
     final current = _currentUser;
 
@@ -165,7 +166,7 @@ class FirebaseUserRepository implements UserRepository {
 
   /// Mobile用のGoogleサインイン
   Future<auth.UserCredential> _signInWithGoogleByMobile() async {
-    final googleUser = await ref.read(googleSignInProvider).signIn();
+    final googleUser = await ref.watch(googleSignInProvider).signIn();
 
     final googleAuth = await googleUser?.authentication;
     final credential = auth.GoogleAuthProvider.credential(
@@ -178,7 +179,7 @@ class FirebaseUserRepository implements UserRepository {
     if (current != null) {
       return current.linkWithCredential(credential);
     } else {
-      return ref.read(firebaseAuthProvider).signInWithCredential(credential);
+      return ref.watch(firebaseAuthProvider).signInWithCredential(credential);
     }
   }
 
@@ -193,13 +194,13 @@ class FirebaseUserRepository implements UserRepository {
     if (current != null) {
       return current.linkWithPopup(googleProvider);
     } else {
-      return ref.read(firebaseAuthProvider).signInWithPopup(googleProvider);
+      return ref.watch(firebaseAuthProvider).signInWithPopup(googleProvider);
     }
   }
 
   Future<void> _createUserDocIfNotExists(String uid) async {
     // ドキュメントの取得
-    final userDocRef = ref.read(userDocumentRefProvider(userId: uid));
+    final userDocRef = ref.watch(userDocumentRefProvider(userId: uid));
     final userDoc = await userDocRef.get();
 
     // 存在すれば認証情報を返却して終了
@@ -214,7 +215,7 @@ class FirebaseUserRepository implements UserRepository {
     );
 
     // 同時に登録
-    await ref.read(firestoreProvider).runTransaction((transaction) async {
+    await ref.watch(firestoreProvider).runTransaction((transaction) async {
       return transaction.set(userDocRef, user);
     });
   }

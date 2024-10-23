@@ -22,7 +22,7 @@ class _ColorStyle extends _$ColorStyle {
     final colorStyle = _repository.fetchColorStyle();
 
     // 初期値は `DynamicColor`のサポート有無で変更
-    final supportStatus = ref.read(dynamicColorSupportProviderProvider);
+    final supportStatus = ref.watch(dynamicColorSupportProviderProvider);
     final defaultValue = switch (supportStatus) {
       DynamicColorSupportStatus.supported => ColorStyle.dynamicColor,
       DynamicColorSupportStatus.notSupported => ColorStyle.systemColor,
