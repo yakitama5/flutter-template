@@ -27,6 +27,9 @@ import 'src/presentation/router/state/router_provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // DevicePreview
+  const enableDevicePreview = bool.fromEnvironment('devicePreview');
+
   // Initializer
   final (buildConfig: buildConfig) = await AppInitializer.initialize();
   await FirebaseInitializer.initialize(buildConfig.flavor);
@@ -62,7 +65,7 @@ void main() async {
           DesignsystemTranslationProvider(),
         ],
         child: DevicePreview(
-          enabled: const bool.fromEnvironment('devicePreview'),
+          enabled: enableDevicePreview,
           builder: (context) => const MainApp(),
         ),
       ),
