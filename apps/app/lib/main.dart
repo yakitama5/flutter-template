@@ -14,7 +14,6 @@ import 'package:features_maintenance/init.dart';
 import 'package:features_setting/i18n.dart';
 import 'package:features_user/i18n.dart';
 import 'package:features_user/init.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';
@@ -63,8 +62,7 @@ void main() async {
           DesignsystemTranslationProvider(),
         ],
         child: DevicePreview(
-          // レイアウト確認はWeb版だけ利用する
-          enabled: kIsWeb && !kReleaseMode,
+          enabled: const bool.fromEnvironment('devicePreview'),
           builder: (context) => const MainApp(),
         ),
       ),
