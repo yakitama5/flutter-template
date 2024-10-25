@@ -16,14 +16,14 @@ import 'package:features_user/i18n.dart';
 import 'package:features_user/init.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/app_initializer.dart';
-import 'package:flutter_app/i18n/strings.g.dart';
-import 'package:flutter_app/src/application/state/initial_location_provider.dart';
-import 'package:flutter_app/src/presentation/router/state/router_provider.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';
 
+import 'app_initializer.dart';
+import 'i18n/strings.g.dart';
+import 'src/application/state/initial_location_provider.dart';
 import 'src/presentation/app.dart';
+import 'src/presentation/router/state/router_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
