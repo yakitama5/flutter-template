@@ -9,8 +9,8 @@ packages:
 command:
   bootstrap:
     environment:
-      sdk: ^3.5.0
-      flutter: ^3.24.0
+      sdk: ^3.5.4
+      flutter: ^3.24.4
     dependencies:
       collection: any
       flutter_hooks: any
