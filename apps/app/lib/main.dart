@@ -8,6 +8,7 @@ import 'package:cores_error/application.dart';
 import 'package:cores_error/i18n.dart';
 import 'package:cores_firebase/init.dart';
 import 'package:cores_shared_preferences/init.dart';
+import 'package:device_preview/device_preview.dart';
 import 'package:features_app_update/i18n.dart';
 import 'package:features_app_update/init.dart';
 import 'package:features_app_update/presentation.dart';
@@ -18,6 +19,7 @@ import 'package:features_maintenance/init.dart';
 import 'package:features_setting/i18n.dart';
 import 'package:features_user/i18n.dart';
 import 'package:features_user/init.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/app_initializer.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
@@ -64,7 +66,10 @@ void main() async {
           SettingsTranslationProvider(),
           DesignsystemTranslationProvider(),
         ],
-        child: const MainApp(),
+        child: DevicePreview(
+          enabled: kIsWeb && !kReleaseMode,
+          builder: (context) => const MainApp(),
+        ),
       ),
     ),
   );
@@ -100,6 +105,7 @@ class MainApp extends ConsumerWidget {
     return MaterialApp.router(
       builder: (_, child) => Nested(
         children: const [
+          _DevicePreviewContainer(),
           // レスポンシブデザイン
           ResponsiveAutoScaleBox(),
           // 共通のローディング表示
@@ -111,7 +117,8 @@ class MainApp extends ConsumerWidget {
       ),
 
       // Slang
-      locale: TranslationProvider.of(context).flutterLocale,
+      locale: DevicePreview.locale(context) ??
+          TranslationProvider.of(context).flutterLocale,
       supportedLocales: AppLocaleUtils.supportedLocales,
       localizationsDelegates: GlobalMaterialLocalizations.delegates,
 
@@ -132,4 +139,13 @@ class _AppTranslationProvider extends SingleChildStatelessWidget {
       TranslationProvider(
         child: child ?? const SizedBox.shrink(),
       );
+}
+
+class _DevicePreviewContainer extends SingleChildStatelessWidget {
+  const _DevicePreviewContainer();
+
+  @override
+  Widget buildWithChild(BuildContext context, Widget? child) {
+    return DevicePreview.appBuilder(context, child);
+  }
 }

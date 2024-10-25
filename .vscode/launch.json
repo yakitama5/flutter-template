@@ -11,7 +11,8 @@
             "program": "lib/main.dart",
             "type": "dart",
             "args": [
-                "--dart-define-from-file=flavor/dev.json"
+                "--dart-define-from-file=flavor/dev.json",
+                "--web-renderer html",
             ]
         },
         {
@@ -21,7 +22,8 @@
             "program": "lib/main.dart",
             "type": "dart",
             "args": [
-                "--dart-define-from-file=flavor/prd.json"
+                "--dart-define-from-file=flavor/prd.json",
+                "--web-renderer html",
             ]
         },
         {
