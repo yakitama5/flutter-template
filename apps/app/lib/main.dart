@@ -63,6 +63,7 @@ void main() async {
           DesignsystemTranslationProvider(),
         ],
         child: DevicePreview(
+          // レイアウト確認はWeb版だけ利用する
           enabled: kIsWeb && !kReleaseMode,
           builder: (context) => const MainApp(),
         ),

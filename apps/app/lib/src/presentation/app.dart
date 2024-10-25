@@ -43,14 +43,9 @@ class MainApp extends ConsumerWidget {
     return MaterialApp.router(
       builder: (_, child) => Nested(
         children: const [
-          // レスポンシブデザイン
           ResponsiveAutoScaleBox(),
-          // 共通のローディング表示
           LoaderOverlay(),
-          // アプリアップデートチェック
           AppUpdateListner(),
-
-          // デバッグ用
           DevicePreviewSingleChildContainer(),
         ],
         child: child,
