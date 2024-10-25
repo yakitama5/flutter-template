@@ -29,6 +29,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';
 
+import 'src/presentation/components/device_preview_wrapper.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -105,13 +107,15 @@ class MainApp extends ConsumerWidget {
     return MaterialApp.router(
       builder: (_, child) => Nested(
         children: const [
-          _DevicePreviewContainer(),
           // レスポンシブデザイン
           ResponsiveAutoScaleBox(),
           // 共通のローディング表示
           LoaderOverlay(),
           // アプリアップデートチェック
           AppUpdateListner(),
+
+          // デバッグ用
+          DevicePreviewSingleChildContainer(),
         ],
         child: child,
       ),
@@ -139,13 +143,4 @@ class _AppTranslationProvider extends SingleChildStatelessWidget {
       TranslationProvider(
         child: child ?? const SizedBox.shrink(),
       );
-}
-
-class _DevicePreviewContainer extends SingleChildStatelessWidget {
-  const _DevicePreviewContainer();
-
-  @override
-  Widget buildWithChild(BuildContext context, Widget? child) {
-    return DevicePreview.appBuilder(context, child);
-  }
 }
