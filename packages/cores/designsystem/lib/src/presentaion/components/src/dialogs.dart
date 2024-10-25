@@ -59,7 +59,6 @@ class _OkDialog extends StatelessWidget {
 /// プラットフォームに応じたアダプティブレイアウトを提供
 class _AdaptiveAction extends SingleChildStatelessWidget {
   const _AdaptiveAction({
-    super.key,
     required super.child,
     required this.onPressed,
   });
