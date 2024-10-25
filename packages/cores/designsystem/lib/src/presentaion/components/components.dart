@@ -2,6 +2,7 @@ export 'src/bottom_sheet_action_chip.dart';
 export 'src/brightness_scope.dart';
 export 'src/cards.dart';
 export 'src/chips.dart';
+export 'src/dialogs.dart';
 export 'src/gauge_indicator.dart';
 export 'src/image_aspect_ratio.dart';
 export 'src/linked_scroll_builder.dart';

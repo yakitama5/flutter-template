@@ -1,6 +1,5 @@
 import 'package:cores_core/application.dart';
 import 'package:cores_core/presentation.dart';
-import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:cores_designsystem/init.dart';
@@ -9,9 +8,9 @@ import 'package:cores_error/application.dart';
 import 'package:cores_error/i18n.dart';
 import 'package:cores_firebase/init.dart';
 import 'package:cores_shared_preferences/init.dart';
-import 'package:features_app_update/application.dart';
 import 'package:features_app_update/i18n.dart';
 import 'package:features_app_update/init.dart';
+import 'package:features_app_update/presentation.dart';
 import 'package:features_goods/i18n.dart';
 import 'package:features_goods/init.dart';
 import 'package:features_maintenance/i18n.dart';
@@ -84,39 +83,30 @@ class MainApp extends ConsumerWidget {
     final darkTheme = ref.watch(appThemeProvider(brightness: Brightness.dark));
 
     ref
-      // エラー検知
-      // TODO(yakitama5): アプリ全体の例外管理に応じて変更検討(mixinかriverpod)
-      ..listen<AppException?>(
-        appExceptionNotifierProvider,
-        (_, appException) {
-          if (appException != null) {
-            SnackBarManager.showErrorSnackBar(
-              'An error occurred: ${appException.message}',
-            );
-            ref.read(appExceptionNotifierProvider.notifier).consume();
-          }
-        },
-      )
-      // アップデート検知
-      ..listen(appUpdateStatusProvider, (_, snapshot) {
-        if (!snapshot.hasValue) {
-          return;
+        // エラー検知
+        // TODO(yakitama5): アプリ全体の例外管理に応じて変更検討(mixinかriverpod)
+        .listen<AppException?>(
+      appExceptionNotifierProvider,
+      (_, appException) {
+        if (appException != null) {
+          SnackBarManager.showErrorSnackBar(
+            'An error occurred: ${appException.message}',
+          );
+          ref.read(appExceptionNotifierProvider.notifier).consume();
         }
-
-        final status = snapshot.value!;
-        switch (status) {
-          case AppUpdateStatus.updateRequired:
-            logger.i('updateRequired');
-          case AppUpdateStatus.updatePossible:
-            logger.i('updatePossible');
-          case AppUpdateStatus.usingLatest:
-            logger.i('usingLatest');
-        }
-      });
+      },
+    );
 
     return MaterialApp.router(
-      // 共通のローディング表示
-      builder: (_, child) => LoaderOverlay(child: child),
+      builder: (_, child) => Nested(
+        children: const [
+          // 共通のローディング表示
+          LoaderOverlay(),
+          // アプリアップデートチェック
+          AppUpdateListner(),
+        ],
+        child: child,
+      ),
 
       // Slang
       locale: TranslationProvider.of(context).flutterLocale,
