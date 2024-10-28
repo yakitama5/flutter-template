@@ -22,6 +22,7 @@ command:
       logger: any
       riverpod_annotation: ^2.6.1
     dev_dependencies:
+      alchemist: ^0.10.0
       build_runner: any
       custom_lint: any
       flutter_gen_runner: any
