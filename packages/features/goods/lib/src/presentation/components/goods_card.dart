@@ -10,8 +10,6 @@ class GoodsCard extends StatelessWidget {
     this.onTap,
   });
 
-  static const _imageHeight = 120.0;
-
   final Goods item;
   final VoidCallback? onTap;
 
@@ -27,18 +25,9 @@ class GoodsCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(12),
-            child: Image.network(
-              item.imageUrl!,
-              height: _imageHeight,
-              width: double.infinity,
-              fit: BoxFit.fitWidth,
+            child: _Image(
+              imageUrl: item.imageUrl,
               semanticLabel: item.description,
-              loadingBuilder: (context, child, loadingProgress) =>
-                  loadingProgress == null
-                      ? child
-                      : const ShimmerWidget.rectangular(
-                          height: _imageHeight,
-                        ),
             ),
           ),
           Flexible(
@@ -58,6 +47,7 @@ class GoodsCard extends StatelessWidget {
                   ),
                   const Gap(4),
                   Text(
+                    // HACK(yakitama5): 多言語化対応
                     '￥${item.price}',
                     style: tt.titleMedium,
                   ),
@@ -73,6 +63,45 @@ class GoodsCard extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class _Image extends StatelessWidget {
+  const _Image({
+    required this.imageUrl,
+    required this.semanticLabel,
+  });
+
+  static const _imageHeight = 120.0;
+
+  final String? imageUrl;
+  final String? semanticLabel;
+
+  @override
+  Widget build(BuildContext context) {
+    // 画像指定無しの場合はダミー表示
+    if (imageUrl?.isEmpty ?? true) {
+      return SizedBox(
+        height: _imageHeight,
+        width: double.infinity,
+        child:
+            ColoredBox(color: Theme.of(context).colorScheme.primaryContainer),
+      );
+    }
+
+    return Image.network(
+      imageUrl!,
+      height: _imageHeight,
+      width: double.infinity,
+      fit: BoxFit.fitWidth,
+      semanticLabel: semanticLabel,
+      loadingBuilder: (context, child, loadingProgress) =>
+          loadingProgress == null
+              ? child
+              : const ShimmerWidget.rectangular(
+                  height: _imageHeight,
+                ),
     );
   }
 }
