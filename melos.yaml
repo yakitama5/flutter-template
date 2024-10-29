@@ -80,6 +80,20 @@ scripts:
     packageFilters:
       dependsOn: build_runner
 
+  test_golden:
+    run: flutter test --tags=golden
+    exec:
+      orderDependents: true
+    packageFilters:
+      dependsOn: alchemist
+
+  test_update_golden:
+    run: flutter test --update-goldens
+    exec:
+      orderDependents: true
+    packageFilters:
+      dependsOn: alchemist
+
 ide:
   intellij:
     # Disabling IntelliJ's automatic configuration.
