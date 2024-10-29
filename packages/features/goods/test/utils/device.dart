@@ -1,3 +1,4 @@
+// ignore_for_file: no_support_multi_text_direction
 // Copied and adapted from https://github.com/eBay/flutter_glove_box/blob/master/packages/golden_toolkit/lib/src/device.dart
 
 import 'package:flutter/material.dart';
@@ -11,7 +12,7 @@ class Device {
     this.devicePixelRatio = 1.0,
     this.textScaleFactor = 1.0,
     this.brightness = Brightness.light,
-    this.safeArea = const EdgeInsets.all(0),
+    this.safeArea = EdgeInsets.zero,
   });
 
   /// [smallPhone] one of the smallest phone screens
