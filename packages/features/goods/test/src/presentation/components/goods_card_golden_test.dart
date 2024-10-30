@@ -20,7 +20,7 @@ void main() {
 
     goldenTest(
       'GoodsCard',
-      fileName: 'goods_card',
+      fileName: 'golden_goods_card',
       builder: () => GoldenTestGroup(
         scenarioConstraints: const BoxConstraints(maxHeight: 288),
         children: [
