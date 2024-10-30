@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 10 (5 per locale)
+/// Strings: 12 (6 per locale)
 ///
-/// Built on 2024-09-05 at 02:09 UTC
+/// Built on 2024-10-30 at 07:52 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -170,6 +170,7 @@ class _StringsGoodsEn {
 				return 'Price';
 		}
 	}
+	late final _StringsGoodsGoodsListTileEn goodsListTile = _StringsGoodsGoodsListTileEn._(_root);
 }
 
 // Path: goods.goodsPage
@@ -181,6 +182,26 @@ class _StringsGoodsGoodsPageEn {
 	// Translations
 	String get title => 'Goods';
 	String get layout => 'Layout';
+}
+
+// Path: goods.goodsListTile
+class _StringsGoodsGoodsListTileEn {
+	_StringsGoodsGoodsListTileEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	late final _StringsGoodsGoodsListTileCurrencyEn currency = _StringsGoodsGoodsListTileCurrencyEn._(_root);
+}
+
+// Path: goods.goodsListTile.currency
+class _StringsGoodsGoodsListTileCurrencyEn {
+	_StringsGoodsGoodsListTileCurrencyEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get price => 'currency';
 }
 
 // Path: <root>
@@ -230,6 +251,7 @@ class _StringsGoodsJa extends _StringsGoodsEn {
 				return '価格';
 		}
 	}
+	@override late final _StringsGoodsGoodsListTileJa goodsListTile = _StringsGoodsGoodsListTileJa._(_root);
 }
 
 // Path: goods.goodsPage
@@ -241,6 +263,26 @@ class _StringsGoodsGoodsPageJa extends _StringsGoodsGoodsPageEn {
 	// Translations
 	@override String get title => '商品一覧';
 	@override String get layout => '表示形式';
+}
+
+// Path: goods.goodsListTile
+class _StringsGoodsGoodsListTileJa extends _StringsGoodsGoodsListTileEn {
+	_StringsGoodsGoodsListTileJa._(_StringsJa root) : this._root = root, super._(root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override late final _StringsGoodsGoodsListTileCurrencyJa currency = _StringsGoodsGoodsListTileCurrencyJa._(_root);
+}
+
+// Path: goods.goodsListTile.currency
+class _StringsGoodsGoodsListTileCurrencyJa extends _StringsGoodsGoodsListTileCurrencyEn {
+	_StringsGoodsGoodsListTileCurrencyJa._(_StringsJa root) : this._root = root, super._(root);
+
+	@override final _StringsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get price => 'currency';
 }
 
 /// Flat map(s) containing all translations.
@@ -261,6 +303,7 @@ extension on Translations {
 						return 'Price';
 				}
 			};
+			case 'goods.goodsListTile.currency.price': return 'currency';
 			default: return null;
 		}
 	}
@@ -281,6 +324,7 @@ extension on _StringsJa {
 						return '価格';
 				}
 			};
+			case 'goods.goodsListTile.currency.price': return 'currency';
 			default: return null;
 		}
 	}
