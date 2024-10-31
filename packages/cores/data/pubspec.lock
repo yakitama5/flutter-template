@@ -297,6 +297,11 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
+  flutter_localizations:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   flutter_riverpod:
     dependency: transitive
     description:
@@ -743,18 +748,18 @@ packages:
     dependency: transitive
     description:
       name: slang
-      sha256: f68f6d6709890f85efabfb0318e9d694be2ebdd333e57fe5cb50eee449e4e3ab
+      sha256: b04db2dbaf927b28600a2f8a272a3bf2ae309556dcc5d6beb02d66af0be39e4c
       url: "https://pub.dev"
     source: hosted
-    version: "3.31.1"
+    version: "4.1.0"
   slang_flutter:
     dependency: transitive
     description:
       name: slang_flutter
-      sha256: f8400292be49c11697d94af58d7f7d054c91af759f41ffe71e4e5413871ffc62
+      sha256: "59988f37bb8b50d96ee46832a8a389036c0da26c04b1b1d4aa6690c00f70eccf"
       url: "https://pub.dev"
     source: hosted
-    version: "3.31.0"
+    version: "4.1.0"
   source_gen:
     dependency: transitive
     description:

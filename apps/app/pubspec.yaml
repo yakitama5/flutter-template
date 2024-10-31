@@ -47,8 +47,8 @@ dependencies:
   nested: null
   package_info_plus: ^5.0.1
   riverpod_annotation: ^2.6.1
-  slang: null
-  slang_flutter: null
+  slang: ^4.1.0
+  slang_flutter: ^4.1.0
   version: null
 
 dev_dependencies:
