@@ -8,7 +8,7 @@ part of 'goods_list_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$goodsListHash() => r'8e8b82bb54b97b65fb8c8e3ef168b683c99b072c';
+String _$goodsListHash() => r'08e422bea87d394a6c9a9a744b1816729727c141';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -155,6 +155,8 @@ class GoodsListProvider extends AutoDisposeStreamProvider<GoodsFetchResponse> {
   }
 }
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 mixin GoodsListRef on AutoDisposeStreamProviderRef<GoodsFetchResponse> {
   /// The parameter `page` of this provider.
   int get page;
@@ -174,4 +176,4 @@ class _GoodsListProviderElement
   GoodsFetchQuery get query => (origin as GoodsListProvider).query;
 }
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
