@@ -13,6 +13,7 @@ import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../components/goods_card.dart';
+import '../components/goods_list_tile.dart';
 import '../components/goods_sort_key_chip.dart';
 
 class GoodsPage extends HookConsumerWidget {
@@ -120,32 +121,18 @@ class _SliverBody extends HookConsumerWidget {
                 GoodsDetailPage(goods: data.goods[indexInPage]),
             closedBuilder: (context, action) {
               final item = data.goods[indexInPage];
-              switch (viewLayout) {
-                case ViewLayout.grid:
-                  return GoodsCard(
+              return switch (viewLayout) {
+                ViewLayout.grid => GoodsCard(
                     key: ValueKey(item),
                     item: item,
                     onTap: action,
-                  );
-                case ViewLayout.list:
-                  // HACK(yakitama5): ListTileもコンポーネント化する
-                  return ListTile(
+                  ),
+                ViewLayout.list => GoodsListTile(
                     key: ValueKey(item),
+                    item: item,
                     onTap: action,
-                    title: Text(item.name),
-                    leading: ClipRRect(
-                      borderRadius: BorderRadius.circular(12),
-                      child: Image.network(
-                        item.imageUrl!,
-                        loadingBuilder: (context, child, loadingProgress) =>
-                            loadingProgress == null
-                                ? child
-                                : const _ShimmerListTileLeading(),
-                      ),
-                    ),
-                    subtitle: Text('￥${item.price}'),
-                  );
-              }
+                  ),
+              };
             },
           ),
           loading: () => _ShimmerTile(viewLayout: viewLayout),
@@ -190,18 +177,7 @@ class _ShimmerListTile extends StatelessWidget {
       subtitle: ShimmerWidget.rectangular(
         height: 16,
       ),
-      leading: _ShimmerListTileLeading(),
-    );
-  }
-}
-
-class _ShimmerListTileLeading extends StatelessWidget {
-  const _ShimmerListTileLeading();
-  @override
-  Widget build(BuildContext context) {
-    return const ShimmerWidget.rectangular(
-      height: 64,
-      width: 64,
+      leading: GoodsShimmerListTileLeading(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:cores_designsystem/presentation.dart';
+import 'package:features_goods/i18n/strings.g.dart';
 import 'package:features_goods/src/domain/entity/goods.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -47,8 +48,7 @@ class GoodsCard extends StatelessWidget {
                   ),
                   const Gap(4),
                   Text(
-                    // HACK(yakitama5): 多言語化対応
-                    '￥${item.price}',
+                    i18n.goods.goodsPage.price(price: item.price ?? 0),
                     style: tt.titleMedium,
                   ),
                   const Gap(8),
