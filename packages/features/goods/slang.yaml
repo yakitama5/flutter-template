@@ -4,6 +4,7 @@ output_directory: lib/i18n
 translate_var: i18n
 input_file_pattern: .i18n.yaml
 namespaces: true
+lazy: false
 
 # Config
 imports:

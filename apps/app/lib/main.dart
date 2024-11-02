@@ -32,7 +32,7 @@ void main() async {
   await FirebaseInitializer.initialize(buildConfig.flavor);
 
   // Slang
-  await LocaleSettings.useDeviceLocale();
+  LocaleSettings.useDeviceLocaleSync();
 
   runApp(
     ProviderScope(
