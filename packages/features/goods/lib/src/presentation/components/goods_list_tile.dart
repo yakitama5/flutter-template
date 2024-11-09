@@ -26,6 +26,8 @@ class GoodsListTile extends StatelessWidget {
               )
             : Image.network(
                 item.imageUrl!,
+                width: 64,
+                height: 64,
                 loadingBuilder: (context, child, loadingProgress) =>
                     loadingProgress == null
                         ? child
