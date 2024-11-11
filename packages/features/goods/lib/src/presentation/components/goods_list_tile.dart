@@ -1,6 +1,7 @@
 import 'package:cores_designsystem/presentation.dart';
 import 'package:features_goods/i18n/strings.g.dart';
 import 'package:features_goods/src/domain/entity/goods.dart';
+import 'package:features_goods/src/presentation/components/goods_empty_image.dart';
 import 'package:flutter/material.dart';
 
 class GoodsListTile extends StatelessWidget {
@@ -17,13 +18,7 @@ class GoodsListTile extends StatelessWidget {
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(12),
         child: item.imageUrl == null
-            ? SizedBox(
-                height: 64,
-                width: 64,
-                child: ColoredBox(
-                  color: Theme.of(context).colorScheme.surfaceContainer,
-                ),
-              )
+            ? const GoodsEmptyImage(width: 64, height: 64)
             : Image.network(
                 item.imageUrl!,
                 width: 64,

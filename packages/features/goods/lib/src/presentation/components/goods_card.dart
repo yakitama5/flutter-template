@@ -4,6 +4,8 @@ import 'package:features_goods/src/domain/entity/goods.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import 'goods_empty_image.dart';
+
 class GoodsCard extends StatelessWidget {
   const GoodsCard({
     super.key,
@@ -82,11 +84,9 @@ class _Image extends StatelessWidget {
   Widget build(BuildContext context) {
     // 画像指定無しの場合はダミー表示
     if (imageUrl?.isEmpty ?? true) {
-      return SizedBox(
+      return const GoodsEmptyImage(
         height: _imageHeight,
         width: double.infinity,
-        child:
-            ColoredBox(color: Theme.of(context).colorScheme.primaryContainer),
       );
     }
 

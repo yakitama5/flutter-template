@@ -1,5 +1,6 @@
 import 'package:cores_designsystem/presentation.dart';
 import 'package:features_goods/src/domain/entity/goods.dart';
+import 'package:features_goods/src/presentation/components/goods_empty_image.dart';
 import 'package:flutter/material.dart';
 
 class GoodsDetailPage extends StatefulWidget {
@@ -41,11 +42,16 @@ class _State extends State<GoodsDetailPage> {
                   title: const Text('Linked Scroll Controller Group'),
                   flexibleSpace: FlexibleSpaceBar(
                     background: OverflowBox(
-                      child: Image.network(
-                        height: imageHeight,
-                        fit: BoxFit.fitHeight,
-                        widget.goods.imageUrl!,
-                      ),
+                      child: widget.goods.imageUrl != null
+                          ? Image.network(
+                              widget.goods.imageUrl!,
+                              height: imageHeight,
+                              fit: BoxFit.fitHeight,
+                            )
+                          : const GoodsEmptyImage(
+                              width: double.infinity,
+                              height: imageHeight,
+                            ),
                     ),
                   ),
                 ),
