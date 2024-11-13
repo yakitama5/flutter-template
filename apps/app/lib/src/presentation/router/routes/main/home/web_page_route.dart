@@ -5,7 +5,7 @@ class WebPageRoute extends GoRouteData {
 
   static const path = 'web';
 
-  static final $parentNavigatorKey = _rootNavigatorKey;
+  static final $parentNavigatorKey = rootNavigatorKey;
 
   @override
   Widget build(BuildContext context, GoRouterState state) {

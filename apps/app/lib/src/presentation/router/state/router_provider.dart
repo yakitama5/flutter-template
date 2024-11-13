@@ -24,8 +24,6 @@ part '../routes/main/setting/setting_shell_branch.dart';
 part '../routes/maintenance_page_route.dart';
 part 'router_provider.g.dart';
 
-final _rootNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'root');
-
 @riverpod
 GoRouter router(Ref ref) {
   final notifier = ref.watch(routerNotifierProvider.notifier);

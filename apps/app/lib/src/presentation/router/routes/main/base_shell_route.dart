@@ -16,7 +16,7 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
   ],
 )
 class BaseShellSroute extends ShellRouteData {
-  static final GlobalKey<NavigatorState> $navigatorKey = _rootNavigatorKey;
+  static final GlobalKey<NavigatorState> $navigatorKey = rootNavigatorKey;
 
   // ルート設定のために定義だけ
   @override

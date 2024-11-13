@@ -1,5 +1,6 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:cores_core/application.dart';
+import 'package:cores_core/presentation.dart';
 import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/presentation.dart';
 import 'package:flutter/widgets.dart';
@@ -16,9 +17,13 @@ class AppUpdateListner extends SingleChildStatelessWidget {
   @override
   Widget buildWithChild(BuildContext context, Widget? child) => Consumer(
         child: child,
-        builder: (context, ref, child) {
+        builder: (_, ref, child) {
           ref.listen(appUpdateStatusProvider, (_, snapshot) async {
-            if (!snapshot.hasValue) {
+            // 共通Widgetのため、呼び出し元によらずRootを利用する
+            final rootContext = rootNavigatorKey.currentContext;
+            if (!snapshot.hasValue ||
+                rootContext == null ||
+                !rootContext.mounted) {
               return;
             }
 
@@ -28,7 +33,7 @@ class AppUpdateListner extends SingleChildStatelessWidget {
               case AppUpdateStatus.updateRequired:
                 logger.i('updateRequired');
 
-                final result = await showOkAlertDialog(context: context);
+                final result = await showOkAlertDialog(context: rootContext);
                 return switch (result) {
                   OkCancelResult.ok => navigateToStore(ref),
                   OkCancelResult.cancel => null,
@@ -37,7 +42,7 @@ class AppUpdateListner extends SingleChildStatelessWidget {
                 logger.i('updatePossible');
 
                 await showOkBarrierDismissibleDialog(
-                  context,
+                  rootContext,
                   okLabel: 'ストアへ',
                   onOk: () => navigateToStore(ref),
                 );
