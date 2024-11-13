@@ -55,7 +55,7 @@ class FakeGoodsRepository extends GoodsRepository {
         id: 'Id $i',
         name: 'Name $i',
         price: i * 100,
-        // imageUrl: _images[i % _images.length],
+        imageUrl: _images[i % _images.length],
         description: _descriptions[i % _descriptions.length],
         createdAt: clock.fromNow(days: -i),
         updatedAt: clock.fromNow(days: -i),
