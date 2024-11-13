@@ -1,7 +1,6 @@
 import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/presentation.dart';
-import 'package:cores_error/application.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:features_app_update/presentation.dart';
 import 'package:flutter/material.dart';
@@ -24,21 +23,6 @@ class MainApp extends ConsumerWidget {
     final lightTheme =
         ref.watch(appThemeProvider(brightness: Brightness.light));
     final darkTheme = ref.watch(appThemeProvider(brightness: Brightness.dark));
-
-    ref
-        // エラー検知
-        // TODO(yakitama5): アプリ全体の例外管理に応じて変更検討(mixinかriverpod)
-        .listen<AppException?>(
-      appExceptionNotifierProvider,
-      (_, appException) {
-        if (appException != null) {
-          SnackBarManager.showErrorSnackBar(
-            'An error occurred: ${appException.message}',
-          );
-          ref.read(appExceptionNotifierProvider.notifier).consume();
-        }
-      },
-    );
 
     return MaterialApp.router(
       builder: (_, child) => Nested(
