@@ -1,5 +1,5 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
-import 'package:cores_core/application.dart';
+import 'package:cores_core/domain.dart';
 import 'package:cores_core/presentation.dart';
 import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/presentation.dart';

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:cores_core/application.dart';
+import 'package:cores_core/domain.dart';
 import 'package:cores_error/application.dart';
 import 'package:cores_error/i18n.dart';
 import 'package:features_user/application.dart';

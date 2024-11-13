@@ -1,4 +1,4 @@
-import 'package:cores_core/application.dart';
+import 'package:cores_core/domain.dart';
 import 'package:features_app_update/application.dart';
 import 'package:features_app_update/src/domain/interface/app_version_repository.dart';
 import 'package:flutter_test/flutter_test.dart';

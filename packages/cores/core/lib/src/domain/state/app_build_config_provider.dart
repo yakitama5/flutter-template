@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../model/app_build_config.dart';
+import '../value_object/app_build_config.dart';
 
 part 'app_build_config_provider.g.dart';
 

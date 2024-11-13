@@ -1,4 +1,4 @@
-import 'package:cores_core/application.dart';
+import 'package:cores_core/domain.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:cores_designsystem/init.dart';
 import 'package:cores_error/i18n.dart';
