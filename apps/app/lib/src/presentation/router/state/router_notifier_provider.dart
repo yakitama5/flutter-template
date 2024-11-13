@@ -1,4 +1,4 @@
-import 'package:features_maintenance/application.dart';
+import 'package:features_maintenance/domain.dart';
 import 'package:features_user/application.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
