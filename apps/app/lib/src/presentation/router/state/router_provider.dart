@@ -7,7 +7,6 @@ import 'package:features_user/presentation.dart';
 import 'package:features_webview/webview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/src/application/state/initial_location_provider.dart';
 import 'package:flutter_app/src/presentation/pages/home_page.dart';
 import 'package:flutter_app/src/presentation/router/routes/main/navigator_page.dart';
 import 'package:go_router/go_router.dart';
@@ -15,6 +14,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../navigator/navigator_provider.dart';
+import 'initial_location_provider.dart';
 import 'router_notifier_provider.dart';
 
 part '../routes/main/base_shell_route.dart';
