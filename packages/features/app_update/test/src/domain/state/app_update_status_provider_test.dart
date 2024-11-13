@@ -1,6 +1,5 @@
 import 'package:cores_core/domain.dart';
-import 'package:features_app_update/application.dart';
-import 'package:features_app_update/src/domain/interface/app_version_repository.dart';
+import 'package:features_app_update/domain.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:version/version.dart';

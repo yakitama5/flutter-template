@@ -8,8 +8,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';
 import 'package:store_redirect/store_redirect.dart';
 
-import '../application/model/app_update_status.dart';
-import '../application/state/app_update_status_provider.dart';
+import '../domain/state/app_update_status_provider.dart';
+import '../domain/value_object/app_update_status.dart';
 
 class AppUpdateListner extends SingleChildStatelessWidget {
   const AppUpdateListner({super.key, super.child});
