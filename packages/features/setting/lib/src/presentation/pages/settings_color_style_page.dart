@@ -1,4 +1,3 @@
-import 'package:cores_designsystem/application.dart';
 import 'package:cores_designsystem/common_assets.dart';
 import 'package:cores_designsystem/domain.dart';
 import 'package:cores_designsystem/i18n.dart';

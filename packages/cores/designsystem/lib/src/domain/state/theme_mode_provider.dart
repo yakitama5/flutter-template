@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../domain/interface/theme_repository.dart';
+import '../interface/theme_repository.dart';
 
 part 'theme_mode_provider.g.dart';
 

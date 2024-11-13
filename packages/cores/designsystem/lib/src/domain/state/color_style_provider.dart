@@ -1,10 +1,11 @@
 import 'dart:async';
 
-import 'package:cores_designsystem/application.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../domain/interface/theme_repository.dart';
-import '../../domain/value_object/color_style.dart';
+import '../interface/theme_repository.dart';
+import '../value_object/color_style.dart';
+import '../value_object/dynamic_color_support_status.dart';
+import 'dynamic_color_support_provider.dart';
 
 part 'color_style_provider.g.dart';
 

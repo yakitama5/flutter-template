@@ -1,4 +1,4 @@
-import 'package:cores_designsystem/application.dart';
+import 'package:cores_designsystem/domain.dart';
 import 'package:cores_designsystem/i18n.dart';
 import 'package:features_setting/i18n/strings.g.dart';
 import 'package:flutter/material.dart';

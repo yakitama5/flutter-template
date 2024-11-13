@@ -1,11 +1,12 @@
-import 'package:cores_designsystem/application.dart';
-import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../presentaion/theme/theme_extensions/theme_extensions.dart';
+import '../value_object/color_style.dart';
+import 'color_style_provider.dart';
+import 'core_palette_provider.dart';
 
 part 'app_theme_provider.g.dart';
 
