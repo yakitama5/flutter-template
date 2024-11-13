@@ -3,7 +3,7 @@ import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/common_assets.dart';
 import 'package:cores_error/presentation.dart';
 import 'package:features_setting/i18n/strings.g.dart';
-import 'package:features_user/application.dart';
+import 'package:features_user/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

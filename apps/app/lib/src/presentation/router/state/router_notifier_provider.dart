@@ -1,5 +1,5 @@
 import 'package:features_maintenance/domain.dart';
-import 'package:features_user/application.dart';
+import 'package:features_user/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

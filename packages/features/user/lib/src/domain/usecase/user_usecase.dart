@@ -3,12 +3,13 @@ import 'dart:async';
 import 'package:cores_core/domain.dart';
 import 'package:cores_error/domain.dart';
 import 'package:cores_error/i18n.dart';
-import 'package:features_user/application.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../domain/entity/user.dart';
-import '../../domain/interface/user_repository.dart';
+import '../entity/user.dart';
+import '../interface/user_repository.dart';
+import '../state/auth_status_provider.dart';
+import '../state/auth_user_provider.dart';
 
 part 'user_usecase.g.dart';
 
