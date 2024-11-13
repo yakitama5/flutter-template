@@ -1,8 +1,8 @@
 // ignore_for_file: scoped_providers_should_specify_dependencies
 import 'package:alchemist/alchemist.dart';
 import 'package:features_goods/presentation.dart';
-import 'package:features_goods/src/application/state/goods_list_provider.dart';
 import 'package:features_goods/src/domain/entity/goods.dart';
+import 'package:features_goods/src/domain/state/goods_list_provider.dart';
 import 'package:features_goods/src/domain/value_object/goods_fetch_query.dart';
 import 'package:features_goods/src/domain/value_object/goods_fetch_response.dart';
 import 'package:flutter_test/flutter_test.dart';
