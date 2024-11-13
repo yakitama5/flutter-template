@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:cores_core/domain.dart';
-import 'package:cores_error/application.dart';
+import 'package:cores_error/domain.dart';
 import 'package:cores_error/i18n.dart';
 import 'package:features_user/application.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

@@ -1,4 +1,4 @@
-import 'package:cores_error/application.dart';
+import 'package:cores_error/domain.dart';
 import 'package:flutter/foundation.dart';
 
 import '../components/snack_bar_manager.dart';
