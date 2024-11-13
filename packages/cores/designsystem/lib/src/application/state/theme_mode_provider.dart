@@ -12,6 +12,8 @@ part 'theme_mode_provider.g.dart';
 AutoDisposeNotifierProviderImpl<_ThemeMode, ThemeMode> get themeModeProvider =>
     _themeModeProvider;
 
+/// テーマを管理するProvider
+/// SharedPreferencesの同期を待たずにUIに反映するため、Notifierを利用している
 @riverpod
 class _ThemeMode extends _$ThemeMode {
   ThemeRepository get _repository => ref.watch(themeRepositoryProvider);

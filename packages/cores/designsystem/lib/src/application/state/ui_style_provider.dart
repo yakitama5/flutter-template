@@ -6,6 +6,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'ui_style_provider.g.dart';
 
+/// UIスタイルを管理するProvider
+/// SharedPreferencesの同期を待たずにUIに反映するため、Notifierを利用している
 @riverpod
 class UiStyle extends _$UiStyle {
   ThemeRepository get _repository => ref.watch(themeRepositoryProvider);

@@ -13,6 +13,8 @@ part 'color_style_provider.g.dart';
 AutoDisposeNotifierProviderImpl<_ColorStyle, ColorStyle>
     get colorStyleProvider => _colorStyleProvider;
 
+/// カラースタイルを管理するProvider
+/// SharedPreferencesの同期を待たずにUIに反映するため、Notifierを利用している
 @riverpod
 class _ColorStyle extends _$ColorStyle {
   ThemeRepository get _repository => ref.watch(themeRepositoryProvider);
