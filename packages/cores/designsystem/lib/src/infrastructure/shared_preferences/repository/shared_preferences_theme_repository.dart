@@ -12,7 +12,7 @@ class SharedPreferencesThemeRepository implements ThemeRepository {
 
   final Ref ref;
 
-  // TODO(yakitama5): Preferencesでまとめる
+  // TODO(yakitama5): 「ここからやる」Preferencesでまとめる
   static const _colorStyleKey = 'COLOR_STYLE';
   static const _uiStyleKey = 'UI_STYLE';
   static const _themeModeKey = 'THEME_MODE';
