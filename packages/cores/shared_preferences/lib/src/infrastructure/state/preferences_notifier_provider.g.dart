@@ -39,17 +39,7 @@ abstract class _$StringPreference extends BuildlessAutoDisposeNotifier<String> {
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<String>]のenum値を設定して利用する.
-///
-/// ```dart
-/// // get
-/// final loginBonus = ref.watch(preferenceNotifierProvider(Preference.loginBonus));
-///
-/// // update
-/// ref
-///   .read(preferenceNotifierProvider(Preference.loginBonus).notifier)
-///   .update('20241231');
-/// ```
+/// `Preference<String>`のenum値を設定して利用する.
 ///
 ///
 /// Copied from [StringPreference].
@@ -58,34 +48,14 @@ const stringPreferenceProvider = StringPreferenceFamily();
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<String>]のenum値を設定して利用する.
-///
-/// ```dart
-/// // get
-/// final loginBonus = ref.watch(preferenceNotifierProvider(Preference.loginBonus));
-///
-/// // update
-/// ref
-///   .read(preferenceNotifierProvider(Preference.loginBonus).notifier)
-///   .update('20241231');
-/// ```
+/// `Preference<String>`のenum値を設定して利用する.
 ///
 ///
 /// Copied from [StringPreference].
 class StringPreferenceFamily extends Family<String> {
   ///
   /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-  /// [Preference<String>]のenum値を設定して利用する.
-  ///
-  /// ```dart
-  /// // get
-  /// final loginBonus = ref.watch(preferenceNotifierProvider(Preference.loginBonus));
-  ///
-  /// // update
-  /// ref
-  ///   .read(preferenceNotifierProvider(Preference.loginBonus).notifier)
-  ///   .update('20241231');
-  /// ```
+  /// `Preference<String>`のenum値を設定して利用する.
   ///
   ///
   /// Copied from [StringPreference].
@@ -93,17 +63,7 @@ class StringPreferenceFamily extends Family<String> {
 
   ///
   /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-  /// [Preference<String>]のenum値を設定して利用する.
-  ///
-  /// ```dart
-  /// // get
-  /// final loginBonus = ref.watch(preferenceNotifierProvider(Preference.loginBonus));
-  ///
-  /// // update
-  /// ref
-  ///   .read(preferenceNotifierProvider(Preference.loginBonus).notifier)
-  ///   .update('20241231');
-  /// ```
+  /// `Preference<String>`のenum値を設定して利用する.
   ///
   ///
   /// Copied from [StringPreference].
@@ -141,17 +101,7 @@ class StringPreferenceFamily extends Family<String> {
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<String>]のenum値を設定して利用する.
-///
-/// ```dart
-/// // get
-/// final loginBonus = ref.watch(preferenceNotifierProvider(Preference.loginBonus));
-///
-/// // update
-/// ref
-///   .read(preferenceNotifierProvider(Preference.loginBonus).notifier)
-///   .update('20241231');
-/// ```
+/// `Preference<String>`のenum値を設定して利用する.
 ///
 ///
 /// Copied from [StringPreference].
@@ -159,17 +109,7 @@ class StringPreferenceProvider
     extends AutoDisposeNotifierProviderImpl<StringPreference, String> {
   ///
   /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-  /// [Preference<String>]のenum値を設定して利用する.
-  ///
-  /// ```dart
-  /// // get
-  /// final loginBonus = ref.watch(preferenceNotifierProvider(Preference.loginBonus));
-  ///
-  /// // update
-  /// ref
-  ///   .read(preferenceNotifierProvider(Preference.loginBonus).notifier)
-  ///   .update('20241231');
-  /// ```
+  /// `Preference<String>`のenum値を設定して利用する.
   ///
   ///
   /// Copied from [StringPreference].
@@ -273,7 +213,7 @@ abstract class _$BoolPreference extends BuildlessAutoDisposeNotifier<bool> {
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<bool>]のenum値を設定して利用する.
+/// `Preference<bool>`のenum値を設定して利用する.
 ///
 ///
 /// Copied from [BoolPreference].
@@ -282,14 +222,14 @@ const boolPreferenceProvider = BoolPreferenceFamily();
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<bool>]のenum値を設定して利用する.
+/// `Preference<bool>`のenum値を設定して利用する.
 ///
 ///
 /// Copied from [BoolPreference].
 class BoolPreferenceFamily extends Family<bool> {
   ///
   /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-  /// [Preference<bool>]のenum値を設定して利用する.
+  /// `Preference<bool>`のenum値を設定して利用する.
   ///
   ///
   /// Copied from [BoolPreference].
@@ -297,7 +237,7 @@ class BoolPreferenceFamily extends Family<bool> {
 
   ///
   /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-  /// [Preference<bool>]のenum値を設定して利用する.
+  /// `Preference<bool>`のenum値を設定して利用する.
   ///
   ///
   /// Copied from [BoolPreference].
@@ -335,7 +275,7 @@ class BoolPreferenceFamily extends Family<bool> {
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<bool>]のenum値を設定して利用する.
+/// `Preference<bool>`のenum値を設定して利用する.
 ///
 ///
 /// Copied from [BoolPreference].
@@ -343,7 +283,7 @@ class BoolPreferenceProvider
     extends AutoDisposeNotifierProviderImpl<BoolPreference, bool> {
   ///
   /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-  /// [Preference<bool>]のenum値を設定して利用する.
+  /// `Preference<bool>`のenum値を設定して利用する.
   ///
   ///
   /// Copied from [BoolPreference].
@@ -447,7 +387,7 @@ abstract class _$IntPreference extends BuildlessAutoDisposeNotifier<int> {
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<int>]のenum値を設定して利用する.
+/// `Preference<int>`のenum値を設定して利用する.
 ///
 ///
 /// Copied from [IntPreference].
@@ -456,14 +396,14 @@ const intPreferenceProvider = IntPreferenceFamily();
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<int>]のenum値を設定して利用する.
+/// `Preference<int>`のenum値を設定して利用する.
 ///
 ///
 /// Copied from [IntPreference].
 class IntPreferenceFamily extends Family<int> {
   ///
   /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-  /// [Preference<int>]のenum値を設定して利用する.
+  /// `Preference<int>`のenum値を設定して利用する.
   ///
   ///
   /// Copied from [IntPreference].
@@ -471,7 +411,7 @@ class IntPreferenceFamily extends Family<int> {
 
   ///
   /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-  /// [Preference<int>]のenum値を設定して利用する.
+  /// `Preference<int>`のenum値を設定して利用する.
   ///
   ///
   /// Copied from [IntPreference].
@@ -509,7 +449,7 @@ class IntPreferenceFamily extends Family<int> {
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<int>]のenum値を設定して利用する.
+/// `Preference<int>`のenum値を設定して利用する.
 ///
 ///
 /// Copied from [IntPreference].
@@ -517,7 +457,7 @@ class IntPreferenceProvider
     extends AutoDisposeNotifierProviderImpl<IntPreference, int> {
   ///
   /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-  /// [Preference<int>]のenum値を設定して利用する.
+  /// `Preference<int>`のenum値を設定して利用する.
   ///
   ///
   /// Copied from [IntPreference].

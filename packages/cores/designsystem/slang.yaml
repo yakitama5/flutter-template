@@ -9,13 +9,13 @@ lazy: false
 # Config
 imports:
   - "package:cores_designsystem/src/domain/value_object/ui_style.dart"
-  - "package:cores_designsystem/src/domain/value_object/color_style.dart"
+  - "package:cores_designsystem/src/domain/value_object/theme_color.dart"
   - "package:cores_designsystem/src/domain/value_object/view_layout.dart"
   - "package:flutter/material.dart"
 contexts:
   UIStyle:
     generate_enum: false
-  ColorStyle:
+  ThemeColor:
     generate_enum: false
   ViewLayout:
     generate_enum: false

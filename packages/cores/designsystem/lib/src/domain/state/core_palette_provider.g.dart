@@ -8,7 +8,7 @@ part of 'core_palette_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$corePaletteHash() => r'dca963efe8dd0f90f71c07c51b830204d51e1aa0';
+String _$corePaletteHash() => r'11459bb1d4b946a2bfb7bf520dcc8082380b8cf5';
 
 /// See also [corePalette].
 @ProviderFor(corePalette)
@@ -21,6 +21,8 @@ final corePaletteProvider = AutoDisposeProvider<CorePalette?>.internal(
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef CorePaletteRef = AutoDisposeProviderRef<CorePalette?>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

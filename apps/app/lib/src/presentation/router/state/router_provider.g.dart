@@ -40,7 +40,7 @@ RouteBase get $baseShellSroute => ShellRouteData.$route(
                       factory: $WebPageRouteExtension._fromState,
                     ),
                     GoRouteData.$route(
-                      path: 'sample_list',
+                      path: 'goods',
                       factory: $SampleListPageRouteExtension._fromState,
                     ),
                   ],
@@ -63,7 +63,7 @@ RouteBase get $baseShellSroute => ShellRouteData.$route(
                     ),
                     GoRouteData.$route(
                       path: 'color_style',
-                      factory: $SettingsColorStylePageRouteExtension._fromState,
+                      factory: $SettingsThemeColorPageRouteExtension._fromState,
                     ),
                     GoRouteData.$route(
                       path: 'theme_mode',
@@ -164,7 +164,7 @@ extension $SampleListPageRouteExtension on SampleListPageRoute {
       const SampleListPageRoute();
 
   String get location => GoRouteData.$location(
-        '/home/sample_list',
+        '/home/goods',
       );
 
   void go(BuildContext context) => context.go(location);
@@ -231,9 +231,9 @@ extension $SettingsUiStylePageRouteExtension on SettingsUiStylePageRoute {
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $SettingsColorStylePageRouteExtension on SettingsColorStylePageRoute {
-  static SettingsColorStylePageRoute _fromState(GoRouterState state) =>
-      const SettingsColorStylePageRoute();
+extension $SettingsThemeColorPageRouteExtension on SettingsThemeColorPageRoute {
+  static SettingsThemeColorPageRoute _fromState(GoRouterState state) =>
+      const SettingsThemeColorPageRoute();
 
   String get location => GoRouteData.$location(
         '/setting/color_style',
@@ -312,7 +312,7 @@ extension $MaintenancePageRouteExtension on MaintenancePageRoute {
 // RiverpodGenerator
 // **************************************************************************
 
-String _$routerHash() => r'5ae81246d824843a4d0e41d0fdf3fa70fb618600';
+String _$routerHash() => r'53f46af5a31b02faf4a77dbf9b1086d4aaa829e2';
 
 /// See also [router].
 @ProviderFor(router)
@@ -325,6 +325,8 @@ final routerProvider = AutoDisposeProvider<GoRouter>.internal(
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef RouterRef = AutoDisposeProviderRef<GoRouter>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

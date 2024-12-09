@@ -9,7 +9,7 @@ part of 'app_maintenance_repository.dart';
 // **************************************************************************
 
 String _$appMaintenanceRepositoryHash() =>
-    r'2a0436be8d0e90653d0052d545d3e6dd6078ffab';
+    r'88b515da67165c5f8b70951ca32650d09ef17e5d';
 
 /// See also [appMaintenanceRepository].
 @ProviderFor(appMaintenanceRepository)
@@ -24,6 +24,8 @@ final appMaintenanceRepositoryProvider =
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef AppMaintenanceRepositoryRef = ProviderRef<AppMaintenanceRepository>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

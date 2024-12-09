@@ -1,12 +1,9 @@
 import 'package:collection/collection.dart';
-import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
-import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
+import 'package:cores_designsystem/domain.dart';
 import 'package:cores_shared_preferences/domain.dart';
 import 'package:cores_shared_preferences/infrastructure.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../../domain/interface/theme_repository.dart';
 
 class SharedPreferencesThemeRepository implements ThemeRepository {
   const SharedPreferencesThemeRepository(this.ref);
@@ -14,9 +11,9 @@ class SharedPreferencesThemeRepository implements ThemeRepository {
   final Ref ref;
 
   @override
-  ColorStyle? fetchColorStyle() {
-    final value = ref.watch(stringPreferenceProvider(Preferences.colorStyle));
-    return ColorStyle.values.firstWhereOrNull((e) => e.name == value);
+  ThemeColor? fetchThemeColor() {
+    final value = ref.watch(stringPreferenceProvider(Preferences.themeColor));
+    return ThemeColor.values.firstWhereOrNull((e) => e.name == value);
   }
 
   @override
@@ -32,9 +29,9 @@ class SharedPreferencesThemeRepository implements ThemeRepository {
   }
 
   @override
-  Future<void> updateColorStyle(ColorStyle colorStyle) => ref
-      .read(stringPreferenceProvider(Preferences.colorStyle).notifier)
-      .update(colorStyle.name);
+  Future<void> updateThemeColor(ThemeColor themeColor) => ref
+      .read(stringPreferenceProvider(Preferences.themeColor).notifier)
+      .update(themeColor.name);
 
   @override
   Future<void> updateUIStyle(UIStyle uiStyle) => ref

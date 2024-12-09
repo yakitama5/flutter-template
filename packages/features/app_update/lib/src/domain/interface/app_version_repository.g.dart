@@ -9,12 +9,11 @@ part of 'app_version_repository.dart';
 // **************************************************************************
 
 String _$appVersionRepositoryHash() =>
-    r'9ade993c34720925fc0a1128f154a99ecafc4d9f';
+    r'd79f41dfb0c522fb11febcda53c5c23dbe9b6a3e';
 
 /// See also [appVersionRepository].
 @ProviderFor(appVersionRepository)
-final appVersionRepositoryProvider =
-    AutoDisposeProvider<AppVersionRepository>.internal(
+final appVersionRepositoryProvider = Provider<AppVersionRepository>.internal(
   appVersionRepository,
   name: r'appVersionRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -24,6 +23,8 @@ final appVersionRepositoryProvider =
   allTransitiveDependencies: null,
 );
 
-typedef AppVersionRepositoryRef = AutoDisposeProviderRef<AppVersionRepository>;
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef AppVersionRepositoryRef = ProviderRef<AppVersionRepository>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -1,5 +1,5 @@
 enum Preferences<T> {
-  colorStyle('COLOR_STYLE', 'dynamicColor'),
+  themeColor('COLOR_STYLE', 'dynamicColor'),
   uiStyle('UI_STYLE', 'system'),
   themeMode('THEME_MODE', 'system');
 

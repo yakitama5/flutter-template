@@ -8,7 +8,7 @@ part of 'auth_status_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authStatusHash() => r'9dfbdecaa9bab1110a126af83fc044effecc0c66';
+String _$authStatusHash() => r'0689927c86637285710a98bdad9c2e3a7d8c5173';
 
 /// 認証状態
 ///
@@ -23,6 +23,8 @@ final authStatusProvider = StreamProvider<AuthStatus?>.internal(
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef AuthStatusRef = StreamProviderRef<AuthStatus?>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

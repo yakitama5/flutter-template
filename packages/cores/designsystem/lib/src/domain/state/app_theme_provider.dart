@@ -4,36 +4,36 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../presentaion/theme/theme_extensions/theme_extensions.dart';
-import '../value_object/color_style.dart';
-import 'color_style_provider.dart';
+import '../value_object/theme_color.dart';
 import 'core_palette_provider.dart';
+import 'theme_color_provider.dart';
 
 part 'app_theme_provider.g.dart';
 
 @riverpod
 ThemeData appTheme(Ref ref, {required Brightness brightness}) {
   // ignore: avoid_manual_providers_as_generated_provider_dependency
-  final colorStyle = ref.watch(colorStyleProvider);
+  final themeColor = ref.watch(themeColorNotifierProvider);
   final corePalette = ref.watch(corePaletteProvider);
 
-  final colorScheme = switch (colorStyle) {
+  final colorScheme = switch (themeColor) {
     // パッケージ対応されるまで最新のColorSchemeに合わせて編集
     // Notes: https://github.com/material-foundation/flutter-packages/issues/582
-    ColorStyle.dynamicColor => _generateDynamicColourSchemes(
+    ThemeColor.dynamicColor => _generateDynamicColourSchemes(
         corePalette!.toColorScheme(brightness: brightness),
       ),
-    ColorStyle.systemColor => brightness == Brightness.light
+    ThemeColor.appColor => brightness == Brightness.light
         ? ColorScheme.light(brightness: brightness)
         : ColorScheme.dark(brightness: brightness),
-    ColorStyle.blue ||
-    ColorStyle.purple ||
-    ColorStyle.green ||
-    ColorStyle.red ||
-    ColorStyle.pink ||
-    ColorStyle.yellow ||
-    ColorStyle.orange =>
+    ThemeColor.blue ||
+    ThemeColor.purple ||
+    ThemeColor.green ||
+    ThemeColor.red ||
+    ThemeColor.pink ||
+    ThemeColor.yellow ||
+    ThemeColor.orange =>
       ColorScheme.fromSeed(
-        seedColor: colorStyle.seedColor!,
+        seedColor: themeColor.seedColor!,
         brightness: brightness,
       )
   };

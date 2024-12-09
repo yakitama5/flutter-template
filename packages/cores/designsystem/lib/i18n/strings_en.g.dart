@@ -57,25 +57,25 @@ class TranslationsDesignsystemEn {
 				return 'iOS';
 		}
 	}
-	String colorStyle({required ColorStyle context}) {
+	String themeColor({required ThemeColor context}) {
 		switch (context) {
-			case ColorStyle.dynamicColor:
+			case ThemeColor.dynamicColor:
 				return 'DynamicColor';
-			case ColorStyle.systemColor:
+			case ThemeColor.systemColor:
 				return 'SystemColor';
-			case ColorStyle.blue:
+			case ThemeColor.blue:
 				return 'Blue';
-			case ColorStyle.purple:
+			case ThemeColor.purple:
 				return 'Purple';
-			case ColorStyle.green:
+			case ThemeColor.green:
 				return 'Green';
-			case ColorStyle.red:
+			case ThemeColor.red:
 				return 'Red';
-			case ColorStyle.pink:
+			case ThemeColor.pink:
 				return 'Pink';
-			case ColorStyle.yellow:
+			case ThemeColor.yellow:
 				return 'Yellow';
-			case ColorStyle.orange:
+			case ThemeColor.orange:
 				return 'Orange';
 		}
 	}
@@ -125,25 +125,25 @@ extension on Translations {
 						return 'iOS';
 				}
 			};
-			case 'designsystem.colorStyle': return ({required ColorStyle context}) {
+			case 'designsystem.themeColor': return ({required ThemeColor context}) {
 				switch (context) {
-					case ColorStyle.dynamicColor:
+					case ThemeColor.dynamicColor:
 						return 'DynamicColor';
-					case ColorStyle.systemColor:
+					case ThemeColor.systemColor:
 						return 'SystemColor';
-					case ColorStyle.blue:
+					case ThemeColor.blue:
 						return 'Blue';
-					case ColorStyle.purple:
+					case ThemeColor.purple:
 						return 'Purple';
-					case ColorStyle.green:
+					case ThemeColor.green:
 						return 'Green';
-					case ColorStyle.red:
+					case ThemeColor.red:
 						return 'Red';
-					case ColorStyle.pink:
+					case ThemeColor.pink:
 						return 'Pink';
-					case ColorStyle.yellow:
+					case ThemeColor.yellow:
 						return 'Yellow';
-					case ColorStyle.orange:
+					case ThemeColor.orange:
 						return 'Orange';
 				}
 			};

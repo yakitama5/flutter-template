@@ -2,7 +2,7 @@ uiStyle(context=UIStyle):
   system: システム設定
   android: Android
   ios: iOS
-colorStyle(context=ColorStyle):
+themeColor(context=ThemeColor):
   dynamicColor: ダイナミックカラー
   systemColor: システムカラー
   blue: ブルー

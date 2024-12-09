@@ -9,7 +9,7 @@ part of 'navigator_provider.dart';
 // **************************************************************************
 
 String _$settingsPageNavigatorHash() =>
-    r'46158ac1f5639ea2198e903fb9da71c3b602dec6';
+    r'e3fdba7e6f59df8a9614171471b93c8470ede837';
 
 /// See also [settingsPageNavigator].
 @ProviderFor(settingsPageNavigator)
@@ -20,11 +20,13 @@ final settingsPageNavigatorProvider =
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
       : _$settingsPageNavigatorHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
+  dependencies: const <ProviderOrFamily>[],
+  allTransitiveDependencies: const <ProviderOrFamily>{},
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef SettingsPageNavigatorRef
     = AutoDisposeProviderRef<SettingsPageNavigator>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -13,8 +13,8 @@ const settingShellBranch = TypedStatefulShellBranch<SettingShellBranch>(
         TypedGoRoute<SettingsUiStylePageRoute>(
           path: SettingsUiStylePageRoute.path,
         ),
-        TypedGoRoute<SettingsColorStylePageRoute>(
-          path: SettingsColorStylePageRoute.path,
+        TypedGoRoute<SettingsThemeColorPageRoute>(
+          path: SettingsThemeColorPageRoute.path,
         ),
         TypedGoRoute<SettingsThemeModePageRoute>(
           path: SettingsThemeModePageRoute.path,
@@ -40,8 +40,8 @@ final class _SettingsPageNavigatorImpl implements SettingsPageNavigator {
   }
 
   @override
-  void goColorStylePage(BuildContext context) =>
-      const SettingsColorStylePageRoute().go(context);
+  void goThemeColorPage(BuildContext context) =>
+      const SettingsThemeColorPageRoute().go(context);
 
   @override
   void goThemeModePage(BuildContext context) =>
@@ -109,14 +109,14 @@ class SettingsUiStylePageRoute extends GoRouteData {
       const SettingsUiStylePage();
 }
 
-class SettingsColorStylePageRoute extends GoRouteData {
-  const SettingsColorStylePageRoute();
+class SettingsThemeColorPageRoute extends GoRouteData {
+  const SettingsThemeColorPageRoute();
 
   static const path = 'color_style';
 
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      const SettingsColorStylePage();
+      const SettingsThemeColorPage();
 }
 
 class SettingsThemeModePageRoute extends GoRouteData {

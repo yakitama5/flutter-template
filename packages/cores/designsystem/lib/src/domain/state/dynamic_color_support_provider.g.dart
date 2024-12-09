@@ -9,7 +9,7 @@ part of 'dynamic_color_support_provider.dart';
 // **************************************************************************
 
 String _$dynamicColorSupportProviderHash() =>
-    r'a504e8cec0c1c29ac7e96681f319ad8f8554eff0';
+    r'6fb246953686d5cb6294450a0b288e0f89365a9d';
 
 /// See also [dynamicColorSupportProvider].
 @ProviderFor(dynamicColorSupportProvider)
@@ -24,7 +24,9 @@ final dynamicColorSupportProviderProvider =
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef DynamicColorSupportProviderRef
     = AutoDisposeProviderRef<DynamicColorSupportStatus>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

@@ -9,8 +9,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../components/src/settings_radio_list_tile.dart';
 import '../components/src/settings_radio_scaffold.dart';
 
-class SettingsColorStylePage extends HookConsumerWidget {
-  const SettingsColorStylePage({
+class SettingsThemeColorPage extends HookConsumerWidget {
+  const SettingsThemeColorPage({
     super.key,
   });
 
@@ -24,51 +24,51 @@ class SettingsColorStylePage extends HookConsumerWidget {
         },
       ),
     );
-    final initialValue = ref.watch(colorStyleProvider);
-    final selected = useState<ColorStyle?>(initialValue);
+    final initialValue = ref.watch(themeColorNotifierProvider);
+    final selected = useState<ThemeColor?>(initialValue);
 
     // ダイナミックカラーが対象外の場合は除外する
-    final values = ColorStyle.values.where(
+    final values = ThemeColor.values.where(
       (e) => switch (e) {
-        ColorStyle.dynamicColor => isDynamicColorSupported,
+        ThemeColor.dynamicColor => isDynamicColorSupported,
         _ => true,
       },
     );
 
     return SettingsRadioScaffold(
       title: i18n.settings.settingsPage.layout.colorTheme,
-      tiles: values.map((colorStyle) {
-        return SettingsRadioListTile<ColorStyle>(
+      tiles: values.map((themeColor) {
+        return SettingsRadioListTile<ThemeColor>(
           title: Text(
-            designsystemI18n.designsystem.colorStyle(context: colorStyle),
+            designsystemI18n.designsystem.themeColor(context: themeColor),
           ),
-          value: colorStyle,
+          value: themeColor,
           groupValue: selected.value,
-          leading: switch (colorStyle) {
-            ColorStyle.dynamicColor => const Icon(Icons.person),
-            ColorStyle.systemColor => CommonAssets.images.logo.image(
+          leading: switch (themeColor) {
+            ThemeColor.dynamicColor => const Icon(Icons.person),
+            ThemeColor.appColor => CommonAssets.images.logo.image(
                 height: 24,
                 width: 24,
               ),
             // 参考カラーを表示
-            ColorStyle.blue ||
-            ColorStyle.purple ||
-            ColorStyle.green ||
-            ColorStyle.red ||
-            ColorStyle.pink ||
-            ColorStyle.yellow ||
-            ColorStyle.orange =>
+            ThemeColor.blue ||
+            ThemeColor.purple ||
+            ThemeColor.green ||
+            ThemeColor.red ||
+            ThemeColor.pink ||
+            ThemeColor.yellow ||
+            ThemeColor.orange =>
               SizedBox(
                 height: 24,
                 width: 24,
                 child: ColoredBox(
-                  color: colorStyle.seedColor!,
+                  color: themeColor.seedColor!,
                 ),
               ),
           },
           onChanged: (value) {
-            selected.value = colorStyle;
-            ref.read(colorStyleProvider.notifier).update(colorStyle);
+            selected.value = themeColor;
+            ref.read(themeColorNotifierProvider.notifier).update(themeColor);
           },
         );
       }).toList(),

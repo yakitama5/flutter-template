@@ -6,7 +6,7 @@ part of 'firestore_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$firestoreHash() => r'e271f8f7be694ee819f397232f4d140c15a5f921';
+String _$firestoreHash() => r'a56abe42f3fb3ee8bfee4e56b46a7bf8561bdc93';
 
 /// Firestore
 /// テスト時にDIすることを考慮して、Providerとして定義
@@ -22,6 +22,8 @@ final firestoreProvider = Provider<FirebaseFirestore>.internal(
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef FirestoreRef = ProviderRef<FirebaseFirestore>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, inference_failure_on_uninitialized_variable, inference_failure_on_function_return_type, inference_failure_on_untyped_parameter, deprecated_member_use_from_same_package
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

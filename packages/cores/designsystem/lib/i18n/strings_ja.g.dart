@@ -4,7 +4,7 @@
 // coverage:ignore-file
 // ignore_for_file: type=lint, unused_import
 
-import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
+import 'package:cores_designsystem/src/domain/value_object/theme_color.dart';
 import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
 import 'package:cores_designsystem/src/domain/value_object/view_layout.dart';
 import 'package:flutter/material.dart';
@@ -59,25 +59,25 @@ class _TranslationsDesignsystemJa extends TranslationsDesignsystemEn {
 				return 'iOS';
 		}
 	}
-	@override String colorStyle({required ColorStyle context}) {
+	@override String themeColor({required ThemeColor context}) {
 		switch (context) {
-			case ColorStyle.dynamicColor:
+			case ThemeColor.dynamicColor:
 				return 'ダイナミックカラー';
-			case ColorStyle.systemColor:
+			case ThemeColor.systemColor:
 				return 'システムカラー';
-			case ColorStyle.blue:
+			case ThemeColor.blue:
 				return 'ブルー';
-			case ColorStyle.purple:
+			case ThemeColor.purple:
 				return 'パープル';
-			case ColorStyle.green:
+			case ThemeColor.green:
 				return 'グリーン';
-			case ColorStyle.red:
+			case ThemeColor.red:
 				return 'レッド';
-			case ColorStyle.pink:
+			case ThemeColor.pink:
 				return 'ピンク';
-			case ColorStyle.yellow:
+			case ThemeColor.yellow:
 				return 'イエロー';
-			case ColorStyle.orange:
+			case ThemeColor.orange:
 				return 'オレンジ';
 		}
 	}
@@ -127,25 +127,25 @@ extension on TranslationsJa {
 						return 'iOS';
 				}
 			};
-			case 'designsystem.colorStyle': return ({required ColorStyle context}) {
+			case 'designsystem.themeColor': return ({required ThemeColor context}) {
 				switch (context) {
-					case ColorStyle.dynamicColor:
+					case ThemeColor.dynamicColor:
 						return 'ダイナミックカラー';
-					case ColorStyle.systemColor:
+					case ThemeColor.systemColor:
 						return 'システムカラー';
-					case ColorStyle.blue:
+					case ThemeColor.blue:
 						return 'ブルー';
-					case ColorStyle.purple:
+					case ThemeColor.purple:
 						return 'パープル';
-					case ColorStyle.green:
+					case ThemeColor.green:
 						return 'グリーン';
-					case ColorStyle.red:
+					case ThemeColor.red:
 						return 'レッド';
-					case ColorStyle.pink:
+					case ThemeColor.pink:
 						return 'ピンク';
-					case ColorStyle.yellow:
+					case ThemeColor.yellow:
 						return 'イエロー';
-					case ColorStyle.orange:
+					case ThemeColor.orange:
 						return 'オレンジ';
 				}
 			};

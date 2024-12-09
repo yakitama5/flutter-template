@@ -12,7 +12,7 @@ import '../router/navigator/navigator_provider.dart';
 abstract interface class SettingsPageNavigator {
   void goAccountPage(BuildContext context);
   void goUiStylePage(BuildContext context);
-  void goColorStylePage(BuildContext context);
+  void goThemeColorPage(BuildContext context);
   void goThemeModePage(BuildContext context);
   void goLicensePage(BuildContext context);
 }
@@ -24,7 +24,7 @@ class SettingsPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 現在の設定値を取得
     final uiStyle = ref.watch(uiStyleProvider);
-    final colorStyle = ref.watch(colorStyleProvider);
+    final themeColor = ref.watch(themeColorNotifierProvider);
     final themeMode = ref.watch(themeModeProvider);
 
     final navigator = ref.watch(settingsPageNavigatorProvider);
@@ -74,9 +74,9 @@ class SettingsPage extends HookConsumerWidget {
                 leading: const Icon(Icons.color_lens),
                 title: Text(i18n.settings.settingsPage.layout.colorTheme),
                 value: Text(
-                  designsystemI18n.designsystem.colorStyle(context: colorStyle),
+                  designsystemI18n.designsystem.themeColor(context: themeColor),
                 ),
-                onPressed: navigator.goColorStylePage,
+                onPressed: navigator.goThemeColorPage,
               ),
             ],
           ),

@@ -8,7 +8,7 @@ part of 'user_usecase.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$userUsecaseHash() => r'2b098235c32daff04bcaf4bab9dabddd96e1db33';
+String _$userUsecaseHash() => r'd3a82142385cdf14e1227b7fb885412b46dc833a';
 
 /// See also [userUsecase].
 @ProviderFor(userUsecase)
@@ -21,6 +21,8 @@ final userUsecaseProvider = Provider<UserUsecase>.internal(
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef UserUsecaseRef = ProviderRef<UserUsecase>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

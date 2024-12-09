@@ -1,5 +1,4 @@
-import 'package:cores_designsystem/src/domain/value_object/color_style.dart';
-import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
+import 'package:cores_designsystem/domain.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -14,8 +13,8 @@ abstract class ThemeRepository {
   UIStyle? fetchUIStyle();
   Future<void> updateUIStyle(UIStyle uiStyle);
 
-  ColorStyle? fetchColorStyle();
-  Future<void> updateColorStyle(ColorStyle colorStyle);
+  ThemeColor? fetchThemeColor();
+  Future<void> updateThemeColor(ThemeColor themeColor);
 
   ThemeMode? fetchThemeMode();
   Future<void> updateThemeMode(ThemeMode themeMode);
