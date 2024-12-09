@@ -9,7 +9,7 @@ part of 'dynamic_color_support_provider.dart';
 // **************************************************************************
 
 String _$dynamicColorSupportProviderHash() =>
-    r'6fb246953686d5cb6294450a0b288e0f89365a9d';
+    r'8817e711690308dbee0954357d888c4272c0686a';
 
 /// See also [dynamicColorSupportProvider].
 @ProviderFor(dynamicColorSupportProvider)

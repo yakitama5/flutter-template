@@ -9,7 +9,7 @@ import '../value_object/theme_color.dart';
 
 part 'theme_color_provider.g.dart';
 
-/// カラースタイルを管理するProvider
+/// テーマカラーを管理するProvider
 /// SharedPreferencesの同期を待たずにUIに反映するため、Notifierを利用している
 @riverpod
 class ThemeColorNotifier extends _$ThemeColorNotifier {

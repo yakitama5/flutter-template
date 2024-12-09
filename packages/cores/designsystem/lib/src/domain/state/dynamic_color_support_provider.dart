@@ -11,7 +11,7 @@ part 'dynamic_color_support_provider.g.dart';
 DynamicColorSupportStatus dynamicColorSupportProvider(
   Ref ref,
 ) {
-  final corePalette = ref.watch(corePaletteProvider);
+  final corePalette = ref.watch(corePaletteProvider).value;
   final isSupport = corePalette != null &&
       switch (defaultTargetPlatform) {
         TargetPlatform.iOS || TargetPlatform.macOS => false,

@@ -2,13 +2,13 @@
 
 // ignore_for_file: type=lint, duplicate_ignore
 
-part of 'app_theme_provider.dart';
+part of 'app_color_scheme_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$appThemeHash() => r'61f8bf9712624115eec78cc1a429a203c50e43da';
+String _$appColorSchemeHash() => r'7472b42d429bd7df3f05b0e044b3c5ba23e5da16';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -31,35 +31,35 @@ class _SystemHash {
   }
 }
 
-/// アプリ内のテーマを管理
+/// アプリ内のカラースキーマを管理
 ///
-/// Copied from [appTheme].
-@ProviderFor(appTheme)
-const appThemeProvider = AppThemeFamily();
+/// Copied from [appColorScheme].
+@ProviderFor(appColorScheme)
+const appColorSchemeProvider = AppColorSchemeFamily();
 
-/// アプリ内のテーマを管理
+/// アプリ内のカラースキーマを管理
 ///
-/// Copied from [appTheme].
-class AppThemeFamily extends Family<ThemeData> {
-  /// アプリ内のテーマを管理
+/// Copied from [appColorScheme].
+class AppColorSchemeFamily extends Family<ColorScheme> {
+  /// アプリ内のカラースキーマを管理
   ///
-  /// Copied from [appTheme].
-  const AppThemeFamily();
+  /// Copied from [appColorScheme].
+  const AppColorSchemeFamily();
 
-  /// アプリ内のテーマを管理
+  /// アプリ内のカラースキーマを管理
   ///
-  /// Copied from [appTheme].
-  AppThemeProvider call({
+  /// Copied from [appColorScheme].
+  AppColorSchemeProvider call({
     required Brightness brightness,
   }) {
-    return AppThemeProvider(
+    return AppColorSchemeProvider(
       brightness: brightness,
     );
   }
 
   @override
-  AppThemeProvider getProviderOverride(
-    covariant AppThemeProvider provider,
+  AppColorSchemeProvider getProviderOverride(
+    covariant AppColorSchemeProvider provider,
   ) {
     return call(
       brightness: provider.brightness,
@@ -78,35 +78,36 @@ class AppThemeFamily extends Family<ThemeData> {
       _allTransitiveDependencies;
 
   @override
-  String? get name => r'appThemeProvider';
+  String? get name => r'appColorSchemeProvider';
 }
 
-/// アプリ内のテーマを管理
+/// アプリ内のカラースキーマを管理
 ///
-/// Copied from [appTheme].
-class AppThemeProvider extends AutoDisposeProvider<ThemeData> {
-  /// アプリ内のテーマを管理
+/// Copied from [appColorScheme].
+class AppColorSchemeProvider extends AutoDisposeProvider<ColorScheme> {
+  /// アプリ内のカラースキーマを管理
   ///
-  /// Copied from [appTheme].
-  AppThemeProvider({
+  /// Copied from [appColorScheme].
+  AppColorSchemeProvider({
     required Brightness brightness,
   }) : this._internal(
-          (ref) => appTheme(
-            ref as AppThemeRef,
+          (ref) => appColorScheme(
+            ref as AppColorSchemeRef,
             brightness: brightness,
           ),
-          from: appThemeProvider,
-          name: r'appThemeProvider',
+          from: appColorSchemeProvider,
+          name: r'appColorSchemeProvider',
           debugGetCreateSourceHash:
               const bool.fromEnvironment('dart.vm.product')
                   ? null
-                  : _$appThemeHash,
-          dependencies: AppThemeFamily._dependencies,
-          allTransitiveDependencies: AppThemeFamily._allTransitiveDependencies,
+                  : _$appColorSchemeHash,
+          dependencies: AppColorSchemeFamily._dependencies,
+          allTransitiveDependencies:
+              AppColorSchemeFamily._allTransitiveDependencies,
           brightness: brightness,
         );
 
-  AppThemeProvider._internal(
+  AppColorSchemeProvider._internal(
     super._createNotifier, {
     required super.name,
     required super.dependencies,
@@ -120,12 +121,12 @@ class AppThemeProvider extends AutoDisposeProvider<ThemeData> {
 
   @override
   Override overrideWith(
-    ThemeData Function(AppThemeRef provider) create,
+    ColorScheme Function(AppColorSchemeRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
-      override: AppThemeProvider._internal(
-        (ref) => create(ref as AppThemeRef),
+      override: AppColorSchemeProvider._internal(
+        (ref) => create(ref as AppColorSchemeRef),
         from: from,
         name: null,
         dependencies: null,
@@ -137,13 +138,13 @@ class AppThemeProvider extends AutoDisposeProvider<ThemeData> {
   }
 
   @override
-  AutoDisposeProviderElement<ThemeData> createElement() {
-    return _AppThemeProviderElement(this);
+  AutoDisposeProviderElement<ColorScheme> createElement() {
+    return _AppColorSchemeProviderElement(this);
   }
 
   @override
   bool operator ==(Object other) {
-    return other is AppThemeProvider && other.brightness == brightness;
+    return other is AppColorSchemeProvider && other.brightness == brightness;
   }
 
   @override
@@ -157,17 +158,17 @@ class AppThemeProvider extends AutoDisposeProvider<ThemeData> {
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-mixin AppThemeRef on AutoDisposeProviderRef<ThemeData> {
+mixin AppColorSchemeRef on AutoDisposeProviderRef<ColorScheme> {
   /// The parameter `brightness` of this provider.
   Brightness get brightness;
 }
 
-class _AppThemeProviderElement extends AutoDisposeProviderElement<ThemeData>
-    with AppThemeRef {
-  _AppThemeProviderElement(super.provider);
+class _AppColorSchemeProviderElement
+    extends AutoDisposeProviderElement<ColorScheme> with AppColorSchemeRef {
+  _AppColorSchemeProviderElement(super.provider);
 
   @override
-  Brightness get brightness => (origin as AppThemeProvider).brightness;
+  Brightness get brightness => (origin as AppColorSchemeProvider).brightness;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
