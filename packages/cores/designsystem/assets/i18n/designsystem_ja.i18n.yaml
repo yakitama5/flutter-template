@@ -4,7 +4,7 @@ uiStyle(context=UIStyle):
   ios: iOS
 themeColor(context=ThemeColor):
   dynamicColor: ダイナミックカラー
-  systemColor: システムカラー
+  appColor: システムカラー
   blue: ブルー
   purple: パープル
   green: グリーン
