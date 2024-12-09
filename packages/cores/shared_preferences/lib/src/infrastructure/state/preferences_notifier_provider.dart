@@ -7,17 +7,7 @@ part 'preferences_notifier_provider.g.dart';
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<String>]のenum値を設定して利用する.
-///
-/// ```dart
-/// // get
-/// final loginBonus = ref.watch(preferenceNotifierProvider(Preference.loginBonus));
-///
-/// // update
-/// ref
-///   .read(preferenceNotifierProvider(Preference.loginBonus).notifier)
-///   .update('20241231');
-/// ```
+/// `Preference<String>`のenum値を設定して利用する.
 ///
 @riverpod
 class StringPreference extends _$StringPreference {
@@ -35,7 +25,7 @@ class StringPreference extends _$StringPreference {
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<bool>]のenum値を設定して利用する.
+/// `Preference<bool>`のenum値を設定して利用する.
 ///
 @riverpod
 class BoolPreference extends _$BoolPreference {
@@ -54,7 +44,7 @@ class BoolPreference extends _$BoolPreference {
 
 ///
 /// shared_preferencesへの値の出し入れを管理するためのプロバイダー.
-/// [Preference<int>]のenum値を設定して利用する.
+/// `Preference<int>`のenum値を設定して利用する.
 ///
 @riverpod
 class IntPreference extends _$IntPreference {
