@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';
 
-import '../../../domain/state/app_theme_provider.dart';
+import '../../theme/state/app_theme_provider.dart';
 
 /// Brightness指定でThemeをoverrideするWidget
 class BrightnessScope extends SingleChildStatelessWidget {

@@ -1,12 +1,12 @@
+import 'package:cores_designsystem/domain.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_color_utilities/palettes/core_palette.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../presentaion/theme/color_schemes.dart';
-import '../../utils/dynamic_color_utils.dart';
-import '../value_object/theme_color.dart';
+import '../color_schemes.dart';
+import '../utils/dynamic_color_utils.dart';
 import 'core_palette_provider.dart';
 import 'theme_color_provider.dart';
 

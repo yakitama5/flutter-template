@@ -1,11 +1,9 @@
 import 'dart:async';
 
-import 'package:cores_designsystem/src/domain/state/dynamic_color_support_provider.dart';
+import 'package:cores_designsystem/domain.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../interface/theme_repository.dart';
-import '../value_object/dynamic_color_support_status.dart';
-import '../value_object/theme_color.dart';
+import 'dynamic_color_support_provider.dart';
 
 part 'theme_color_provider.g.dart';
 

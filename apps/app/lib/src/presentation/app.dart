@@ -1,5 +1,4 @@
 import 'package:cores_core/presentation.dart';
-import 'package:cores_designsystem/domain.dart';
 import 'package:cores_designsystem/presentation.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:features_app_update/presentation.dart';

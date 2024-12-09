@@ -1,9 +1,9 @@
-import 'package:cores_designsystem/src/domain/state/app_color_scheme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../presentaion/theme/theme_extensions/theme_extensions.dart';
+import '../theme_extensions/src/app_colors.dart';
+import 'app_color_scheme_provider.dart';
 
 part 'app_theme_provider.g.dart';
 
