@@ -5,6 +5,7 @@ import 'package:cores_error/presentation.dart';
 import 'package:features_goods/i18n/strings.g.dart';
 import 'package:features_goods/src/domain/constants/goods_constants.dart';
 import 'package:features_goods/src/domain/state/goods_list_provider.dart';
+import 'package:features_goods/src/domain/usecase/goods_usecase.dart';
 import 'package:features_goods/src/domain/value_object/goods_fetch_query.dart';
 import 'package:features_goods/src/presentation/pages/goods_detail_page.dart';
 import 'package:flutter/material.dart';
@@ -27,17 +28,8 @@ class GoodsPage extends HookConsumerWidget {
 
     return Scaffold(
       body: RefreshIndicator(
-        onRefresh: () async {
-          ref.invalidate(goodsListProvider);
-
-          // 最初のページが表示されるまでは待機
-          try {
-            await ref
-                .read(goodsListProvider(page: 1, query: query.value).future);
-          } on Exception catch (_) {
-            // do nothing
-          }
-        },
+        onRefresh: () =>
+            ref.read(goodsUsecaseProvider).refreshGoods(query: query.value),
         // HACK(yakitama5): SliverAppBar付きのこの構成を共通定義化する
         child: CustomScrollView(
           slivers: [
