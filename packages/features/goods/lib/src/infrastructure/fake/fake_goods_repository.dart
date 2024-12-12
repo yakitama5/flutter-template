@@ -77,13 +77,20 @@ class FakeGoodsRepository extends GoodsRepository {
   }) async* {
     await Future<void>.delayed(const Duration(milliseconds: 3000));
 
-    final sortItems = items.sortedBy<String>(
-      (e) => switch (query.sortKey) {
-        GoodsSortKey.createdAt => e.createdAt.toString(),
-        GoodsSortKey.name => e.name,
-        GoodsSortKey.price => e.price.toString(),
+    final sortItems = items.sorted(
+      (a, b) => switch (query.sortKey) {
+        GoodsSortKey.createdAt => a.createdAt.compareTo(b.createdAt),
+        GoodsSortKey.name => a.name.compareTo(b.name),
+        GoodsSortKey.price => a.price?.compareTo(b.price ?? 0) ?? 0,
       },
     );
+
+    // https://github.com/dart-lang/sdk/issues/43763
+    // final sortItems = switch (query.sortKey) {
+    //   GoodsSortKey.createdAt => items.sortedBy((e) => e.createdAt),
+    //   GoodsSortKey.name => items.sortedBy((e) => e.name),
+    //   GoodsSortKey.price => items.sortedBy((e) => e.price ?? 0),
+    // };
 
     final orderItems = switch (query.sortOrder) {
       SortOrder.asc => sortItems,
