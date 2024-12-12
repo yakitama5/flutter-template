@@ -9,8 +9,8 @@ packages:
 command:
   bootstrap:
     environment:
-      sdk: ^3.5.4
-      flutter: ^3.24.4
+      sdk: ^3.6.0
+      flutter: ^3.27.0
     dependencies:
       collection: any
       flutter_hooks: any
@@ -36,8 +36,8 @@ command:
       riverpod_lint: ^2.6.1
       slang_build_runner: ^4.1.0
       test: any
-    hooks:
-      post: grind generate-package-labels && grind generate-package-labeler
+    # hooks:
+    #   post: grind generate-package-labels && grind generate-package-labeler
   clean:
     hooks:
       post: melos exec --flutter --concurrency=3 -- "flutter clean"
