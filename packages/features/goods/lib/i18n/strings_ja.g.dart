@@ -68,7 +68,7 @@ class _TranslationsGoodsGoodsPageJa extends TranslationsGoodsGoodsPageEn {
 	// Translations
 	@override String get title => '商品一覧';
 	@override String get layout => '表示形式';
-	@override String price({required num price}) => '${NumberFormat.currency(locale: 'ja').format(price)}';
+	@override String price({required num price}) => '${NumberFormat.simpleCurrency(locale: 'ja').format(price)}';
 }
 
 /// Flat map(s) containing all translations.
@@ -78,7 +78,7 @@ extension on TranslationsJa {
 		switch (path) {
 			case 'goods.goodsPage.title': return '商品一覧';
 			case 'goods.goodsPage.layout': return '表示形式';
-			case 'goods.goodsPage.price': return ({required num price}) => '${NumberFormat.currency(locale: 'ja').format(price)}';
+			case 'goods.goodsPage.price': return ({required num price}) => '${NumberFormat.simpleCurrency(locale: 'ja').format(price)}';
 			case 'goods.goodsSortKey': return ({required GoodsSortKey context}) {
 				switch (context) {
 					case GoodsSortKey.createdAt:

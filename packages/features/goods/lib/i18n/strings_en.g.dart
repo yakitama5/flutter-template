@@ -69,7 +69,7 @@ class TranslationsGoodsGoodsPageEn {
 	// Translations
 	String get title => 'Goods';
 	String get layout => 'Layout';
-	String price({required num price}) => '${NumberFormat.currency(locale: 'en').format(price)}';
+	String price({required num price}) => '${NumberFormat.simpleCurrency(locale: 'en').format(price)}';
 }
 
 /// Flat map(s) containing all translations.
@@ -79,7 +79,7 @@ extension on Translations {
 		switch (path) {
 			case 'goods.goodsPage.title': return 'Goods';
 			case 'goods.goodsPage.layout': return 'Layout';
-			case 'goods.goodsPage.price': return ({required num price}) => '${NumberFormat.currency(locale: 'en').format(price)}';
+			case 'goods.goodsPage.price': return ({required num price}) => '${NumberFormat.simpleCurrency(locale: 'en').format(price)}';
 			case 'goods.goodsSortKey': return ({required GoodsSortKey context}) {
 				switch (context) {
 					case GoodsSortKey.createdAt:
