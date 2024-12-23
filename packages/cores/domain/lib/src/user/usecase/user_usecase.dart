@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:cores_core/domain.dart';
-import 'package:cores_error/domain.dart';
-import 'package:cores_error/i18n.dart';
+import 'package:cores_domain/src/core/usecase/run_usecase_mixin.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -57,9 +55,8 @@ class UserUsecase with RunUsecaseMixin {
           // ユーザー情報 および アカウントの削除
           final userId = await _authUserId;
           if (userId == null) {
-            throw ImpossibleOperationException(
-              errorI18n.error.message.impossibleOperation.notAuth,
-            );
+            // TODO(yakitama5): Validatorみたいなものを用意して、Errorを返す
+            return;
           }
           await _userRepository.delete(userId: userId);
         },
@@ -74,9 +71,8 @@ class UserUsecase with RunUsecaseMixin {
           final status = await ref.read(authStatusProvider.future);
           final linked = status?.linkedGoogle ?? false;
           if (!linked) {
-            throw ImpossibleOperationException(
-              errorI18n.error.message.impossibleOperation.notLinked,
-            );
+            // TODO(yakitama5): Validatorみたいなものを用意して、Errorを返す
+            return;
           }
 
           return _userRepository.unlinkWithGoogle();
@@ -91,9 +87,8 @@ class UserUsecase with RunUsecaseMixin {
           final status = await ref.read(authStatusProvider.future);
           final linked = status?.linkedApple ?? false;
           if (!linked) {
-            throw ImpossibleOperationException(
-              errorI18n.error.message.impossibleOperation.notLinked,
-            );
+            // TODO(yakitama5): Validatorみたいなものを用意して、Errorを返す
+            return;
           }
 
           return _userRepository.unlinkWithApple();

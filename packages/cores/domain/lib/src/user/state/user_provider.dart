@@ -1,4 +1,5 @@
-import 'package:features_user/domain.dart';
+import 'package:cores_domain/src/user/entity/user.dart';
+import 'package:cores_domain/src/user/interface/user_repository.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

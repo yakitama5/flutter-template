@@ -1,5 +1,5 @@
-import 'package:cores_core/src/core/value_object/theme_color.dart';
-import 'package:cores_core/src/core/value_object/ui_style.dart';
+import 'package:cores_domain/src/core/value_object/theme_color.dart';
+import 'package:cores_domain/src/core/value_object/ui_style.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

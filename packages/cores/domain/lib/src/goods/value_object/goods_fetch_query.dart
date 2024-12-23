@@ -1,6 +1,7 @@
-import 'package:cores_core/domain.dart';
-import 'goods_sort_key.dart';
+import 'package:cores_domain/src/core/value_object/sort_order.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'goods_sort_key.dart';
 
 part 'goods_fetch_query.freezed.dart';
 

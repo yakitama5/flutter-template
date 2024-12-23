@@ -8,10 +8,10 @@ environment:
   flutter: ^3.27.0
 
 dependencies:
-  cores_domain:
-    path: ../../packages/cores/domain
   cores_designsystem:
     path: ../../packages/cores/designsystem
+  cores_domain:
+    path: ../../packages/cores/domain
   cupertino_icons: null
   device_preview: ^1.2.0
   flutter:

@@ -1,15 +1,19 @@
 sealed class AppException implements Exception {
   const AppException(this.message);
 
-  final String message;
+  final String? message;
 }
 
 sealed class BusinessException extends AppException {
   const BusinessException(super.message);
 }
 
-class ImpossibleOperationException extends BusinessException {
-  const ImpossibleOperationException(super.message);
+sealed class PermissionException extends BusinessException {
+  const PermissionException(super.message);
+}
+
+class NotAuthException extends PermissionException {
+  const NotAuthException(super.message);
 }
 
 sealed class NetworkException extends AppException {
