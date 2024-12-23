@@ -194,14 +194,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_hooks:
-    dependency: transitive
-    description:
-      name: flutter_hooks
-      sha256: cde36b12f7188c85286fba9b38cc5a902e7279f36dd676967106c041dc9dde70
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.20.5"
   flutter_lints:
     dependency: transitive
     description:
@@ -210,14 +202,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
-  flutter_riverpod:
-    dependency: transitive
-    description:
-      name: flutter_riverpod
-      sha256: "9532ee6db4a943a1ed8383072a2e3eeda041db5657cdf6d2acecf3c21ecbe7e1"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.6.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -247,14 +231,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
-  hooks_riverpod:
-    dependency: transitive
-    description:
-      name: hooks_riverpod
-      sha256: "70bba33cfc5670c84b796e6929c54b8bc5be7d0fe15bb28c2560500b9ad06966"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.6.1"
   hotreloader:
     dependency: transitive
     description:
@@ -399,14 +375,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.5"
-  nested:
-    dependency: transitive
-    description:
-      name: nested
-      sha256: "03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   nilts:
     dependency: "direct dev"
     description:
@@ -684,14 +652,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.2"
-  visibility_detector:
-    dependency: transitive
-    description:
-      name: visibility_detector
-      sha256: dd5cc11e13494f432d15939c3aa8ae76844c42b723398643ce9addb88a5ed420
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.0+2"
   vm_service:
     dependency: transitive
     description:
