@@ -1,22 +1,21 @@
+import 'package:cores_domain/core.dart';
 import 'package:flutter/material.dart';
 
 extension ThemeColorX on ThemeColor {
-  appColor(null),
-  dynamicColor(null),
-  blue(Colors.blue),
-  purple(Colors.purple),
-  pink(Colors.pink),
-  red(Colors.red),
-  orange(Colors.orange),
-  yellow(Colors.yellow),
-  green(Colors.green);
-
-  const ThemeColor(this.seedColor);
+  Color? get seedColor => switch (this) {
+        ThemeColor.appColor => null,
+        ThemeColor.dynamicColor => null,
+        ThemeColor.blue => Colors.blue,
+        ThemeColor.purple => Colors.purple,
+        ThemeColor.pink => Colors.pink,
+        ThemeColor.red => Colors.red,
+        ThemeColor.orange => Colors.orange,
+        ThemeColor.yellow => Colors.yellow,
+        ThemeColor.green => Colors.green,
+      };
 
   static List<ThemeColor> get colorValues =>
-      values.where((i) => i.seedColor != null).toList();
+      ThemeColor.values.where((i) => i.seedColor != null).toList();
   static List<ThemeColor> get systemValues =>
-      values.where((i) => i.seedColor == null).toList();
-
-  final Color? seedColor;
+      ThemeColor.values.where((i) => i.seedColor == null).toList();
 }

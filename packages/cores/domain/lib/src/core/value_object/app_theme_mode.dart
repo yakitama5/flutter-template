@@ -1,5 +1,5 @@
 enum AppThemeMode {
   system,
-  android,
-  ios;
+  light,
+  dark;
 }
