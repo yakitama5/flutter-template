@@ -11,8 +11,8 @@ dependencies:
   cloud_firestore:
   cloud_functions:
   collection: 
-  cores_core:
-    path: ../core
+  cores_domain:
+    path: ../../cores/domain
   firebase_analytics:
   firebase_app_check:
   firebase_auth:

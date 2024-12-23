@@ -10,10 +10,8 @@ environment:
 dependencies:
   animations: null
   collection: null
-  cores_core:
-    path: ../core
-  cores_shared_preferences:
-    path: ../shared_preferences
+  cores_domain:
+    path: ../domain
   dynamic_color: null
   flutter:
     sdk: flutter

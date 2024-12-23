@@ -3,7 +3,7 @@ sdkPath: .fvm/flutter_sdk
 
 packages:
   - apps/*
-  - packages/*
+  - packages/cores/*
   - packages/infrastructure/*
 
 command:

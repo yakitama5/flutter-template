@@ -1,6 +1,3 @@
-import 'package:cores_core/domain.dart';
-import 'package:cores_firebase/firebase_options.dart';
-import 'package:cores_firebase/firebase_options_dev.dart' as dev;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';

@@ -7,7 +7,7 @@ import 'package:features_user/presentation.dart';
 import 'package:features_webview/webview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/src/presentation/pages/home_page.dart';
+import 'package:flutter_app/src/home/pages/home_page.dart';
 import 'package:flutter_app/src/router/routes/main/navigator_page.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

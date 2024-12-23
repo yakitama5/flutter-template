@@ -1,4 +1,4 @@
-import 'package:cores_designsystem/src/presentation/components/src/snack_bar_manager.dart';
+import 'package:cores_designsystem/src/components/src/snack_bar_manager.dart';
 import 'package:flutter/foundation.dart';
 
 /// プレゼンテーション層用の共通処理 Mixin

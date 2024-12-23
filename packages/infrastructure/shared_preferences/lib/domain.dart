@@ -1,1 +1,1 @@
-export 'src/domain/value_object/preferences.dart';
+export 'src/core/enum/preferences.dart';

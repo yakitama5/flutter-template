@@ -21,3 +21,6 @@ viewLayout:
   typeName(context=ViewLayout):
     grid: Grid
     list: List
+sortOrder(context=SortOrder):
+  asc: ASC
+  desc: DESC

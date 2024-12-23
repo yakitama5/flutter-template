@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../infrastructure/state/shared_preferences_provider.dart';
+import '../core/state/shared_preferences_provider.dart';
 
 /// Returns list of [Override] that should be applied to root [ProviderScope].
 Future<List<Override>> initializeSharedPreferencesProviders() async {
