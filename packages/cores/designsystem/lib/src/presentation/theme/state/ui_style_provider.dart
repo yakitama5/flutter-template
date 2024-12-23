@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:cores_designsystem/src/domain/interface/theme_repository.dart';
-import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
+import 'package:cores_designsystem/domain/lib/src/core/interface/theme_repository.dart';
+import 'package:cores_designsystem/domain/lib/src/core/value_object/ui_style.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'ui_style_provider.g.dart';

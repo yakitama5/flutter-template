@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../router/navigator/navigator_provider.dart';
+import '../../router/navigator/navigator_provider.dart';
 
 // ignore: one_member_abstracts
 abstract interface class HomePageNavigator {

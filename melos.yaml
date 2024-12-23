@@ -3,8 +3,8 @@ sdkPath: .fvm/flutter_sdk
 
 packages:
   - apps/*
-  - packages/cores/*
-  - packages/features/*
+  - packages/*
+  - packages/infrastructure/*
 
 command:
   bootstrap:

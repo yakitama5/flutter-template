@@ -8,8 +8,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';
 
+import '../router/state/router_provider.dart';
 import 'components/device_preview_wrapper.dart';
-import 'router/state/router_provider.dart';
 
 class MainApp extends ConsumerWidget {
   const MainApp({super.key});

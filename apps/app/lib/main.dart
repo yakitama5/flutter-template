@@ -21,8 +21,8 @@ import 'package:nested/nested.dart';
 import 'app_initializer.dart';
 import 'i18n/strings.g.dart';
 import 'src/presentation/app.dart';
-import 'src/presentation/router/state/initial_location_provider.dart';
-import 'src/presentation/router/state/router_provider.dart';
+import 'src/router/state/initial_location_provider.dart';
+import 'src/router/state/router_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,8 +1,7 @@
+import 'package:cores_designsystem/domain/lib/src/core/value_object/view_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sliver_tools/sliver_tools.dart';
-
-import '../../../domain/value_object/view_layout.dart';
 
 typedef SwitchLayoutItemBuilder = Widget? Function(
   BuildContext context,
