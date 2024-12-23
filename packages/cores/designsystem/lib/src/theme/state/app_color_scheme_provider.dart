@@ -1,4 +1,5 @@
-import 'package:cores_designsystem/domain.dart';
+import 'package:cores_designsystem/src/extension/theme_color_extension.dart';
+import 'package:cores_domain/designsystem.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -8,7 +9,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../color_schemes.dart';
 import '../utils/dynamic_color_utils.dart';
 import 'core_palette_provider.dart';
-import 'theme_color_provider.dart';
 
 part 'app_color_scheme_provider.g.dart';
 

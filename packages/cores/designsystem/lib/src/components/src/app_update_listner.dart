@@ -1,10 +1,8 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
-import 'package:cores_core/domain.dart';
-import 'package:cores_core/presentation.dart';
-import 'package:cores_core/util.dart';
 import 'package:cores_designsystem/presentation.dart';
-import 'package:features_app_update/cores/domain/lib/src/core/state/app_update_status_provider.dart';
-import 'package:features_app_update/cores/domain/lib/src/core/value_object/app_update_status.dart';
+import 'package:cores_designsystem/src/keys/root_navigator_key.dart';
+import 'package:cores_domain/core.dart';
+import 'package:cores_domain/util.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';
@@ -46,6 +44,7 @@ class AppUpdateListner extends SingleChildStatelessWidget {
                   onOk: () => navigateToStore(ref),
                 );
               case AppUpdateStatus.usingLatest:
+              case null:
                 // do nothing
                 logger.i('usingLatest');
             }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme_extensions/theme_extensions.dart';
+import '../theme/theme_extensions/theme_extensions.dart';
 
 extension ThemeDataX on ThemeData {
   AppColors get appColors => extension<AppColors>()!;

@@ -1,6 +1,7 @@
-import 'package:cores_designsystem/domain.dart';
 import 'package:cores_designsystem/i18n/strings.g.dart';
 import 'package:cores_designsystem/presentation.dart';
+import 'package:cores_designsystem/src/extension/view_layout_extension.dart';
+import 'package:cores_domain/designsystem.dart';
 import 'package:flutter/material.dart';
 
 class ViewLayoutChip extends StatelessWidget {
@@ -20,7 +21,8 @@ class ViewLayoutChip extends StatelessWidget {
       actions: ViewLayout.values
           .map(
             (e) => BottomSheetAction(
-              title: Text(e.title),
+              // TODO(yakitama5): 多言語化対応
+              title: const Text('e.title'),
               icon: Icon(e.iconData),
               value: e,
             ),

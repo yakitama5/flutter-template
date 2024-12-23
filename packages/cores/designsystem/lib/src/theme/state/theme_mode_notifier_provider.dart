@@ -1,10 +1,11 @@
 import 'dart:async';
 
-import 'package:cores_designsystem/domain.dart';
+import 'package:cores_designsystem/src/extension/app_theme_mode_extension.dart';
+import 'package:cores_domain/designsystem.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'theme_mode_provider.g.dart';
+part 'theme_mode_notifier_provider.g.dart';
 
 // 名称重複を避けるために別名指定で外部に公開する
 // ignore: invalid_use_of_internal_member, library_private_types_in_public_api
@@ -18,11 +19,18 @@ class _ThemeMode extends _$ThemeMode {
   ThemeRepository get _repository => ref.watch(themeRepositoryProvider);
 
   @override
-  ThemeMode build() => _repository.fetchThemeMode() ?? ThemeMode.system;
+  ThemeMode build() =>
+      _repository.fetchThemeMode()?.themeMode ?? AppThemeMode.system.themeMode;
 
   Future<void> update(ThemeMode themeMode) async {
+    final appThemeMode = switch (themeMode) {
+      ThemeMode.system => AppThemeMode.system,
+      ThemeMode.light => AppThemeMode.light,
+      ThemeMode.dark => AppThemeMode.dark,
+    };
+
     // 設定反映を待たずに設定する
-    unawaited(_repository.updateThemeMode(themeMode));
+    unawaited(_repository.updateThemeMode(appThemeMode));
     state = themeMode;
   }
 }

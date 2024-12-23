@@ -1,4 +1,4 @@
-import 'package:cores_domain/core.dart';
+import 'package:cores_domain/designsystem.dart';
 import 'package:flutter/material.dart';
 
 extension AppThemeModeX on AppThemeMode {

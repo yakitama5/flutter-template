@@ -1,11 +1,12 @@
 import 'dart:async';
 
-import 'package:cores_designsystem/domain.dart';
+import 'package:cores_designsystem/src/theme/model/dynamic_color_support_status.dart';
+import 'package:cores_domain/designsystem.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'dynamic_color_support_provider.dart';
 
-part 'theme_color_provider.g.dart';
+part 'theme_color_notifier_provider.g.dart';
 
 /// テーマカラーを管理するProvider
 /// SharedPreferencesの同期を待たずにUIに反映するため、Notifierを利用している

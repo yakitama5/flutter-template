@@ -8,10 +8,12 @@ environment:
   flutter: ^3.27.0
 
 dependencies:
+  adaptive_dialog: ^2.4.0
   animations: null
   collection: null
   cores_domain:
     path: ../domain
+  device_preview: ^1.2.0
   dynamic_color: null
   flutter:
     sdk: flutter
@@ -30,6 +32,7 @@ dependencies:
   slang: ^4.1.0
   slang_flutter: ^4.1.0
   sliver_tools: null
+  store_redirect: ^2.0.3
   theme_tailor_annotation: null
   url_launcher: null
 

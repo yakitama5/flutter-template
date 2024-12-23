@@ -1,4 +1,4 @@
-import 'package:cores_designsystem/domain/lib/src/core/value_object/view_layout.dart';
+import 'package:cores_domain/designsystem.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sliver_tools/sliver_tools.dart';
@@ -9,6 +9,7 @@ typedef SwitchLayoutItemBuilder = Widget? Function(
 );
 
 /// 表示形式をスイッチング可能なViewBuilder
+// TODO(yakitama5): アニメーション対応する
 class SliverSwitchLayoutViewBuilder extends StatelessWidget {
   const SliverSwitchLayoutViewBuilder({
     super.key,

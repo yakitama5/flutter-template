@@ -1,10 +1,9 @@
 import 'dart:async';
 
-import 'package:cores_designsystem/domain/lib/src/core/interface/theme_repository.dart';
-import 'package:cores_designsystem/domain/lib/src/core/value_object/ui_style.dart';
+import 'package:cores_domain/designsystem.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'ui_style_provider.g.dart';
+part 'ui_style_notifier_provider.g.dart';
 
 /// UIスタイルを管理するProvider
 /// SharedPreferencesの同期を待たずにUIに反映するため、Notifierを利用している
