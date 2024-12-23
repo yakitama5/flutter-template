@@ -1,6 +1,6 @@
 import 'package:cores_domain/src/user/entity/user.dart';
 import 'package:cores_domain/src/user/interface/user_repository.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'user_provider.g.dart';

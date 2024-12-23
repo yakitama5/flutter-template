@@ -1,7 +1,7 @@
+import 'package:cores_domain/src/core/value_object/app_theme_mode.dart';
 import 'package:cores_domain/src/core/value_object/theme_color.dart';
 import 'package:cores_domain/src/core/value_object/ui_style.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'theme_repository.g.dart';
@@ -17,6 +17,6 @@ abstract class ThemeRepository {
   ThemeColor? fetchThemeColor();
   Future<void> updateThemeColor(ThemeColor themeColor);
 
-  ThemeMode? fetchThemeMode();
-  Future<void> updateThemeMode(ThemeMode themeMode);
+  AppThemeMode? fetchThemeMode();
+  Future<void> updateThemeMode(AppThemeMode themeMode);
 }

@@ -1,5 +1,3 @@
-import 'package:cores_firebase/features/app_update/lib/src/domain/interface/app_version_repository.dart';
-import 'package:cores_firebase/infrastructure.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:version/version.dart';
 

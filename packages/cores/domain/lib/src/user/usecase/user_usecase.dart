@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:cores_domain/src/core/usecase/run_usecase_mixin.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../entity/user.dart';

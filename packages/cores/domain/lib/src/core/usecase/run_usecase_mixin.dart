@@ -1,5 +1,4 @@
-import 'package:flutter/foundation.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod/riverpod.dart';
 
 import '../state/app_loading_provider.dart';
 
@@ -9,7 +8,7 @@ mixin RunUsecaseMixin {
   /// ローディング表示を行わない場合は、`disableLoading`を指定する
   Future<T> execute<T>(
     Ref ref, {
-    required AsyncValueGetter<T> action,
+    required Future<T> Function() action,
     bool disableLoading = false,
   }) async {
     // ローディング表示を行わない

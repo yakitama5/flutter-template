@@ -1,4 +1,4 @@
-enum UIStyle {
+enum AppThemeMode {
   system,
   android,
   ios;

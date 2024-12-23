@@ -1,3 +1,4 @@
+import 'package:cores_domain/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 /// FirebaseAuthの認証ユーザー拡張

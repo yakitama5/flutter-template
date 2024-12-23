@@ -1,10 +1,11 @@
 import 'dart:async';
 
+import 'package:riverpod/riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
 import '../interface/goods_repository.dart';
 import '../value_object/goods_fetch_query.dart';
 import '../value_object/goods_fetch_response.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'goods_list_provider.g.dart';
 

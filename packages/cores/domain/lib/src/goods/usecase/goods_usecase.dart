@@ -1,7 +1,7 @@
-import '../state/goods_list_provider.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../state/goods_list_provider.dart';
 import '../value_object/goods_fetch_query.dart';
 
 part 'goods_usecase.g.dart';
