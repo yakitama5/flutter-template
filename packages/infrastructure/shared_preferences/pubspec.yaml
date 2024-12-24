@@ -1,6 +1,7 @@
 name: infrastructure_shared_preferences
 description: "A new Flutter package project."
 version: 0.0.1
+publish_to: "none"
 
 environment:
   sdk: ^3.6.0
@@ -12,7 +13,7 @@ dependencies:
     path: ../../cores/domain
   flutter:
     sdk: flutter
-  hooks_riverpod: ^2.6.1
+  riverpod: ^2.6.1
   riverpod_annotation: ^2.6.1
   shared_preferences: null
 

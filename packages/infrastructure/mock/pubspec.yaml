@@ -5,18 +5,14 @@ publish_to: "none"
 
 environment:
   sdk: ^3.6.0
-  flutter: ^3.27.0
 
 dependencies:
+  clock: ^1.1.2
+  collection: ^1.19.1
   cores_domain:
     path: ../../cores/domain
-  flutter:
-    sdk: flutter
+  riverpod: ^2.6.1
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   nilts: any
-  pedantic_mono:
-  riverpod_lint: ^2.6.1
-  test: any
+  pedantic_mono: null

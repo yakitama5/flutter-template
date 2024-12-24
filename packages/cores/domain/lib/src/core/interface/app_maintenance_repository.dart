@@ -11,6 +11,6 @@ AppMaintenanceRepository appMaintenanceRepository(
 
 abstract class AppMaintenanceRepository {
   const AppMaintenanceRepository();
-  Future<bool> isMaintenanceMode();
-  Stream<bool> fetchMaintenanceMode();
+  Future<bool> fetchMaintenanceMode();
+  Stream<bool> listenMaintenanceMode();
 }

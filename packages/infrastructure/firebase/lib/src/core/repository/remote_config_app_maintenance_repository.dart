@@ -1,34 +1,35 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-const String _maintenanceKey = 'app_maintenance_mode';
+import 'package:cores_domain/core.dart';
+import 'package:infrastructure_firebase/src/common/enum/remote_configs.dart';
+import 'package:infrastructure_firebase/src/common/state/remote_config_provider.dart';
+import 'package:riverpod/riverpod.dart';
 
 class RemoteConfigAppMaintenanceRepository extends AppMaintenanceRepository {
   const RemoteConfigAppMaintenanceRepository(this.ref);
 
   final Ref ref;
 
-  /// 文字列型を取得する
-  Future<bool> _fetchBool(String key) async {
+  @override
+  Future<bool> fetchMaintenanceMode() async {
     final remoteConfig = await ref.watch(remoteConfigProvider.future);
-    return remoteConfig.getBool(key);
+    return remoteConfig.getBool(RemoteConfigs.maintenance.key);
   }
 
   @override
-  Stream<bool> fetchMaintenanceMode() async* {
+  Stream<bool> listenMaintenanceMode() async* {
     final remoteConfig = await ref.watch(remoteConfigProvider.future);
 
     // 初回は単純に取得
-    yield remoteConfig.getBool(_maintenanceKey);
+    final key = RemoteConfigs.maintenance.key;
+    yield remoteConfig.getBool(key);
 
     // キーが更新された際に最新の値を取得する
     yield* remoteConfig.onConfigUpdated
-        .where((snapshot) => snapshot.updatedKeys.contains(_maintenanceKey))
+        .where(
+      (snapshot) => snapshot.updatedKeys.contains(key),
+    )
         .asyncMap((snapshot) async {
       await remoteConfig.activate();
-      return remoteConfig.getBool(_maintenanceKey);
+      return remoteConfig.getBool(key);
     });
   }
-
-  @override
-  Future<bool> isMaintenanceMode() => _fetchBool(_maintenanceKey);
 }

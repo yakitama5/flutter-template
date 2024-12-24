@@ -11,7 +11,7 @@ Stream<AppMaintenanceStatus> appMaintenanceStatus(
   Ref ref,
 ) {
   final repository = ref.watch(appMaintenanceRepositoryProvider);
-  return repository.fetchMaintenanceMode().map(
+  return repository.listenMaintenanceMode().map(
         (isMaintenance) => isMaintenance
             ? AppMaintenanceStatus.maintenance
             : AppMaintenanceStatus.none,

@@ -1,4 +1,5 @@
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:cores_domain/core.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:version/version.dart';
 
 const String _forceUpdateAppVersionKey = 'force_update_app_version';

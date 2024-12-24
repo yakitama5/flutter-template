@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
-import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:infrastructure_shared_preferences/domain.dart';
+import 'package:cores_domain/designsystem.dart';
 import 'package:infrastructure_shared_preferences/infrastructure.dart';
+import 'package:infrastructure_shared_preferences/src/core/enum/preferences.dart';
+import 'package:riverpod/riverpod.dart';
 
 class SharedPreferencesThemeRepository implements ThemeRepository {
   const SharedPreferencesThemeRepository(this.ref);
@@ -22,9 +22,9 @@ class SharedPreferencesThemeRepository implements ThemeRepository {
   }
 
   @override
-  ThemeMode? fetchThemeMode() {
+  AppThemeMode? fetchThemeMode() {
     final value = ref.watch(stringPreferenceProvider(Preferences.themeMode));
-    return ThemeMode.values.firstWhereOrNull((e) => e.name == value);
+    return AppThemeMode.values.firstWhereOrNull((e) => e.name == value);
   }
 
   @override
@@ -38,7 +38,7 @@ class SharedPreferencesThemeRepository implements ThemeRepository {
       .update(uiStyle.name);
 
   @override
-  Future<void> updateThemeMode(ThemeMode themeMode) => ref
+  Future<void> updateThemeMode(AppThemeMode themeMode) => ref
       .read(stringPreferenceProvider(Preferences.themeMode).notifier)
       .update(themeMode.name);
 }
