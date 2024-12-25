@@ -1,6 +1,10 @@
+import 'package:cores_domain/core.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:infrastructure_firebase/src/common/config/firebase_options.dart';
+import 'package:infrastructure_firebase/src/common/config/firebase_options_dev.dart'
+    as dev;
 
 final class FirebaseInitializer {
   FirebaseInitializer._();

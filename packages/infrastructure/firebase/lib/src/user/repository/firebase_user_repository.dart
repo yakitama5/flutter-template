@@ -1,15 +1,14 @@
-import 'package:cores_firebase/infrastructure.dart';
+import 'package:cores_domain/user.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/foundation.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import 'package:cores_firebase/cores/domain/lib/src/user/entity/auth_status.dart';
-import 'package:cores_firebase/cores/domain/lib/src/user/entity/user.dart';
-import 'package:cores_firebase/cores/domain/lib/src/user/interface/user_repository.dart';
-import '../firebase_auth_user_extension.dart';
-import '../model/firestore_user_model.dart';
-import '../state/firestore_deleted_user_provider.dart';
-import '../state/firestore_user_provider.dart';
+import 'package:infrastructure_firebase/src/common/extension/firebase_auth_user_extension.dart';
+import 'package:infrastructure_firebase/src/common/state/firebase_auth_provider.dart';
+import 'package:infrastructure_firebase/src/common/state/firestore_provider.dart';
+import 'package:infrastructure_firebase/src/common/state/google_sign_in_provider.dart';
+import 'package:infrastructure_firebase/src/user/model/firestore_user_model.dart';
+import 'package:infrastructure_firebase/src/user/state/firestore_deleted_user_provider.dart';
+import 'package:infrastructure_firebase/src/user/state/firestore_user_provider.dart';
+import 'package:riverpod/riverpod.dart';
 
 /// Firebaseを利用したリポジトリの実装
 class FirebaseUserRepository implements UserRepository {

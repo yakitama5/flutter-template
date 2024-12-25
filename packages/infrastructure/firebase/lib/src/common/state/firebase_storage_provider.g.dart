@@ -1,31 +1,32 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'firebase_functions_provider.dart';
+// ignore_for_file: type=lint, duplicate_ignore
+
+part of 'firebase_storage_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$firebaseFunctionsHash() => r'3c986d4d43427f37786a729442cd1a430c787a91';
+String _$firebaseStorageHash() => r'4d34fbbd82ac849c74805e19a05079afa5e20cad';
 
-/// Firebase Functions
+/// Firebase Storage
 /// テスト時にDIすることを考慮して、Providerとして定義
 ///
-/// Copied from [firebaseFunctions].
-@ProviderFor(firebaseFunctions)
-final firebaseFunctionsProvider =
-    AutoDisposeProvider<FirebaseFunctions>.internal(
-  firebaseFunctions,
-  name: r'firebaseFunctionsProvider',
+/// Copied from [firebaseStorage].
+@ProviderFor(firebaseStorage)
+final firebaseStorageProvider = Provider<FirebaseStorage>.internal(
+  firebaseStorage,
+  name: r'firebaseStorageProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$firebaseFunctionsHash,
+      : _$firebaseStorageHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef FirebaseFunctionsRef = AutoDisposeProviderRef<FirebaseFunctions>;
+typedef FirebaseStorageRef = ProviderRef<FirebaseStorage>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

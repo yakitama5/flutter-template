@@ -26,8 +26,12 @@ mixin _$FirestoreUserModel {
   @timestampKey
   DateTime? get updatedAt => throw _privateConstructorUsedError;
 
+  /// Serializes this FirestoreUserModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of FirestoreUserModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FirestoreUserModelCopyWith<FirestoreUserModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -54,6 +58,8 @@ class _$FirestoreUserModelCopyWithImpl<$Res, $Val extends FirestoreUserModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FirestoreUserModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -100,6 +106,8 @@ class __$$FirestoreUserModelImplCopyWithImpl<$Res>
       $Res Function(_$FirestoreUserModelImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FirestoreUserModel
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -161,11 +169,13 @@ class _$FirestoreUserModelImpl implements _FirestoreUserModel {
                 other.updatedAt == updatedAt));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, id, createdAt, updatedAt);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FirestoreUserModel
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FirestoreUserModelImplCopyWith<_$FirestoreUserModelImpl> get copyWith =>
@@ -197,8 +207,11 @@ abstract class _FirestoreUserModel implements FirestoreUserModel {
   @override
   @timestampKey
   DateTime? get updatedAt;
+
+  /// Create a copy of FirestoreUserModel
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FirestoreUserModelImplCopyWith<_$FirestoreUserModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

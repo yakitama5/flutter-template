@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:cores_firebase/infrastructure.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:infrastructure_firebase/src/common/enum/firestore_columns.dart';
+import 'package:infrastructure_firebase/src/common/extension/collection_reference.dart';
+import 'package:infrastructure_firebase/src/common/state/firestore_provider.dart';
+import 'package:infrastructure_firebase/src/user/model/firestore_user_model.dart';
+import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-
-import '../collection_reference.dart';
-import '../model/firestore_user_model.dart';
 
 part 'firestore_deleted_user_provider.g.dart';
 
@@ -20,9 +20,9 @@ CollectionReference<FirestoreUserModel> duserCollectionRef(
           ...value.toJson(),
 
           // 日付項目は自動更新
-          firestoreColumnUpdatedAt: FieldValue.serverTimestamp(),
+          FirestoreColumns.updatedAt.fieldName: FieldValue.serverTimestamp(),
           if (value.createdAt == null)
-            firestoreColumnCreatedAt: FieldValue.serverTimestamp(),
+            FirestoreColumns.createdAt.fieldName: FieldValue.serverTimestamp(),
         },
       );
 }

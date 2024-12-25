@@ -1,1 +1,1 @@
-export 'src/init/initializer.dart';
+export 'src/common/init/initializer.dart';

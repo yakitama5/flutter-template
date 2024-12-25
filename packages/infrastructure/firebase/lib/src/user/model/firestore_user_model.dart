@@ -1,8 +1,6 @@
-// ignore_for_file: invalid_annotation_target
-
-import 'package:cores_firebase/infrastructure.dart';
-import 'package:cores_firebase/cores/domain/lib/src/user/entity/user.dart';
+import 'package:cores_domain/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:infrastructure_firebase/src/common/converter/json_key.dart';
 
 part 'firestore_user_model.freezed.dart';
 part 'firestore_user_model.g.dart';
