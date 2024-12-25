@@ -1,9 +1,8 @@
 import 'package:cores_domain/core.dart';
+import 'package:infrastructure_firebase/src/common/enum/remote_configs.dart';
+import 'package:infrastructure_firebase/src/common/state/remote_config_provider.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:version/version.dart';
-
-const String _forceUpdateAppVersionKey = 'force_update_app_version';
-const String _latestAppVersionKey = 'latest_app_version';
 
 class RemoteConfigAppVersionRepository extends AppVersionRepository {
   const RemoteConfigAppVersionRepository(this.ref);
@@ -11,26 +10,20 @@ class RemoteConfigAppVersionRepository extends AppVersionRepository {
   final Ref ref;
 
   @override
-  Future<Version?> fetchForceUpdateAppVersion() =>
-      _fetchVersion(_forceUpdateAppVersionKey);
+  Future<Version> fetchForceUpdateAppVersion() =>
+      _fetchVersion(RemoteConfigs.forceUpdateAppVersion);
 
   @override
-  Future<Version?> fetchLatestAppVersion() =>
-      _fetchVersion(_latestAppVersionKey);
+  Future<Version> fetchLatestAppVersion() =>
+      _fetchVersion(RemoteConfigs.latestAppVersion);
 
   /// バージョンを取得する
-  Future<Version?> _fetchVersion(String key) async {
-    final str = await _fetchString(key);
+  Future<Version> _fetchVersion(RemoteConfigs<String> config) async {
+    final str = await ref.watch(stringConfigProvider(config: config).future);
     if (str.isEmpty) {
-      return null;
+      return Version.parse(config.defaultValue);
     }
 
     return Version.parse(str);
-  }
-
-  /// 文字列型を取得する
-  Future<String> _fetchString(String key) async {
-    final remoteConfig = await ref.watch(remoteConfigProvider.future);
-    return remoteConfig.getString(key);
   }
 }
