@@ -8,6 +8,7 @@ environment:
   flutter: ^3.27.0
 
 dependencies:
+  adaptive_dialog: ^2.4.0
   cores_dependency_override:
     path: ../../packages/cores/dependency_override
   cores_designsystem:
@@ -32,6 +33,7 @@ dependencies:
   nested: null
   package_info_plus: ^5.0.1
   riverpod_annotation: ^2.6.1
+  settings_ui: ^2.0.2
   slang: ^4.1.0
   slang_flutter: ^4.1.0
   version: null
