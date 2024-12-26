@@ -896,21 +896,21 @@ packages:
     source: hosted
     version: "2.2.0"
   infrastructure_firebase:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../packages/infrastructure/firebase"
       relative: true
     source: path
     version: "0.0.1"
   infrastructure_mock:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../packages/infrastructure/mock"
       relative: true
     source: path
     version: "0.0.1"
   infrastructure_shared_preferences:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
       path: "../../packages/infrastructure/shared_preferences"
       relative: true
