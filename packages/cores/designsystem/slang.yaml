@@ -8,9 +8,7 @@ lazy: false
 
 # Config
 imports:
-  - "package:cores_designsystem/src/domain/value_object/ui_style.dart"
-  - "package:cores_designsystem/src/domain/value_object/theme_color.dart"
-  - "package:cores_designsystem/src/domain/value_object/view_layout.dart"
+  - "package:cores_domain/designsystem.dart"
   - "package:flutter/material.dart"
   - "package:cores_domain/core.dart"
 contexts:
