@@ -1,4 +1,13 @@
-part of 'package:flutter_app/src/presentation/router/state/router_provider.dart';
+import 'package:cores_designsystem/keys.dart';
+import 'package:cores_designsystem/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_app/src/home/pages/onboard_page.dart';
+import 'package:flutter_app/src/router/routes/branches/home_shell_branch.dart';
+import 'package:flutter_app/src/router/routes/branches/setting_shell_branch.dart';
+import 'package:flutter_app/src/router/routes/navigator_page.dart';
+import 'package:go_router/go_router.dart';
+
+part 'base_shell_route.g.dart';
 
 final GlobalKey<NavigatorState> _shellNavigatorKey =
     GlobalKey<NavigatorState>(debugLabel: 'shell');
@@ -7,6 +16,7 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
   routes: [
     TypedGoRoute<RootRoute>(path: RootRoute.path),
     TypedGoRoute<OnboardRoute>(path: OnboardRoute.path),
+    TypedGoRoute<MaintenancePageRoute>(path: MaintenancePageRoute.path),
     TypedStatefulShellRoute<NavigatorPageShellRoute>(
       branches: [
         homeShellBranch,
@@ -61,5 +71,18 @@ class NavigatorPageShellRoute extends StatefulShellRouteData {
     StatefulNavigationShell navigationShell,
   ) {
     return NavigatorPage(navigationShell: navigationShell);
+  }
+}
+
+class MaintenancePageRoute extends GoRouteData {
+  const MaintenancePageRoute();
+
+  static const path = '/maintenance';
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) {
+    return const NoTransitionPage<Page<dynamic>>(
+      child: MaintenancePage(),
+    );
   }
 }

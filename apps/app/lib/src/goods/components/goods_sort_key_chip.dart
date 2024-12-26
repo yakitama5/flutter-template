@@ -1,7 +1,9 @@
-import 'package:cores_core/domain.dart';
-import 'package:cores_designsystem/presentation.dart';
-import 'package:features_goods/src/domain/value_object/goods_sort_key.dart';
+import 'package:cores_designsystem/extension.dart';
+import 'package:cores_designsystem/widgets.dart';
+import 'package:cores_domain/core.dart';
+import 'package:cores_domain/goods.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/i18n/strings.g.dart';
 
 /// 並び替えを行うための`ActionChip`
 class GoodsSortKeyChip extends StatelessWidget {
@@ -19,18 +21,18 @@ class GoodsSortKeyChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomSheetSelectActionChip<GoodsSortKey>(
-      label: Text(sortKey.title),
+      label: Text(i18n.goods.goodsSortKey(context: sortKey)),
       actions: GoodsSortKey.values
           .map(
             (e) => BottomSheetAction(
-              title: Text(e.title),
+              title: Text(i18n.goods.goodsSortKey(context: sortKey)),
               icon: sortKey == e ? Icon(sortOrder.iconData) : null,
               value: e,
             ),
           )
           .toList(),
       iconData: Icons.sort,
-      title: Text(sortKey.title),
+      title: Text(i18n.goods.goodsSortKey(context: sortKey)),
       initial: sortKey,
       onChanged: onChanged,
     );

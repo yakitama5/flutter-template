@@ -1,10 +1,9 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
-import 'package:cores_core/presentation.dart';
 import 'package:cores_designsystem/common_assets.dart';
-import 'package:cores_error/presentation.dart';
-import 'package:features_setting/i18n/strings.g.dart';
-import 'package:features_user/domain.dart';
+import 'package:cores_designsystem/widgets.dart';
+import 'package:cores_domain/user.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';

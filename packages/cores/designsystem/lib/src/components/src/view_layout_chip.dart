@@ -1,5 +1,6 @@
 import 'package:cores_designsystem/i18n/strings.g.dart';
-import 'package:cores_designsystem/presentation.dart';
+import 'package:cores_designsystem/src/components/src/bottom_sheet_action_chip.dart';
+import 'package:cores_designsystem/src/components/src/model/bottom_sheet_action.dart';
 import 'package:cores_designsystem/src/extension/view_layout_extension.dart';
 import 'package:cores_domain/designsystem.dart';
 import 'package:flutter/material.dart';

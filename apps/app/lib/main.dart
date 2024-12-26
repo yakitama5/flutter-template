@@ -1,20 +1,9 @@
-import 'package:cores_core/domain.dart';
+import 'package:cores_dependency_override/dependency_override.dart';
 import 'package:cores_designsystem/i18n.dart';
-import 'package:cores_designsystem/init.dart';
-import 'package:cores_error/i18n.dart';
-import 'package:cores_firebase/init.dart';
-import 'package:cores_shared_preferences/init.dart';
+import 'package:cores_domain/core.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:features_app_update/i18n.dart';
-import 'package:features_app_update/init.dart';
-import 'package:features_goods/i18n.dart';
-import 'package:features_goods/init.dart';
-import 'package:features_maintenance/i18n.dart';
-import 'package:features_maintenance/init.dart';
-import 'package:features_setting/i18n.dart';
-import 'package:features_user/i18n.dart';
-import 'package:features_user/init.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/src/router/routes/base_shell_route.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';
 
@@ -22,30 +11,23 @@ import 'app_initializer.dart';
 import 'i18n/strings.g.dart';
 import 'src/app.dart';
 import 'src/router/state/initial_location_provider.dart';
-import 'src/router/state/router_provider.dart';
 
 void main() async {
+  // アプリの初期処理
   WidgetsFlutterBinding.ensureInitialized();
-
-  // Initializer
   final (buildConfig: buildConfig) = await AppInitializer.initialize();
-  await FirebaseInitializer.initialize(buildConfig.flavor);
-
-  // Slang
   LocaleSettings.useDeviceLocaleSync();
+
+  // インフラ層の初期処理
+  await InfrastructureInitializer.initialize(buildConfig.flavor);
 
   runApp(
     ProviderScope(
       overrides: [
-        // 各パッケージのDI
-        ...await initializeSharedPreferencesProviders(),
-        ...await initializeDesignsystemProviders(),
-        ...await initializeAppUpdateProviders(),
-        ...await initializeMaintenanceProviders(),
-        ...await initializeUserProviders(),
-        ...await initializeGoodsProviders(),
+        // インフラ層のDI
+        ...await initializeInfrastructureProviders(),
 
-        // アプリ特有の設定
+        // アプリの初期設定
         appBuildConfigProvider.overrideWithValue(buildConfig),
         initialLocationProvider.overrideWithValue(RootRoute.path),
       ],
@@ -53,12 +35,6 @@ void main() async {
         children: const [
           // Slangの伝播
           _AppTranslationProvider(),
-          GoodsTranslationProvider(),
-          AppUpdateTranslationProvider(),
-          MaintenanceTranslationProvider(),
-          UserTranslationProvider(),
-          ErrorTranslationProvider(),
-          SettingsTranslationProvider(),
           DesignsystemTranslationProvider(),
 
           // DevicePreview

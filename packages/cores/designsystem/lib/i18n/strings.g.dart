@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 36 (18 per locale)
+/// Strings: 40 (20 per locale)
 ///
-/// Built on 2024-12-09 at 08:22 UTC
+/// Built on 2024-12-26 at 04:19 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint, unused_import
@@ -14,6 +14,7 @@
 import 'package:cores_designsystem/src/domain/value_object/theme_color.dart';
 import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
 import 'package:cores_designsystem/src/domain/value_object/view_layout.dart';
+import 'package:cores_domain/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';

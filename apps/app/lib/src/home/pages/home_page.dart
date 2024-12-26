@@ -1,5 +1,5 @@
-import 'package:cores_designsystem/presentation.dart';
-import 'package:features_goods/i18n.dart';
+import 'package:cores_designsystem/extension.dart';
+import 'package:cores_designsystem/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -30,7 +30,7 @@ class HomePage extends ConsumerWidget {
             child: FilledButton.icon(
               icon: const Icon(Icons.list),
               onPressed: () => navigator.goSampleListPage(context),
-              label: Text(goodsI18n.goods.goodsPage.title),
+              label: Text(i18n.goods.goodsPage.title),
             ),
           ),
           SizedBox(

@@ -12,6 +12,7 @@ imports:
   - "package:cores_designsystem/src/domain/value_object/theme_color.dart"
   - "package:cores_designsystem/src/domain/value_object/view_layout.dart"
   - "package:flutter/material.dart"
+  - "package:cores_domain/core.dart"
 contexts:
   UIStyle:
     generate_enum: false
@@ -20,4 +21,6 @@ contexts:
   ViewLayout:
     generate_enum: false
   ThemeMode:
+    generate_enum: false
+  SortOrder:
     generate_enum: false

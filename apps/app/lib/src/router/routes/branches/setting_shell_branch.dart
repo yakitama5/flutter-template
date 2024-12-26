@@ -1,6 +1,13 @@
-part of 'package:flutter_app/src/presentation/router/state/router_provider.dart';
+import 'package:cores_designsystem/common_assets.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_app/src/settings/pages/settings_account_page.dart';
+import 'package:flutter_app/src/settings/pages/settings_page.dart';
+import 'package:flutter_app/src/settings/pages/settings_theme_color_page.dart';
+import 'package:flutter_app/src/settings/pages/settings_theme_mode_page.dart';
+import 'package:flutter_app/src/settings/pages/settings_ui_style_page.dart';
+import 'package:go_router/go_router.dart';
 
-final _settingsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'settings');
+final settingsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'settings');
 
 const settingShellBranch = TypedStatefulShellBranch<SettingShellBranch>(
   routes: <TypedRoute<RouteData>>[
@@ -31,49 +38,15 @@ class SettingShellBranch extends StatefulShellBranchData {
   const SettingShellBranch();
 }
 
-final class _SettingsPageNavigatorImpl implements SettingsPageNavigator {
-  const _SettingsPageNavigatorImpl();
-
-  @override
-  void goLicensePage(BuildContext context) {
-    const LicensePageRoute().go(context);
-  }
-
-  @override
-  void goThemeColorPage(BuildContext context) =>
-      const SettingsThemeColorPageRoute().go(context);
-
-  @override
-  void goThemeModePage(BuildContext context) =>
-      const SettingsThemeModePageRoute().go(context);
-
-  @override
-  void goUiStylePage(BuildContext context) =>
-      const SettingsUiStylePageRoute().go(context);
-
-  @override
-  void goAccountPage(BuildContext context) {
-    const SettingsAccountPageRoute().go(context);
-  }
-}
-
 class SettingPageRoute extends GoRouteData {
   const SettingPageRoute();
 
-  static final GlobalKey<NavigatorState> $navigatorKey = _settingsNavigatorKey;
+  static final GlobalKey<NavigatorState> $navigatorKey = settingsNavigatorKey;
   static const path = '/setting';
 
   @override
-  Widget build(BuildContext context, GoRouterState state) {
-    return ProviderScope(
-      overrides: [
-        settingsPageNavigatorProvider.overrideWithValue(
-          const _SettingsPageNavigatorImpl(),
-        ),
-      ],
-      child: const SettingsPage(),
-    );
-  }
+  Widget build(BuildContext context, GoRouterState state) =>
+      const SettingsPage();
 }
 
 class LicensePageRoute extends GoRouteData {
@@ -84,7 +57,7 @@ class LicensePageRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) {
     return LicensePage(
-      applicationIcon: CommonAssets.images.logo.image(height: 100, width: 100),
+      applicationIcon: CommonAssets.images.logo.image(height: 120, width: 120),
     );
   }
 }

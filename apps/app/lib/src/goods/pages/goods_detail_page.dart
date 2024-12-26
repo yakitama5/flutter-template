@@ -1,6 +1,6 @@
-import 'package:cores_core/util.dart';
-import 'package:cores_designsystem/presentation.dart';
-import 'package:features_goods/src/domain/entity/goods.dart';
+import 'package:cores_designsystem/widgets.dart';
+import 'package:cores_domain/goods.dart';
+import 'package:cores_domain/util.dart';
 import 'package:flutter/material.dart';
 
 import '../components/goods_empty_image.dart';

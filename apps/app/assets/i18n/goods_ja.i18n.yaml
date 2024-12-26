@@ -1,0 +1,8 @@
+goodsPage:
+  title: 商品一覧
+  layout: 表示形式
+  price: "${price: simpleCurrency}"
+goodsSortKey(context=GoodsSortKey):
+  createdAt: 作成日時
+  name: 商品名
+  price: 価格

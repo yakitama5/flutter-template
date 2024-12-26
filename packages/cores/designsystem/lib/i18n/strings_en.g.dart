@@ -90,6 +90,14 @@ class TranslationsDesignsystemEn {
 		}
 	}
 	late final TranslationsDesignsystemViewLayoutEn viewLayout = TranslationsDesignsystemViewLayoutEn.internal(_root);
+	String sortOrder({required SortOrder context}) {
+		switch (context) {
+			case SortOrder.asc:
+				return 'ASC';
+			case SortOrder.desc:
+				return 'DESC';
+		}
+	}
 }
 
 // Path: designsystem.viewLayout
@@ -164,6 +172,14 @@ extension on Translations {
 						return 'Grid';
 					case ViewLayout.list:
 						return 'List';
+				}
+			};
+			case 'designsystem.sortOrder': return ({required SortOrder context}) {
+				switch (context) {
+					case SortOrder.asc:
+						return 'ASC';
+					case SortOrder.desc:
+						return 'DESC';
 				}
 			};
 			default: return null;

@@ -1,10 +1,9 @@
-import 'package:cores_core/presentation.dart';
-import 'package:cores_designsystem/presentation.dart';
-import 'package:features_setting/presentation.dart';
-import 'package:features_user/i18n/strings.g.dart';
+import 'package:cores_designsystem/widgets.dart';
+import 'package:cores_domain/user.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/packages/cores/domain/lib/src/user/usecase/user_usecase.dart';
-import 'package:flutter_app/packages/features/user/lib/src/gen/assets/assets.gen.dart';
+import 'package:flutter_app/i18n/strings.g.dart';
+import 'package:flutter_app/src/gen/assets/assets.gen.dart';
+import 'package:flutter_app/src/settings/components/components.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

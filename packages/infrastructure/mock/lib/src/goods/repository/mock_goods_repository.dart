@@ -38,8 +38,8 @@ const _descriptions = [
   '＿|＼○＿　ｲﾔｯ　ε＝　＼＿○ノ　ﾎｫｫｫｫｫｩ!!!!!!',
 ];
 
-class FakeGoodsRepository extends GoodsRepository {
-  FakeGoodsRepository(this.ref);
+class MockGoodsRepository extends GoodsRepository {
+  MockGoodsRepository(this.ref);
 
   final Ref ref;
 

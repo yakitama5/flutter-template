@@ -1,6 +1,6 @@
-import 'package:cores_designsystem/presentation.dart';
-import 'package:features_setting/i18n/strings.g.dart';
+import 'package:cores_designsystem/widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/i18n/strings.g.dart';
 
 // TODO(yakitama5): URLはアプリに応じて定義すること
 const _dummyUrl = 'https://flutter.dev';

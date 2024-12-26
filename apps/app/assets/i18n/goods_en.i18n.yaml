@@ -1,0 +1,8 @@
+goodsPage: 
+  title: Goods
+  layout: Layout
+  price: "${price: simpleCurrency}"
+goodsSortKey(context=GoodsSortKey):
+  createdAt: Created at
+  name: Name
+  price: Price

@@ -1,8 +1,9 @@
 import 'package:cores_designsystem/i18n.dart';
-import 'package:cores_designsystem/presentation.dart';
-import 'package:features_setting/i18n/strings.g.dart';
+import 'package:cores_designsystem/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_app/packages/features/setting/lib/src/presentation/router/navigator/navigator_provider.dart';
+import 'package:flutter_app/i18n/strings.g.dart';
+import 'package:flutter_app/src/router/routes/base_shell_route.dart';
+import 'package:flutter_app/src/router/routes/branches/setting_shell_branch.dart';
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -27,8 +28,6 @@ class SettingsPage extends HookConsumerWidget {
     final themeColor = ref.watch(themeColorNotifierProvider);
     final themeMode = ref.watch(themeModeProvider);
 
-    final navigator = ref.watch(settingsPageNavigatorProvider);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(i18n.settings.settingsPage.title),
@@ -41,7 +40,7 @@ class SettingsPage extends HookConsumerWidget {
               SettingsTile.navigation(
                 leading: const Icon(Icons.link),
                 title: Text(i18n.settings.settingsPage.account.account),
-                onPressed: navigator.goAccountPage,
+                onPressed: const SettingsAccountPageRoute().go,
               ),
             ],
           ),
@@ -54,7 +53,7 @@ class SettingsPage extends HookConsumerWidget {
                 value: Text(
                   designsystemI18n.designsystem.uiStyle(context: uiStyle),
                 ),
-                onPressed: navigator.goUiStylePage,
+                onPressed: const SettingsUiStylePageRoute().go,
               ),
               SettingsTile.navigation(
                 leading: Icon(
@@ -68,7 +67,7 @@ class SettingsPage extends HookConsumerWidget {
                 value: Text(
                   designsystemI18n.designsystem.themeMode(context: themeMode),
                 ),
-                onPressed: navigator.goThemeModePage,
+                onPressed: const SettingsThemeModePageRoute().go,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.color_lens),
@@ -76,7 +75,7 @@ class SettingsPage extends HookConsumerWidget {
                 value: Text(
                   designsystemI18n.designsystem.themeColor(context: themeColor),
                 ),
-                onPressed: navigator.goThemeColorPage,
+                onPressed: const SettingsThemeColorPageRoute().go,
               ),
             ],
           ),
@@ -105,7 +104,7 @@ class SettingsPage extends HookConsumerWidget {
               ),
               SettingsTile.navigation(
                 title: Text(i18n.settings.settingsPage.help.licencse),
-                onPressed: navigator.goLicensePage,
+                onPressed: const LicensePageRoute().go,
               ),
             ],
           ),

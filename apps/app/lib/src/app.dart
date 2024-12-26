@@ -1,10 +1,10 @@
-import 'package:cores_core/presentation.dart';
-import 'package:cores_designsystem/presentation.dart';
+import 'package:cores_designsystem/extension.dart';
+import 'package:cores_designsystem/theme.dart';
+import 'package:cores_designsystem/widgets.dart';
 import 'package:device_preview/device_preview.dart';
-import 'package:features_app_update/presentation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
-import 'package:flutter_app/packages/cores/designsystem/lib/src/components/src/device_preview_wrapper.dart';
+import 'package:flutter_app/src/debug/components/device_preview_wrapper.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';

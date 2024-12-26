@@ -7,8 +7,8 @@ environment:
   sdk: ^3.6.0
 
 dependencies:
-  clock: ^1.1.2
-  collection: ^1.19.1
+  clock: ^1.1.1
+  collection: ^1.19.0
   cores_domain:
     path: ../../cores/domain
   riverpod: ^2.6.1

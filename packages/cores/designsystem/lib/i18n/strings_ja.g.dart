@@ -7,6 +7,7 @@
 import 'package:cores_designsystem/src/domain/value_object/theme_color.dart';
 import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
 import 'package:cores_designsystem/src/domain/value_object/view_layout.dart';
+import 'package:cores_domain/core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
@@ -92,6 +93,14 @@ class _TranslationsDesignsystemJa extends TranslationsDesignsystemEn {
 		}
 	}
 	@override late final _TranslationsDesignsystemViewLayoutJa viewLayout = _TranslationsDesignsystemViewLayoutJa._(_root);
+	@override String sortOrder({required SortOrder context}) {
+		switch (context) {
+			case SortOrder.asc:
+				return '昇順';
+			case SortOrder.desc:
+				return '降順';
+		}
+	}
 }
 
 // Path: designsystem.viewLayout
@@ -166,6 +175,14 @@ extension on TranslationsJa {
 						return 'グリッド表示';
 					case ViewLayout.list:
 						return 'リスト表示';
+				}
+			};
+			case 'designsystem.sortOrder': return ({required SortOrder context}) {
+				switch (context) {
+					case SortOrder.asc:
+						return '昇順';
+					case SortOrder.desc:
+						return '降順';
 				}
 			};
 			default: return null;

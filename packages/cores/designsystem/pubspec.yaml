@@ -13,7 +13,6 @@ dependencies:
   collection: null
   cores_domain:
     path: ../domain
-  device_preview: ^1.2.0
   dynamic_color: null
   flutter:
     sdk: flutter
