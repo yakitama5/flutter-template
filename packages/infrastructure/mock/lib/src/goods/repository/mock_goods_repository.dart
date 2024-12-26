@@ -81,6 +81,7 @@ class FakeGoodsRepository extends GoodsRepository {
     );
 
     // https://github.com/dart-lang/sdk/issues/43763
+    // HACK(yakitama5): Dart3.7で書き直す
     // final sortItems = switch (query.sortKey) {
     //   GoodsSortKey.createdAt => items.sortedBy((e) => e.createdAt),
     //   GoodsSortKey.name => items.sortedBy((e) => e.name),
