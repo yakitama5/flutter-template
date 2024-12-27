@@ -16,10 +16,8 @@ dependencies:
   infrastructure_shared_preferences:
     path: ../../infrastructure/shared_preferences
   riverpod: ^2.6.1
-  version: null
 
 dev_dependencies:
   custom_lint: null
   nilts: any
   pedantic_mono: null
-  riverpod_lint: ^2.6.1
