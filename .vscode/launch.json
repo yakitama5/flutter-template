@@ -13,6 +13,30 @@
       "args": ["--dart-define-from-file=flavor/dev.json", "--web-renderer html"]
     },
     {
+      "name": "dev-profile",
+      "cwd": "apps/app",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "args": [
+        "--dart-define-from-file=flavor/dev.json",
+        "--web-renderer html",
+        "--profile"
+      ]
+    },
+    {
+      "name": "dev-release",
+      "cwd": "apps/app",
+      "request": "launch",
+      "program": "lib/main.dart",
+      "type": "dart",
+      "args": [
+        "--dart-define-from-file=flavor/dev.json",
+        "--web-renderer html",
+        "--release"
+      ]
+    },
+    {
       "name": "prd-debug",
       "cwd": "apps/app",
       "request": "launch",
