@@ -18,8 +18,8 @@ dependencies:
   shared_preferences: null
 
 dev_dependencies:
-  build_runner: null
-  custom_lint: null
+  build_runner: ^2.4.14
+  custom_lint: ^0.7.0
   flutter_test:
     sdk: flutter
   nilts: any

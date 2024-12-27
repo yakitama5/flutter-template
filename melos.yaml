@@ -26,8 +26,8 @@ command:
       slang_flutter: ^4.1.0
     dev_dependencies:
       alchemist: ^0.10.0
-      build_runner: any
-      custom_lint: any
+      build_runner: ^2.4.14
+      custom_lint: ^0.7.0
       flutter_gen_runner: any
       freezed: any
       json_serializable: any
