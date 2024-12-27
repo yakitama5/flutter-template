@@ -4,10 +4,8 @@
 // coverage:ignore-file
 // ignore_for_file: type=lint, unused_import
 
-import 'package:cores_designsystem/src/domain/value_object/theme_color.dart';
-import 'package:cores_designsystem/src/domain/value_object/ui_style.dart';
-import 'package:cores_designsystem/src/domain/value_object/view_layout.dart';
 import 'package:cores_domain/core.dart';
+import 'package:cores_domain/designsystem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
