@@ -1,4 +1,3 @@
-import 'package:cores_designsystem/extension.dart';
 import 'package:cores_designsystem/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
@@ -26,11 +25,6 @@ class HomePage extends ConsumerWidget {
               onPressed: () => const GoodsPageRoute().go(context),
               label: Text(i18n.goods.goodsPage.title),
             ),
-          ),
-          SizedBox(
-            width: double.infinity,
-            height: 100,
-            child: ColoredBox(color: Theme.of(context).appColors.favIcon),
           ),
         ],
       ),

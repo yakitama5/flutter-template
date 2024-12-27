@@ -15,6 +15,12 @@ ThemeData appTheme(Ref ref, {required Brightness brightness}) {
   return ThemeData(
     colorScheme: colorScheme,
     brightness: brightness,
+    pageTransitionsTheme: const PageTransitionsTheme(
+      builders: {
+        // https://github.com/flutter/flutter/issues/132504#issuecomment-2025776552
+        TargetPlatform.android: PredictiveBackPageTransitionsBuilder(),
+      },
+    ),
     extensions: [
       AppColors.brightness(brightness: brightness),
     ],
