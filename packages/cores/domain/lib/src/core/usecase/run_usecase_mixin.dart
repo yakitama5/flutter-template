@@ -8,6 +8,7 @@ mixin RunUsecaseMixin {
   /// ローディング表示を行わない場合は、`disableLoading`を指定する
   Future<T> execute<T>(
     Ref ref, {
+    // ignore: defined_async_value_getter_type
     required Future<T> Function() action,
     bool disableLoading = false,
   }) async {
