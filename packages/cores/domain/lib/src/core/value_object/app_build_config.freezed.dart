@@ -24,7 +24,9 @@ mixin _$AppBuildConfig {
   String get buildSignature => throw _privateConstructorUsedError;
   String? get installerStore => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppBuildConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AppBuildConfigCopyWith<AppBuildConfig> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -55,6 +57,8 @@ class _$AppBuildConfigCopyWithImpl<$Res, $Val extends AppBuildConfig>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AppBuildConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -125,6 +129,8 @@ class __$$AppBuildConfigImplCopyWithImpl<$Res>
       _$AppBuildConfigImpl _value, $Res Function(_$AppBuildConfigImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AppBuildConfig
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -223,7 +229,9 @@ class _$AppBuildConfigImpl implements _AppBuildConfig {
   int get hashCode => Object.hash(runtimeType, flavor, appName, packageName,
       version, buildNumber, buildSignature, installerStore);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AppBuildConfig
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$AppBuildConfigImplCopyWith<_$AppBuildConfigImpl> get copyWith =>
@@ -255,8 +263,11 @@ abstract class _AppBuildConfig implements AppBuildConfig {
   String get buildSignature;
   @override
   String? get installerStore;
+
+  /// Create a copy of AppBuildConfig
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$AppBuildConfigImplCopyWith<_$AppBuildConfigImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

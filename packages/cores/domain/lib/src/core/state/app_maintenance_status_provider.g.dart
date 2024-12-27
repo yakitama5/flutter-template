@@ -9,7 +9,7 @@ part of 'app_maintenance_status_provider.dart';
 // **************************************************************************
 
 String _$appMaintenanceStatusHash() =>
-    r'8d4f53371ffd01c8cdcc33ca114cce5a70861f42';
+    r'21f96f6e13ee37f2b3f3b963796b096378ea57af';
 
 /// See also [appMaintenanceStatus].
 @ProviderFor(appMaintenanceStatus)

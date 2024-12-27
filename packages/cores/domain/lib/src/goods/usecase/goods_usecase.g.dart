@@ -8,7 +8,7 @@ part of 'goods_usecase.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$goodsUsecaseHash() => r'9e13af1fac18703115514dbbda041cf4033f5f4b';
+String _$goodsUsecaseHash() => r'c73982ffdab5fb24c64c2d258bca48d1e6068c53';
 
 /// See also [goodsUsecase].
 @ProviderFor(goodsUsecase)
