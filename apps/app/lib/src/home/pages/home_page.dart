@@ -2,14 +2,9 @@ import 'package:cores_designsystem/extension.dart';
 import 'package:cores_designsystem/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
+import 'package:flutter_app/src/router/routes/base_shell_route.dart';
+import 'package:flutter_app/src/router/routes/branches/home_shell_branch.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-
-import '../../router/navigator/navigator_provider.dart';
-
-// ignore: one_member_abstracts
-abstract interface class HomePageNavigator {
-  void goSampleListPage(BuildContext context);
-}
 
 class HomePage extends ConsumerWidget {
   const HomePage({
@@ -18,7 +13,6 @@ class HomePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final navigator = ref.watch(homePageNavigatorProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text(i18n.app.homePage.title),
@@ -29,7 +23,7 @@ class HomePage extends ConsumerWidget {
           WidthFillBox(
             child: FilledButton.icon(
               icon: const Icon(Icons.list),
-              onPressed: () => navigator.goSampleListPage(context),
+              onPressed: () => const GoodsPageRoute().go(context),
               label: Text(i18n.goods.goodsPage.title),
             ),
           ),
