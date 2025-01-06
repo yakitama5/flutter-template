@@ -1,4 +1,3 @@
-import 'package:cores_designsystem/extension.dart';
 import 'package:cores_designsystem/theme.dart';
 import 'package:cores_designsystem/widgets.dart';
 import 'package:device_preview/device_preview.dart';
@@ -18,7 +17,6 @@ class MainApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // テーマ設定
     final themeMode = ref.watch(themeModeProvider);
-    final uiStyle = ref.watch(uiStyleProvider);
     final lightTheme =
         ref.watch(appThemeProvider(brightness: Brightness.light));
     final darkTheme = ref.watch(appThemeProvider(brightness: Brightness.dark));
@@ -42,8 +40,8 @@ class MainApp extends ConsumerWidget {
 
       scaffoldMessengerKey: SnackBarManager.rootScaffoldMessengerKey,
       routerConfig: ref.watch(routerProvider),
-      theme: lightTheme.copyWith(platform: uiStyle.platform),
-      darkTheme: darkTheme.copyWith(platform: uiStyle.platform),
+      theme: lightTheme,
+      darkTheme: darkTheme,
       themeMode: themeMode,
     );
   }
