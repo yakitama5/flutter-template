@@ -42,6 +42,7 @@ class OnboardPage extends StatelessWidget {
 class _WelcomeImage extends StatelessWidget {
   const _WelcomeImage();
 
+  // ignore: low_readability_numeric_literals
   static const Color _rawPrimary = Color(0xff21005D);
 
   @override

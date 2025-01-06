@@ -1,3 +1,4 @@
+// ignore_for_file: low_readability_numeric_literals
 import 'package:flutter/material.dart';
 
 // Generated code from https://m3.material.io/theme-builder#/custom
