@@ -1,5 +1,6 @@
 bottomNavBar: 
   home: ホーム
+  search: 探す
   settings: 設定
 homePage:
   title: ホーム

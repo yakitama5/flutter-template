@@ -3,6 +3,7 @@ import 'package:cores_designsystem/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/home/pages/onboard_page.dart';
 import 'package:flutter_app/src/router/routes/branches/home_shell_branch.dart';
+import 'package:flutter_app/src/router/routes/branches/search_shell_branch.dart';
 import 'package:flutter_app/src/router/routes/branches/setting_shell_branch.dart';
 import 'package:flutter_app/src/router/routes/navigator_page.dart';
 import 'package:go_router/go_router.dart';
@@ -20,6 +21,7 @@ final GlobalKey<NavigatorState> _shellNavigatorKey =
     TypedStatefulShellRoute<NavigatorPageShellRoute>(
       branches: [
         homeShellBranch,
+        searchShellBranch,
         settingShellBranch,
       ],
     ),

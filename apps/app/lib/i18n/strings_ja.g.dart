@@ -116,6 +116,7 @@ class _TranslationsAppBottomNavBarJa extends TranslationsAppBottomNavBarEn {
 
 	// Translations
 	@override String get home => 'ホーム';
+	@override String get search => '探す';
 	@override String get settings => '設定';
 }
 
@@ -301,6 +302,7 @@ extension on TranslationsJa {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'app.bottomNavBar.home': return 'ホーム';
+			case 'app.bottomNavBar.search': return '探す';
 			case 'app.bottomNavBar.settings': return '設定';
 			case 'app.homePage.title': return 'ホーム';
 			case 'error.errorPage.title': return 'エラー';

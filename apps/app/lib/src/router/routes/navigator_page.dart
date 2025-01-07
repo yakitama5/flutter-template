@@ -20,11 +20,18 @@ class NavigatorPage extends ConsumerWidget {
         destinations: [
           NavigationDestination(
             label: i18n.app.bottomNavBar.home,
-            icon: const Icon(Icons.home),
+            icon: const Icon(Icons.home_outlined),
+            selectedIcon: const Icon(Icons.home_filled),
+          ),
+          NavigationDestination(
+            label: i18n.app.bottomNavBar.search,
+            icon: const Icon(Icons.search_outlined),
+            selectedIcon: const Icon(Icons.search),
           ),
           NavigationDestination(
             label: i18n.app.bottomNavBar.settings,
             icon: const Icon(Icons.settings),
+            selectedIcon: const Icon(Icons.settings),
           ),
         ],
         onDestinationSelected: (index) async {

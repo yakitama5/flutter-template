@@ -36,12 +36,14 @@ RouteBase get $baseShellSroute => ShellRouteData.$route(
                 GoRouteData.$route(
                   path: '/home',
                   factory: $HomePageRouteExtension._fromState,
-                  routes: [
-                    GoRouteData.$route(
-                      path: 'goods',
-                      factory: $GoodsPageRouteExtension._fromState,
-                    ),
-                  ],
+                ),
+              ],
+            ),
+            StatefulShellBranchData.$branch(
+              routes: [
+                GoRouteData.$route(
+                  path: '/goods',
+                  factory: $GoodsPageRouteExtension._fromState,
                 ),
               ],
             ),
@@ -163,7 +165,7 @@ extension $GoodsPageRouteExtension on GoodsPageRoute {
       const GoodsPageRoute();
 
   String get location => GoRouteData.$location(
-        '/home/goods',
+        '/goods',
       );
 
   void go(BuildContext context) => context.go(location);

@@ -116,6 +116,7 @@ class TranslationsAppBottomNavBarEn {
 
 	// Translations
 	String get home => 'Home';
+	String get search => 'Search';
 	String get settings => 'Settings';
 }
 
@@ -301,6 +302,7 @@ extension on Translations {
 	dynamic _flatMapFunction(String path) {
 		switch (path) {
 			case 'app.bottomNavBar.home': return 'Home';
+			case 'app.bottomNavBar.search': return 'Search';
 			case 'app.bottomNavBar.settings': return 'Settings';
 			case 'app.homePage.title': return 'Home';
 			case 'error.errorPage.title': return 'Error';
