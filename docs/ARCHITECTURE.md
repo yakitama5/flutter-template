@@ -15,10 +15,11 @@
 │
 └── packages
     ├── cores
-    │   ├── ...
-    │   └── ...
+    │   ├── dependenciy_override
+    │   ├── designsystem
+    │   └── domain
     │
-    └── features
+    └── infrastructure
         ├── ...
         └── ...
 ```
@@ -27,15 +28,20 @@
 
 > [!IMPORTANT]
 >
-> - `cores` のパッケージは `apps` のアプリパッケージ、`features` のパッケージ、および `cores` のパッケージから呼び出されます。
-> - `features` のパッケージは `apps` のアプリパッケージからのみ呼び出されます。
+> - `cores/domain` はDartのみで構成され、業務ロジックを表します。
+> - `cores/designsystem` は共通のデザインシステムを表します。
+> - `cores/domain` パッケージは、すべてのパッケージから呼び出されます。
+> - `infrastructure` のパッケージは `cores/domain` に依存し `cores/dependency_override`からのみ呼び出されます。
 
 ```mermaid
 flowchart TB
     app
-    cores
-    features
-    app --> cores & features
-    features --> cores
-    cores --> cores
+    cores/domain
+    cores/designsystem
+    cores/dependency_override
+    infrastructure
+    app --> cores/domain & cores/designsystem & cores/dependency_override
+    cores/designsystem --> cores/domain
+    cores/dependency_override --> cores/domain & infrastructure
+    infrastructure --> cores/domain
 ```
