@@ -13,15 +13,6 @@ command:
       flutter: ^x.x.x
 ```
 
-> [!NOTE]
-> `analysis_options.yaml`でyumemi_lintsのルールバージョンの更新が必要ですが、こちらは`melos bootstrap`のpost hooksで自動化的に更新されます。
->
->```yaml
->include: package:yumemi_lints/flutter/x.x.x/recommended.yaml
->```
->
->ただしyumemi_lints自体のバージョンが古くて最新Flutterバージョンに対応していない場合があるので、その場合はyumemi_lintsを更新してください。
-
 4. `melos bootstrap`コマンドを実行
 5. iOS でアプリが起動できることを確認
 6. Android でアプリが起動できることを確認
