@@ -9,6 +9,7 @@ environment:
 
 dependencies:
   adaptive_dialog: ^2.4.0
+  animated_to: ^0.2.0
   cores_dependency_override:
     path: ../../packages/cores/dependency_override
   cores_designsystem:
