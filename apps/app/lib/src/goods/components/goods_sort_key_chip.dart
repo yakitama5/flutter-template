@@ -25,7 +25,7 @@ class GoodsSortKeyChip extends StatelessWidget {
       actions: GoodsSortKey.values
           .map(
             (e) => BottomSheetAction(
-              title: Text(i18n.goods.goodsSortKey(context: sortKey)),
+              title: Text(i18n.goods.goodsSortKey(context: e)),
               icon: sortKey == e ? Icon(sortOrder.iconData) : null,
               value: e,
             ),
