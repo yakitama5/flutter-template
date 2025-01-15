@@ -4,7 +4,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'model/svg_replace_colors.dart';
 
-
 class SvgAssetImage extends StatelessWidget {
   const SvgAssetImage({
     super.key,
@@ -32,11 +31,14 @@ class SvgAssetImage extends StatelessWidget {
   }
 
   String toColorUpperCode(Color color) {
+    // https://github.com/flutter/flutter/issues/160184#issuecomment-2573822206
+    // ignore: deprecated_member_use
     final hexa = color.value.toRadixString(16).toUpperCase();
     return '#${hexa.substring(hexa.length - 6, hexa.length).padLeft(6, '0')}';
   }
 
   String toColorLowerCode(Color color) {
+    // ignore: deprecated_member_use
     final hexa = color.value.toRadixString(16).toLowerCase();
     return '#${hexa.substring(hexa.length - 6, hexa.length).padLeft(6, '0')}';
   }
