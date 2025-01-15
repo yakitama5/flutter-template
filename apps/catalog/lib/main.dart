@@ -71,7 +71,7 @@ class WidgetbookApp extends StatelessWidget {
         ),
         AlignmentAddon(),
         TextScaleAddon(
-          scales: [1.0, 2.0],
+          min: 1,
         ),
       ],
     );
