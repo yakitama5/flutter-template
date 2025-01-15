@@ -8,7 +8,7 @@ part of 'goods_list_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$goodsListHash() => r'08e422bea87d394a6c9a9a744b1816729727c141';
+String _$goodsListHash() => r'c7a59d09715e16cce1a1eeeba3a26b117a9efa5b';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -36,7 +36,7 @@ class _SystemHash {
 const goodsListProvider = GoodsListFamily();
 
 /// See also [goodsList].
-class GoodsListFamily extends Family<AsyncValue<GoodsFetchResponse>> {
+class GoodsListFamily extends Family<AsyncValue<PageInfo<Goods>>> {
   /// See also [goodsList].
   const GoodsListFamily();
 
@@ -77,7 +77,7 @@ class GoodsListFamily extends Family<AsyncValue<GoodsFetchResponse>> {
 }
 
 /// See also [goodsList].
-class GoodsListProvider extends AutoDisposeStreamProvider<GoodsFetchResponse> {
+class GoodsListProvider extends AutoDisposeStreamProvider<PageInfo<Goods>> {
   /// See also [goodsList].
   GoodsListProvider({
     required int page,
@@ -116,7 +116,7 @@ class GoodsListProvider extends AutoDisposeStreamProvider<GoodsFetchResponse> {
 
   @override
   Override overrideWith(
-    Stream<GoodsFetchResponse> Function(GoodsListRef provider) create,
+    Stream<PageInfo<Goods>> Function(GoodsListRef provider) create,
   ) {
     return ProviderOverride(
       origin: this,
@@ -134,7 +134,7 @@ class GoodsListProvider extends AutoDisposeStreamProvider<GoodsFetchResponse> {
   }
 
   @override
-  AutoDisposeStreamProviderElement<GoodsFetchResponse> createElement() {
+  AutoDisposeStreamProviderElement<PageInfo<Goods>> createElement() {
     return _GoodsListProviderElement(this);
   }
 
@@ -157,7 +157,7 @@ class GoodsListProvider extends AutoDisposeStreamProvider<GoodsFetchResponse> {
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-mixin GoodsListRef on AutoDisposeStreamProviderRef<GoodsFetchResponse> {
+mixin GoodsListRef on AutoDisposeStreamProviderRef<PageInfo<Goods>> {
   /// The parameter `page` of this provider.
   int get page;
 
@@ -166,7 +166,7 @@ mixin GoodsListRef on AutoDisposeStreamProviderRef<GoodsFetchResponse> {
 }
 
 class _GoodsListProviderElement
-    extends AutoDisposeStreamProviderElement<GoodsFetchResponse>
+    extends AutoDisposeStreamProviderElement<PageInfo<Goods>>
     with GoodsListRef {
   _GoodsListProviderElement(super.provider);
 

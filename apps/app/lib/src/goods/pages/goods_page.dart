@@ -93,8 +93,6 @@ class _SliverBody extends HookConsumerWidget {
         ref.watch(goodsListProvider(page: 1, query: query)).valueOrNull;
 
     return SliverSwitchLayoutViewBuilder(
-      // 条件が変更されたらスクロール状態をリセットさせる
-      key: ValueKey(query),
       viewLayout: viewLayout,
       itemCount: result?.totalCount ?? goodsPageSize,
       itemBuilder: (context, index) {
@@ -105,9 +103,9 @@ class _SliverBody extends HookConsumerWidget {
         return response.when(
           data: (data) => OpenContainerCardWrapper(
             openBuilder: (context, action) =>
-                GoodsDetailPage(goods: data.goods[indexInPage]),
+                GoodsDetailPage(goods: data.items[indexInPage]),
             closedBuilder: (context, action) {
-              final item = data.goods[indexInPage];
+              final item = data.items[indexInPage];
               return switch (viewLayout) {
                 ViewLayout.grid => GoodsCard(
                     key: ValueKey(item),

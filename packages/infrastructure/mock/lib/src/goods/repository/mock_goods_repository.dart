@@ -65,14 +65,18 @@ class MockGoodsRepository extends GoodsRepository {
   }
 
   @override
-  Stream<GoodsFetchResponse> fetchList({
+  Stream<PageInfo<Goods>> fetchList({
     int page = 1,
     int pageSize = goodsPageSize,
     required GoodsFetchQuery query,
   }) async* {
-    await Future<void>.delayed(const Duration(milliseconds: 3000));
+    await Future<void>.delayed(const Duration(milliseconds: 1000));
 
-    final sortItems = items.sorted(
+    final hoge = items
+        .map((e) => e.copyWith(price: Random().nextInt(max(1, 100))))
+        .toList();
+
+    final sortItems = hoge.sorted(
       (a, b) => switch (query.sortKey) {
         GoodsSortKey.createdAt => a.createdAt.compareTo(b.createdAt),
         GoodsSortKey.name => a.name.compareTo(b.name),
@@ -95,8 +99,8 @@ class MockGoodsRepository extends GoodsRepository {
 
     final start = (page - 1) * pageSize;
     final end = min(start + pageSize, items.length);
-    final result = GoodsFetchResponse(
-      goods: orderItems.sublist(start, end),
+    final result = PageInfo<Goods>(
+      items: orderItems.sublist(start, end),
       totalCount: items.length,
     );
 
