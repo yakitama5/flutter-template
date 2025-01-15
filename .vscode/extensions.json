@@ -6,14 +6,12 @@
         "djbkwon.flutter-dependency-docs",
         "esbenp.prettier-vscode",
         "DavidAnson.vscode-markdownlint",
-        "Google.arb-editor",
         "aaron-bond.better-comments",
         "ryanluker.vscode-coverage-gutters",
         "flutterando.flutter-coverage",
         "djbkwon.flutter-dependency-docs",
         "robert-brunhage.flutter-riverpod-snippets",
         "github.vscode-github-actions",
-        "GitHub.copilot",
         "GitHub.vscode-pull-request-github",
         "oderwat.indent-rainbow",
         "MS-CEINTL.vscode-language-pack-ja",
@@ -21,10 +19,10 @@
         "nickdemayo.vscode-json-editor",
         "ryanolsonx.solarized",
         "Gruntfuggly.todo-tree",
-        "ms-vscode.sublime-keybindings",
         "pflannery.vscode-versionlens",
         "rioukkevin.vscode-git-commit",
         "tomoki1207.vscode-input-sequence",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "sourcegraph.cody-ai"
     ]
 }
