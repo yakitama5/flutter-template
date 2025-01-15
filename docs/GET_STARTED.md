@@ -1,6 +1,8 @@
-## はじめに
+# 🔰はじめに
 
-### 事前準備
+## 💻ローカルセットアップ
+
+### ツールのインストール
 
 - IDE をインストールしてください。
   - [Visual Studio Code]
@@ -40,7 +42,44 @@ fvm use --force
 melos bs
 ```
 
-### アプリの実行
+## 🔥Firebase
+
+Firebaseを利用する場合は下記の手順を実施してください。
+
+### Firebase CLIツールのインストール
+
+- [Firebase CLI] をインストールしてください。
+
+    ```shell
+    npm install -g firebase-tools
+    firebase login
+    ```
+
+- [FlutterFire CLI] コマンドを有効にしてください。
+
+    ```shell
+    dart pub global activate flutterfire_cli
+    ```
+  
+  - プロジェクト毎にコマンドを叩いて設定ファイルを作成してください。
+
+    ```shell
+    # 開発環境
+    flutterfire configure --out=packages/infrastructure/firebase/lib/src/common/config/firebase_options_dev.dart -p [DevProjectID] --platforms=android,ios -i [BundleID].dev -a [AppID].dev
+
+    # 本番環境
+    flutterfire configure --out=packages/infrastructure/firebase/lib/src/common/config/firebase_options.dart -p [ProjectID] --platforms=android,ios -i [BundleID] -a [AppID]
+    ```
+  
+  - 下記のファイルをそれぞれ環境別のディレクトリに配置する
+    - `GoogleService-Info.plist`
+      - 開発：`apps/app/ios/dev/GoogleService-Info.plist`
+      - 本番：`apps/app/ios/prod/GoogleService-Info.plist`
+    - `google-services.json`
+      - 開発：`apps/app/android/app/src/dev/google-services.json`
+      - 本番：`apps/app/android/app/src/prod/google-services.json`
+
+## 📱動作確認
 
 このアプリを実行するための実行構成が設定されています。
 
@@ -62,3 +101,7 @@ Please check:
 [yq]: https://github.com/mikefarah/yq
 
 [cmder]: https://github.com/cmderdev/cmder/wiki/Seamless-VS-Code-Integration
+
+[Firebase CLI]: https://firebase.google.com/docs/cli?hl=ja
+
+[FlutterFire CLI]: https://firebase.google.com/docs/flutter/setup?hl=ja

@@ -1,6 +1,6 @@
-# infrastructure_packageパッケージ追加手順
+# ➕infrastructure_packageパッケージ追加手順
 
-## 1. infrastructure_package(masonのbrick) で新しいパッケージを作成
+infrastructure_package(masonのbrick) で新しいパッケージを作成
 
 ```shell
 mason make infrastructure_package

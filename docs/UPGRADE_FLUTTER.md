@@ -1,5 +1,7 @@
 <!-- markdownlint-disable MD029 -->
-### 手順
+# ⬆️Flutter のアップグレード
+
+## 手順
 
 1. `fvm use <upgrade version>` を実行
 2. ルートの`pubspec.yaml` の `sdk`バージョンを更新
@@ -18,7 +20,7 @@ command:
 6. Android でアプリが起動できることを確認
 7. [Migration Guide](https://docs.flutter.dev/release/breaking-changes) に従い、必要に応じて deprecate 箇所を修正
 
-### 注意ポイント
+## 注意ポイント
 
 - iOS Simulator や Android Emulator だけでなく、実機も動作することを確認
 - Flutter 側だけでなく、 Android・iOS 側で利用しているパッケージ・プラグイン・ライブラリの更新が必要ないか確認

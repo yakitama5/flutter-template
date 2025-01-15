@@ -1,11 +1,11 @@
-## アイコンについて
+# 🖼️アイコンについて
 
-### iOS
+## 🍎iOS
 
 - iOSのアイコンの場合、Apple Storeで使用されている画像サイズは1024x1024で、それ以外のサイズの場合は[icons_launcher]が自動的に小さいものを生成します。
 - アイコンのサイズは1024x1024以下でも問題ありませんが、小さすぎると画質が悪いアイコンになる可能性があります。
 
-### Android
+## 🍨Android
 
 - Adaptive Launcher IconsはAndroid 8.0（APIレベル26）で導入され、デバイスの種類ごとに異なる形で表示できるようになりました。
   - `adaptive_icon_foreground`
