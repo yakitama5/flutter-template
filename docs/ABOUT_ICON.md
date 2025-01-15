@@ -2,7 +2,7 @@
 
 ### iOS
 
-- iOSのアイコンの場合、Apple Storeで使用されている画像サイズは1024x1024で、それ以外のサイズの場合は[flutter_launcher_icons]が自動的に小さいものを生成します。
+- iOSのアイコンの場合、Apple Storeで使用されている画像サイズは1024x1024で、それ以外のサイズの場合は[icons_launcher]が自動的に小さいものを生成します。
 - アイコンのサイズは1024x1024以下でも問題ありませんが、小さすぎると画質が悪いアイコンになる可能性があります。
 
 ### Android
@@ -27,6 +27,6 @@
 
 <!-- Links -->
 
-[flutter_launcher_icons]: https://pub.dev/packages/flutter_launcher_icons
+[icons_launcher]: https://pub.dev/packages/icons_launcher
 
 [adaptive icon guide]: https://developer.android.com/guide/practices/ui_guidelines/icon_design_adaptive?hl=ja
