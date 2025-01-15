@@ -22,8 +22,7 @@ class ViewLayoutChip extends StatelessWidget {
       actions: ViewLayout.values
           .map(
             (e) => BottomSheetAction(
-              // TODO(yakitama5): 多言語化対応
-              title: const Text('e.title'),
+              title: Text(i18n.designsystem.viewLayout.typeName(context: e)),
               icon: Icon(e.iconData),
               value: e,
             ),
