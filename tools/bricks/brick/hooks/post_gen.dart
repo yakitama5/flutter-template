@@ -7,29 +7,38 @@ void run(HookContext context) {
   const bricksDir = './tools/bricks/';
 
   // create bricks
-  Process.runSync('mason', [
-    'new',
-    brickName,
-    '-o',
-    bricksDir,
-    context.vars['hooks'] ? '--hooks' : '',
-    '--desc',
-    context.vars['description'],
+  Process.runSync(
+    'mason',
+    [
+      'new',
+      brickName,
+      '-o',
+      bricksDir,
+      context.vars['hooks'] ? '--hooks' : '',
+      '--desc',
+      context.vars['description'],
+    ],
     runInShell: true,
-  ]);
+  );
 
   // add bricks
-  Process.runSync('mason', [
-    'add',
-    brickName,
-    '--path',
-    bricksDir + brickName,
+  Process.runSync(
+    'mason',
+    [
+      'add',
+      brickName,
+      '--path',
+      bricksDir + brickName,
+    ],
     runInShell: true,
-  ]);
+  );
 
   // remove LICENSE
-  Process.runSync('rm', [
-    '$bricksDir$brickName/LICENSE',
+  Process.runSync(
+    'rm',
+    [
+      '$bricksDir$brickName/LICENSE',
+    ],
     runInShell: true,
-  ]);
+  );
 }
