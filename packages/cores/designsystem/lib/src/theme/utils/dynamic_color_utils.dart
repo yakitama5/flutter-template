@@ -15,34 +15,21 @@ extension CorePaletteX on CorePalette {
   ColorScheme toM3ColorScheme({
     Brightness brightness = Brightness.light,
   }) {
-    final DynamicScheme scheme;
+    final scheme = DynamicScheme(
+      sourceColorArgb: toColorScheme(brightness: brightness).primary.value,
+      // Variantを取得する手段がないため、`fruitSalad`を暫定的に固定設定
+      variant: Variant.fruitSalad,
+      isDark: brightness == Brightness.dark,
+      primaryPalette: primary,
+      secondaryPalette: secondary,
+      tertiaryPalette: tertiary,
+      neutralPalette: neutral,
+      neutralVariantPalette: neutralVariant,
+    );
 
-    switch (brightness) {
-      case Brightness.light:
-        scheme = DynamicScheme(
-          sourceColorArgb: toColorScheme(brightness: brightness).primary.value,
-          variant: Variant.content,
-          isDark: false,
-          primaryPalette: primary,
-          secondaryPalette: secondary,
-          tertiaryPalette: tertiary,
-          neutralPalette: neutral,
-          neutralVariantPalette: neutralVariant,
-        );
-      case Brightness.dark:
-        scheme = DynamicScheme(
-          sourceColorArgb: toColorScheme(brightness: brightness).primary.value,
-          variant: Variant.content,
-          isDark: true,
-          primaryPalette: primary,
-          secondaryPalette: secondary,
-          tertiaryPalette: tertiary,
-          neutralPalette: neutral,
-          neutralVariantPalette: neutralVariant,
-        );
-    }
+    // DynamicScheme → ColorSchemeへの変換
     return ColorScheme(
-      brightness: Brightness.light,
+      brightness: brightness,
       primary: Color(scheme.primary),
       surfaceTint: Color(scheme.surfaceTint),
       onPrimary: Color(scheme.onPrimary),
