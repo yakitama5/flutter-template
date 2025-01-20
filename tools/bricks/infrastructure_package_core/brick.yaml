@@ -1,0 +1,13 @@
+name: infrastructure_package_core
+description: infrastructureパッケージの主要部分を作成するためのbrickです。直接使うのではなく、infrastructure_package brickから呼ぶことを想定しています。
+
+version: 0.1.0
+
+environment:
+  mason: "^0.1.0"
+
+vars:
+  package_name:
+    type: string
+    description: Package name
+    prompt: 'What is infrastructure name? (example: shared_preferences)'

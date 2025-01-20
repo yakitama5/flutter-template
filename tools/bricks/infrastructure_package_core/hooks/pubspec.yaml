@@ -1,0 +1,7 @@
+name: infrastructure_package_core_hooks
+
+environment:
+  sdk: ^3.4.1
+
+dependencies:
+  mason: "^0.1.0"

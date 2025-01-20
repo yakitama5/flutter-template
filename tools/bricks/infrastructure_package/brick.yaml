@@ -1,0 +1,13 @@
+name: infrastructure_package
+description: infrastructureパッケージを作成するbrickです。
+
+version: 0.1.0
+
+environment:
+  mason: "^0.1.0"
+
+vars:
+  package_name:
+    type: string
+    description: Package name
+    prompt: 'What is package name? (example: shared_preferences)'
