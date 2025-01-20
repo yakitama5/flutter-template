@@ -1,5 +1,4 @@
 // ignore_for_file: deprecated_member_use, lines_longer_than_80_chars
-
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:material_color_utilities/dynamiccolor/dynamic_scheme.dart';
