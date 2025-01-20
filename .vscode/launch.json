@@ -55,13 +55,6 @@
         "--web-renderer html",
         "--dart-define=devicePreview=true"
       ]
-    },
-    {
-      "name": "ui-catalog",
-      "cwd": "apps/catalog",
-      "request": "launch",
-      "program": "lib/main.dart",
-      "type": "dart"
     }
   ]
 }
