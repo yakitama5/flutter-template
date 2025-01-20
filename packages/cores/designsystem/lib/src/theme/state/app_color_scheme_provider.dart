@@ -1,14 +1,14 @@
 import 'package:cores_designsystem/src/extension/theme_color_extension.dart';
 import 'package:cores_designsystem/src/theme/state/theme_color_notifier_provider.dart';
+import 'package:cores_designsystem/src/theme/utils/dynamic_color_utils.dart';
 import 'package:cores_domain/designsystem.dart';
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:material_color_utilities/palettes/core_palette.dart';
+import 'package:material_color_utilities/material_color_utilities.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../color_schemes.dart';
-import '../utils/dynamic_color_utils.dart';
 import 'core_palette_provider.dart';
 
 part 'app_color_scheme_provider.g.dart';
@@ -43,11 +43,8 @@ ColorScheme _colorScheme(
       }
 
       // デバイスのテーマカラーを基にカラースキーマを生成
-      final dynamicColorScheme =
-          dynamicCorePalette.toColorScheme(brightness: brightness);
-
       // [暫定対応] Flutter3.22.0で行われた`ColorScheme`の破壊的変更への対応
-      return generateDynamicColourSchemes(dynamicColorScheme);
+      return dynamicCorePalette.toM3ColorScheme(brightness: brightness);
 
     case ThemeColor.blue:
     case ThemeColor.purple:
@@ -67,7 +64,7 @@ ColorScheme _colorScheme(
 ColorScheme _defaultColorScheme(Brightness brightness) {
   // HACK(yakitama5): プレゼン層に依存している
   return switch (brightness) {
-    Brightness.light => lightColorScheme,
-    Brightness.dark => darkColorScheme,
+    Brightness.light => MaterialTheme.lightScheme(),
+    Brightness.dark => MaterialTheme.darkScheme(),
   };
 }

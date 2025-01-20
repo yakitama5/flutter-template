@@ -16,7 +16,6 @@ ThemeData appTheme(Ref ref, {required Brightness brightness}) {
 
   return ThemeData(
     colorScheme: colorScheme,
-    brightness: brightness,
     platform: uiStyle.platform,
     pageTransitionsTheme: const PageTransitionsTheme(
       builders: {
