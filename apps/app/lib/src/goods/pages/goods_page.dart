@@ -19,7 +19,7 @@ class GoodsPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 初期状態はドメイン層に定義
     final query = useState(const GoodsFetchQuery());
-    final viewLayout = useState(ViewLayout.list);
+    final viewLayout = ref.watch(goodsViewLayoutNotifierProvider);
 
     return Scaffold(
       body: RefreshIndicator(
@@ -60,8 +60,10 @@ class GoodsPage extends HookConsumerWidget {
                       ),
                       const Gap(12),
                       ViewLayoutChip(
-                        viewLayout: viewLayout.value,
-                        onChanged: (v) => viewLayout.value = v,
+                        viewLayout: viewLayout,
+                        onChanged: (v) => ref
+                            .read(goodsViewLayoutNotifierProvider.notifier)
+                            .updateViewLayout(viewLayout: v),
                       ),
                     ],
                   ),
@@ -70,7 +72,7 @@ class GoodsPage extends HookConsumerWidget {
             ),
             _SliverBody(
               query: query.value,
-              viewLayout: viewLayout.value,
+              viewLayout: viewLayout,
             ),
           ],
         ),

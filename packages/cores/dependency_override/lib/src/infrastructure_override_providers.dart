@@ -6,6 +6,7 @@ import 'package:infrastructure_firebase/core.dart';
 import 'package:infrastructure_firebase/user.dart';
 import 'package:infrastructure_mock/goods.dart';
 import 'package:infrastructure_shared_preferences/designsystem.dart';
+import 'package:infrastructure_shared_preferences/goods.dart';
 import 'package:infrastructure_shared_preferences/init.dart';
 import 'package:riverpod/riverpod.dart';
 
@@ -14,6 +15,8 @@ Future<List<Override>> initializeInfrastructureProviders() async {
     // SharedPreferences
     ...await initializeSharedPreferencesProviders(),
     themeRepositoryProvider.overrideWith(SharedPreferencesThemeRepository.new),
+    goodsConfigRepositoryProvider
+        .overrideWith(SharedPreferencesGoodsConfigRepository.new),
 
     // Firebase
     userRepositoryProvider.overrideWith(FirebaseUserRepository.new),

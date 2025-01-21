@@ -18,7 +18,7 @@ class ViewLayoutChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomSheetSelectActionChip<ViewLayout>(
-      label: Text(i18n.designsystem.viewLayout.name),
+      label: Text(i18n.designsystem.viewLayout.typeName(context: viewLayout)),
       actions: ViewLayout.values
           .map(
             (e) => BottomSheetAction(
