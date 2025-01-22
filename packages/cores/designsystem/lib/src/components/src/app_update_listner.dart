@@ -2,7 +2,6 @@ import 'package:adaptive_dialog/adaptive_dialog.dart';
 import 'package:cores_designsystem/src/components/src/dialogs.dart';
 import 'package:cores_designsystem/src/keys/root_navigator_key.dart';
 import 'package:cores_domain/core.dart';
-import 'package:cores_domain/util.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';
@@ -26,18 +25,13 @@ class AppUpdateListner extends SingleChildStatelessWidget {
 
             final status = snapshot.value;
             switch (status) {
-              // TODO(yakitama5): アップデート時の振る舞いを定義
               case AppUpdateStatus.updateRequired:
-                logger.i('updateRequired');
-
                 final result = await showOkAlertDialog(context: rootContext);
                 return switch (result) {
                   OkCancelResult.ok => navigateToStore(ref),
                   OkCancelResult.cancel => null,
                 };
               case AppUpdateStatus.updatePossible:
-                logger.i('updatePossible');
-
                 await showOkBarrierDismissibleDialog(
                   rootContext,
                   okLabel: 'ストアへ',
@@ -45,8 +39,7 @@ class AppUpdateListner extends SingleChildStatelessWidget {
                 );
               case AppUpdateStatus.usingLatest:
               case null:
-                // do nothing
-                logger.i('usingLatest');
+              // do nothing
             }
           });
 
