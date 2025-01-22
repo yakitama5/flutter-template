@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nested/nested.dart';
 
+/// OKボタンを押すでしか閉じることが出来ないダイアログ
 Future<void> showOkBarrierDismissibleDialog(
   BuildContext context, {
   Widget? icon,

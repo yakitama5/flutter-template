@@ -24,3 +24,6 @@ viewLayout:
 sortOrder(context=SortOrder):
   asc: ASC
   desc: DESC
+appUpdate:
+  navigateStore: Open Store
+  

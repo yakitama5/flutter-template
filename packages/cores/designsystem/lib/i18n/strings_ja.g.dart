@@ -99,6 +99,7 @@ class _TranslationsDesignsystemJa extends TranslationsDesignsystemEn {
 				return '降順';
 		}
 	}
+	@override late final _TranslationsDesignsystemAppUpdateJa appUpdate = _TranslationsDesignsystemAppUpdateJa._(_root);
 }
 
 // Path: designsystem.viewLayout
@@ -117,6 +118,16 @@ class _TranslationsDesignsystemViewLayoutJa extends TranslationsDesignsystemView
 				return 'リスト表示';
 		}
 	}
+}
+
+// Path: designsystem.appUpdate
+class _TranslationsDesignsystemAppUpdateJa extends TranslationsDesignsystemAppUpdateEn {
+	_TranslationsDesignsystemAppUpdateJa._(TranslationsJa root) : this._root = root, super.internal(root);
+
+	final TranslationsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get navigateStore => 'ストアを開く';
 }
 
 /// Flat map(s) containing all translations.
@@ -183,6 +194,7 @@ extension on TranslationsJa {
 						return '降順';
 				}
 			};
+			case 'designsystem.appUpdate.navigateStore': return 'ストアを開く';
 			default: return null;
 		}
 	}

@@ -98,6 +98,7 @@ class TranslationsDesignsystemEn {
 				return 'DESC';
 		}
 	}
+	late final TranslationsDesignsystemAppUpdateEn appUpdate = TranslationsDesignsystemAppUpdateEn.internal(_root);
 }
 
 // Path: designsystem.viewLayout
@@ -116,6 +117,16 @@ class TranslationsDesignsystemViewLayoutEn {
 				return 'List';
 		}
 	}
+}
+
+// Path: designsystem.appUpdate
+class TranslationsDesignsystemAppUpdateEn {
+	TranslationsDesignsystemAppUpdateEn.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get navigateStore => 'Open Store';
 }
 
 /// Flat map(s) containing all translations.
@@ -182,6 +193,7 @@ extension on Translations {
 						return 'DESC';
 				}
 			};
+			case 'designsystem.appUpdate.navigateStore': return 'Open Store';
 			default: return null;
 		}
 	}

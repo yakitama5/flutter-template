@@ -1,4 +1,5 @@
 import 'package:adaptive_dialog/adaptive_dialog.dart';
+import 'package:cores_designsystem/i18n/strings.g.dart';
 import 'package:cores_designsystem/src/components/src/dialogs.dart';
 import 'package:cores_designsystem/src/keys/root_navigator_key.dart';
 import 'package:cores_domain/core.dart';
@@ -26,17 +27,20 @@ class AppUpdateListner extends SingleChildStatelessWidget {
             final status = snapshot.value;
             switch (status) {
               case AppUpdateStatus.updateRequired:
-                final result = await showOkAlertDialog(context: rootContext);
+                await showOkBarrierDismissibleDialog(
+                  rootContext,
+                  okLabel: i18n.designsystem.appUpdate.navigateStore,
+                  onOk: () => navigateToStore(ref),
+                );
+              case AppUpdateStatus.updatePossible:
+                final result = await showOkCancelAlertDialog(
+                  context: rootContext,
+                  okLabel: i18n.designsystem.appUpdate.navigateStore,
+                );
                 return switch (result) {
                   OkCancelResult.ok => navigateToStore(ref),
                   OkCancelResult.cancel => null,
                 };
-              case AppUpdateStatus.updatePossible:
-                await showOkBarrierDismissibleDialog(
-                  rootContext,
-                  okLabel: 'ストアへ',
-                  onOk: () => navigateToStore(ref),
-                );
               case AppUpdateStatus.usingLatest:
               case null:
               // do nothing
