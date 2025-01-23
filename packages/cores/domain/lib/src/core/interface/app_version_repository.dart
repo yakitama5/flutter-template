@@ -10,6 +10,6 @@ AppVersionRepository appVersionRepository(Ref ref) =>
 
 abstract class AppVersionRepository {
   const AppVersionRepository();
-  Future<Version> fetchLatestAppVersion();
-  Future<Version> fetchForceUpdateAppVersion();
+  Stream<Version> listenLatestAppVersion();
+  Stream<Version> listenForceUpdateAppVersion();
 }

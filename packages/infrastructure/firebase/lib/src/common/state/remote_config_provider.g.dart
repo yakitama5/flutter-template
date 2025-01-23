@@ -308,6 +308,139 @@ class _BoolConfigProviderElement extends AutoDisposeFutureProviderElement<bool>
   RemoteConfigs<bool> get config => (origin as BoolConfigProvider).config;
 }
 
+String _$stringStreamConfigHash() =>
+    r'5d70c2bf5c5d5b92002e803fff4651df273f0b98';
+
+/// See also [stringStreamConfig].
+@ProviderFor(stringStreamConfig)
+const stringStreamConfigProvider = StringStreamConfigFamily();
+
+/// See also [stringStreamConfig].
+class StringStreamConfigFamily extends Family<AsyncValue<String>> {
+  /// See also [stringStreamConfig].
+  const StringStreamConfigFamily();
+
+  /// See also [stringStreamConfig].
+  StringStreamConfigProvider call({
+    required RemoteConfigs<String> config,
+  }) {
+    return StringStreamConfigProvider(
+      config: config,
+    );
+  }
+
+  @override
+  StringStreamConfigProvider getProviderOverride(
+    covariant StringStreamConfigProvider provider,
+  ) {
+    return call(
+      config: provider.config,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'stringStreamConfigProvider';
+}
+
+/// See also [stringStreamConfig].
+class StringStreamConfigProvider extends AutoDisposeStreamProvider<String> {
+  /// See also [stringStreamConfig].
+  StringStreamConfigProvider({
+    required RemoteConfigs<String> config,
+  }) : this._internal(
+          (ref) => stringStreamConfig(
+            ref as StringStreamConfigRef,
+            config: config,
+          ),
+          from: stringStreamConfigProvider,
+          name: r'stringStreamConfigProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$stringStreamConfigHash,
+          dependencies: StringStreamConfigFamily._dependencies,
+          allTransitiveDependencies:
+              StringStreamConfigFamily._allTransitiveDependencies,
+          config: config,
+        );
+
+  StringStreamConfigProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.config,
+  }) : super.internal();
+
+  final RemoteConfigs<String> config;
+
+  @override
+  Override overrideWith(
+    Stream<String> Function(StringStreamConfigRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: StringStreamConfigProvider._internal(
+        (ref) => create(ref as StringStreamConfigRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        config: config,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeStreamProviderElement<String> createElement() {
+    return _StringStreamConfigProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is StringStreamConfigProvider && other.config == config;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, config.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+mixin StringStreamConfigRef on AutoDisposeStreamProviderRef<String> {
+  /// The parameter `config` of this provider.
+  RemoteConfigs<String> get config;
+}
+
+class _StringStreamConfigProviderElement
+    extends AutoDisposeStreamProviderElement<String>
+    with StringStreamConfigRef {
+  _StringStreamConfigProviderElement(super.provider);
+
+  @override
+  RemoteConfigs<String> get config =>
+      (origin as StringStreamConfigProvider).config;
+}
+
 String _$boolStreamConfigHash() => r'd5360082d0a6b46d1fe91de93198a70960a02d47';
 
 /// See also [boolStreamConfig].
