@@ -127,7 +127,29 @@ class _TranslationsDesignsystemAppUpdateJa extends TranslationsDesignsystemAppUp
 	final TranslationsJa _root; // ignore: unused_field
 
 	// Translations
+	@override late final _TranslationsDesignsystemAppUpdateUpdatePossibleJa updatePossible = _TranslationsDesignsystemAppUpdateUpdatePossibleJa._(_root);
+	@override late final _TranslationsDesignsystemAppUpdateForceUpdateJa forceUpdate = _TranslationsDesignsystemAppUpdateForceUpdateJa._(_root);
 	@override String get navigateStore => 'ストアを開く';
+}
+
+// Path: designsystem.appUpdate.updatePossible
+class _TranslationsDesignsystemAppUpdateUpdatePossibleJa extends TranslationsDesignsystemAppUpdateUpdatePossibleEn {
+	_TranslationsDesignsystemAppUpdateUpdatePossibleJa._(TranslationsJa root) : this._root = root, super.internal(root);
+
+	final TranslationsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get message => '新しいバージョンが公開されています。\nアップデートを行うと、新しい機能をご利用いただけます。\nアップデートを行いますか？';
+}
+
+// Path: designsystem.appUpdate.forceUpdate
+class _TranslationsDesignsystemAppUpdateForceUpdateJa extends TranslationsDesignsystemAppUpdateForceUpdateEn {
+	_TranslationsDesignsystemAppUpdateForceUpdateJa._(TranslationsJa root) : this._root = root, super.internal(root);
+
+	final TranslationsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get message => 'ご利用のバージョンは現在ご利用出来ません。\nストアから新しいバージョンをご利用下さい。';
 }
 
 /// Flat map(s) containing all translations.
@@ -194,6 +216,8 @@ extension on TranslationsJa {
 						return '降順';
 				}
 			};
+			case 'designsystem.appUpdate.updatePossible.message': return '新しいバージョンが公開されています。\nアップデートを行うと、新しい機能をご利用いただけます。\nアップデートを行いますか？';
+			case 'designsystem.appUpdate.forceUpdate.message': return 'ご利用のバージョンは現在ご利用出来ません。\nストアから新しいバージョンをご利用下さい。';
 			case 'designsystem.appUpdate.navigateStore': return 'ストアを開く';
 			default: return null;
 		}

@@ -25,5 +25,8 @@ sortOrder(context=SortOrder):
   asc: ASC
   desc: DESC
 appUpdate:
+  updatePossible:
+    message: A new version has been released.\nBy updating, you can enjoy new features.\nWould you like to update?
+  forceUpdate:
+    message: The version you are using is currently unavailable. \nPlease download a new version from the store.
   navigateStore: Open Store
-  

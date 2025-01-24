@@ -29,12 +29,14 @@ class AppUpdateListner extends SingleChildStatelessWidget {
               case AppUpdateStatus.updateRequired:
                 await showOkBarrierDismissibleDialog(
                   rootContext,
+                  message: i18n.designsystem.appUpdate.forceUpdate.message,
                   okLabel: i18n.designsystem.appUpdate.navigateStore,
                   onOk: () => navigateToStore(ref),
                 );
               case AppUpdateStatus.updatePossible:
                 final result = await showOkCancelAlertDialog(
                   context: rootContext,
+                  message: i18n.designsystem.appUpdate.updatePossible.message,
                   okLabel: i18n.designsystem.appUpdate.navigateStore,
                 );
                 return switch (result) {

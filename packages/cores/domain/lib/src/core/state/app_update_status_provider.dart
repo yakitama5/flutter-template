@@ -18,6 +18,11 @@ Future<AppUpdateStatus> appUpdateStatus(Ref ref) async {
   // 現在のアプリ情報を取得
   final appVersion = ref.watch(appBuildConfigProvider.select((e) => e.version));
 
+  logger
+    ..d('Force Update Version: $forceUpdateAppVersion')
+    ..d('Latest App Version: $latestAppVersion')
+    ..d('App Version: $appVersion');
+
   // 比較してステータスを返却
   if (appVersion < forceUpdateAppVersion) {
     logger.d('Update Required');

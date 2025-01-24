@@ -126,7 +126,29 @@ class TranslationsDesignsystemAppUpdateEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+	late final TranslationsDesignsystemAppUpdateUpdatePossibleEn updatePossible = TranslationsDesignsystemAppUpdateUpdatePossibleEn.internal(_root);
+	late final TranslationsDesignsystemAppUpdateForceUpdateEn forceUpdate = TranslationsDesignsystemAppUpdateForceUpdateEn.internal(_root);
 	String get navigateStore => 'Open Store';
+}
+
+// Path: designsystem.appUpdate.updatePossible
+class TranslationsDesignsystemAppUpdateUpdatePossibleEn {
+	TranslationsDesignsystemAppUpdateUpdatePossibleEn.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get message => 'A new version has been released.\nBy updating, you can enjoy new features.\nWould you like to update?';
+}
+
+// Path: designsystem.appUpdate.forceUpdate
+class TranslationsDesignsystemAppUpdateForceUpdateEn {
+	TranslationsDesignsystemAppUpdateForceUpdateEn.internal(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get message => 'The version you are using is currently unavailable. \nPlease download a new version from the store.';
 }
 
 /// Flat map(s) containing all translations.
@@ -193,6 +215,8 @@ extension on Translations {
 						return 'DESC';
 				}
 			};
+			case 'designsystem.appUpdate.updatePossible.message': return 'A new version has been released.\nBy updating, you can enjoy new features.\nWould you like to update?';
+			case 'designsystem.appUpdate.forceUpdate.message': return 'The version you are using is currently unavailable. \nPlease download a new version from the store.';
 			case 'designsystem.appUpdate.navigateStore': return 'Open Store';
 			default: return null;
 		}
