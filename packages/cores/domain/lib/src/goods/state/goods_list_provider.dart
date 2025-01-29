@@ -18,7 +18,7 @@ Stream<PageInfo<Goods>> goodsList(
   logger.d('GoodsListProvider: $page');
   ref.cacheFor(const Duration(seconds: 30));
 
-  return ref.watch(goodsRepositoryProvider).fetchList(
+  return ref.watch(goodsRepositoryProvider).listenGoodsList(
         page: page,
         query: query,
       );

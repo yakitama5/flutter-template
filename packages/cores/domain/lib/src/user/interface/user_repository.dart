@@ -13,7 +13,7 @@ UserRepository userRepository(Ref ref) => throw UnimplementedError();
 /// ユーザーモデル および ユーザーの認証に関するリポジトリ
 abstract class UserRepository {
   /// ユーザーモデルの取得
-  Stream<User?> fetch({required String userId});
+  Stream<User?> listen({required String userId});
 
   /// サインアップ および ユーザー/グループモデルの追加
   Future<void> signUp();
@@ -22,7 +22,7 @@ abstract class UserRepository {
   Future<void> delete({required String userId});
 
   /// 認証状態の取得
-  Stream<AuthStatus?> fetchAuthStatus();
+  Stream<AuthStatus?> listenAuthStatus();
 
   /// 匿名ログイン
   Future<AuthStatus> signInAnonymously();

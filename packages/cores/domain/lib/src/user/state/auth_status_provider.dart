@@ -9,4 +9,4 @@ part 'auth_status_provider.g.dart';
 /// 認証状態
 @Riverpod(keepAlive: true)
 Stream<AuthStatus?> authStatus(Ref ref) =>
-    ref.watch(userRepositoryProvider).fetchAuthStatus();
+    ref.watch(userRepositoryProvider).listenAuthStatus();

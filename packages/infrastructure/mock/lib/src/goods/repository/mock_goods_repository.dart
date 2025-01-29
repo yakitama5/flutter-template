@@ -59,13 +59,13 @@ class MockGoodsRepository extends GoodsRepository {
   );
 
   @override
-  Stream<Goods?> fetch({required String id}) {
+  Stream<Goods?> listenGoods({required String id}) {
     final item = items.firstWhere((e) => e.id == id);
     return Stream.value(item);
   }
 
   @override
-  Stream<PageInfo<Goods>> fetchList({
+  Stream<PageInfo<Goods>> listenGoodsList({
     int page = 1,
     int pageSize = goodsPageSize,
     required GoodsFetchQuery query,

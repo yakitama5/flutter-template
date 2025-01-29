@@ -12,11 +12,11 @@ part 'goods_repository.g.dart';
 GoodsRepository goodsRepository(Ref ref) => throw UnimplementedError();
 
 abstract class GoodsRepository {
-  Stream<PageInfo<Goods>> fetchList({
+  Stream<PageInfo<Goods>> listenGoodsList({
     int page = 1,
     int pageSize = goodsPageSize,
     required GoodsFetchQuery query,
   });
 
-  Stream<Goods?> fetch({required String id});
+  Stream<Goods?> listenGoods({required String id});
 }

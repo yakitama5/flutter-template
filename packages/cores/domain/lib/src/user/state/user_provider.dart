@@ -9,5 +9,5 @@ part 'user_provider.g.dart';
 /// データの参照頻度を減らすため、`keepAlive`を指定
 @Riverpod(keepAlive: true)
 Stream<User?> user(Ref ref, {required String userId}) {
-  return ref.watch(userRepositoryProvider).fetch(userId: userId);
+  return ref.watch(userRepositoryProvider).listen(userId: userId);
 }

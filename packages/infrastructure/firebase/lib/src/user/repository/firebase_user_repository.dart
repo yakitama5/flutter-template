@@ -20,7 +20,7 @@ class FirebaseUserRepository implements UserRepository {
   auth.User? get _currentUser => ref.watch(firebaseAuthProvider).currentUser;
 
   @override
-  Stream<User?> fetch({required String userId}) {
+  Stream<User?> listen({required String userId}) {
     return ref
         .read(userDocumentRefProvider(userId: userId))
         .snapshots()
@@ -62,7 +62,7 @@ class FirebaseUserRepository implements UserRepository {
   }
 
   @override
-  Stream<AuthStatus?> fetchAuthStatus() {
+  Stream<AuthStatus?> listenAuthStatus() {
     return ref.watch(firebaseAuthProvider).userChanges().map((authUser) {
       if (authUser == null) {
         return null;
