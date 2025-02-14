@@ -33,7 +33,7 @@ dependencies:
   json_annotation: any
   material_design_icons_flutter: ^7.0.7296
   nested: null
-  package_info_plus: ^5.0.1
+  package_info_plus: ^8.2.1
   riverpod_annotation: ^2.6.1
   settings_ui: ^2.0.2
   slang: ^4.1.0
