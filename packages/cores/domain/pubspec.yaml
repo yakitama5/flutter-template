@@ -4,7 +4,7 @@ publish_to: "none"
 version: 0.0.1
 
 environment:
-  sdk: ^3.6.1
+  sdk: ^3.7.0
 
 dependencies:
   freezed_annotation: null
@@ -24,3 +24,5 @@ dev_dependencies:
   pedantic_mono: null
   riverpod_generator: ^2.6.1
   riverpod_lint: ^2.6.1
+
+resolution: workspace

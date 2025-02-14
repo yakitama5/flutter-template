@@ -24,3 +24,5 @@ dev_dependencies:
   pedantic_mono: 
   riverpod_generator: 
   riverpod_lint: 
+
+resolution: workspace

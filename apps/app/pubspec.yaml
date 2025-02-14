@@ -4,8 +4,8 @@ publish_to: "none"
 version: 0.0.1
 
 environment:
-  sdk: ^3.6.1
-  flutter: ^3.27.2
+  sdk: ^3.7.0
+  flutter: ^3.29.0
 
 dependencies:
   adaptive_dialog: ^2.4.0
@@ -33,7 +33,7 @@ dependencies:
   json_annotation: any
   material_design_icons_flutter: ^7.0.7296
   nested: null
-  package_info_plus: ^5.0.1
+  package_info_plus: ^8.2.1
   riverpod_annotation: ^2.6.1
   settings_ui: ^2.0.2
   slang: ^4.1.0
@@ -69,3 +69,5 @@ flutter_gen:
   assets:
     outputs:
       package_parameter_enabled: true
+
+resolution: workspace
