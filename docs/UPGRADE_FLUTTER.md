@@ -5,14 +5,15 @@
 
 1. `fvm use <upgrade version>` を実行
 2. ルートの`pubspec.yaml` の `sdk`バージョンを更新
-3. `melos.yaml`のbootstrapにある`sdk`, `flutter`部分のバージョンを更新
+3. ルートの`pubspec.yaml` のmelos.bootstrapにある`sdk`, `flutter`部分のバージョンを更新
 
 ```yaml
-command:
-  bootstrap:
-    environment:
-      sdk: ^x.x.x
-      flutter: ^x.x.x
+melos: 
+  command:
+    bootstrap:
+      environment:
+        sdk: ^x.x.x
+        flutter: ^x.x.x
 ```
 
 4. `melos bootstrap`コマンドを実行
