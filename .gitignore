@@ -7,9 +7,6 @@
 !/.idea/runConfigurations/
 /*.iml
 
-# Melos related
-/pubspec_overrides.yaml
-
 # mason related
 /.mason
 

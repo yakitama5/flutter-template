@@ -1,0 +1,10 @@
+# melos_managed_dependency_overrides: cores_domain,infrastructure_firebase,infrastructure_mock,infrastructure_shared_preferences
+dependency_overrides:
+  cores_domain:
+    path: ..\\domain
+  infrastructure_firebase:
+    path: ..\\..\\infrastructure\\firebase
+  infrastructure_mock:
+    path: ..\\..\\infrastructure\\mock
+  infrastructure_shared_preferences:
+    path: ..\\..\\infrastructure\\shared_preferences
