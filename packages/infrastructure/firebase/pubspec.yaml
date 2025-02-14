@@ -40,3 +40,5 @@ dev_dependencies:
   riverpod_generator: ^2.6.1
   riverpod_lint: ^2.6.1
   test: any
+
+resolution: workspace

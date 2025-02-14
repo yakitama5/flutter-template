@@ -16,3 +16,5 @@ dependencies:
 dev_dependencies:
   nilts: any
   pedantic_mono: null
+
+resolution: workspace

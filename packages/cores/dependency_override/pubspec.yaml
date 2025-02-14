@@ -21,3 +21,5 @@ dev_dependencies:
   custom_lint: ^0.7.0
   nilts: any
   pedantic_mono: null
+
+resolution: workspace
