@@ -23,16 +23,15 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
     });
   }
 
-  Future<String?> redirect(
-    GoRouterState routeState,
-  ) async {
+  Future<String?> redirect(GoRouterState routeState) async {
     if (state.isLoading || state.hasError) {
       return null;
     }
     final location = routeState.fullPath ?? '';
     final isSplash = location == const RootRoute().location;
-    final isNotAuthLocations =
-        location.startsWith(const OnboardRoute().location);
+    final isNotAuthLocations = location.startsWith(
+      const OnboardRoute().location,
+    );
 
     // 認証判定
     final authUser = await ref.watch(authStatusProvider.future);
@@ -43,7 +42,8 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
     }
 
     // メンテナンスモード
-    final appMaintenanceStatus = ref.watch(appMaintenanceStatusProvider).value;
+    final appMaintenanceStatus =
+        ref.watch(appMaintenanceStatusProvider).valueOrNull;
     switch (appMaintenanceStatus) {
       case AppMaintenanceStatus.maintenance:
         return MaintenancePageRoute.path;
