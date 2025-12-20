@@ -14,7 +14,7 @@ workspace:
 
 dev_dependencies:
   altive_lints: ^2.0.0
-  flutter_lints:
+  flutter_lints: any
   grinder: ^0.9.5
   melos: ^7.0.0-dev.7
   path: ^1.9.0
