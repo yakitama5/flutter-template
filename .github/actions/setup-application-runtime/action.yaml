@@ -4,30 +4,40 @@ description: "Setup application runtime for Flutter"
 runs:
   using: "composite"
   steps:
+  
     # https://github.com/kuhnroyal/flutter-fvm-config-action
-    - name: Fetch flutter config
-      uses: kuhnroyal/flutter-fvm-config-action@34c3905bc939a4ff9d9cb07d5a977493fa73b2aa # v2.0
+    - name: ⚙️Fetch flutter config
+      uses: kuhnroyal/flutter-fvm-config-action/setup@v3
       id: fvm-config-action
 
     # https://github.com/subosito/flutter-action
-    - name: Setup flutter
+    - name: ⚙️Setup flutter
       uses: subosito/flutter-action@1c5eb12d812966ca84680edc38353a0851c8fd56 # v2.14.0
       with:
         flutter-version: ${{ steps.fvm-config-action.outputs.FLUTTER_VERSION }}
         channel: ${{ steps.fvm-config-action.outputs.FLUTTER_CHANNEL }}
         cache: true
 
-    - name: Activate grinder
+    # NOTE: 後述の melosコマンドが実行できないためPATHを通します。
+    # PUB_CACHE: $HOME/.pub-cache に設定
+    - name: ⚙️Export PUB_CACHE
       run: |
-        GRINDER_VERSION=$(cat pubspec.lock | yq ".packages.grinder.version" -r)
-        dart pub global activate grinder $GRINDER_VERSION
+        echo "PUB_CACHE=$HOME/.pub-cache" >> "$GITHUB_ENV"
+        echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
       shell: bash
 
-    - name: Setup melos
+    - name: 🏃‍➡️Setup melos
       run: |
-        mkdir -p .fvm
-        ln -s $FLUTTER_ROOT .fvm/flutter_sdk
         MELOS_VERSION=$(cat pubspec.lock | yq ".packages.melos.version" -r)
         dart pub global activate melos $MELOS_VERSION
-        melos bootstrap
+        dart run melos bootstrap
+      shell: bash
+
+    - name: 🔥Setup FlutterFire
+      run: |
+        dart pub global activate flutterfire_cli
+      shell: bash
+    
+    - name: ♻️Regenerate Code
+      run: melos run gen
       shell: bash
