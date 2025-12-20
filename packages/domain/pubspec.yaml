@@ -17,12 +17,10 @@ dependencies:
 
 dev_dependencies:
   build_runner: ^2.4.14
-  custom_lint: ^0.7.0
+
   freezed: null
   json_serializable: null
-  nilts: any
-  pedantic_mono: null
+
   riverpod_generator: ^2.6.1
-  riverpod_lint: ^2.6.1
 
 resolution: workspace

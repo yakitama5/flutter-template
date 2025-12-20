@@ -35,10 +35,9 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   json_serializable: null
-  nilts: any
-  pedantic_mono: null
+
   riverpod_generator: ^2.6.1
-  riverpod_lint: ^2.6.1
+
   test: any
 
 resolution: workspace

@@ -1,21 +1,21 @@
-include: package:pedantic_mono/analysis_options.yaml
-
+include: package:altive_lints/altive_lints.yaml
 linter:
   rules:
+    - public_member_api_docs: false
+
+plugins:
+  altive_lints:
+    version: ^2.0.0
+    diagnostics:
+      avoid_hardcoded_color: false
+      avoid_hardcoded_japanese: false
 
 analyzer:
-  # https://riverpod.dev/docs/introduction/getting_started#enabling-riverpod_lintcustom_lint
-  plugins:
-    - custom_lint
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
     - "**/*.gform.dart"
     - "**/firebase_options*.dart"
-    - ".github/**"
-    - "*/functions/*.js"
-    - "tool/**"
-    - "tools/**"
   errors:
     invalid_annotation_target: ignore
     todo: ignore

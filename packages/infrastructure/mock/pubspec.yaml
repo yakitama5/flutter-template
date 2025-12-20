@@ -14,7 +14,5 @@ dependencies:
   riverpod: ^2.6.1
 
 dev_dependencies:
-  nilts: any
-  pedantic_mono: null
 
 resolution: workspace

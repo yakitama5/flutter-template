@@ -13,15 +13,16 @@ workspace:
   - packages/infrastructure/shared_preferences
 
 dev_dependencies:
-  custom_lint: any
+  altive_lints: ^2.0.0
   flutter_lints:
   grinder: ^0.9.5
   melos: ^7.0.0-dev.7
-  nilts: any
   path: ^1.9.0
-  pedantic_mono: any
   yaml: ^3.1.2
   yaml_edit: ^2.2.1
+
+dependency_overrides:
+  analyzer: ^9.0.0
 
 melos:
   sdkPath: .fvm/flutter_sdk
@@ -47,14 +48,10 @@ melos:
       dev_dependencies:
         alchemist: ^0.10.0
         build_runner: ^2.4.14
-        custom_lint: ^0.7.0
         flutter_gen_runner: any
         freezed: any
         json_serializable: any
-        nilts: any
-        pedantic_mono: any
         riverpod_generator: ^2.6.1
-        riverpod_lint: ^2.6.1
         slang_build_runner: ^4.1.0
         test: any
       # hooks:
