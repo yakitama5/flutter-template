@@ -1,5 +1,5 @@
-import 'package:cores_domain/src/user/entity/user.dart';
-import 'package:cores_domain/src/user/interface/user_repository.dart';
+import 'package:domain/src/user/entity/user.dart';
+import 'package:domain/src/user/interface/user_repository.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

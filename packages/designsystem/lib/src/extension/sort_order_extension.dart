@@ -1,5 +1,5 @@
-import 'package:cores_designsystem/i18n/strings.g.dart';
-import 'package:cores_domain/core.dart';
+import 'package:designsystem/i18n/strings.g.dart';
+import 'package:domain/core.dart';
 import 'package:flutter/material.dart';
 
 extension SortOrderX on SortOrder {

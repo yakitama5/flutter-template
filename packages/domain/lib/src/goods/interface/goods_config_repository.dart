@@ -1,4 +1,4 @@
-import 'package:cores_domain/src/designsystem/value_object/view_layout.dart';
+import 'package:domain/src/designsystem/value_object/view_layout.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

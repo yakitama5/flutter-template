@@ -1,4 +1,4 @@
-import 'package:cores_domain/user.dart';
+import 'package:domain/user.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:infrastructure_firebase/src/common/converter/json_key.dart';
 

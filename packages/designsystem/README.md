@@ -1,1 +1,1 @@
-# cores_designsystem package
+# designsystem package

@@ -1,4 +1,4 @@
-import 'package:cores_designsystem/widgets.dart';
+import 'package:designsystem/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
 

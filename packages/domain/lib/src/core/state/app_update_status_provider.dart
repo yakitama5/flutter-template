@@ -1,8 +1,8 @@
-import 'package:cores_domain/src/core/state/app_build_config_provider.dart';
-import 'package:cores_domain/src/core/state/app_latest_version_provider.dart';
-import 'package:cores_domain/src/core/state/force_update_version_provider.dart';
-import 'package:cores_domain/src/core/value_object/app_update_status.dart';
-import 'package:cores_domain/src/util/logger.dart';
+import 'package:domain/src/core/state/app_build_config_provider.dart';
+import 'package:domain/src/core/state/app_latest_version_provider.dart';
+import 'package:domain/src/core/state/force_update_version_provider.dart';
+import 'package:domain/src/core/value_object/app_update_status.dart';
+import 'package:domain/src/util/logger.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

@@ -1,5 +1,5 @@
 import 'package:collection/collection.dart';
-import 'package:cores_domain/designsystem.dart';
+import 'package:domain/designsystem.dart';
 import 'package:infrastructure_shared_preferences/common.dart';
 import 'package:infrastructure_shared_preferences/src/common/enum/preferences.dart';
 import 'package:riverpod/riverpod.dart';

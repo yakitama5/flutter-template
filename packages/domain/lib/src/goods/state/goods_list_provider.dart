@@ -1,8 +1,8 @@
 import 'dart:async';
 
-import 'package:cores_domain/core.dart';
-import 'package:cores_domain/goods.dart';
-import 'package:cores_domain/src/util/logger.dart';
+import 'package:domain/core.dart';
+import 'package:domain/goods.dart';
+import 'package:domain/src/util/logger.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

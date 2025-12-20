@@ -1,6 +1,6 @@
-import 'package:cores_dependency_override/dependency_override.dart';
-import 'package:cores_designsystem/i18n.dart';
-import 'package:cores_domain/core.dart';
+import 'package:dependency_override/dependency_override.dart';
+import 'package:designsystem/i18n.dart';
+import 'package:domain/core.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/router/routes/base_shell_route.dart';

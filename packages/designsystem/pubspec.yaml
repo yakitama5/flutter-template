@@ -1,4 +1,4 @@
-name: cores_designsystem
+name: designsystem
 description: "This package provides style definitions, themes, etc."
 publish_to: "none"
 version: 0.0.1
@@ -11,7 +11,7 @@ dependencies:
   adaptive_dialog: ^2.4.0
   animations: null
   collection: null
-  cores_domain:
+  domain:
     path: ../domain
   dynamic_color: null
   flutter:

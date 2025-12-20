@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   collection: any
-  cores_domain:
+  domain:
     path: ../../cores/domain
   flutter:
     sdk: flutter

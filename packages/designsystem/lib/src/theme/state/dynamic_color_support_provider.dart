@@ -1,4 +1,4 @@
-import 'package:cores_designsystem/src/theme/model/dynamic_color_support_status.dart';
+import 'package:designsystem/src/theme/model/dynamic_color_support_status.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';

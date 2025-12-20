@@ -1,4 +1,4 @@
-import 'package:cores_domain/designsystem.dart';
+import 'package:domain/designsystem.dart';
 import 'package:flutter/material.dart';
 
 extension UIStyleX on UIStyle {

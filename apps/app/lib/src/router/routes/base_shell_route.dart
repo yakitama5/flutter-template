@@ -1,5 +1,5 @@
-import 'package:cores_designsystem/keys.dart';
-import 'package:cores_designsystem/widgets.dart';
+import 'package:designsystem/keys.dart';
+import 'package:designsystem/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/home/pages/onboard_page.dart';
 import 'package:flutter_app/src/router/routes/branches/home_shell_branch.dart';

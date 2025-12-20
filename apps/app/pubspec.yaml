@@ -10,11 +10,11 @@ environment:
 dependencies:
   adaptive_dialog: ^2.4.0
   animated_to: ^0.2.0
-  cores_dependency_override:
+  dependency_override:
     path: ../../packages/cores/dependency_override
-  cores_designsystem:
+  designsystem:
     path: ../../packages/cores/designsystem
-  cores_domain:
+  domain:
     path: ../../packages/cores/domain
   cupertino_icons: null
   device_preview: ^1.2.0

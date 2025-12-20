@@ -1,4 +1,4 @@
-import 'package:cores_domain/src/core/value_object/sort_order.dart';
+import 'package:domain/src/core/value_object/sort_order.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'goods_sort_key.dart';

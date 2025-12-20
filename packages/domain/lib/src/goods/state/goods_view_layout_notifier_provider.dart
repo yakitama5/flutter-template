@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:cores_domain/goods.dart';
-import 'package:cores_domain/src/designsystem/value_object/view_layout.dart';
+import 'package:domain/goods.dart';
+import 'package:domain/src/designsystem/value_object/view_layout.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'goods_view_layout_notifier_provider.g.dart';

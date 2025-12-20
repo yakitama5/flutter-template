@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:cores_designsystem/src/extension/app_theme_mode_extension.dart';
-import 'package:cores_domain/designsystem.dart';
+import 'package:designsystem/src/extension/app_theme_mode_extension.dart';
+import 'package:domain/designsystem.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

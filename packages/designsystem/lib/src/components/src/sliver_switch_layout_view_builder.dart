@@ -1,4 +1,4 @@
-import 'package:cores_domain/designsystem.dart';
+import 'package:domain/designsystem.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:sliver_tools/sliver_tools.dart';

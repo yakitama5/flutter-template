@@ -1,5 +1,5 @@
-import 'package:cores_domain/core.dart';
-import 'package:cores_domain/user.dart';
+import 'package:domain/core.dart';
+import 'package:domain/user.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/router/routes/base_shell_route.dart';
 import 'package:flutter_app/src/router/routes/branches/home_shell_branch.dart';

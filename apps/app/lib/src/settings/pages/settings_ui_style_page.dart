@@ -1,7 +1,7 @@
-import 'package:cores_designsystem/extension.dart';
-import 'package:cores_designsystem/i18n.dart';
-import 'package:cores_designsystem/theme.dart';
-import 'package:cores_domain/designsystem.dart';
+import 'package:designsystem/extension.dart';
+import 'package:designsystem/i18n.dart';
+import 'package:designsystem/theme.dart';
+import 'package:domain/designsystem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';

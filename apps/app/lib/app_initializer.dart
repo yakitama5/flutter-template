@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:cores_domain/core.dart';
-import 'package:cores_domain/util.dart';
+import 'package:domain/core.dart';
+import 'package:domain/util.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:version/version.dart';
 

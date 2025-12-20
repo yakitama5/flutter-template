@@ -1,5 +1,5 @@
-import 'package:cores_designsystem/i18n.dart';
-import 'package:cores_designsystem/theme.dart';
+import 'package:designsystem/i18n.dart';
+import 'package:designsystem/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:flutter_app/src/router/routes/base_shell_route.dart';

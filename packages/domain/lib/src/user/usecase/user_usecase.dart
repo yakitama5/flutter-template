@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:cores_domain/src/core/usecase/run_usecase_mixin.dart';
+import 'package:domain/src/core/usecase/run_usecase_mixin.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

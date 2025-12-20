@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:cores_designsystem/src/theme/model/dynamic_color_support_status.dart';
-import 'package:cores_domain/designsystem.dart';
+import 'package:designsystem/src/theme/model/dynamic_color_support_status.dart';
+import 'package:domain/designsystem.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'dynamic_color_support_provider.dart';

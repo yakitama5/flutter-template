@@ -1,4 +1,4 @@
-import 'package:cores_domain/core.dart';
+import 'package:domain/core.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:nested/nested.dart';

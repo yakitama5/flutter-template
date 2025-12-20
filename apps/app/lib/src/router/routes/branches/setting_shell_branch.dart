@@ -1,4 +1,4 @@
-import 'package:cores_designsystem/common_assets.dart';
+import 'package:designsystem/common_assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/src/settings/pages/settings_account_page.dart';
 import 'package:flutter_app/src/settings/pages/settings_page.dart';

@@ -9,7 +9,7 @@ lazy: false
 # Config
 imports:
   - "package:flutter/material.dart"
-  - "package:cores_domain/goods.dart"
+  - "package:domain/goods.dart"
 contexts:
   ThemeMode:
     generate_enum: false

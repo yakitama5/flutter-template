@@ -1,6 +1,6 @@
-import 'package:cores_designsystem/widgets.dart';
-import 'package:cores_domain/designsystem.dart';
-import 'package:cores_domain/goods.dart';
+import 'package:designsystem/widgets.dart';
+import 'package:domain/designsystem.dart';
+import 'package:domain/goods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';

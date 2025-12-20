@@ -1,4 +1,4 @@
-import 'package:cores_domain/user.dart';
+import 'package:domain/user.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/foundation.dart';
 import 'package:infrastructure_firebase/src/common/extension/firebase_auth_user_extension.dart';

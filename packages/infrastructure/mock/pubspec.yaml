@@ -9,7 +9,7 @@ environment:
 dependencies:
   clock: ^1.1.1
   collection: any
-  cores_domain:
+  domain:
     path: ../../cores/domain
   riverpod: ^2.6.1
 

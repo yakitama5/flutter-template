@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:cores_domain/designsystem.dart';
+import 'package:domain/designsystem.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'ui_style_notifier_provider.g.dart';

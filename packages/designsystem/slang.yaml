@@ -8,9 +8,9 @@ lazy: false
 
 # Config
 imports:
-  - "package:cores_domain/designsystem.dart"
+  - "package:domain/designsystem.dart"
   - "package:flutter/material.dart"
-  - "package:cores_domain/core.dart"
+  - "package:domain/core.dart"
 contexts:
   UIStyle:
     generate_enum: false

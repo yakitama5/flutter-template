@@ -1,4 +1,4 @@
-name: cores_dependency_override
+name: dependency_override
 description: "This package provides core features of app."
 publish_to: "none"
 version: 0.0.1
@@ -7,7 +7,7 @@ environment:
   sdk: ^3.7.0
 
 dependencies:
-  cores_domain:
+  domain:
     path: ../domain
   infrastructure_firebase:
     path: ../../infrastructure/firebase

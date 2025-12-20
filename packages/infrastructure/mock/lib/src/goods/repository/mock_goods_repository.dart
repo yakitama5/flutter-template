@@ -4,8 +4,8 @@ import 'dart:math';
 
 import 'package:clock/clock.dart';
 import 'package:collection/collection.dart';
-import 'package:cores_domain/core.dart';
-import 'package:cores_domain/goods.dart';
+import 'package:domain/core.dart';
+import 'package:domain/goods.dart';
 import 'package:riverpod/riverpod.dart';
 
 const _totalLength = 100;

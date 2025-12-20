@@ -28,7 +28,7 @@ class $AssetsImagesGen {
 class Assets {
   Assets._();
 
-  static const String package = 'cores_designsystem';
+  static const String package = 'designsystem';
 
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
@@ -42,7 +42,7 @@ class AssetGenImage {
 
   final String _assetName;
 
-  static const String package = 'cores_designsystem';
+  static const String package = 'designsystem';
 
   final Size? size;
   final Set<String> flavors;
@@ -115,7 +115,7 @@ class AssetGenImage {
 
   String get path => _assetName;
 
-  String get keyName => 'packages/cores_designsystem/$_assetName';
+  String get keyName => 'packages/designsystem/$_assetName';
 }
 
 class SvgGenImage {
@@ -136,7 +136,7 @@ class SvgGenImage {
   final Set<String> flavors;
   final bool _isVecFormat;
 
-  static const String package = 'cores_designsystem';
+  static const String package = 'designsystem';
 
   _svg.SvgPicture svg({
     Key? key,
@@ -195,5 +195,5 @@ class SvgGenImage {
 
   String get path => _assetName;
 
-  String get keyName => 'packages/cores_designsystem/$_assetName';
+  String get keyName => 'packages/designsystem/$_assetName';
 }
