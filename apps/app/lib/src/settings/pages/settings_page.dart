@@ -2,7 +2,6 @@ import 'package:designsystem/i18n.dart';
 import 'package:designsystem/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/i18n/strings.g.dart';
-import 'package:flutter_app/src/router/routes/base_shell_route.dart';
 import 'package:flutter_app/src/router/routes/branches/setting_shell_branch.dart';
 import 'package:flutter_settings_ui/flutter_settings_ui.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';

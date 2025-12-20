@@ -8,7 +8,9 @@
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": "off",
-    "editor.rulers": [80],
+    "editor.rulers": [
+      80
+    ],
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
       "source.organizeImports": "explicit",
@@ -63,7 +65,7 @@
     "*.dart": "$(capture).g.dart, $(capture).freezed.dart, $(capture).gform.dart",
     "*_ja.i18n.yaml": "$(capture)_*.i18n.yaml"
   },
-  "dart.flutterSdkPath": ".fvm/versions/3.38.3",
+  "dart.flutterSdkPath": ".fvm/versions/3.38.5",
   "dart.sdkPath": ".fvm/flutter_sdk/bin/cache/dart-sdk",
   "github.copilot.enable": {
     "*": false
@@ -81,5 +83,7 @@
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
-  "vscodeGitCommit.template": ["{prefix}: {message}"]
+  "vscodeGitCommit.template": [
+    "{prefix}: {message}"
+  ]
 }

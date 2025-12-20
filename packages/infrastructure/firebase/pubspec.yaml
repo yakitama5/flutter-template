@@ -4,15 +4,15 @@ version: 0.0.1
 publish_to: "none"
 
 environment:
-  sdk: ^3.7.0
-  flutter: ^3.29.0
+  sdk: ^3.10.4
+  flutter: ^3.38.5
 
 dependencies:
   cloud_firestore: null
   cloud_functions: null
   collection: null
   domain:
-    path: ../../cores/domain
+    path: ../../domain
   firebase_analytics: null
   firebase_app_check: null
   firebase_auth: null

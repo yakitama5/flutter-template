@@ -4,13 +4,13 @@ version: 0.0.1
 publish_to: "none"
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.10.4
 
 dependencies:
   clock: ^1.1.1
   collection: any
   domain:
-    path: ../../cores/domain
+    path: ../../domain
   riverpod: ^2.6.1
 
 dev_dependencies:

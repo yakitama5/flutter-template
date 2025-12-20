@@ -4,13 +4,13 @@ version: 0.0.1
 publish_to: "none"
 
 environment:
-  sdk: ^3.7.0
-  flutter: ^3.29.0
+  sdk: ^3.10.4
+  flutter: ^3.38.5
 
 dependencies:
   collection: any
   domain:
-    path: ../../cores/domain
+    path: ../../domain
   flutter:
     sdk: flutter
   riverpod: ^2.6.1

@@ -4,20 +4,20 @@ publish_to: "none"
 version: 0.0.1
 
 environment:
-  sdk: ^3.7.0
-  flutter: ^3.29.0
+  sdk: ^3.10.4
+  flutter: ^3.38.5
 
 dependencies:
   adaptive_dialog: ^2.4.0
   animated_to: ^0.2.0
-  dependency_override:
-    path: ../../packages/cores/dependency_override
-  designsystem:
-    path: ../../packages/cores/designsystem
-  domain:
-    path: ../../packages/cores/domain
   cupertino_icons: null
+  dependency_override:
+    path: ../../packages/dependency_override
+  designsystem:
+    path: ../../packages/designsystem
   device_preview: ^1.2.0
+  domain:
+    path: ../../packages/domain
   dynamic_color: ^1.7.0
   flutter:
     sdk: flutter

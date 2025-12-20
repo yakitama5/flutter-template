@@ -4,17 +4,17 @@ publish_to: "none"
 version: 0.0.1
 
 environment:
-  sdk: ^3.7.0
+  sdk: ^3.10.4
 
 dependencies:
   domain:
     path: ../domain
   infrastructure_firebase:
-    path: ../../infrastructure/firebase
+    path: ../infrastructure/firebase
   infrastructure_mock:
-    path: ../../infrastructure/mock
+    path: ../infrastructure/mock
   infrastructure_shared_preferences:
-    path: ../../infrastructure/shared_preferences
+    path: ../infrastructure/shared_preferences
   riverpod: ^2.6.1
 
 dev_dependencies:

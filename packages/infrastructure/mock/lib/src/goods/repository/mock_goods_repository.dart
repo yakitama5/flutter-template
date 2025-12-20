@@ -43,7 +43,7 @@ class MockGoodsRepository extends GoodsRepository {
 
   final Ref ref;
 
-  static final items = List.generate(
+  static final List<Goods> items = List.generate(
     _totalLength,
     (i) {
       return Goods(
