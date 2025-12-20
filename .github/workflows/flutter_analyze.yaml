@@ -22,7 +22,7 @@ jobs:
     name: 🔬Analyze
 
     # 一時的な無効化
-    # if: ${{ false }}
+    if: ${{ false }}
 
     # ジョブを実行するOS
     runs-on: ubuntu-latest
