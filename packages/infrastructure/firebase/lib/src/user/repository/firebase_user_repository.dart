@@ -25,10 +25,11 @@ class FirebaseUserRepository implements UserRepository {
         .read(userDocumentRefProvider(userId: userId))
         .snapshots()
         .where((s) {
-      // 読み込み中のドキュメントが存在する場合はスキップ
-      final doc = s.data();
-      return doc == null || !doc.fieldValuePending;
-    }).map((snap) => snap.data()?.toDomainModel());
+          // 読み込み中のドキュメントが存在する場合はスキップ
+          final doc = s.data();
+          return doc == null || !doc.fieldValuePending;
+        })
+        .map((snap) => snap.data()?.toDomainModel());
   }
 
   @override
@@ -74,8 +75,9 @@ class FirebaseUserRepository implements UserRepository {
   @override
   Future<AuthStatus> signInAnonymously() async {
     // 匿名ログイン
-    final credential =
-        await ref.watch(firebaseAuthProvider).signInAnonymously();
+    final credential = await ref
+        .watch(firebaseAuthProvider)
+        .signInAnonymously();
 
     // 結果を変換
     return credential.user!.authStatus;
@@ -84,8 +86,9 @@ class FirebaseUserRepository implements UserRepository {
   @override
   Future<AuthStatus> signInWithApple() async {
     // プラットフォームに応じた認証
-    final credential =
-        await (kIsWeb ? _signInWithAppleByWeb() : _signInWithAppleByMobile());
+    final credential = await (kIsWeb
+        ? _signInWithAppleByWeb()
+        : _signInWithAppleByMobile());
 
     // ドキュメントが存在しなければ登録
     final authUser = credential.user!;
@@ -97,8 +100,9 @@ class FirebaseUserRepository implements UserRepository {
 
   @override
   Future<AuthStatus> signInWithGoogle() async {
-    final credential =
-        await (kIsWeb ? _signInWithGoogleByWeb() : _signInWithGoogleByMobile());
+    final credential = await (kIsWeb
+        ? _signInWithGoogleByWeb()
+        : _signInWithGoogleByMobile());
 
     // ドキュメントが存在しなければ登録
     final authUser = credential.user!;
@@ -165,12 +169,11 @@ class FirebaseUserRepository implements UserRepository {
 
   /// Mobile用のGoogleサインイン
   Future<auth.UserCredential> _signInWithGoogleByMobile() async {
-    final googleUser = await ref.watch(googleSignInProvider).signIn();
+    final googleSignIn = ref.read(googleSignInProvider);
+    final account = await googleSignIn.authenticate();
 
-    final googleAuth = await googleUser?.authentication;
     final credential = auth.GoogleAuthProvider.credential(
-      accessToken: googleAuth?.accessToken,
-      idToken: googleAuth?.idToken,
+      idToken: account.authentication.idToken,
     );
 
     // 現在のユーザー情報があれば連携する

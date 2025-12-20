@@ -29,8 +29,10 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
               title: Text(i18n.settings.accountPage.link.head),
               tiles: [
                 SettingsTile.switchTile(
-                  leading:
-                      CommonAssets.images.google.svg(width: 24, height: 24),
+                  leading: CommonAssets.images.google.svg(
+                    width: 24,
+                    height: 24,
+                  ),
                   title: Text(i18n.settings.accountPage.link.google),
                   initialValue: data?.linkedGoogle,
                   onToggle: (value) => _onToggleGoogle(context, ref, value),
@@ -75,35 +77,31 @@ class SettingsAccountPage extends HookConsumerWidget with PresentationMixin {
     BuildContext context,
     WidgetRef ref,
     bool value,
-  ) async =>
-      execute(
-        action: () {
-          final usecase = ref.read(userUsecaseProvider);
+  ) async => execute(
+    action: () {
+      final usecase = ref.read(userUsecaseProvider);
 
-          // トグルの状態に合わせてユースケースを変更する
-          return value
-              ? usecase.signInWithGoogle()
-              : usecase.unlinkWithGoogle();
-        },
-      );
+      // トグルの状態に合わせてユースケースを変更する
+      return value ? usecase.signInWithGoogle() : usecase.unlinkWithGoogle();
+    },
+  );
 
   Future<void> _onToggleApple(
     BuildContext context,
     WidgetRef ref,
     bool value,
-  ) =>
-      execute(
-        action: () {
-          final usecase = ref.read(userUsecaseProvider);
+  ) => execute(
+    action: () {
+      final usecase = ref.read(userUsecaseProvider);
 
-          // トグルの状態に合わせてユースケースを変更する
-          return value ? usecase.signInWithApple() : usecase.unlinkWithApple();
-        },
-      );
+      // トグルの状態に合わせてユースケースを変更する
+      return value ? usecase.signInWithApple() : usecase.unlinkWithApple();
+    },
+  );
 
   Future<void> _onLogout(BuildContext context, WidgetRef ref) => execute(
-        action: () => ref.read(userUsecaseProvider).signOut(),
-      );
+    action: () => ref.read(userUsecaseProvider).signOut(),
+  );
 
   Future<void> _onDeleteAccount(BuildContext context, WidgetRef ref) async {
     // 削除確認
