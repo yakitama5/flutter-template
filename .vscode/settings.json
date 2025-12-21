@@ -8,9 +8,7 @@
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "editor.tabCompletion": "onlySnippets",
     "editor.wordBasedSuggestions": "off",
-    "editor.rulers": [
-      80
-    ],
+    "editor.rulers": [80],
     "editor.codeActionsOnSave": {
       "source.fixAll": "explicit",
       "source.organizeImports": "explicit",
@@ -31,7 +29,8 @@
     "**/.kotlin": true,
     "**/.linux": true,
     "**/.windows": true,
-    "**/.macos": true
+    "**/.macos": true,
+    "**/tools": true
   },
   "files.watcherExclude": {
     "**/.fvm": true,
@@ -47,7 +46,8 @@
     "**/web": true,
     "**/.linux": true,
     "**/.windows": true,
-    "**/.macos": true
+    "**/.macos": true,
+    "**/tools": true
   },
   "files.exclude": {
     "**/.fvm": true,
@@ -83,7 +83,5 @@
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
-  "vscodeGitCommit.template": [
-    "{prefix}: {message}"
-  ]
+  "vscodeGitCommit.template": ["{prefix}: {message}"]
 }
