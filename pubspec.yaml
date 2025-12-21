@@ -54,8 +54,6 @@ melos:
         riverpod_generator: ^2.6.1
         slang_build_runner: ^4.1.0
         test: any
-      # hooks:
-      #   post: grind generate-package-labels && grind generate-package-labeler
     clean:
       hooks:
         post: melos exec --flutter --concurrency=3 -- "flutter clean"
@@ -63,65 +61,123 @@ melos:
           melos exec --flutter --file-exists="macos/Podfile.lock" -- "cd macos && rm Podfile.lock"
 
   scripts:
-    build_app: melos run build_app_android && melos run build_app_ios
-    build_app_dev: melos run build_app_android_dev && melos run build_app_ios_dev
+    # ビルド関連
+    build:app:
+      description: 各プラットフォーム毎にモバイルアプリをビルドする
+      stpes:
+        - build:app:android
+        - build:app:ios
+    build:app:ios:
+      description: Android向けにモバイルアプリをビルドする
+      run: melos exec --scope="flutter_app" -- flutter build ipa
+        --export-options-plist=ExportOptions.plist
+        --dart-define-from-file=flavor/prod.json
+    build:app:android:
+      description: iOS向けにモバイルアプリをビルドする
+      run: melos exec --scope="flutter_app" -- flutter build
+        appbundle --dart-define-from-file=flavor/prod.json
 
-    build_app_ios: melos exec --scope="flutter_app" -- fvm flutter build ipa --export-options-plist=ExportOptions.plist --dart-define-from-file=flavor/prod.json
-    build_app_ios_dev: melos exec --scope="flutter_app" -- fvm flutter build ipa --export-options-plist=ExportOptions.plist --dart-define-from-file=flavor/dev.json
-    build_app_android: melos exec --scope="flutter_app" -- fvm flutter build appbundle --dart-define-from-file=flavor/prod.json
-    build_app_android_dev: melos exec --scope="flutter_app" -- fvm flutter build appbundle --dart-define-from-file=flavor/dev.json
+    # コード生成関連
+    gen:
+      description: build_runner, slangの生成コマンドを実行する
+      steps:
+        - gen:build
+        - gen:slang
 
-    report_test:
-      exec: flutter test --no-pub --machine > test_report.log
-      packageFilters:
-        flutter: true
-        dependsOn: test
-
-    # ローカルでフォーマットとdart fix --applyを実行する
-    format_and_fix:
-      exec: bash "$MELOS_ROOT_PATH/scripts/format.sh"
-
-    report_custom_lint:ci:
-      exec: bash "$MELOS_ROOT_PATH/scripts/report-custom-lint-ci.sh"
-      packageFilters:
-        dependsOn: custom_lint
-
-    regenerate_code: melos run regenerate_by_using_build_runner && melos run regenerate_by_using_gen_slang
-
-    regenerate_by_using_build_runner:
+    gen:build:
+      description: build_runner を使用してコードを生成する
       run: dart run build_runner build -d
       exec:
         orderDependents: true
       packageFilters:
         dependsOn: build_runner
-
-    regenerate_by_using_gen_slang:
-      run: dart run slang
-      exec:
-        orderDependents: true
-      packageFilters:
-        dependsOn: slang
-
-    watch_build_runner:
+    gen:build:watch:
+      description: build_runner watch を使用して、変更箇所を検知しつつコードを生成する。
       run: dart run build_runner watch -d
       exec:
         orderDependents: true
       packageFilters:
         dependsOn: build_runner
 
-    test_golden:
+    gen:slang:
+      description: slang を使用してコードを生成する
+      run: dart run slang
+      exec:
+        orderDependents: true
+      packageFilters:
+        dependsOn: slang
+    gen:slang:watch:
+      description: slang watch を使用して、変更箇所を検知しつつコードを生成する。
+      run: dart run slang watch
+      exec:
+        orderDependents: true
+      packageFilters:
+        dependsOn: slang
+
+    gen:diff:main:
+      description: main ブランチと差分のあるパッケージのみ build_runner と i18n の生成コマンドを実行します。
+      steps:
+        - gen:build:diff:main
+        - gen:i18n:diff:main
+    gen:build:diff:main:
+      description: main ブランチと差分のあるパッケージのみ build_runner を使用してコードを生成します。
+      run: dart run build_runner build -d
+      exec:
+        orderDependents: true
+      packageFilters:
+        dependsOn: build_runner
+        diff: origin/main...HEAD
+    gen:slang:diff:main:
+      description: main ブランチと差分のあるパッケージのみ slang を使用して国際化ファイルを生成します。
+      run: dart run slang
+      exec:
+        orderDependents: true
+      packageFilters:
+        dependsOn: slang
+        diff: origin/main...HEAD
+
+    # dart fix関連
+    fix:
+      exec: dart fix --apply lib
+      description: Run dart fix.
+      packageFilters:
+        dirExists: lib
+    fix:check:
+      exec: dart fix --dry-run lib
+      description: Check dart fix.
+      packageFilters:
+        dirExists: lib
+    fix:custom:
+      description: すべてのパッケージに custom_lint の fix を実行します。
+      exec: dart run custom_lint --fix
+      packageFilters:
+        dirExists: lib
+        dependsOn: custom_lint
+
+    # テスト関連
+    test:golden:
       run: flutter test --tags=golden
       exec:
         orderDependents: true
       packageFilters:
         dependsOn: alchemist
-
-    test_update_golden:
+        dirExists:
+          - test
+    test:golden:update:
       run: flutter test --update-goldens
       exec:
         orderDependents: true
       packageFilters:
         dependsOn: alchemist
+        dirExists:
+          - test
+    test:ci:
+      run: flutter test --dart-define=CI=true
+      exec:
+        failFast: true
+      packageFilters:
+        dirExists:
+          - test
 
   ide:
     intellij:
