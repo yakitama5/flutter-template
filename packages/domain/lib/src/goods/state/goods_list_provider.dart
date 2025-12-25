@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:domain/core.dart';
 import 'package:domain/goods.dart';
 import 'package:domain/src/util/logger.dart';
+import 'package:packages_core/extension.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -18,7 +19,9 @@ Stream<PageInfo<Goods>> goodsList(
   logger.d('GoodsListProvider: $page');
   ref.cacheFor(const Duration(seconds: 30));
 
-  return ref.watch(goodsRepositoryProvider).listenGoodsList(
+  return ref
+      .watch(goodsRepositoryProvider)
+      .listenGoodsList(
         page: page,
         query: query,
       );

@@ -11,6 +11,8 @@ dependencies:
   intl: null
   json_annotation: null
   logger: null
+  packages_core:
+    path: ../core
   riverpod: ^2.6.1
   riverpod_annotation: ^2.6.1
   version: null
