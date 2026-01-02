@@ -52,9 +52,10 @@ melos:
         test: any
     clean:
       hooks:
-        post: melos exec --flutter --concurrency=3 -- "flutter clean"
-          melos exec --flutter --file-exists="ios/Podfile.lock" -- "cd ios && rm Podfile.lock"
-          melos exec --flutter --file-exists="macos/Podfile.lock" -- "cd macos && rm Podfile.lock"
+        post: melos exec --flutter --concurrency=3 -- "flutter clean" melos exec
+          --flutter --file-exists="ios/Podfile.lock" -- "cd ios && rm
+          Podfile.lock" melos exec --flutter --file-exists="macos/Podfile.lock"
+          -- "cd macos && rm Podfile.lock"
 
   scripts:
     # ビルド関連
@@ -70,8 +71,8 @@ melos:
         --dart-define-from-file=flavor/prod.json
     build:app:android:
       description: iOS向けにモバイルアプリをビルドする
-      run: melos exec --scope="flutter_app" -- flutter build
-        appbundle --dart-define-from-file=flavor/prod.json
+      run: melos exec --scope="flutter_app" -- flutter build appbundle
+        --dart-define-from-file=flavor/prod.json
 
     # コード生成関連
     gen:
