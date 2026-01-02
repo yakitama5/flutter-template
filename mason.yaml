@@ -1,7 +1,0 @@
-bricks:
-  infrastructure_package_core:
-    path: tools/bricks/infrastructure_package_core
-  infrastructure_package:
-    path: tools/bricks/infrastructure_package
-  brick:
-    path: tools/bricks/brick
