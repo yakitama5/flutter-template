@@ -5,7 +5,7 @@ environment:
 
 workspace:
   - apps/app
-  - packages/core
+  - packages/foundation
   - packages/dependency_override
   - packages/designsystem
   - packages/domain

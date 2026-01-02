@@ -2,8 +2,6 @@ import 'dart:async';
 
 import 'package:domain/core.dart';
 import 'package:domain/goods.dart';
-import 'package:domain/src/util/logger.dart';
-import 'package:packages_core/extension.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

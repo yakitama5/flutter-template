@@ -1,4 +1,4 @@
-name: packages_core
+name: packages_foundation
 description: "This package provides core features of app."
 publish_to: "none"
 version: 0.0.1
