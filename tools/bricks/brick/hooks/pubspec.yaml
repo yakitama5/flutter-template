@@ -1,7 +1,0 @@
-name: brick_hooks
-
-environment:
-  sdk: ^3.6.1
-
-dependencies:
-  mason: "^0.1.0"
