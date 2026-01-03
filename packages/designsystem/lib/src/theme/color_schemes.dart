@@ -367,6 +367,7 @@ class ExtendedColor {
     required this.darkHighContrast,
     required this.darkMediumContrast,
   });
+
   final Color seed;
   final Color value;
   final ColorFamily light;
