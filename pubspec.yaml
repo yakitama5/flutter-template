@@ -16,6 +16,7 @@ workspace:
 dev_dependencies:
   altive_lints: ^2.0.0
   flutter_lints: any
+  melos: ^7.3.0
 
 dependency_overrides:
   analyzer: ^9.0.0
@@ -33,21 +34,21 @@ melos:
         flutter_hooks: any
         freezed_annotation: any
         go_router: any
-        hooks_riverpod: ^2.6.1
+        hooks_riverpod: ^3.1.0
         intl: any
         json_annotation: any
         logger: any
-        riverpod: ^2.6.1
-        riverpod_annotation: ^2.6.1
-        slang: ^4.1.0
-        slang_flutter: ^4.1.0
+        riverpod: ^3.1.0
+        riverpod_annotation: ^4.0.0
+        slang: ^4.11.1
+        slang_flutter: ^4.11.1
       dev_dependencies:
         alchemist: ^0.10.0
-        build_runner: ^2.4.14
+        build_runner: ^2.10.4
         flutter_gen_runner: any
         freezed: any
         json_serializable: any
-        riverpod_generator: ^2.6.1
+        riverpod_generator: ^4.0.0
         slang_build_runner: ^4.1.0
         test: any
     clean:
