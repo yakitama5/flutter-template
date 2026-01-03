@@ -90,6 +90,7 @@ class _StartButton extends ConsumerWidget with PresentationMixin {
 
 class _SignInWithGoogleButton extends ConsumerWidget with PresentationMixin {
   const _SignInWithGoogleButton();
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return WidthFillBox(
@@ -106,6 +107,7 @@ class _SignInWithGoogleButton extends ConsumerWidget with PresentationMixin {
 
 class _SignInWithAppleButton extends ConsumerWidget with PresentationMixin {
   const _SignInWithAppleButton();
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final cs = Theme.of(context).colorScheme;

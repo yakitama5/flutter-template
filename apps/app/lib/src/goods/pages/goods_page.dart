@@ -91,8 +91,9 @@ class _SliverBody extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 先頭ページを固定で取得
     // エラーハンドリングはコンテンツ取得部分で行うため`valueOrNull`で無視する
-    final result =
-        ref.watch(goodsListProvider(page: 1, query: query)).valueOrNull;
+    final result = ref
+        .watch(goodsListProvider(page: 1, query: query))
+        .valueOrNull;
 
     return SliverSwitchLayoutViewBuilder(
       viewLayout: viewLayout,
@@ -110,15 +111,15 @@ class _SliverBody extends HookConsumerWidget {
               final item = data.items[indexInPage];
               return switch (viewLayout) {
                 ViewLayout.grid => GoodsCard(
-                    key: ValueKey(item),
-                    item: item,
-                    onTap: action,
-                  ),
+                  key: ValueKey(item),
+                  item: item,
+                  onTap: action,
+                ),
                 ViewLayout.list => GoodsListTile(
-                    key: ValueKey(item),
-                    item: item,
-                    onTap: action,
-                  ),
+                  key: ValueKey(item),
+                  item: item,
+                  onTap: action,
+                ),
               };
             },
           ),
@@ -140,6 +141,7 @@ class _SliverBody extends HookConsumerWidget {
 
 class _ShimmerTile extends StatelessWidget {
   const _ShimmerTile({required this.viewLayout});
+
   final ViewLayout viewLayout;
 
   @override
