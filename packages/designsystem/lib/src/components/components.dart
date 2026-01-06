@@ -1,4 +1,4 @@
-export 'src/app_update_listner.dart';
+export 'src/app_update_listener.dart';
 export 'src/bottom_sheet_action_chip.dart';
 export 'src/brightness_scope.dart';
 export 'src/cards.dart';
