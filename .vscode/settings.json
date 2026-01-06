@@ -83,5 +83,6 @@
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
   },
-  "vscodeGitCommit.template": ["{prefix}: {message}"]
+  "vscodeGitCommit.template": ["{prefix}: {message}"],
+  "cSpell.words": ["altive", "appbundle", "designsystem", "goldens", "usecase"]
 }
