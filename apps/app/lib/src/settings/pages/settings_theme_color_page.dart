@@ -12,9 +12,7 @@ import '../components/src/settings_radio_list_tile.dart';
 import '../components/src/settings_radio_scaffold.dart';
 
 class SettingsThemeColorPage extends HookConsumerWidget {
-  const SettingsThemeColorPage({
-    super.key,
-  });
+  const SettingsThemeColorPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -26,7 +24,7 @@ class SettingsThemeColorPage extends HookConsumerWidget {
         },
       ),
     );
-    final initialValue = ref.watch(themeColorNotifierProvider);
+    final initialValue = ref.watch(themeColorProvider);
     final selected = useState<ThemeColor?>(initialValue);
 
     // ダイナミックカラーが対象外の場合は除外する
@@ -49,9 +47,9 @@ class SettingsThemeColorPage extends HookConsumerWidget {
           leading: switch (themeColor) {
             ThemeColor.dynamicColor => const Icon(Icons.person),
             ThemeColor.appColor => CommonAssets.images.logo.image(
-                height: 24,
-                width: 24,
-              ),
+              height: 24,
+              width: 24,
+            ),
             // 参考カラーを表示
             ThemeColor.blue ||
             ThemeColor.purple ||
@@ -59,18 +57,15 @@ class SettingsThemeColorPage extends HookConsumerWidget {
             ThemeColor.red ||
             ThemeColor.pink ||
             ThemeColor.yellow ||
-            ThemeColor.orange =>
-              SizedBox(
-                height: 24,
-                width: 24,
-                child: ColoredBox(
-                  color: themeColor.seedColor!,
-                ),
-              ),
+            ThemeColor.orange => SizedBox(
+              height: 24,
+              width: 24,
+              child: ColoredBox(color: themeColor.seedColor!),
+            ),
           },
           onChanged: (value) {
             selected.value = themeColor;
-            ref.read(themeColorNotifierProvider.notifier).update(themeColor);
+            ref.read(themeColorProvider.notifier).update(themeColor);
           },
         );
       }).toList(),

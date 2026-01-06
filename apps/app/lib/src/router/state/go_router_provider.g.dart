@@ -2,7 +2,7 @@
 
 // ignore_for_file: type=lint, duplicate_ignore
 
-part of 'initial_location_provider.dart';
+part of 'go_router_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -11,43 +11,43 @@ part of 'initial_location_provider.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(initialLocation)
-final initialLocationProvider = InitialLocationProvider._();
+@ProviderFor(goRouter)
+final goRouterProvider = GoRouterProvider._();
 
-final class InitialLocationProvider
-    extends $FunctionalProvider<String?, String?, String?>
-    with $Provider<String?> {
-  InitialLocationProvider._()
+final class GoRouterProvider
+    extends $FunctionalProvider<GoRouter, GoRouter, GoRouter>
+    with $Provider<GoRouter> {
+  GoRouterProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'initialLocationProvider',
+        name: r'goRouterProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$initialLocationHash();
+  String debugGetCreateSourceHash() => _$goRouterHash();
 
   @$internal
   @override
-  $ProviderElement<String?> $createElement($ProviderPointer pointer) =>
+  $ProviderElement<GoRouter> $createElement($ProviderPointer pointer) =>
       $ProviderElement(pointer);
 
   @override
-  String? create(Ref ref) {
-    return initialLocation(ref);
+  GoRouter create(Ref ref) {
+    return goRouter(ref);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(String? value) {
+  Override overrideWithValue(GoRouter value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<String?>(value),
+      providerOverride: $SyncValueProvider<GoRouter>(value),
     );
   }
 }
 
-String _$initialLocationHash() => r'ca0023b63cb88d0b40ed39b412fa2d0272e751bb';
+String _$goRouterHash() => r'9d93adca94663cb21a51069bcd8c8a37685e22e0';

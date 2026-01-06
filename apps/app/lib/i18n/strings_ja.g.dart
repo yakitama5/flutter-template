@@ -3,8 +3,9 @@
 ///
 // coverage:ignore-file
 // ignore_for_file: type=lint, unused_import
+// dart format off
 
-import 'package:cores_domain/goods.dart';
+import 'package:domain/goods.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
@@ -12,12 +13,12 @@ import 'package:slang/generated.dart';
 import 'strings.g.dart';
 
 // Path: <root>
-class TranslationsJa extends Translations {
+class TranslationsJa extends Translations with BaseTranslations<AppLocale, Translations> {
 	/// You can call this constructor and build your own translation instance of this locale.
 	/// Constructing via the enum [AppLocale.build] is preferred.
-	TranslationsJa({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
+	TranslationsJa({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver, TranslationMetadata<AppLocale, Translations>? meta})
 		: assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-		  $meta = TranslationMetadata(
+		  $meta = meta ?? TranslationMetadata(
 		    locale: AppLocale.ja,
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
@@ -35,6 +36,9 @@ class TranslationsJa extends Translations {
 	@override dynamic operator[](String key) => $meta.getTranslation(key) ?? super.$meta.getTranslation(key);
 
 	late final TranslationsJa _root = this; // ignore: unused_field
+
+	@override 
+	TranslationsJa $copyWith({TranslationMetadata<AppLocale, Translations>? meta}) => TranslationsJa(meta: meta ?? this.$meta);
 
 	// Translations
 	@override late final _TranslationsAppJa app = _TranslationsAppJa._(_root);
@@ -296,60 +300,53 @@ class _TranslationsSettingsAccountPageLeaveConfirmDialogJa extends TranslationsS
 	@override String get body => '本当に退会してもよろしいですか？\nこの操作は元に戻すことができません。';
 }
 
-/// Flat map(s) containing all translations.
+/// The flat map containing all translations for locale <ja>.
 /// Only for edge cases! For simple maps, use the map function of this library.
+///
+/// The Dart AOT compiler has issues with very large switch statements,
+/// so the map is split into smaller functions (512 entries each).
 extension on TranslationsJa {
 	dynamic _flatMapFunction(String path) {
-		switch (path) {
-			case 'app.bottomNavBar.home': return 'ホーム';
-			case 'app.bottomNavBar.search': return '探す';
-			case 'app.bottomNavBar.settings': return '設定';
-			case 'app.homePage.title': return 'ホーム';
-			case 'error.errorPage.title': return 'エラー';
-			case 'error.message.impossibleOperation.notAuth': return '認証済でないため操作が許可されていません';
-			case 'error.message.impossibleOperation.notLinked': return 'アカウントが連携されていないため解除出来ません';
-			case 'goods.goodsPage.title': return '商品一覧';
-			case 'goods.goodsPage.layout': return '表示形式';
-			case 'goods.goodsPage.price': return ({required num price}) => '${NumberFormat.simpleCurrency(locale: 'ja').format(price)}';
-			case 'goods.goodsSortKey': return ({required GoodsSortKey context}) {
-				switch (context) {
-					case GoodsSortKey.createdAt:
-						return '作成日時';
-					case GoodsSortKey.name:
-						return '商品名';
-					case GoodsSortKey.price:
-						return '価格';
-				}
-			};
-			case 'settings.settingsPage.title': return '設定';
-			case 'settings.settingsPage.account.head': return 'アカウント';
-			case 'settings.settingsPage.account.account': return 'アカウント';
-			case 'settings.settingsPage.layout.haed': return 'レイアウト';
-			case 'settings.settingsPage.layout.uiStyle': return 'UIスタイル';
-			case 'settings.settingsPage.layout.themeMode': return 'テーマモード';
-			case 'settings.settingsPage.layout.colorTheme': return 'カラー';
-			case 'settings.settingsPage.help.head': return 'ヘルプ';
-			case 'settings.settingsPage.help.howToUse': return 'つかい方';
-			case 'settings.settingsPage.help.contactUs': return 'お問い合わせ';
-			case 'settings.settingsPage.help.developperTwitter': return '開発者情報';
-			case 'settings.settingsPage.help.privacyPollicy': return 'プライバシーポリシー';
-			case 'settings.settingsPage.help.licencse': return 'ライセンス';
-			case 'settings.accountPage.title': return 'アカウント';
-			case 'settings.accountPage.link.head': return 'アカウント連携';
-			case 'settings.accountPage.link.google': return 'Google';
-			case 'settings.accountPage.link.apple': return 'Apple';
-			case 'settings.accountPage.other.head': return 'その他';
-			case 'settings.accountPage.other.logout': return 'ログアウト';
-			case 'settings.accountPage.other.leave': return '退会';
-			case 'settings.accountPage.leaveConfirmDialog.title': return '退会しますか？';
-			case 'settings.accountPage.leaveConfirmDialog.body': return '本当に退会してもよろしいですか？\nこの操作は元に戻すことができません。';
-			case 'user.userPage.title': return 'タイトル';
-			case 'user.onboardPage.start': return 'はじめる';
-			case 'user.onboardPage.startCaption': return 'はじめての方はこちら';
-			case 'user.onboardPage.signInWithGoogle': return 'Googleアカウントでログイン';
-			case 'user.onboardPage.signInWithApple': return 'Appleアカウントでログイン';
-			default: return null;
-		}
+		return switch (path) {
+			'app.bottomNavBar.home' => 'ホーム',
+			'app.bottomNavBar.search' => '探す',
+			'app.bottomNavBar.settings' => '設定',
+			'app.homePage.title' => 'ホーム',
+			'error.errorPage.title' => 'エラー',
+			'error.message.impossibleOperation.notAuth' => '認証済でないため操作が許可されていません',
+			'error.message.impossibleOperation.notLinked' => 'アカウントが連携されていないため解除出来ません',
+			'goods.goodsPage.title' => '商品一覧',
+			'goods.goodsPage.layout' => '表示形式',
+			'goods.goodsPage.price' => ({required num price}) => '${NumberFormat.simpleCurrency(locale: 'ja').format(price)}',
+			'goods.goodsSortKey' => ({required GoodsSortKey context}) { switch (context) { case GoodsSortKey.createdAt: return '作成日時'; case GoodsSortKey.name: return '商品名'; case GoodsSortKey.price: return '価格'; } }, 
+			'settings.settingsPage.title' => '設定',
+			'settings.settingsPage.account.head' => 'アカウント',
+			'settings.settingsPage.account.account' => 'アカウント',
+			'settings.settingsPage.layout.haed' => 'レイアウト',
+			'settings.settingsPage.layout.uiStyle' => 'UIスタイル',
+			'settings.settingsPage.layout.themeMode' => 'テーマモード',
+			'settings.settingsPage.layout.colorTheme' => 'カラー',
+			'settings.settingsPage.help.head' => 'ヘルプ',
+			'settings.settingsPage.help.howToUse' => 'つかい方',
+			'settings.settingsPage.help.contactUs' => 'お問い合わせ',
+			'settings.settingsPage.help.developperTwitter' => '開発者情報',
+			'settings.settingsPage.help.privacyPollicy' => 'プライバシーポリシー',
+			'settings.settingsPage.help.licencse' => 'ライセンス',
+			'settings.accountPage.title' => 'アカウント',
+			'settings.accountPage.link.head' => 'アカウント連携',
+			'settings.accountPage.link.google' => 'Google',
+			'settings.accountPage.link.apple' => 'Apple',
+			'settings.accountPage.other.head' => 'その他',
+			'settings.accountPage.other.logout' => 'ログアウト',
+			'settings.accountPage.other.leave' => '退会',
+			'settings.accountPage.leaveConfirmDialog.title' => '退会しますか？',
+			'settings.accountPage.leaveConfirmDialog.body' => '本当に退会してもよろしいですか？\nこの操作は元に戻すことができません。',
+			'user.userPage.title' => 'タイトル',
+			'user.onboardPage.start' => 'はじめる',
+			'user.onboardPage.startCaption' => 'はじめての方はこちら',
+			'user.onboardPage.signInWithGoogle' => 'Googleアカウントでログイン',
+			'user.onboardPage.signInWithApple' => 'Appleアカウントでログイン',
+			_ => null,
+		};
 	}
 }
-

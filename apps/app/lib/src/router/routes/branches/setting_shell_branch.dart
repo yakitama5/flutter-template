@@ -1,5 +1,6 @@
 import 'package:designsystem/common_assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/src/router/routes/base_shell_route.dart';
 import 'package:flutter_app/src/settings/pages/settings_account_page.dart';
 import 'package:flutter_app/src/settings/pages/settings_page.dart';
 import 'package:flutter_app/src/settings/pages/settings_theme_color_page.dart';
@@ -11,24 +12,22 @@ final settingsNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'settings');
 
 const settingShellBranch = TypedStatefulShellBranch<SettingShellBranch>(
   routes: <TypedRoute<RouteData>>[
-    TypedGoRoute<SettingPageRoute>(
-      path: SettingPageRoute.path,
+    TypedGoRoute<SettingPageRouteData>(
+      path: SettingPageRouteData.path,
       routes: [
-        TypedGoRoute<SettingsAccountPageRoute>(
-          path: SettingsAccountPageRoute.path,
+        TypedGoRoute<SettingsAccountPageRouteData>(
+          path: SettingsAccountPageRouteData.path,
         ),
-        TypedGoRoute<SettingsUiStylePageRoute>(
-          path: SettingsUiStylePageRoute.path,
+        TypedGoRoute<SettingsUiStylePageRouteData>(
+          path: SettingsUiStylePageRouteData.path,
         ),
-        TypedGoRoute<SettingsThemeColorPageRoute>(
-          path: SettingsThemeColorPageRoute.path,
+        TypedGoRoute<SettingsThemeColorPageRouteData>(
+          path: SettingsThemeColorPageRouteData.path,
         ),
-        TypedGoRoute<SettingsThemeModePageRoute>(
-          path: SettingsThemeModePageRoute.path,
+        TypedGoRoute<SettingsThemeModePageRouteData>(
+          path: SettingsThemeModePageRouteData.path,
         ),
-        TypedGoRoute<LicensePageRoute>(
-          path: LicensePageRoute.path,
-        ),
+        TypedGoRoute<LicensePageRouteData>(path: LicensePageRouteData.path),
       ],
     ),
   ],
@@ -38,8 +37,8 @@ class SettingShellBranch extends StatefulShellBranchData {
   const SettingShellBranch();
 }
 
-class SettingPageRoute extends GoRouteData {
-  const SettingPageRoute();
+class SettingPageRouteData extends GoRouteData with $SettingPageRouteData {
+  const SettingPageRouteData();
 
   static final GlobalKey<NavigatorState> $navigatorKey = settingsNavigatorKey;
   static const path = '/setting';
@@ -49,8 +48,8 @@ class SettingPageRoute extends GoRouteData {
       const SettingsPage();
 }
 
-class LicensePageRoute extends GoRouteData {
-  const LicensePageRoute();
+class LicensePageRouteData extends GoRouteData with $LicensePageRouteData {
+  const LicensePageRouteData();
 
   static const path = 'license';
 
@@ -62,8 +61,9 @@ class LicensePageRoute extends GoRouteData {
   }
 }
 
-class SettingsAccountPageRoute extends GoRouteData {
-  const SettingsAccountPageRoute();
+class SettingsAccountPageRouteData extends GoRouteData
+    with $SettingsAccountPageRouteData {
+  const SettingsAccountPageRouteData();
 
   static const path = 'account';
 
@@ -72,8 +72,9 @@ class SettingsAccountPageRoute extends GoRouteData {
       const SettingsAccountPage();
 }
 
-class SettingsUiStylePageRoute extends GoRouteData {
-  const SettingsUiStylePageRoute();
+class SettingsUiStylePageRouteData extends GoRouteData
+    with $SettingsUiStylePageRouteData {
+  const SettingsUiStylePageRouteData();
 
   static const path = 'ui_style';
 
@@ -82,8 +83,9 @@ class SettingsUiStylePageRoute extends GoRouteData {
       const SettingsUiStylePage();
 }
 
-class SettingsThemeColorPageRoute extends GoRouteData {
-  const SettingsThemeColorPageRoute();
+class SettingsThemeColorPageRouteData extends GoRouteData
+    with $SettingsThemeColorPageRouteData {
+  const SettingsThemeColorPageRouteData();
 
   static const path = 'color_style';
 
@@ -92,8 +94,9 @@ class SettingsThemeColorPageRoute extends GoRouteData {
       const SettingsThemeColorPage();
 }
 
-class SettingsThemeModePageRoute extends GoRouteData {
-  const SettingsThemeModePageRoute();
+class SettingsThemeModePageRouteData extends GoRouteData
+    with $SettingsThemeModePageRouteData {
+  const SettingsThemeModePageRouteData();
 
   static const path = 'theme_mode';
 

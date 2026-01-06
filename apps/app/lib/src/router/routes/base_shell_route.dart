@@ -10,24 +10,21 @@ import 'package:go_router/go_router.dart';
 
 part 'base_shell_route.g.dart';
 
-final GlobalKey<NavigatorState> _shellNavigatorKey =
-    GlobalKey<NavigatorState>(debugLabel: 'shell');
+final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>(
+  debugLabel: 'shell',
+);
 
-@TypedShellRoute<BaseShellSroute>(
+@TypedShellRoute<BaseShellRouteData>(
   routes: [
-    TypedGoRoute<RootRoute>(path: RootRoute.path),
-    TypedGoRoute<OnboardRoute>(path: OnboardRoute.path),
-    TypedGoRoute<MaintenancePageRoute>(path: MaintenancePageRoute.path),
-    TypedStatefulShellRoute<NavigatorPageShellRoute>(
-      branches: [
-        homeShellBranch,
-        searchShellBranch,
-        settingShellBranch,
-      ],
+    TypedGoRoute<RootRouteData>(path: RootRouteData.path),
+    TypedGoRoute<OnboardRouteData>(path: OnboardRouteData.path),
+    TypedGoRoute<MaintenancePageRouteData>(path: MaintenancePageRouteData.path),
+    TypedStatefulShellRoute<NavigatorPageShellRouteData>(
+      branches: [homeShellBranch, searchShellBranch, settingShellBranch],
     ),
   ],
 )
-class BaseShellSroute extends ShellRouteData {
+class BaseShellRouteData extends ShellRouteData {
   static final GlobalKey<NavigatorState> $navigatorKey = rootNavigatorKey;
 
   // ルート設定のために定義だけ
@@ -36,23 +33,19 @@ class BaseShellSroute extends ShellRouteData {
       navigator;
 }
 
-class RootRoute extends GoRouteData {
-  const RootRoute();
+class RootRouteData extends GoRouteData with $RootRouteData {
+  const RootRouteData();
 
   static const path = '/';
 
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       // ぐるぐる回すだけ
-      const Scaffold(
-        body: Center(
-          child: CircularProgressIndicator.adaptive(),
-        ),
-      );
+      const Scaffold(body: Center(child: CircularProgressIndicator.adaptive()));
 }
 
-class OnboardRoute extends GoRouteData {
-  const OnboardRoute();
+class OnboardRouteData extends GoRouteData with $OnboardRouteData {
+  const OnboardRouteData();
 
   static const path = '/onboard';
 
@@ -61,8 +54,8 @@ class OnboardRoute extends GoRouteData {
       const OnboardPage();
 }
 
-class NavigatorPageShellRoute extends StatefulShellRouteData {
-  const NavigatorPageShellRoute();
+class NavigatorPageShellRouteData extends StatefulShellRouteData {
+  const NavigatorPageShellRouteData();
 
   static final GlobalKey<NavigatorState> $navigatorKey = _shellNavigatorKey;
 
@@ -76,15 +69,14 @@ class NavigatorPageShellRoute extends StatefulShellRouteData {
   }
 }
 
-class MaintenancePageRoute extends GoRouteData {
-  const MaintenancePageRoute();
+class MaintenancePageRouteData extends GoRouteData
+    with $MaintenancePageRouteData {
+  const MaintenancePageRouteData();
 
   static const path = '/maintenance';
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) {
-    return const NoTransitionPage<Page<dynamic>>(
-      child: MaintenancePage(),
-    );
+    return const NoTransitionPage<Page<dynamic>>(child: MaintenancePage());
   }
 }

@@ -3,12 +3,13 @@
 ///
 // coverage:ignore-file
 // ignore_for_file: type=lint, unused_import
+// dart format off
 
 part of 'strings.g.dart';
 
 // Path: <root>
 typedef TranslationsEn = Translations; // ignore: unused_element
-class Translations implements BaseTranslations<AppLocale, Translations> {
+class Translations with BaseTranslations<AppLocale, Translations> {
 	/// Returns the current translations of the given [context].
 	///
 	/// Usage:
@@ -17,9 +18,9 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	/// You can call this constructor and build your own translation instance of this locale.
 	/// Constructing via the enum [AppLocale.build] is preferred.
-	Translations({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
+	Translations({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver, TranslationMetadata<AppLocale, Translations>? meta})
 		: assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-		  $meta = TranslationMetadata(
+		  $meta = meta ?? TranslationMetadata(
 		    locale: AppLocale.en,
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
@@ -35,6 +36,8 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	dynamic operator[](String key) => $meta.getTranslation(key);
 
 	late final Translations _root = this; // ignore: unused_field
+
+	Translations $copyWith({TranslationMetadata<AppLocale, Translations>? meta}) => Translations(meta: meta ?? this.$meta);
 
 	// Translations
 	late final TranslationsAppEn app = TranslationsAppEn.internal(_root);
@@ -74,6 +77,8 @@ class TranslationsGoodsEn {
 
 	// Translations
 	late final TranslationsGoodsGoodsPageEn goodsPage = TranslationsGoodsGoodsPageEn.internal(_root);
+
+	/// en: '(createdAt) {Created at} (name) {Name} (price) {Price}'
 	String goodsSortKey({required GoodsSortKey context}) {
 		switch (context) {
 			case GoodsSortKey.createdAt:
@@ -115,8 +120,14 @@ class TranslationsAppBottomNavBarEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Home'
 	String get home => 'Home';
+
+	/// en: 'Search'
 	String get search => 'Search';
+
+	/// en: 'Settings'
 	String get settings => 'Settings';
 }
 
@@ -127,6 +138,8 @@ class TranslationsAppHomePageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Home'
 	String get title => 'Home';
 }
 
@@ -137,6 +150,8 @@ class TranslationsErrorErrorPageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Error'
 	String get title => 'Error';
 }
 
@@ -157,8 +172,14 @@ class TranslationsGoodsGoodsPageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Goods'
 	String get title => 'Goods';
+
+	/// en: 'Layout'
 	String get layout => 'Layout';
+
+	/// en: '${price: simpleCurrency}'
 	String price({required num price}) => '${NumberFormat.simpleCurrency(locale: 'en').format(price)}';
 }
 
@@ -169,7 +190,10 @@ class TranslationsSettingsSettingsPageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Settings'
 	String get title => 'Settings';
+
 	late final TranslationsSettingsSettingsPageAccountEn account = TranslationsSettingsSettingsPageAccountEn.internal(_root);
 	late final TranslationsSettingsSettingsPageLayoutEn layout = TranslationsSettingsSettingsPageLayoutEn.internal(_root);
 	late final TranslationsSettingsSettingsPageHelpEn help = TranslationsSettingsSettingsPageHelpEn.internal(_root);
@@ -182,7 +206,10 @@ class TranslationsSettingsAccountPageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Account'
 	String get title => 'Account';
+
 	late final TranslationsSettingsAccountPageLinkEn link = TranslationsSettingsAccountPageLinkEn.internal(_root);
 	late final TranslationsSettingsAccountPageOtherEn other = TranslationsSettingsAccountPageOtherEn.internal(_root);
 	late final TranslationsSettingsAccountPageLeaveConfirmDialogEn leaveConfirmDialog = TranslationsSettingsAccountPageLeaveConfirmDialogEn.internal(_root);
@@ -195,6 +222,8 @@ class TranslationsUserUserPageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Title'
 	String get title => 'Title';
 }
 
@@ -205,9 +234,17 @@ class TranslationsUserOnboardPageEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Start'
 	String get start => 'Start';
+
+	/// en: 'For first-time users, click here'
 	String get startCaption => 'For first-time users, click here';
+
+	/// en: 'Sign in with Google'
 	String get signInWithGoogle => 'Sign in with Google';
+
+	/// en: 'Sign in with Apple'
 	String get signInWithApple => 'Sign in with Apple';
 }
 
@@ -218,7 +255,11 @@ class TranslationsErrorMessageImpossibleOperationEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Not auth'
 	String get notAuth => 'Not auth';
+
+	/// en: 'Not linked'
 	String get notLinked => 'Not linked';
 }
 
@@ -229,7 +270,11 @@ class TranslationsSettingsSettingsPageAccountEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Account'
 	String get head => 'Account';
+
+	/// en: 'Account'
 	String get account => 'Account';
 }
 
@@ -240,9 +285,17 @@ class TranslationsSettingsSettingsPageLayoutEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Layout'
 	String get haed => 'Layout';
+
+	/// en: 'UI Style'
 	String get uiStyle => 'UI Style';
+
+	/// en: 'ThemeMode'
 	String get themeMode => 'ThemeMode';
+
+	/// en: 'Colors'
 	String get colorTheme => 'Colors';
 }
 
@@ -253,11 +306,23 @@ class TranslationsSettingsSettingsPageHelpEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Help'
 	String get head => 'Help';
+
+	/// en: 'HowToUse'
 	String get howToUse => 'HowToUse';
+
+	/// en: 'Contact us'
 	String get contactUs => 'Contact us';
+
+	/// en: 'Developper'
 	String get developperTwitter => 'Developper';
+
+	/// en: 'PrivacyPollicy'
 	String get privacyPollicy => 'PrivacyPollicy';
+
+	/// en: 'License'
 	String get licencse => 'License';
 }
 
@@ -268,8 +333,14 @@ class TranslationsSettingsAccountPageLinkEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Account link'
 	String get head => 'Account link';
+
+	/// en: 'Google'
 	String get google => 'Google';
+
+	/// en: 'Apple'
 	String get apple => 'Apple';
 }
 
@@ -280,8 +351,14 @@ class TranslationsSettingsAccountPageOtherEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Other'
 	String get head => 'Other';
+
+	/// en: 'Logout'
 	String get logout => 'Logout';
+
+	/// en: 'Leave'
 	String get leave => 'Leave';
 }
 
@@ -292,64 +369,61 @@ class TranslationsSettingsAccountPageLeaveConfirmDialogEn {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// en: 'Leave?'
 	String get title => 'Leave?';
+
+	/// en: 'Are you sure you want to cancel your membership? \\Ўn this operation cannot be undone.'
 	String get body => 'Are you sure you want to cancel your membership? \\Ўn this operation cannot be undone.';
 }
 
-/// Flat map(s) containing all translations.
+/// The flat map containing all translations for locale <en>.
 /// Only for edge cases! For simple maps, use the map function of this library.
+///
+/// The Dart AOT compiler has issues with very large switch statements,
+/// so the map is split into smaller functions (512 entries each).
 extension on Translations {
 	dynamic _flatMapFunction(String path) {
-		switch (path) {
-			case 'app.bottomNavBar.home': return 'Home';
-			case 'app.bottomNavBar.search': return 'Search';
-			case 'app.bottomNavBar.settings': return 'Settings';
-			case 'app.homePage.title': return 'Home';
-			case 'error.errorPage.title': return 'Error';
-			case 'error.message.impossibleOperation.notAuth': return 'Not auth';
-			case 'error.message.impossibleOperation.notLinked': return 'Not linked';
-			case 'goods.goodsPage.title': return 'Goods';
-			case 'goods.goodsPage.layout': return 'Layout';
-			case 'goods.goodsPage.price': return ({required num price}) => '${NumberFormat.simpleCurrency(locale: 'en').format(price)}';
-			case 'goods.goodsSortKey': return ({required GoodsSortKey context}) {
-				switch (context) {
-					case GoodsSortKey.createdAt:
-						return 'Created at';
-					case GoodsSortKey.name:
-						return 'Name';
-					case GoodsSortKey.price:
-						return 'Price';
-				}
-			};
-			case 'settings.settingsPage.title': return 'Settings';
-			case 'settings.settingsPage.account.head': return 'Account';
-			case 'settings.settingsPage.account.account': return 'Account';
-			case 'settings.settingsPage.layout.haed': return 'Layout';
-			case 'settings.settingsPage.layout.uiStyle': return 'UI Style';
-			case 'settings.settingsPage.layout.themeMode': return 'ThemeMode';
-			case 'settings.settingsPage.layout.colorTheme': return 'Colors';
-			case 'settings.settingsPage.help.head': return 'Help';
-			case 'settings.settingsPage.help.howToUse': return 'HowToUse';
-			case 'settings.settingsPage.help.contactUs': return 'Contact us';
-			case 'settings.settingsPage.help.developperTwitter': return 'Developper';
-			case 'settings.settingsPage.help.privacyPollicy': return 'PrivacyPollicy';
-			case 'settings.settingsPage.help.licencse': return 'License';
-			case 'settings.accountPage.title': return 'Account';
-			case 'settings.accountPage.link.head': return 'Account link';
-			case 'settings.accountPage.link.google': return 'Google';
-			case 'settings.accountPage.link.apple': return 'Apple';
-			case 'settings.accountPage.other.head': return 'Other';
-			case 'settings.accountPage.other.logout': return 'Logout';
-			case 'settings.accountPage.other.leave': return 'Leave';
-			case 'settings.accountPage.leaveConfirmDialog.title': return 'Leave?';
-			case 'settings.accountPage.leaveConfirmDialog.body': return 'Are you sure you want to cancel your membership? \\Ўn this operation cannot be undone.';
-			case 'user.userPage.title': return 'Title';
-			case 'user.onboardPage.start': return 'Start';
-			case 'user.onboardPage.startCaption': return 'For first-time users, click here';
-			case 'user.onboardPage.signInWithGoogle': return 'Sign in with Google';
-			case 'user.onboardPage.signInWithApple': return 'Sign in with Apple';
-			default: return null;
-		}
+		return switch (path) {
+			'app.bottomNavBar.home' => 'Home',
+			'app.bottomNavBar.search' => 'Search',
+			'app.bottomNavBar.settings' => 'Settings',
+			'app.homePage.title' => 'Home',
+			'error.errorPage.title' => 'Error',
+			'error.message.impossibleOperation.notAuth' => 'Not auth',
+			'error.message.impossibleOperation.notLinked' => 'Not linked',
+			'goods.goodsPage.title' => 'Goods',
+			'goods.goodsPage.layout' => 'Layout',
+			'goods.goodsPage.price' => ({required num price}) => '${NumberFormat.simpleCurrency(locale: 'en').format(price)}',
+			'goods.goodsSortKey' => ({required GoodsSortKey context}) { switch (context) { case GoodsSortKey.createdAt: return 'Created at'; case GoodsSortKey.name: return 'Name'; case GoodsSortKey.price: return 'Price'; } }, 
+			'settings.settingsPage.title' => 'Settings',
+			'settings.settingsPage.account.head' => 'Account',
+			'settings.settingsPage.account.account' => 'Account',
+			'settings.settingsPage.layout.haed' => 'Layout',
+			'settings.settingsPage.layout.uiStyle' => 'UI Style',
+			'settings.settingsPage.layout.themeMode' => 'ThemeMode',
+			'settings.settingsPage.layout.colorTheme' => 'Colors',
+			'settings.settingsPage.help.head' => 'Help',
+			'settings.settingsPage.help.howToUse' => 'HowToUse',
+			'settings.settingsPage.help.contactUs' => 'Contact us',
+			'settings.settingsPage.help.developperTwitter' => 'Developper',
+			'settings.settingsPage.help.privacyPollicy' => 'PrivacyPollicy',
+			'settings.settingsPage.help.licencse' => 'License',
+			'settings.accountPage.title' => 'Account',
+			'settings.accountPage.link.head' => 'Account link',
+			'settings.accountPage.link.google' => 'Google',
+			'settings.accountPage.link.apple' => 'Apple',
+			'settings.accountPage.other.head' => 'Other',
+			'settings.accountPage.other.logout' => 'Logout',
+			'settings.accountPage.other.leave' => 'Leave',
+			'settings.accountPage.leaveConfirmDialog.title' => 'Leave?',
+			'settings.accountPage.leaveConfirmDialog.body' => 'Are you sure you want to cancel your membership? \\Ўn this operation cannot be undone.',
+			'user.userPage.title' => 'Title',
+			'user.onboardPage.start' => 'Start',
+			'user.onboardPage.startCaption' => 'For first-time users, click here',
+			'user.onboardPage.signInWithGoogle' => 'Sign in with Google',
+			'user.onboardPage.signInWithApple' => 'Sign in with Apple',
+			_ => null,
+		};
 	}
 }
-

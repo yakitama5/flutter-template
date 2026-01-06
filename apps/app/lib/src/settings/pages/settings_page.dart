@@ -24,13 +24,11 @@ class SettingsPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 現在の設定値を取得
     final uiStyle = ref.watch(uiStyleProvider);
-    final themeColor = ref.watch(themeColorNotifierProvider);
+    final themeColor = ref.watch(themeColorProvider);
     final themeMode = ref.watch(themeModeProvider);
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(i18n.settings.settingsPage.title),
-      ),
+      appBar: AppBar(title: Text(i18n.settings.settingsPage.title)),
       body: ThemedSettingsList(
         sections: [
           SettingsSection(
@@ -39,7 +37,7 @@ class SettingsPage extends HookConsumerWidget {
               SettingsTile.navigation(
                 leading: const Icon(Icons.link),
                 title: Text(i18n.settings.settingsPage.account.account),
-                onPressed: const SettingsAccountPageRoute().go,
+                onPressed: const SettingsAccountPageRouteData().go,
               ),
             ],
           ),
@@ -52,21 +50,19 @@ class SettingsPage extends HookConsumerWidget {
                 value: Text(
                   designsystemI18n.designsystem.uiStyle(context: uiStyle),
                 ),
-                onPressed: const SettingsUiStylePageRoute().go,
+                onPressed: const SettingsUiStylePageRouteData().go,
               ),
               SettingsTile.navigation(
-                leading: Icon(
-                  switch (themeMode) {
-                    ThemeMode.system => Icons.settings,
-                    ThemeMode.light => Icons.light_mode,
-                    ThemeMode.dark => Icons.dark_mode,
-                  },
-                ),
+                leading: Icon(switch (themeMode) {
+                  ThemeMode.system => Icons.settings,
+                  ThemeMode.light => Icons.light_mode,
+                  ThemeMode.dark => Icons.dark_mode,
+                }),
                 title: Text(i18n.settings.settingsPage.layout.themeMode),
                 value: Text(
                   designsystemI18n.designsystem.themeMode(context: themeMode),
                 ),
-                onPressed: const SettingsThemeModePageRoute().go,
+                onPressed: const SettingsThemeModePageRouteData().go,
               ),
               SettingsTile.navigation(
                 leading: const Icon(Icons.color_lens),
@@ -74,7 +70,7 @@ class SettingsPage extends HookConsumerWidget {
                 value: Text(
                   designsystemI18n.designsystem.themeColor(context: themeColor),
                 ),
-                onPressed: const SettingsThemeColorPageRoute().go,
+                onPressed: const SettingsThemeColorPageRouteData().go,
               ),
             ],
           ),
@@ -103,7 +99,7 @@ class SettingsPage extends HookConsumerWidget {
               ),
               SettingsTile.navigation(
                 title: Text(i18n.settings.settingsPage.help.licencse),
-                onPressed: const LicensePageRoute().go,
+                onPressed: const LicensePageRouteData().go,
               ),
             ],
           ),

@@ -19,7 +19,7 @@ class GoodsPage extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 初期状態はドメイン層に定義
     final query = useState(const GoodsFetchQuery());
-    final viewLayout = ref.watch(goodsViewLayoutNotifierProvider);
+    final viewLayout = ref.watch(goodsViewLayoutProvider);
 
     return Scaffold(
       body: RefreshIndicator(
@@ -29,11 +29,7 @@ class GoodsPage extends HookConsumerWidget {
         child: CustomScrollView(
           slivers: [
             const PinnedHeaderSliver(
-              child: Material(
-                child: SafeArea(
-                  child: SizedBox.shrink(),
-                ),
-              ),
+              child: Material(child: SafeArea(child: SizedBox.shrink())),
             ),
             SliverAppBar(
               primary: false,
@@ -62,7 +58,7 @@ class GoodsPage extends HookConsumerWidget {
                       ViewLayoutChip(
                         viewLayout: viewLayout,
                         onChanged: (v) => ref
-                            .read(goodsViewLayoutNotifierProvider.notifier)
+                            .read(goodsViewLayoutProvider.notifier)
                             .updateViewLayout(viewLayout: v),
                       ),
                     ],
@@ -70,10 +66,7 @@ class GoodsPage extends HookConsumerWidget {
                 ),
               ),
             ),
-            _SliverBody(
-              query: query.value,
-              viewLayout: viewLayout,
-            ),
+            _SliverBody(query: query.value, viewLayout: viewLayout),
           ],
         ),
       ),
@@ -91,9 +84,7 @@ class _SliverBody extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     // 先頭ページを固定で取得
     // エラーハンドリングはコンテンツ取得部分で行うため`valueOrNull`で無視する
-    final result = ref
-        .watch(goodsListProvider(page: 1, query: query))
-        .valueOrNull;
+    final result = ref.watch(goodsListProvider(page: 1, query: query)).value;
 
     return SliverSwitchLayoutViewBuilder(
       viewLayout: viewLayout,
@@ -160,12 +151,8 @@ class _ShimmerListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     // プライベートWidgetのためマジックナンバーを許容
     return const ListTile(
-      title: ShimmerWidget.rectangular(
-        height: 24,
-      ),
-      subtitle: ShimmerWidget.rectangular(
-        height: 16,
-      ),
+      title: ShimmerWidget.rectangular(height: 24),
+      subtitle: ShimmerWidget.rectangular(height: 16),
       leading: GoodsShimmerListTileLeading(),
     );
   }

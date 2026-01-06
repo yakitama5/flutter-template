@@ -29,7 +29,7 @@ void main() async {
 
         // アプリの初期設定
         appBuildConfigProvider.overrideWithValue(buildConfig),
-        initialLocationProvider.overrideWithValue(RootRoute.path),
+        initialLocationProvider.overrideWithValue(RootRouteData.path),
       ],
       child: Nested(
         children: const [
@@ -51,9 +51,7 @@ class _AppTranslationProvider extends SingleChildStatelessWidget {
 
   @override
   Widget buildWithChild(BuildContext context, Widget? child) =>
-      TranslationProvider(
-        child: child ?? const SizedBox.shrink(),
-      );
+      TranslationProvider(child: child ?? const SizedBox.shrink());
 }
 
 class _DevicePreviewWrapper extends SingleChildStatelessWidget {

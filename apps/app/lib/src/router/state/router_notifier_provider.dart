@@ -28,30 +28,29 @@ class RouterNotifier extends _$RouterNotifier implements Listenable {
       return null;
     }
     final location = routeState.fullPath ?? '';
-    final isSplash = location == const RootRoute().location;
+    final isSplash = location == const RootRouteData().location;
     final isNotAuthLocations = location.startsWith(
-      const OnboardRoute().location,
+      const OnboardRouteData().location,
     );
 
     // 認証判定
     final authUser = await ref.watch(authStatusProvider.future);
     if (authUser == null && (isSplash || !isNotAuthLocations)) {
-      return const OnboardRoute().location;
+      return const OnboardRouteData().location;
     } else if (authUser != null && (isSplash || isNotAuthLocations)) {
-      return const HomePageRoute().location;
+      return const HomePageRouteData().location;
     }
 
     // メンテナンスモード
-    final appMaintenanceStatus =
-        ref.watch(appMaintenanceStatusProvider).valueOrNull;
+    final appMaintenanceStatus = ref.watch(appMaintenanceStatusProvider).value;
     switch (appMaintenanceStatus) {
       case AppMaintenanceStatus.maintenance:
-        return MaintenancePageRoute.path;
+        return MaintenancePageRouteData.path;
       case AppMaintenanceStatus.none:
       case null:
         // メンテナンスページにいる場合は元に戻してやる
-        if (location == MaintenancePageRoute.path) {
-          return HomePageRoute.path;
+        if (location == MaintenancePageRouteData.path) {
+          return HomePageRouteData.path;
         }
     }
 

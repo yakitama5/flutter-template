@@ -8,280 +8,308 @@ part of 'base_shell_route.dart';
 // GoRouterGenerator
 // **************************************************************************
 
-List<RouteBase> get $appRoutes => [
-      $baseShellSroute,
-    ];
+List<RouteBase> get $appRoutes => [$baseShellRouteData];
 
-RouteBase get $baseShellSroute => ShellRouteData.$route(
-      navigatorKey: BaseShellSroute.$navigatorKey,
-      factory: $BaseShellSrouteExtension._fromState,
-      routes: [
-        GoRouteData.$route(
-          path: '/',
-          factory: $RootRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: '/onboard',
-          factory: $OnboardRouteExtension._fromState,
-        ),
-        GoRouteData.$route(
-          path: '/maintenance',
-          factory: $MaintenancePageRouteExtension._fromState,
-        ),
-        StatefulShellRouteData.$route(
-          factory: $NavigatorPageShellRouteExtension._fromState,
-          branches: [
-            StatefulShellBranchData.$branch(
-              routes: [
-                GoRouteData.$route(
-                  path: '/home',
-                  factory: $HomePageRouteExtension._fromState,
-                ),
-              ],
+RouteBase get $baseShellRouteData => ShellRouteData.$route(
+  navigatorKey: BaseShellRouteData.$navigatorKey,
+  factory: $BaseShellRouteDataExtension._fromState,
+  routes: [
+    GoRouteData.$route(path: '/', factory: $RootRouteData._fromState),
+    GoRouteData.$route(path: '/onboard', factory: $OnboardRouteData._fromState),
+    GoRouteData.$route(
+      path: '/maintenance',
+      factory: $MaintenancePageRouteData._fromState,
+    ),
+    StatefulShellRouteData.$route(
+      factory: $NavigatorPageShellRouteDataExtension._fromState,
+      branches: [
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/home',
+              factory: $HomePageRouteData._fromState,
             ),
-            StatefulShellBranchData.$branch(
-              routes: [
-                GoRouteData.$route(
-                  path: '/goods',
-                  factory: $GoodsPageRouteExtension._fromState,
-                ),
-              ],
+          ],
+        ),
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/goods',
+              factory: $GoodsPageRouteData._fromState,
             ),
-            StatefulShellBranchData.$branch(
+          ],
+        ),
+        StatefulShellBranchData.$branch(
+          routes: [
+            GoRouteData.$route(
+              path: '/setting',
+              factory: $SettingPageRouteData._fromState,
               routes: [
                 GoRouteData.$route(
-                  path: '/setting',
-                  factory: $SettingPageRouteExtension._fromState,
-                  routes: [
-                    GoRouteData.$route(
-                      path: 'account',
-                      factory: $SettingsAccountPageRouteExtension._fromState,
-                    ),
-                    GoRouteData.$route(
-                      path: 'ui_style',
-                      factory: $SettingsUiStylePageRouteExtension._fromState,
-                    ),
-                    GoRouteData.$route(
-                      path: 'color_style',
-                      factory: $SettingsThemeColorPageRouteExtension._fromState,
-                    ),
-                    GoRouteData.$route(
-                      path: 'theme_mode',
-                      factory: $SettingsThemeModePageRouteExtension._fromState,
-                    ),
-                    GoRouteData.$route(
-                      path: 'license',
-                      factory: $LicensePageRouteExtension._fromState,
-                    ),
-                  ],
+                  path: 'account',
+                  factory: $SettingsAccountPageRouteData._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'ui_style',
+                  factory: $SettingsUiStylePageRouteData._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'color_style',
+                  factory: $SettingsThemeColorPageRouteData._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'theme_mode',
+                  factory: $SettingsThemeModePageRouteData._fromState,
+                ),
+                GoRouteData.$route(
+                  path: 'license',
+                  factory: $LicensePageRouteData._fromState,
                 ),
               ],
             ),
           ],
         ),
       ],
-    );
+    ),
+  ],
+);
 
-extension $BaseShellSrouteExtension on BaseShellSroute {
-  static BaseShellSroute _fromState(GoRouterState state) => BaseShellSroute();
+extension $BaseShellRouteDataExtension on BaseShellRouteData {
+  static BaseShellRouteData _fromState(GoRouterState state) =>
+      BaseShellRouteData();
 }
 
-extension $RootRouteExtension on RootRoute {
-  static RootRoute _fromState(GoRouterState state) => const RootRoute();
+mixin $RootRouteData on GoRouteData {
+  static RootRouteData _fromState(GoRouterState state) => const RootRouteData();
 
-  String get location => GoRouteData.$location(
-        '/',
-      );
+  @override
+  String get location => GoRouteData.$location('/');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $OnboardRouteExtension on OnboardRoute {
-  static OnboardRoute _fromState(GoRouterState state) => const OnboardRoute();
+mixin $OnboardRouteData on GoRouteData {
+  static OnboardRouteData _fromState(GoRouterState state) =>
+      const OnboardRouteData();
 
-  String get location => GoRouteData.$location(
-        '/onboard',
-      );
+  @override
+  String get location => GoRouteData.$location('/onboard');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $MaintenancePageRouteExtension on MaintenancePageRoute {
-  static MaintenancePageRoute _fromState(GoRouterState state) =>
-      const MaintenancePageRoute();
+mixin $MaintenancePageRouteData on GoRouteData {
+  static MaintenancePageRouteData _fromState(GoRouterState state) =>
+      const MaintenancePageRouteData();
 
-  String get location => GoRouteData.$location(
-        '/maintenance',
-      );
+  @override
+  String get location => GoRouteData.$location('/maintenance');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $NavigatorPageShellRouteExtension on NavigatorPageShellRoute {
-  static NavigatorPageShellRoute _fromState(GoRouterState state) =>
-      const NavigatorPageShellRoute();
+extension $NavigatorPageShellRouteDataExtension on NavigatorPageShellRouteData {
+  static NavigatorPageShellRouteData _fromState(GoRouterState state) =>
+      const NavigatorPageShellRouteData();
 }
 
-extension $HomePageRouteExtension on HomePageRoute {
-  static HomePageRoute _fromState(GoRouterState state) => const HomePageRoute();
+mixin $HomePageRouteData on GoRouteData {
+  static HomePageRouteData _fromState(GoRouterState state) =>
+      const HomePageRouteData();
 
-  String get location => GoRouteData.$location(
-        '/home',
-      );
+  @override
+  String get location => GoRouteData.$location('/home');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $GoodsPageRouteExtension on GoodsPageRoute {
-  static GoodsPageRoute _fromState(GoRouterState state) =>
-      const GoodsPageRoute();
+mixin $GoodsPageRouteData on GoRouteData {
+  static GoodsPageRouteData _fromState(GoRouterState state) =>
+      const GoodsPageRouteData();
 
-  String get location => GoRouteData.$location(
-        '/goods',
-      );
+  @override
+  String get location => GoRouteData.$location('/goods');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $SettingPageRouteExtension on SettingPageRoute {
-  static SettingPageRoute _fromState(GoRouterState state) =>
-      const SettingPageRoute();
+mixin $SettingPageRouteData on GoRouteData {
+  static SettingPageRouteData _fromState(GoRouterState state) =>
+      const SettingPageRouteData();
 
-  String get location => GoRouteData.$location(
-        '/setting',
-      );
+  @override
+  String get location => GoRouteData.$location('/setting');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $SettingsAccountPageRouteExtension on SettingsAccountPageRoute {
-  static SettingsAccountPageRoute _fromState(GoRouterState state) =>
-      const SettingsAccountPageRoute();
+mixin $SettingsAccountPageRouteData on GoRouteData {
+  static SettingsAccountPageRouteData _fromState(GoRouterState state) =>
+      const SettingsAccountPageRouteData();
 
-  String get location => GoRouteData.$location(
-        '/setting/account',
-      );
+  @override
+  String get location => GoRouteData.$location('/setting/account');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $SettingsUiStylePageRouteExtension on SettingsUiStylePageRoute {
-  static SettingsUiStylePageRoute _fromState(GoRouterState state) =>
-      const SettingsUiStylePageRoute();
+mixin $SettingsUiStylePageRouteData on GoRouteData {
+  static SettingsUiStylePageRouteData _fromState(GoRouterState state) =>
+      const SettingsUiStylePageRouteData();
 
-  String get location => GoRouteData.$location(
-        '/setting/ui_style',
-      );
+  @override
+  String get location => GoRouteData.$location('/setting/ui_style');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $SettingsThemeColorPageRouteExtension on SettingsThemeColorPageRoute {
-  static SettingsThemeColorPageRoute _fromState(GoRouterState state) =>
-      const SettingsThemeColorPageRoute();
+mixin $SettingsThemeColorPageRouteData on GoRouteData {
+  static SettingsThemeColorPageRouteData _fromState(GoRouterState state) =>
+      const SettingsThemeColorPageRouteData();
 
-  String get location => GoRouteData.$location(
-        '/setting/color_style',
-      );
+  @override
+  String get location => GoRouteData.$location('/setting/color_style');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $SettingsThemeModePageRouteExtension on SettingsThemeModePageRoute {
-  static SettingsThemeModePageRoute _fromState(GoRouterState state) =>
-      const SettingsThemeModePageRoute();
+mixin $SettingsThemeModePageRouteData on GoRouteData {
+  static SettingsThemeModePageRouteData _fromState(GoRouterState state) =>
+      const SettingsThemeModePageRouteData();
 
-  String get location => GoRouteData.$location(
-        '/setting/theme_mode',
-      );
+  @override
+  String get location => GoRouteData.$location('/setting/theme_mode');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }
 
-extension $LicensePageRouteExtension on LicensePageRoute {
-  static LicensePageRoute _fromState(GoRouterState state) =>
-      const LicensePageRoute();
+mixin $LicensePageRouteData on GoRouteData {
+  static LicensePageRouteData _fromState(GoRouterState state) =>
+      const LicensePageRouteData();
 
-  String get location => GoRouteData.$location(
-        '/setting/license',
-      );
+  @override
+  String get location => GoRouteData.$location('/setting/license');
 
+  @override
   void go(BuildContext context) => context.go(location);
 
+  @override
   Future<T?> push<T>(BuildContext context) => context.push<T>(location);
 
+  @override
   void pushReplacement(BuildContext context) =>
       context.pushReplacement(location);
 
+  @override
   void replace(BuildContext context) => context.replace(location);
 }

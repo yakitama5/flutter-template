@@ -16,7 +16,3 @@ targets:
           ignore_for_file:
             - type=lint
             - duplicate_ignore
-      go_router_builder:
-        generate_for:
-          include:
-            - lib/**/router/**/**.dart
