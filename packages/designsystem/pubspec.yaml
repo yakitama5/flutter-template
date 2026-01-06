@@ -41,7 +41,7 @@ dev_dependencies:
   flutter_gen_runner: null
   flutter_test:
     sdk: flutter
-  freezed: ^3.2.4
+  freezed: any
 
   riverpod_generator: ^4.0.0
 
