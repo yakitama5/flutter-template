@@ -17,7 +17,7 @@ mixin RunUsecaseMixin {
       return action.call();
     }
 
-    final loading = ref.read(loadingNotifierProvider.notifier);
+    final loading = ref.read(loadingProvider.notifier);
     return loading.wrap<T>(action.call());
   }
 }

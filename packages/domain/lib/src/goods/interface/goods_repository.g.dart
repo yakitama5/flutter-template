@@ -8,22 +8,47 @@ part of 'goods_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$goodsRepositoryHash() => r'288ce9a7beb5c039e2627da868b61cd5466b150f';
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
 
-/// See also [goodsRepository].
 @ProviderFor(goodsRepository)
-final goodsRepositoryProvider = Provider<GoodsRepository>.internal(
-  goodsRepository,
-  name: r'goodsRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$goodsRepositoryHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
+final goodsRepositoryProvider = GoodsRepositoryProvider._();
 
-@Deprecated('Will be removed in 3.0. Use Ref instead')
-// ignore: unused_element
-typedef GoodsRepositoryRef = ProviderRef<GoodsRepository>;
-// ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
+final class GoodsRepositoryProvider
+    extends
+        $FunctionalProvider<GoodsRepository, GoodsRepository, GoodsRepository>
+    with $Provider<GoodsRepository> {
+  GoodsRepositoryProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'goodsRepositoryProvider',
+        isAutoDispose: false,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$goodsRepositoryHash();
+
+  @$internal
+  @override
+  $ProviderElement<GoodsRepository> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  GoodsRepository create(Ref ref) {
+    return goodsRepository(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(GoodsRepository value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<GoodsRepository>(value),
+    );
+  }
+}
+
+String _$goodsRepositoryHash() => r'288ce9a7beb5c039e2627da868b61cd5466b150f';

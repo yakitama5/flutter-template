@@ -7,7 +7,7 @@ part 'goods_fetch_query.freezed.dart';
 
 // TODO(yakitama5): 共通化したい
 @freezed
-class GoodsFetchQuery with _$GoodsFetchQuery {
+abstract class GoodsFetchQuery with _$GoodsFetchQuery {
   const factory GoodsFetchQuery({
     @Default(GoodsSortKey.price) GoodsSortKey sortKey,
     @Default(SortOrder.asc) SortOrder sortOrder,
