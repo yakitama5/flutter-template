@@ -11,9 +11,7 @@ import 'package:material_color_utilities/palettes/core_palette.dart';
 /// https://github.com/material-foundation/flutter-packages/issues/582#issuecomment-2081174158
 extension CorePaletteX on CorePalette {
   /// Create a [ColorScheme] from the given `palette` obtained from the Android OS.
-  ColorScheme toM3ColorScheme({
-    Brightness brightness = Brightness.light,
-  }) {
+  ColorScheme toM3ColorScheme({Brightness brightness = Brightness.light}) {
     final scheme = DynamicScheme(
       sourceColorArgb: toColorScheme(brightness: brightness).primary.value,
       // Variantを取得する手段がないため、`fruitSalad`を暫定的に固定設定

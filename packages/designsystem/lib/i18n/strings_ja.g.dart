@@ -3,9 +3,10 @@
 ///
 // coverage:ignore-file
 // ignore_for_file: type=lint, unused_import
+// dart format off
 
-import 'package:cores_domain/core.dart';
-import 'package:cores_domain/designsystem.dart';
+import 'package:domain/core.dart';
+import 'package:domain/designsystem.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
@@ -13,12 +14,12 @@ import 'package:slang/generated.dart';
 import 'strings.g.dart';
 
 // Path: <root>
-class TranslationsJa extends Translations {
+class TranslationsJa extends Translations with BaseTranslations<AppLocale, Translations> {
 	/// You can call this constructor and build your own translation instance of this locale.
 	/// Constructing via the enum [AppLocale.build] is preferred.
-	TranslationsJa({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver})
+	TranslationsJa({Map<String, Node>? overrides, PluralResolver? cardinalResolver, PluralResolver? ordinalResolver, TranslationMetadata<AppLocale, Translations>? meta})
 		: assert(overrides == null, 'Set "translation_overrides: true" in order to enable this feature.'),
-		  $meta = TranslationMetadata(
+		  $meta = meta ?? TranslationMetadata(
 		    locale: AppLocale.ja,
 		    overrides: overrides ?? {},
 		    cardinalResolver: cardinalResolver,
@@ -36,6 +37,9 @@ class TranslationsJa extends Translations {
 	@override dynamic operator[](String key) => $meta.getTranslation(key) ?? super.$meta.getTranslation(key);
 
 	late final TranslationsJa _root = this; // ignore: unused_field
+
+	@override 
+	TranslationsJa $copyWith({TranslationMetadata<AppLocale, Translations>? meta}) => TranslationsJa(meta: meta ?? this.$meta);
 
 	// Translations
 	@override late final _TranslationsDesignsystemJa designsystem = _TranslationsDesignsystemJa._(_root);
@@ -152,75 +156,24 @@ class _TranslationsDesignsystemAppUpdateForceUpdateJa extends TranslationsDesign
 	@override String get message => 'ご利用のバージョンは現在ご利用出来ません。\nストアから新しいバージョンをご利用下さい。';
 }
 
-/// Flat map(s) containing all translations.
+/// The flat map containing all translations for locale <ja>.
 /// Only for edge cases! For simple maps, use the map function of this library.
+///
+/// The Dart AOT compiler has issues with very large switch statements,
+/// so the map is split into smaller functions (512 entries each).
 extension on TranslationsJa {
 	dynamic _flatMapFunction(String path) {
-		switch (path) {
-			case 'designsystem.uiStyle': return ({required UIStyle context}) {
-				switch (context) {
-					case UIStyle.system:
-						return 'システム設定';
-					case UIStyle.android:
-						return 'Android';
-					case UIStyle.ios:
-						return 'iOS';
-				}
-			};
-			case 'designsystem.themeColor': return ({required ThemeColor context}) {
-				switch (context) {
-					case ThemeColor.dynamicColor:
-						return 'ダイナミックカラー';
-					case ThemeColor.appColor:
-						return 'システムカラー';
-					case ThemeColor.blue:
-						return 'ブルー';
-					case ThemeColor.purple:
-						return 'パープル';
-					case ThemeColor.green:
-						return 'グリーン';
-					case ThemeColor.red:
-						return 'レッド';
-					case ThemeColor.pink:
-						return 'ピンク';
-					case ThemeColor.yellow:
-						return 'イエロー';
-					case ThemeColor.orange:
-						return 'オレンジ';
-				}
-			};
-			case 'designsystem.themeMode': return ({required ThemeMode context}) {
-				switch (context) {
-					case ThemeMode.system:
-						return 'システムテーマ';
-					case ThemeMode.light:
-						return 'ライトテーマ';
-					case ThemeMode.dark:
-						return 'ダークテーマ';
-				}
-			};
-			case 'designsystem.viewLayout.name': return '表示形式';
-			case 'designsystem.viewLayout.typeName': return ({required ViewLayout context}) {
-				switch (context) {
-					case ViewLayout.grid:
-						return 'グリッド表示';
-					case ViewLayout.list:
-						return 'リスト表示';
-				}
-			};
-			case 'designsystem.sortOrder': return ({required SortOrder context}) {
-				switch (context) {
-					case SortOrder.asc:
-						return '昇順';
-					case SortOrder.desc:
-						return '降順';
-				}
-			};
-			case 'designsystem.appUpdate.updatePossible.message': return '新しいバージョンが公開されています。\nアップデートを行うと、新しい機能をご利用いただけます。\nアップデートを行いますか？';
-			case 'designsystem.appUpdate.forceUpdate.message': return 'ご利用のバージョンは現在ご利用出来ません。\nストアから新しいバージョンをご利用下さい。';
-			case 'designsystem.appUpdate.navigateStore': return 'ストアを開く';
-			default: return null;
-		}
+		return switch (path) {
+			'designsystem.uiStyle' => ({required UIStyle context}) { switch (context) { case UIStyle.system: return 'システム設定'; case UIStyle.android: return 'Android'; case UIStyle.ios: return 'iOS'; } }, 
+			'designsystem.themeColor' => ({required ThemeColor context}) { switch (context) { case ThemeColor.dynamicColor: return 'ダイナミックカラー'; case ThemeColor.appColor: return 'システムカラー'; case ThemeColor.blue: return 'ブルー'; case ThemeColor.purple: return 'パープル'; case ThemeColor.green: return 'グリーン'; case ThemeColor.red: return 'レッド'; case ThemeColor.pink: return 'ピンク'; case ThemeColor.yellow: return 'イエロー'; case ThemeColor.orange: return 'オレンジ'; } }, 
+			'designsystem.themeMode' => ({required ThemeMode context}) { switch (context) { case ThemeMode.system: return 'システムテーマ'; case ThemeMode.light: return 'ライトテーマ'; case ThemeMode.dark: return 'ダークテーマ'; } }, 
+			'designsystem.viewLayout.name' => '表示形式',
+			'designsystem.viewLayout.typeName' => ({required ViewLayout context}) { switch (context) { case ViewLayout.grid: return 'グリッド表示'; case ViewLayout.list: return 'リスト表示'; } }, 
+			'designsystem.sortOrder' => ({required SortOrder context}) { switch (context) { case SortOrder.asc: return '昇順'; case SortOrder.desc: return '降順'; } }, 
+			'designsystem.appUpdate.updatePossible.message' => '新しいバージョンが公開されています。\nアップデートを行うと、新しい機能をご利用いただけます。\nアップデートを行いますか？',
+			'designsystem.appUpdate.forceUpdate.message' => 'ご利用のバージョンは現在ご利用出来ません。\nストアから新しいバージョンをご利用下さい。',
+			'designsystem.appUpdate.navigateStore' => 'ストアを開く',
+			_ => null,
+		};
 	}
 }
-
