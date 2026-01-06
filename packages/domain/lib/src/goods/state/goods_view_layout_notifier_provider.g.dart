@@ -44,7 +44,7 @@ final class GoodsViewLayoutNotifierProvider
 }
 
 String _$goodsViewLayoutNotifierHash() =>
-    r'd9409dbcdadd7dfd9d58d3a9c216d654a117d88b';
+    r'6ed9698a5f9c7d53ee7e0416fff91a97e54eea8e';
 
 abstract class _$GoodsViewLayoutNotifier extends $Notifier<ViewLayout> {
   ViewLayout build();

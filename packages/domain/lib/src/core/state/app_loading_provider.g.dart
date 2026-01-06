@@ -46,7 +46,7 @@ final class LoadingNotifierProvider
   }
 }
 
-String _$loadingNotifierHash() => r'7f8edc8a1c4f6e47c22363a333deade007ff4556';
+String _$loadingNotifierHash() => r'af1996d9ac77e923458cbf2039e2302f793c28b6';
 
 /// アプリ全体で共通するローディング表示を管理
 
