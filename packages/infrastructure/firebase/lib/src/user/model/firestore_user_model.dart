@@ -7,7 +7,7 @@ part 'firestore_user_model.g.dart';
 
 /// `/users/{userId}`ドキュメントのモデル
 @freezed
-class FirestoreUserModel with _$FirestoreUserModel {
+abstract class FirestoreUserModel with _$FirestoreUserModel {
   const factory FirestoreUserModel({
     required String id,
     @timestampKey DateTime? createdAt,
@@ -20,11 +20,8 @@ class FirestoreUserModel with _$FirestoreUserModel {
 
 extension FirestoreUserModelX on FirestoreUserModel {
   /// ドメイン層への変換
-  User toDomainModel() => User(
-        id: id,
-        createdAt: createdAt!,
-        updatedAt: updatedAt!,
-      );
+  User toDomainModel() =>
+      User(id: id, createdAt: createdAt!, updatedAt: updatedAt!);
 
   /// `FieldValue`による更新が保留中か否か
   bool get fieldValuePending => createdAt == null || updatedAt == null;
