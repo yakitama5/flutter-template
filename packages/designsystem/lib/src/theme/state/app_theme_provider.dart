@@ -1,7 +1,6 @@
 import 'package:designsystem/extension.dart';
 import 'package:designsystem/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'app_color_scheme_provider.dart';
@@ -25,8 +24,6 @@ ThemeData appTheme(Ref ref, {required Brightness brightness}) {
         TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
       },
     ),
-    extensions: [
-      AppColors.brightness(brightness: brightness),
-    ],
+    extensions: [AppColors.brightness(brightness: brightness)],
   );
 }

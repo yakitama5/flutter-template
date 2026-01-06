@@ -4,7 +4,6 @@ import 'package:domain/core.dart';
 import 'package:domain/goods.dart';
 import 'package:domain/util.dart';
 import 'package:packages_foundation/extension.dart';
-import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'goods_list_provider.g.dart';
@@ -21,8 +20,5 @@ Stream<PageInfo<Goods>> goodsList(
 
   return ref
       .watch(goodsRepositoryProvider)
-      .listenGoodsList(
-        page: page,
-        query: query,
-      );
+      .listenGoodsList(page: page, query: query);
 }

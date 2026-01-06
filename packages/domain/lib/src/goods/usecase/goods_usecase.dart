@@ -1,4 +1,3 @@
-import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../state/goods_list_provider.dart';
@@ -15,9 +14,7 @@ class GoodsUsecase {
   final Ref ref;
 
   /// 商品一覧を再読み込みする.
-  Future<void> refreshGoods({
-    required GoodsFetchQuery query,
-  }) async {
+  Future<void> refreshGoods({required GoodsFetchQuery query}) async {
     // すべての要素を再読み込み
     ref.invalidate(goodsListProvider);
 
